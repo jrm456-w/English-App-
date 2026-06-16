@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v8';
+const CACHE_VERSION = 'engflow-v9';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.

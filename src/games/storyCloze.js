@@ -48,11 +48,20 @@ export function storyCloze(stage, ctx) {
       if (ok) correct++;
       sel.style.borderColor = ok ? 'var(--c-success)' : 'var(--c-danger)';
       sel.disabled = true;
+      // Reveal the correct word next to a wrong blank.
+      if (!ok) {
+        const hint = el(`<span class="needs-net" style="color:var(--c-success);margin-left:4px">→ ${story.answers[idx]}</span>`);
+        sel.insertAdjacentElement('afterend', hint);
+      }
     });
-    card.querySelector('#check').disabled = true;
+    const checkBtn = card.querySelector('#check');
+    checkBtn.disabled = true;
     const fb = card.querySelector('#fb');
     fb.innerHTML = `<div class="feedback ${correct === total ? 'feedback--ok' : 'feedback--no'}">${correct}/${total} ${t('common.correct')}</div>`;
     speak(story.text.replace(/___/g, (function () { let i = 0; return () => story.answers[i++]; })()));
-    ctx.finish({ attempts, correct, total });
+    // Let the user review the blanks before moving to the score screen.
+    const done = el(`<button class="btn btn--block" style="margin-top:12px">${t('quiz.finish')}</button>`);
+    done.onclick = () => ctx.finish({ attempts, correct, total });
+    fb.appendChild(done);
   };
 }
