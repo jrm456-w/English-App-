@@ -389,6 +389,317 @@
         "A good routine improves wellbeing."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Internet & Social Media / Internet y redes",
+      "vocabulary": [
+        { "en": "Browse", "es": "Navegar" },
+        { "en": "Post", "es": "Publicar / Publicación" },
+        { "en": "Follower", "es": "Seguidor" },
+        { "en": "Privacy", "es": "Privacidad" },
+        { "en": "Content", "es": "Contenido" },
+        { "en": "Streaming", "es": "Transmisión" },
+        { "en": "Notification", "es": "Notificación" },
+        { "en": "Trend", "es": "Tendencia" },
+        { "en": "Scroll", "es": "Desplazar" },
+        { "en": "Influencer", "es": "Influencer" },
+        { "en": "Fake news", "es": "Noticias falsas" },
+        { "en": "Addiction", "es": "Adicción" }
+      ],
+      "grammar": {
+        "rule": "Causative (have/get something done)",
+        "explanation_es": "'have/get + objeto + participio' para algo hecho por otros: 'I got my account verified'.",
+        "examples": ["She spends hours scrolling online.", "I got my account verified.", "Be careful with your privacy settings.", "That post went viral.", "Fake news spreads quickly."]
+      },
+      "story": {
+        "text": "Many people now get their news from social media, where ___ spreads faster than facts. A single ___ can reach millions of ___ in hours. Experts warn about ___ and the loss of ___ online.",
+        "answers": ["content", "post", "followers", "addiction", "privacy"],
+        "bank": ["content", "post", "followers", "addiction", "privacy", "trend", "streaming"]
+      },
+      "sentences": [
+        "She spends hours scrolling online.",
+        "That post went completely viral.",
+        "Fake news spreads very quickly.",
+        "Check your privacy settings often."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Travel & Culture / Viajes y cultura",
+      "vocabulary": [
+        { "en": "Destination", "es": "Destino" },
+        { "en": "Tourist", "es": "Turista" },
+        { "en": "Sightseeing", "es": "Turismo (visitar lugares)" },
+        { "en": "Landmark", "es": "Monumento / Punto de referencia" },
+        { "en": "Souvenir", "es": "Recuerdo" },
+        { "en": "Local", "es": "Local" },
+        { "en": "Heritage", "es": "Patrimonio" },
+        { "en": "Adventure", "es": "Aventura" },
+        { "en": "Journey", "es": "Viaje / Trayecto" },
+        { "en": "Explore", "es": "Explorar" },
+        { "en": "Diverse", "es": "Diverso" },
+        { "en": "Authentic", "es": "Auténtico" }
+      ],
+      "grammar": {
+        "rule": "used to / would for past habits",
+        "explanation_es": "Para hábitos pasados al narrar viajes: 'We would explore the old town every evening'.",
+        "examples": ["We explored the ancient landmarks.", "I would buy a souvenir in each city.", "The food was wonderfully authentic.", "This region is culturally diverse.", "The journey was an adventure."]
+      },
+      "sentences": [
+        "We explored the ancient landmarks.",
+        "The food was wonderfully authentic.",
+        "This region is culturally diverse.",
+        "The whole journey was an adventure."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "Art & Music / Arte y música",
+      "vocabulary": [
+        { "en": "Painting", "es": "Pintura" },
+        { "en": "Artist", "es": "Artista" },
+        { "en": "Gallery", "es": "Galería" },
+        { "en": "Exhibition", "es": "Exposición" },
+        { "en": "Melody", "es": "Melodía" },
+        { "en": "Lyrics", "es": "Letra" },
+        { "en": "Instrument", "es": "Instrumento" },
+        { "en": "Perform", "es": "Interpretar / Actuar" },
+        { "en": "Creative", "es": "Creativo" },
+        { "en": "Inspire", "es": "Inspirar" },
+        { "en": "Talent", "es": "Talento" },
+        { "en": "Masterpiece", "es": "Obra maestra" }
+      ],
+      "grammar": {
+        "rule": "Relative clauses (non-defining)",
+        "explanation_es": "Añaden información extra con comas: 'The artist, who lives in Paris, paints landscapes.'",
+        "examples": ["The artist, who is famous, paints landscapes.", "Her music inspires millions.", "We visited an art exhibition.", "He performs with great talent.", "It is considered a masterpiece."]
+      },
+      "sentences": [
+        "Her music inspires millions of people.",
+        "We visited a fascinating art exhibition.",
+        "He performs with great talent.",
+        "It is considered a true masterpiece."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "Advanced Adjectives / Adjetivos avanzados",
+      "vocabulary": [
+        { "en": "Outstanding", "es": "Sobresaliente" },
+        { "en": "Remarkable", "es": "Notable" },
+        { "en": "Disappointing", "es": "Decepcionante" },
+        { "en": "Overwhelming", "es": "Abrumador" },
+        { "en": "Reluctant", "es": "Reacio" },
+        { "en": "Genuine", "es": "Genuino" },
+        { "en": "Crucial", "es": "Crucial" },
+        { "en": "Inevitable", "es": "Inevitable" },
+        { "en": "Vague", "es": "Vago" },
+        { "en": "Thorough", "es": "Minucioso" },
+        { "en": "Demanding", "es": "Exigente" },
+        { "en": "Worthwhile", "es": "Que vale la pena" }
+      ],
+      "grammar": {
+        "rule": "Strong (extreme) adjectives",
+        "explanation_es": "Algunos adjetivos ya son extremos: 'outstanding' (= muy bueno). Con ellos usamos 'absolutely', no 'very'.",
+        "examples": ["Her performance was outstanding.", "The results were remarkable.", "The movie was rather disappointing.", "This step is absolutely crucial.", "It was a worthwhile effort."]
+      },
+      "sentences": [
+        "Her performance was outstanding.",
+        "The results were truly remarkable.",
+        "This step is absolutely crucial.",
+        "It was a worthwhile effort overall."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Media & Journalism / Medios y periodismo",
+      "vocabulary": [
+        { "en": "Journalist", "es": "Periodista" },
+        { "en": "Source", "es": "Fuente" },
+        { "en": "Interview", "es": "Entrevista" },
+        { "en": "Coverage", "es": "Cobertura" },
+        { "en": "Bias", "es": "Sesgo" },
+        { "en": "Report", "es": "Reportar / Informe" },
+        { "en": "Broadcast", "es": "Emisión" },
+        { "en": "Editor", "es": "Editor" },
+        { "en": "Article", "es": "Artículo" },
+        { "en": "Censorship", "es": "Censura" },
+        { "en": "Reliable", "es": "Fiable" },
+        { "en": "Investigate", "es": "Investigar" },
+        { "en": "Statement", "es": "Declaración" }
+      ],
+      "grammar": {
+        "rule": "Reporting verbs",
+        "explanation_es": "Para informar: 'claim', 'deny', 'reveal', 'announce': 'The minister denied the accusations.'",
+        "examples": ["The journalist revealed the truth.", "Officials denied the report.", "The story got wide coverage.", "Always check a reliable source.", "The newspaper announced the results."]
+      },
+      "story": {
+        "text": "A respected ___ decided to ___ the scandal. She gathered information from several reliable ___ before writing the ___ . Despite pressure and even ___ , the story received massive ___ .",
+        "answers": ["journalist", "investigate", "sources", "article", "censorship", "coverage"],
+        "bank": ["journalist", "investigate", "sources", "article", "censorship", "coverage", "bias"]
+      },
+      "sentences": [
+        "The journalist revealed the truth.",
+        "Officials denied the entire report.",
+        "Always check a reliable source.",
+        "The story got wide coverage."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Emotions in Depth / Emociones a fondo",
+      "vocabulary": [
+        { "en": "Anxious", "es": "Ansioso" },
+        { "en": "Grateful", "es": "Agradecido" },
+        { "en": "Frustrated", "es": "Frustrado" },
+        { "en": "Overwhelmed", "es": "Abrumado" },
+        { "en": "Content", "es": "Satisfecho" },
+        { "en": "Jealous", "es": "Celoso" },
+        { "en": "Embarrassed", "es": "Avergonzado" },
+        { "en": "Relieved", "es": "Aliviado" },
+        { "en": "Disappointed", "es": "Decepcionado" },
+        { "en": "Eager", "es": "Ansioso (con ganas)" },
+        { "en": "Calm", "es": "Tranquilo" },
+        { "en": "Resentful", "es": "Resentido" }
+      ],
+      "grammar": {
+        "rule": "Expressing emotional reactions",
+        "explanation_es": "Estructuras: 'I feel ... about', 'It makes me feel ...', 'I was relieved to hear ...'.",
+        "examples": ["I feel anxious about the interview.", "She was relieved to hear the news.", "He felt frustrated with the delay.", "I'm grateful for your help.", "They were disappointed by the result."]
+      },
+      "sentences": [
+        "I feel anxious about the interview.",
+        "She was relieved to hear the news.",
+        "I'm truly grateful for your help.",
+        "He felt frustrated with the delay."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "Education & Academia / Educación superior",
+      "vocabulary": [
+        { "en": "Lecture", "es": "Conferencia / Clase magistral" },
+        { "en": "Assignment", "es": "Trabajo / Tarea" },
+        { "en": "Scholarship", "es": "Beca" },
+        { "en": "Curriculum", "es": "Plan de estudios" },
+        { "en": "Tuition", "es": "Matrícula" },
+        { "en": "Graduate", "es": "Graduarse" },
+        { "en": "Thesis", "es": "Tesis" },
+        { "en": "Faculty", "es": "Facultad / Profesorado" },
+        { "en": "Semester", "es": "Semestre" },
+        { "en": "Deadline", "es": "Fecha límite" },
+        { "en": "Plagiarism", "es": "Plagio" },
+        { "en": "Qualification", "es": "Titulación" }
+      ],
+      "grammar": {
+        "rule": "Concession (although / despite)",
+        "explanation_es": "'although' + oración; 'despite' + sustantivo/-ing: 'Despite the deadline, she finished.'",
+        "examples": ["Although the course was hard, she passed.", "Despite the deadline, he relaxed.", "She won a full scholarship.", "He is writing his thesis.", "The curriculum was recently updated."]
+      },
+      "sentences": [
+        "Although the course was hard she passed.",
+        "She won a full scholarship.",
+        "He is currently writing his thesis.",
+        "The deadline is next Friday."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Psychology & Mind / Psicología y mente",
+      "vocabulary": [
+        { "en": "Behaviour", "es": "Comportamiento" },
+        { "en": "Motivation", "es": "Motivación" },
+        { "en": "Memory", "es": "Memoria" },
+        { "en": "Attitude", "es": "Actitud" },
+        { "en": "Perception", "es": "Percepción" },
+        { "en": "Awareness", "es": "Conciencia" },
+        { "en": "Habit", "es": "Hábito" },
+        { "en": "Mindset", "es": "Mentalidad" },
+        { "en": "Cope", "es": "Afrontar" },
+        { "en": "Trigger", "es": "Desencadenar" },
+        { "en": "Self-esteem", "es": "Autoestima" },
+        { "en": "Reaction", "es": "Reacción" }
+      ],
+      "grammar": {
+        "rule": "Verbs of perception & cognition",
+        "explanation_es": "'seem', 'appear', 'tend to', 'be likely to' describen tendencias mentales y percepciones.",
+        "examples": ["Her attitude seems very positive.", "Stress can trigger anxiety.", "A growth mindset boosts motivation.", "He struggles to cope with change.", "Memory tends to fade over time."]
+      },
+      "sentences": [
+        "Her attitude seems very positive.",
+        "Stress can trigger anxiety.",
+        "A growth mindset boosts motivation.",
+        "He struggles to cope with change."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "Discourse Markers / Marcadores del discurso",
+      "vocabulary": [
+        { "en": "As a result", "es": "Como resultado" },
+        { "en": "In contrast", "es": "En contraste" },
+        { "en": "For instance", "es": "Por ejemplo" },
+        { "en": "Moreover", "es": "Además" },
+        { "en": "In other words", "es": "En otras palabras" },
+        { "en": "On the whole", "es": "En conjunto" },
+        { "en": "As far as", "es": "En cuanto a" },
+        { "en": "To begin with", "es": "Para empezar" },
+        { "en": "In conclusion", "es": "En conclusión" },
+        { "en": "Apart from", "es": "Aparte de" },
+        { "en": "Due to", "es": "Debido a" },
+        { "en": "Whereas", "es": "Mientras que" }
+      ],
+      "grammar": {
+        "rule": "Organizing an argument",
+        "explanation_es": "Los marcadores estructuran el discurso: introducir (to begin with), añadir (moreover), concluir (in conclusion).",
+        "examples": ["To begin with, the plan is costly.", "Moreover, it lacks support.", "In contrast, the alternative is cheaper.", "As a result, sales fell.", "In conclusion, we should wait."]
+      },
+      "sentences": [
+        "To begin with the plan is costly.",
+        "Moreover it lacks public support.",
+        "As a result sales fell sharply.",
+        "In conclusion we should wait."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Negotiation / Negociación",
+      "vocabulary": [
+        { "en": "Offer", "es": "Oferta" },
+        { "en": "Compromise", "es": "Acuerdo / Ceder" },
+        { "en": "Agreement", "es": "Acuerdo" },
+        { "en": "Condition", "es": "Condición" },
+        { "en": "Proposal", "es": "Propuesta" },
+        { "en": "Discount", "es": "Descuento" },
+        { "en": "Deal", "es": "Trato" },
+        { "en": "Counteroffer", "es": "Contraoferta" },
+        { "en": "Flexible", "es": "Flexible" },
+        { "en": "Mutual", "es": "Mutuo" },
+        { "en": "Settle", "es": "Resolver / Acordar" },
+        { "en": "Terms", "es": "Condiciones" }
+      ],
+      "grammar": {
+        "rule": "Conditional bargaining",
+        "explanation_es": "Para negociar: 'If you lower the price, we'll sign today', 'We could agree, provided that...'.",
+        "examples": ["If you lower the price, we'll sign.", "We could reach a compromise.", "Let's agree on the terms.", "I'm open to a counteroffer.", "We need a mutual agreement."]
+      },
+      "sentences": [
+        "If you lower the price we'll sign.",
+        "We could reach a fair compromise.",
+        "Let's agree on the final terms.",
+        "We need a mutual agreement."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }

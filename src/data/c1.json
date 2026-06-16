@@ -388,6 +388,315 @@
         "Sustainability must guide development."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Advanced Verbs / Verbos avanzados",
+      "vocabulary": [
+        { "en": "To undermine", "es": "Socavar" },
+        { "en": "To enhance", "es": "Mejorar / Realzar" },
+        { "en": "To mitigate", "es": "Mitigar" },
+        { "en": "To advocate", "es": "Abogar por" },
+        { "en": "To undertake", "es": "Emprender" },
+        { "en": "To allocate", "es": "Asignar" },
+        { "en": "To foster", "es": "Fomentar" },
+        { "en": "To compel", "es": "Obligar" },
+        { "en": "To overshadow", "es": "Eclipsar" },
+        { "en": "To reconcile", "es": "Reconciliar" },
+        { "en": "To exacerbate", "es": "Agravar" },
+        { "en": "To yield", "es": "Producir / Ceder" }
+      ],
+      "grammar": {
+        "rule": "Precise verb choice (register)",
+        "explanation_es": "El registro culto exige verbos precisos: 'enhance' en lugar de 'make better', 'mitigate' en vez de 'reduce a bit'.",
+        "examples": ["The reforms enhanced productivity.", "We must mitigate the risks.", "She advocates for human rights.", "Poor planning undermined the project.", "The policy fostered innovation."]
+      },
+      "sentences": [
+        "The reforms greatly enhanced productivity.",
+        "We must mitigate the financial risks.",
+        "She advocates for human rights.",
+        "Poor planning undermined the project."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Finance & Economics / Finanzas y economía",
+      "vocabulary": [
+        { "en": "Inflation", "es": "Inflación" },
+        { "en": "Recession", "es": "Recesión" },
+        { "en": "Asset", "es": "Activo" },
+        { "en": "Liability", "es": "Pasivo" },
+        { "en": "Shareholder", "es": "Accionista" },
+        { "en": "Interest rate", "es": "Tasa de interés" },
+        { "en": "Capital", "es": "Capital" },
+        { "en": "Fiscal", "es": "Fiscal" },
+        { "en": "Volatile", "es": "Volátil" },
+        { "en": "Diversify", "es": "Diversificar" },
+        { "en": "Surplus", "es": "Superávit" },
+        { "en": "Deficit", "es": "Déficit" }
+      ],
+      "grammar": {
+        "rule": "Cause and effect language",
+        "explanation_es": "Relaciones causales formales: 'A leads to B', 'B stems from A', 'as a result of'.",
+        "examples": ["Rising inflation leads to higher prices.", "The recession stemmed from weak demand.", "Investors should diversify their assets.", "The deficit widened significantly.", "Markets remain highly volatile."]
+      },
+      "story": {
+        "text": "During a ___ , rising ___ erodes people's savings. Central banks may raise the ___ to stabilize prices. Wise investors ___ their portfolio to reduce risk, balancing each ___ against its potential return.",
+        "answers": ["recession", "inflation", "interest rate", "diversify", "asset"],
+        "bank": ["recession", "inflation", "interest rate", "diversify", "asset", "deficit", "capital"]
+      },
+      "sentences": [
+        "Rising inflation leads to higher prices.",
+        "Investors should diversify their assets.",
+        "The budget deficit widened sharply.",
+        "Markets remain extremely volatile."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "Ethics & Philosophy / Ética y filosofía",
+      "vocabulary": [
+        { "en": "Morality", "es": "Moralidad" },
+        { "en": "Virtue", "es": "Virtud" },
+        { "en": "Dilemma", "es": "Dilema" },
+        { "en": "Conscience", "es": "Conciencia" },
+        { "en": "Principle", "es": "Principio" },
+        { "en": "Justify", "es": "Justificar" },
+        { "en": "Objective", "es": "Objetivo / Imparcial" },
+        { "en": "Subjective", "es": "Subjetivo" },
+        { "en": "Inherent", "es": "Inherente" },
+        { "en": "Rational", "es": "Racional" },
+        { "en": "Consequence", "es": "Consecuencia" },
+        { "en": "Integrity", "es": "Integridad" }
+      ],
+      "grammar": {
+        "rule": "Hypothetical & abstract argument",
+        "explanation_es": "Para argumentar en abstracto: 'One could argue that...', 'It raises the question of whether...'.",
+        "examples": ["One could argue that morality is subjective.", "The case poses a serious ethical dilemma.", "We must act with integrity.", "Such actions are hard to justify.", "Every choice has consequences."]
+      },
+      "story": {
+        "text": "The scientist faced a profound moral ___ : whether to publish data that could be misused. Guided by her ___ and a firm sense of ___ , she refused to ___ a decision that violated her core ___ .",
+        "answers": ["dilemma", "conscience", "integrity", "justify", "principles"],
+        "bank": ["dilemma", "conscience", "integrity", "justify", "principles", "virtue", "consequence"]
+      },
+      "sentences": [
+        "One could argue that morality is subjective.",
+        "The case poses an ethical dilemma.",
+        "We must always act with integrity.",
+        "Such actions are hard to justify."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "Rhetoric & Persuasion / Retórica y persuasión",
+      "vocabulary": [
+        { "en": "Persuade", "es": "Persuadir" },
+        { "en": "Emphasize", "es": "Enfatizar" },
+        { "en": "Highlight", "es": "Destacar" },
+        { "en": "Undeniable", "es": "Innegable" },
+        { "en": "Compelling", "es": "Convincente" },
+        { "en": "Counterargument", "es": "Contraargumento" },
+        { "en": "Assertion", "es": "Afirmación" },
+        { "en": "Credibility", "es": "Credibilidad" },
+        { "en": "Appeal", "es": "Apelar / Atractivo" },
+        { "en": "Rhetoric", "es": "Retórica" },
+        { "en": "Concede", "es": "Conceder" },
+        { "en": "Rebut", "es": "Rebatir" }
+      ],
+      "grammar": {
+        "rule": "Emphatic structures",
+        "explanation_es": "Para enfatizar al persuadir: 'It is precisely because...', 'What is undeniable is that...'.",
+        "examples": ["What is undeniable is that change is needed.", "Let me emphasize this key point.", "Her argument was truly compelling.", "He anticipated every counterargument.", "This appeals to our sense of justice."]
+      },
+      "sentences": [
+        "Let me emphasize this key point.",
+        "Her argument was truly compelling.",
+        "He anticipated every counterargument.",
+        "What is undeniable is the need to act."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Technology & Innovation / Tecnología e innovación",
+      "vocabulary": [
+        { "en": "Algorithm", "es": "Algoritmo" },
+        { "en": "Automation", "es": "Automatización" },
+        { "en": "Breakthrough", "es": "Avance decisivo" },
+        { "en": "Disruptive", "es": "Disruptivo" },
+        { "en": "Cutting-edge", "es": "De vanguardia" },
+        { "en": "Scalable", "es": "Escalable" },
+        { "en": "Encryption", "es": "Cifrado" },
+        { "en": "Infrastructure", "es": "Infraestructura" },
+        { "en": "Obsolete", "es": "Obsoleto" },
+        { "en": "Implement", "es": "Implementar" },
+        { "en": "Optimize", "es": "Optimizar" },
+        { "en": "Artificial intelligence", "es": "Inteligencia artificial" }
+      ],
+      "grammar": {
+        "rule": "Future continuous & perfect",
+        "explanation_es": "Para hablar del futuro tecnológico: 'will be using', 'will have transformed by 2040'.",
+        "examples": ["Automation will be transforming entire industries.", "By 2040, AI will have reshaped work.", "The startup developed a disruptive algorithm.", "We need to optimize the infrastructure.", "That technology is now obsolete."]
+      },
+      "story": {
+        "text": "The company achieved a major ___ with a new ___ that powered its product. Critics called the model ___ , predicting it would make older systems ___ . To grow, the team had to ___ its ___ for millions of users.",
+        "answers": ["breakthrough", "algorithm", "disruptive", "obsolete", "optimize", "infrastructure"],
+        "bank": ["breakthrough", "algorithm", "disruptive", "obsolete", "optimize", "infrastructure", "automation"]
+      },
+      "sentences": [
+        "Automation will transform entire industries.",
+        "The startup built a disruptive algorithm.",
+        "We need to optimize the infrastructure.",
+        "That technology is now obsolete."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Advanced Phrasal Verbs / Verbos compuestos avanzados",
+      "vocabulary": [
+        { "en": "To account for", "es": "Explicar / Representar" },
+        { "en": "To boil down to", "es": "Reducirse a" },
+        { "en": "To branch out", "es": "Diversificarse" },
+        { "en": "To weigh up", "es": "Sopesar" },
+        { "en": "To rule out", "es": "Descartar" },
+        { "en": "To phase out", "es": "Eliminar gradualmente" },
+        { "en": "To stem from", "es": "Provenir de" },
+        { "en": "To gloss over", "es": "Pasar por alto" },
+        { "en": "To bring about", "es": "Provocar / Ocasionar" },
+        { "en": "To single out", "es": "Señalar / Destacar" },
+        { "en": "To live up to", "es": "Estar a la altura de" },
+        { "en": "To zero in on", "es": "Centrarse en" }
+      ],
+      "grammar": {
+        "rule": "Formal phrasal verbs in writing",
+        "explanation_es": "Algunos phrasal verbs son válidos en registro formal: 'account for', 'bring about', 'stem from'.",
+        "examples": ["This factor accounts for the difference.", "It all boils down to trust.", "We cannot rule out that option.", "The crisis brought about major change.", "The problem stems from poor planning."]
+      },
+      "sentences": [
+        "This factor accounts for the difference.",
+        "It all boils down to trust.",
+        "We cannot rule out that option.",
+        "The crisis brought about major change."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "Legal Language / Lenguaje jurídico",
+      "vocabulary": [
+        { "en": "Legislation", "es": "Legislación" },
+        { "en": "Liability", "es": "Responsabilidad legal" },
+        { "en": "Contract", "es": "Contrato" },
+        { "en": "Clause", "es": "Cláusula" },
+        { "en": "Plaintiff", "es": "Demandante" },
+        { "en": "Defendant", "es": "Demandado" },
+        { "en": "Verdict", "es": "Veredicto" },
+        { "en": "Appeal", "es": "Apelación" },
+        { "en": "Comply", "es": "Cumplir" },
+        { "en": "Breach", "es": "Incumplimiento" },
+        { "en": "Enforce", "es": "Hacer cumplir" },
+        { "en": "Jurisdiction", "es": "Jurisdicción" }
+      ],
+      "grammar": {
+        "rule": "Formal obligation (shall / be required to)",
+        "explanation_es": "El lenguaje legal usa 'shall' y 'be required to': 'The party shall comply with the terms'.",
+        "examples": ["The parties shall comply with the contract.", "He was found liable for the breach.", "The defendant filed an appeal.", "This clause must be enforced.", "The verdict was unanimous."]
+      },
+      "sentences": [
+        "The parties shall comply with the contract.",
+        "He was found liable for the breach.",
+        "The defendant filed an appeal.",
+        "This clause must be enforced strictly."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Medicine & Health / Medicina y salud",
+      "vocabulary": [
+        { "en": "Diagnosis", "es": "Diagnóstico" },
+        { "en": "Treatment", "es": "Tratamiento" },
+        { "en": "Symptom", "es": "Síntoma" },
+        { "en": "Chronic", "es": "Crónico" },
+        { "en": "Prescription", "es": "Receta médica" },
+        { "en": "Immune", "es": "Inmune" },
+        { "en": "Recovery", "es": "Recuperación" },
+        { "en": "Surgery", "es": "Cirugía" },
+        { "en": "Outbreak", "es": "Brote" },
+        { "en": "Vaccine", "es": "Vacuna" },
+        { "en": "Side effect", "es": "Efecto secundario" },
+        { "en": "Wellbeing", "es": "Bienestar" }
+      ],
+      "grammar": {
+        "rule": "Impersonal passive (medical register)",
+        "explanation_es": "Registro médico impersonal: 'The patient was diagnosed with...', 'Treatment is recommended'.",
+        "examples": ["The patient was diagnosed early.", "Treatment significantly improved recovery.", "The vaccine reduces severe symptoms.", "Chronic conditions require ongoing care.", "The drug has mild side effects."]
+      },
+      "sentences": [
+        "The patient was diagnosed early.",
+        "Treatment improved his recovery.",
+        "The vaccine reduces severe symptoms.",
+        "Chronic conditions require ongoing care."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "Academic Connectors / Conectores académicos",
+      "vocabulary": [
+        { "en": "Thereby", "es": "De ese modo" },
+        { "en": "Whereas", "es": "Mientras que" },
+        { "en": "Insofar as", "es": "En la medida en que" },
+        { "en": "Accordingly", "es": "En consecuencia" },
+        { "en": "Conversely", "es": "A la inversa" },
+        { "en": "Hitherto", "es": "Hasta ahora" },
+        { "en": "Henceforth", "es": "De ahora en adelante" },
+        { "en": "Notably", "es": "Notablemente" },
+        { "en": "Predominantly", "es": "Predominantemente" },
+        { "en": "Ostensibly", "es": "Aparentemente" },
+        { "en": "By virtue of", "es": "En virtud de" },
+        { "en": "With respect to", "es": "Con respecto a" }
+      ],
+      "grammar": {
+        "rule": "High-register cohesion",
+        "explanation_es": "Conectores formales propios de ensayos y artículos: 'thereby', 'conversely', 'accordingly'.",
+        "examples": ["The data were incomplete; accordingly, conclusions are tentative.", "Conversely, the second group improved.", "Costs rose, thereby reducing profit.", "This is notably absent from the report.", "Henceforth, new rules apply."]
+      },
+      "sentences": [
+        "Conversely the second group improved.",
+        "Costs rose thereby reducing profit.",
+        "This is notably absent from the report.",
+        "Accordingly the conclusions are tentative."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Idioms 2 / Modismos 2",
+      "vocabulary": [
+        { "en": "To raise the bar", "es": "Subir el listón" },
+        { "en": "To think outside the box", "es": "Pensar de forma creativa" },
+        { "en": "A double-edged sword", "es": "Un arma de doble filo" },
+        { "en": "To get cold feet", "es": "Acobardarse" },
+        { "en": "To be a game changer", "es": "Cambiarlo todo" },
+        { "en": "To jump on the bandwagon", "es": "Sumarse a la moda" },
+        { "en": "To read between the lines", "es": "Leer entre líneas" },
+        { "en": "To move the goalposts", "es": "Cambiar las reglas" },
+        { "en": "Par for the course", "es": "Lo habitual" },
+        { "en": "A long shot", "es": "Algo poco probable" },
+        { "en": "To rock the boat", "es": "Causar problemas" },
+        { "en": "The lion's share", "es": "La mayor parte" }
+      ],
+      "grammar": {
+        "rule": "Idioms in professional discourse",
+        "explanation_es": "Estos modismos son frecuentes en contextos profesionales; úsalos para sonar natural y nativo.",
+        "examples": ["This product is a real game changer.", "Their decision was a double-edged sword.", "Let's think outside the box.", "He got cold feet at the last minute.", "They took the lion's share of the profit."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
     }
   ]
 }

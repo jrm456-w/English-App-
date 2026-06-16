@@ -394,6 +394,396 @@
         "If everyone helps we save energy."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Food & Cooking / Comida y cocina",
+      "vocabulary": [
+        { "en": "Recipe", "es": "Receta" },
+        { "en": "Ingredient", "es": "Ingrediente" },
+        { "en": "Boil", "es": "Hervir" },
+        { "en": "Fry", "es": "Freír" },
+        { "en": "Bake", "es": "Hornear" },
+        { "en": "Slice", "es": "Cortar en rodajas" },
+        { "en": "Mix", "es": "Mezclar" },
+        { "en": "Taste", "es": "Probar" },
+        { "en": "Flavour", "es": "Sabor" },
+        { "en": "Spicy", "es": "Picante" },
+        { "en": "Raw", "es": "Crudo" },
+        { "en": "Fresh", "es": "Fresco" }
+      ],
+      "grammar": {
+        "rule": "Sequencing instructions",
+        "explanation_es": "Para recetas usamos secuencia + imperativo: 'First, chop the onion. Then, fry it.'",
+        "examples": ["First, boil the water.", "Then add the pasta.", "Mix the ingredients well.", "Bake it for twenty minutes.", "This soup is too spicy."]
+      },
+      "sentences": [
+        "First boil the water for the pasta.",
+        "Mix all the ingredients well.",
+        "Bake the cake for thirty minutes.",
+        "This dish is a little too spicy."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "Sports & Fitness / Deporte y forma física",
+      "vocabulary": [
+        { "en": "Exercise", "es": "Ejercicio" },
+        { "en": "Gym", "es": "Gimnasio" },
+        { "en": "Training", "es": "Entrenamiento" },
+        { "en": "Match", "es": "Partido" },
+        { "en": "Score", "es": "Marcador / Anotar" },
+        { "en": "Champion", "es": "Campeón" },
+        { "en": "Fit", "es": "En forma" },
+        { "en": "Strength", "es": "Fuerza" },
+        { "en": "Effort", "es": "Esfuerzo" },
+        { "en": "Compete", "es": "Competir" },
+        { "en": "Injury", "es": "Lesión" },
+        { "en": "Warm up", "es": "Calentar" }
+      ],
+      "grammar": {
+        "rule": "Comparatives of progress",
+        "explanation_es": "Para mejora gradual: 'getting fitter', 'better and better', 'the more I train, the stronger I get'.",
+        "examples": ["I am getting fitter every week.", "He trains harder than before.", "The more you practice, the better you get.", "She scored the winning goal.", "Always warm up before exercise."]
+      },
+      "sentences": [
+        "I am getting fitter every week.",
+        "He trains harder than before.",
+        "She scored the winning goal.",
+        "Always warm up before exercise."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "Weather & Climate / Tiempo y clima",
+      "vocabulary": [
+        { "en": "Forecast", "es": "Pronóstico" },
+        { "en": "Storm", "es": "Tormenta" },
+        { "en": "Fog", "es": "Niebla" },
+        { "en": "Thunder", "es": "Trueno" },
+        { "en": "Lightning", "es": "Relámpago" },
+        { "en": "Humid", "es": "Húmedo" },
+        { "en": "Dry", "es": "Seco" },
+        { "en": "Temperature", "es": "Temperatura" },
+        { "en": "Degree", "es": "Grado" },
+        { "en": "Flood", "es": "Inundación" },
+        { "en": "Drought", "es": "Sequía" },
+        { "en": "Mild", "es": "Templado" }
+      ],
+      "grammar": {
+        "rule": "will / might for predictions",
+        "explanation_es": "Para predecir el tiempo: 'It will rain', 'It might be foggy', 'There could be a storm'.",
+        "examples": ["It will rain this afternoon.", "There might be a storm tonight.", "The temperature could drop.", "It is very humid today.", "The forecast says it will be sunny."]
+      },
+      "sentences": [
+        "It will rain this afternoon.",
+        "There might be a storm tonight.",
+        "The temperature could drop sharply.",
+        "The forecast says it will be sunny."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Describing Places / Describir lugares",
+      "vocabulary": [
+        { "en": "Quiet", "es": "Tranquilo" },
+        { "en": "Lively", "es": "Animado" },
+        { "en": "Ancient", "es": "Antiguo" },
+        { "en": "Modern", "es": "Moderno" },
+        { "en": "Beautiful", "es": "Hermoso" },
+        { "en": "Polluted", "es": "Contaminado" },
+        { "en": "Safe", "es": "Seguro" },
+        { "en": "Touristy", "es": "Turístico" },
+        { "en": "Spacious", "es": "Espacioso" },
+        { "en": "Remote", "es": "Remoto" },
+        { "en": "View", "es": "Vista" },
+        { "en": "Atmosphere", "es": "Ambiente" }
+      ],
+      "grammar": {
+        "rule": "Order of adjectives",
+        "explanation_es": "El orden típico: opinión + tamaño + edad: 'a beautiful old town', 'a lovely small village'.",
+        "examples": ["It is a beautiful old town.", "The village is quiet and remote.", "The city has a lively atmosphere.", "We had a great view of the sea.", "This area feels very safe."]
+      },
+      "sentences": [
+        "It is a beautiful old town.",
+        "The village is quiet and remote.",
+        "The city has a lively atmosphere.",
+        "We had a great view of the sea."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Safety & Emergencies / Seguridad y emergencias",
+      "vocabulary": [
+        { "en": "Emergency", "es": "Emergencia" },
+        { "en": "Danger", "es": "Peligro" },
+        { "en": "Accident", "es": "Accidente" },
+        { "en": "Fire", "es": "Incendio" },
+        { "en": "Help", "es": "Ayuda" },
+        { "en": "Ambulance", "es": "Ambulancia" },
+        { "en": "Warning", "es": "Advertencia" },
+        { "en": "Safe", "es": "Seguro" },
+        { "en": "Rescue", "es": "Rescatar" },
+        { "en": "Careful", "es": "Cuidadoso" },
+        { "en": "Avoid", "es": "Evitar" },
+        { "en": "Escape", "es": "Escapar" }
+      ],
+      "grammar": {
+        "rule": "must / mustn't (rules & safety)",
+        "explanation_es": "'must' = obligación; 'mustn't' = prohibición: 'You must stay calm', 'You mustn't run'.",
+        "examples": ["You must stay calm in an emergency.", "You mustn't touch the fire.", "Call an ambulance quickly.", "Be careful on the stairs.", "We must avoid the danger."]
+      },
+      "sentences": [
+        "You must stay calm in an emergency.",
+        "You mustn't touch the fire.",
+        "Please call an ambulance quickly.",
+        "Be careful on the wet stairs."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "Phrasal Verbs 2 / Verbos compuestos 2",
+      "vocabulary": [
+        { "en": "Get on", "es": "Subir(se) a" },
+        { "en": "Get off", "es": "Bajar(se) de" },
+        { "en": "Look after", "es": "Cuidar" },
+        { "en": "Look up", "es": "Buscar (información)" },
+        { "en": "Fill in", "es": "Rellenar" },
+        { "en": "Give back", "es": "Devolver" },
+        { "en": "Throw away", "es": "Tirar" },
+        { "en": "Try on", "es": "Probarse" },
+        { "en": "Wake up", "es": "Despertarse" },
+        { "en": "Calm down", "es": "Calmarse" },
+        { "en": "Hurry up", "es": "Darse prisa" },
+        { "en": "Get back", "es": "Regresar" }
+      ],
+      "grammar": {
+        "rule": "Separable phrasal verbs",
+        "explanation_es": "Algunos se separan: 'fill in the form' / 'fill it in'. Con pronombre va en medio.",
+        "examples": ["Please fill in this form.", "Can you look after my dog?", "I'll look up the word.", "Hurry up, we are late!", "She gave the book back."]
+      },
+      "sentences": [
+        "Please fill in this form.",
+        "Can you look after my dog?",
+        "I'll look up the word online.",
+        "Hurry up we are late!"
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Culture & Customs / Cultura y costumbres",
+      "vocabulary": [
+        { "en": "Tradition", "es": "Tradición" },
+        { "en": "Custom", "es": "Costumbre" },
+        { "en": "Festival", "es": "Festival" },
+        { "en": "Celebrate", "es": "Celebrar" },
+        { "en": "Religion", "es": "Religión" },
+        { "en": "Language", "es": "Idioma" },
+        { "en": "Habit", "es": "Hábito" },
+        { "en": "Polite", "es": "Cortés" },
+        { "en": "Rude", "es": "Grosero" },
+        { "en": "Greeting", "es": "Saludo" },
+        { "en": "Gift", "es": "Regalo" },
+        { "en": "Abroad", "es": "En el extranjero" }
+      ],
+      "grammar": {
+        "rule": "be supposed to / be used to",
+        "explanation_es": "'be supposed to' = se espera que; 'be used to + -ing' = estar acostumbrado a.",
+        "examples": ["You are supposed to bring a gift.", "I'm used to living abroad.", "In Japan, people bow as a greeting.", "It is rude to be late.", "We celebrate this festival every year."]
+      },
+      "sentences": [
+        "You are supposed to bring a gift.",
+        "I'm used to living abroad now.",
+        "It is rude to arrive late.",
+        "We celebrate this festival yearly."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "At Work / En el trabajo",
+      "vocabulary": [
+        { "en": "Office", "es": "Oficina" },
+        { "en": "Meeting", "es": "Reunión" },
+        { "en": "Report", "es": "Informe" },
+        { "en": "Task", "es": "Tarea" },
+        { "en": "Project", "es": "Proyecto" },
+        { "en": "Boss", "es": "Jefe" },
+        { "en": "Team", "es": "Equipo" },
+        { "en": "Overtime", "es": "Horas extra" },
+        { "en": "Break", "es": "Descanso" },
+        { "en": "Promotion", "es": "Ascenso" },
+        { "en": "Responsible", "es": "Responsable" },
+        { "en": "Manage", "es": "Gestionar" }
+      ],
+      "grammar": {
+        "rule": "be responsible for / in charge of",
+        "explanation_es": "Para tareas laborales: 'I'm responsible for the report', 'She is in charge of the team'.",
+        "examples": ["I am responsible for this report.", "She is in charge of the team.", "We have a meeting at ten.", "He got a promotion last month.", "Let's take a short break."]
+      },
+      "sentences": [
+        "I am responsible for this report.",
+        "She is in charge of the team.",
+        "We have a meeting at ten.",
+        "He got a promotion last month."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Shopping & Services / Compras y servicios",
+      "vocabulary": [
+        { "en": "Refund", "es": "Reembolso" },
+        { "en": "Exchange", "es": "Cambio (de producto)" },
+        { "en": "Complaint", "es": "Queja" },
+        { "en": "Customer", "es": "Cliente" },
+        { "en": "Queue", "es": "Fila" },
+        { "en": "Brand", "es": "Marca" },
+        { "en": "Guarantee", "es": "Garantía" },
+        { "en": "Sale", "es": "Rebaja" },
+        { "en": "Bargain", "es": "Ganga" },
+        { "en": "Deliver", "es": "Entregar" },
+        { "en": "Order", "es": "Pedido" },
+        { "en": "Return", "es": "Devolver" }
+      ],
+      "grammar": {
+        "rule": "Polite complaints & requests",
+        "explanation_es": "Para reclamar con cortesía: 'I'd like to return this', 'Could I get a refund, please?'.",
+        "examples": ["I'd like to return this shirt.", "Could I get a refund, please?", "There is a long queue.", "Can I exchange it for a bigger size?", "I want to make a complaint."]
+      },
+      "sentences": [
+        "I'd like to return this shirt.",
+        "Could I get a refund please?",
+        "Can I exchange it for a larger size?",
+        "I want to make a complaint."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u23",
+      "title": "Personality / Personalidad",
+      "vocabulary": [
+        { "en": "Outgoing", "es": "Extrovertido" },
+        { "en": "Shy", "es": "Tímido" },
+        { "en": "Honest", "es": "Honesto" },
+        { "en": "Lazy", "es": "Perezoso" },
+        { "en": "Hardworking", "es": "Trabajador" },
+        { "en": "Generous", "es": "Generoso" },
+        { "en": "Funny", "es": "Gracioso" },
+        { "en": "Serious", "es": "Serio" },
+        { "en": "Patient", "es": "Paciente" },
+        { "en": "Confident", "es": "Seguro" },
+        { "en": "Moody", "es": "De humor cambiante" },
+        { "en": "Easygoing", "es": "Relajado" }
+      ],
+      "grammar": {
+        "rule": "tend to / can be",
+        "explanation_es": "Para describir tendencias: 'He tends to be shy', 'She can be quite moody'.",
+        "examples": ["He tends to be quite shy.", "She is very outgoing.", "They can be a bit lazy sometimes.", "My boss is hardworking and honest.", "I'm pretty easygoing."]
+      },
+      "sentences": [
+        "He tends to be quite shy.",
+        "She is very outgoing and funny.",
+        "My boss is hardworking and honest.",
+        "I am pretty easygoing usually."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u24",
+      "title": "Online Life / Vida en línea",
+      "vocabulary": [
+        { "en": "Profile", "es": "Perfil" },
+        { "en": "Share", "es": "Compartir" },
+        { "en": "Comment", "es": "Comentar" },
+        { "en": "Like", "es": "Me gusta" },
+        { "en": "Upload", "es": "Subir" },
+        { "en": "Stream", "es": "Transmitir" },
+        { "en": "Chat", "es": "Chatear" },
+        { "en": "Block", "es": "Bloquear" },
+        { "en": "Subscribe", "es": "Suscribirse" },
+        { "en": "Username", "es": "Nombre de usuario" },
+        { "en": "Link", "es": "Enlace" },
+        { "en": "Online", "es": "En línea" }
+      ],
+      "grammar": {
+        "rule": "Present perfect with just/yet/already",
+        "explanation_es": "'just' (recién), 'already' (ya), 'yet' (todavía, en negativas/preguntas): 'I have just posted it'.",
+        "examples": ["I have just uploaded the photo.", "She hasn't replied yet.", "They have already shared it.", "Please subscribe to the channel.", "He blocked that account."]
+      },
+      "sentences": [
+        "I have just uploaded the photo.",
+        "She hasn't replied to me yet.",
+        "They have already shared the link.",
+        "Please subscribe to the channel."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u25",
+      "title": "Telling a Story / Narrar",
+      "vocabulary": [
+        { "en": "Suddenly", "es": "De repente" },
+        { "en": "Meanwhile", "es": "Mientras tanto" },
+        { "en": "At first", "es": "Al principio" },
+        { "en": "In the end", "es": "Al final" },
+        { "en": "After that", "es": "Después de eso" },
+        { "en": "As soon as", "es": "Tan pronto como" },
+        { "en": "While", "es": "Mientras" },
+        { "en": "Later", "es": "Más tarde" },
+        { "en": "Eventually", "es": "Finalmente" },
+        { "en": "Once", "es": "Una vez" },
+        { "en": "Then", "es": "Entonces" },
+        { "en": "Fortunately", "es": "Afortunadamente" }
+      ],
+      "grammar": {
+        "rule": "Past simple vs past continuous",
+        "explanation_es": "Acción larga interrumpida por una corta: 'I was reading when the phone rang'.",
+        "examples": ["I was sleeping when it happened.", "Suddenly, the lights went out.", "Meanwhile, she was cooking.", "As soon as he arrived, we left.", "Eventually, everything was fine."]
+      },
+      "sentences": [
+        "I was sleeping when it happened.",
+        "Suddenly the lights went out.",
+        "As soon as he arrived we left.",
+        "In the end everything was fine."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u26",
+      "title": "Studying English / Estudiar inglés",
+      "vocabulary": [
+        { "en": "Practice", "es": "Practicar" },
+        { "en": "Review", "es": "Repasar" },
+        { "en": "Pronounce", "es": "Pronunciar" },
+        { "en": "Vocabulary", "es": "Vocabulario" },
+        { "en": "Grammar", "es": "Gramática" },
+        { "en": "Fluent", "es": "Fluido" },
+        { "en": "Translate", "es": "Traducir" },
+        { "en": "Memorize", "es": "Memorizar" },
+        { "en": "Progress", "es": "Progreso" },
+        { "en": "Native speaker", "es": "Hablante nativo" },
+        { "en": "Accent", "es": "Acento" },
+        { "en": "Confidence", "es": "Confianza" }
+      ],
+      "grammar": {
+        "rule": "by + -ing (method)",
+        "explanation_es": "Para explicar cómo logramos algo: 'You improve by practicing every day'.",
+        "examples": ["You improve by practicing daily.", "I review new vocabulary every night.", "Try to think in English.", "Speaking builds confidence.", "She is becoming fluent."]
+      },
+      "sentences": [
+        "You improve by practicing daily.",
+        "I review new vocabulary every night.",
+        "Speaking aloud builds confidence.",
+        "She is becoming more fluent."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }
