@@ -188,6 +188,96 @@
         { "q": "Who can contribute to knowledge?", "options": ["Only scientists", "Anyone willing to learn", "Only scholars"], "answer": "Anyone willing to learn" },
         { "q": "What should education do?", "options": ["Empower every citizen", "Stay exclusive", "Focus on a few"], "answer": "Empower every citizen" }
       ]
+    },
+    {
+      "id": "s_a2_2",
+      "level": "A2",
+      "emoji": "🛒",
+      "title": "At the Market",
+      "title_es": "En el mercado",
+      "summary_es": "Lucía va al mercado a comprar comida para la semana.",
+      "sentences": [
+        { "en": "On Saturday morning, Lucía went to the market.", "es": "El sábado por la mañana, Lucía fue al mercado." },
+        { "en": "She wanted to buy fresh fruit and vegetables.", "es": "Quería comprar fruta y verduras frescas." },
+        { "en": "\"How much are the apples?\" she asked.", "es": "\"¿Cuánto cuestan las manzanas?\", preguntó." },
+        { "en": "\"Two dollars a kilo,\" said the seller.", "es": "\"Dos dólares el kilo\", dijo el vendedor." },
+        { "en": "She bought apples, bread, and some cheese.", "es": "Compró manzanas, pan y un poco de queso." },
+        { "en": "The seller gave her a small discount.", "es": "El vendedor le dio un pequeño descuento." },
+        { "en": "Lucía paid and thanked him with a smile.", "es": "Lucía pagó y le dio las gracias con una sonrisa." }
+      ],
+      "glossary": [
+        { "en": "market", "es": "mercado" },
+        { "en": "fresh", "es": "fresco" },
+        { "en": "vegetables", "es": "verduras" },
+        { "en": "seller", "es": "vendedor" },
+        { "en": "discount", "es": "descuento" },
+        { "en": "paid", "es": "pagó" }
+      ],
+      "questions": [
+        { "q": "What did Lucía want to buy?", "options": ["Clothes", "Fresh fruit and vegetables", "A phone"], "answer": "Fresh fruit and vegetables" },
+        { "q": "How much were the apples?", "options": ["Two dollars a kilo", "Five dollars", "Free"], "answer": "Two dollars a kilo" },
+        { "q": "What did the seller give her?", "options": ["A small discount", "A gift", "Nothing"], "answer": "A small discount" }
+      ]
+    },
+    {
+      "id": "s_b1_2",
+      "level": "B1",
+      "emoji": "💼",
+      "title": "The Job Interview",
+      "title_es": "La entrevista de trabajo",
+      "summary_es": "Pedro tiene su primera entrevista importante.",
+      "sentences": [
+        { "en": "Pedro had been preparing for the interview all week.", "es": "Pedro había estado preparándose para la entrevista toda la semana." },
+        { "en": "He arrived early and waited nervously in the lobby.", "es": "Llegó temprano y esperó nerviosamente en el vestíbulo." },
+        { "en": "The manager asked about his experience and skills.", "es": "El gerente preguntó por su experiencia y sus habilidades." },
+        { "en": "\"I have worked in customer service for three years,\" he said.", "es": "\"He trabajado en atención al cliente durante tres años\", dijo." },
+        { "en": "He explained that he was a fast learner and a team player.", "es": "Explicó que aprendía rápido y que trabajaba bien en equipo." },
+        { "en": "The manager seemed impressed by his answers.", "es": "El gerente pareció impresionado por sus respuestas." },
+        { "en": "A week later, Pedro got the job he wanted.", "es": "Una semana después, Pedro consiguió el trabajo que quería." }
+      ],
+      "glossary": [
+        { "en": "interview", "es": "entrevista" },
+        { "en": "experience", "es": "experiencia" },
+        { "en": "skills", "es": "habilidades" },
+        { "en": "manager", "es": "gerente" },
+        { "en": "team player", "es": "jugador de equipo" },
+        { "en": "impressed", "es": "impresionado" }
+      ],
+      "questions": [
+        { "q": "How long had Pedro prepared?", "options": ["All week", "One hour", "He didn't"], "answer": "All week" },
+        { "q": "What was his experience in?", "options": ["Customer service", "Engineering", "Teaching"], "answer": "Customer service" },
+        { "q": "What happened a week later?", "options": ["He got the job", "He was rejected", "He moved away"], "answer": "He got the job" }
+      ]
+    },
+    {
+      "id": "s_c1_2",
+      "level": "C1",
+      "emoji": "🤖",
+      "title": "The Age of Machines",
+      "title_es": "La era de las máquinas",
+      "summary_es": "Una reflexión sobre la tecnología y el papel del ser humano.",
+      "sentences": [
+        { "en": "Few innovations have transformed society as profoundly as artificial intelligence.", "es": "Pocas innovaciones han transformado la sociedad tan profundamente como la inteligencia artificial." },
+        { "en": "Notwithstanding its benefits, it raises significant ethical concerns.", "es": "A pesar de sus beneficios, plantea preocupaciones éticas significativas." },
+        { "en": "Arguably, the greatest risk is not the technology itself, but our complacency.", "es": "Podría decirse que el mayor riesgo no es la tecnología en sí, sino nuestra complacencia." },
+        { "en": "Machines can process data, yet they cannot grasp human meaning.", "es": "Las máquinas pueden procesar datos, pero no pueden captar el significado humano." },
+        { "en": "Consequently, education must emphasize critical thinking over mere memorization.", "es": "Por consiguiente, la educación debe enfatizar el pensamiento crítico sobre la mera memorización." },
+        { "en": "It is human judgment, not computation, that should guide our decisions.", "es": "Es el juicio humano, no el cálculo, lo que debería guiar nuestras decisiones." },
+        { "en": "Ultimately, technology should serve humanity, not the other way around.", "es": "En última instancia, la tecnología debería servir a la humanidad, no al revés." }
+      ],
+      "glossary": [
+        { "en": "innovations", "es": "innovaciones" },
+        { "en": "profoundly", "es": "profundamente" },
+        { "en": "ethical", "es": "ético" },
+        { "en": "complacency", "es": "complacencia" },
+        { "en": "grasp", "es": "captar" },
+        { "en": "judgment", "es": "juicio" }
+      ],
+      "questions": [
+        { "q": "What does the author say is the greatest risk?", "options": ["The technology itself", "Our complacency", "The cost"], "answer": "Our complacency" },
+        { "q": "What can machines NOT do?", "options": ["Process data", "Grasp human meaning", "Compute"], "answer": "Grasp human meaning" },
+        { "q": "What should technology do?", "options": ["Serve humanity", "Replace humans", "Make decisions alone"], "answer": "Serve humanity" }
+      ]
     }
   ]
 }

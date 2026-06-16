@@ -124,6 +124,16 @@ export async function home(_p, view) {
   reviewCard.onclick = () => navigate('/review');
   view.appendChild(reviewCard);
 
+  const dictCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>🔤 ${t('dict.title')}</strong><span>→</span>
+      </div>
+      <small class="muted">${t('dict.search')}</small>
+    </div>`);
+  dictCard.onclick = () => navigate('/dictionary');
+  view.appendChild(dictCard);
+
   // Quick games
   view.appendChild(el(`<h2 class="h2">${t('home.quickGames')}</h2>`));
   const grid = el(`<div class="grid grid--2"></div>`);
@@ -151,9 +161,14 @@ export async function learn(_p, view) {
   clear(view);
   const data = await loadLevel(s.level);
   view.appendChild(el(`<h1 class="h1">${t('learn.title')} · ${s.level}</h1>`));
-  const storiesBtn = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:14px">📖 ${t('stories.title')}</button>`);
+  const quickRow = el(`<div class="grid grid--2" style="margin-bottom:14px"></div>`);
+  const storiesBtn = el(`<button class="btn btn--ghost">📖 ${t('stories.title')}</button>`);
   storiesBtn.onclick = () => navigate('/stories');
-  view.appendChild(storiesBtn);
+  const dictBtn = el(`<button class="btn btn--ghost">🔤 ${t('dict.title')}</button>`);
+  dictBtn.onclick = () => navigate('/dictionary');
+  quickRow.appendChild(storiesBtn);
+  quickRow.appendChild(dictBtn);
+  view.appendChild(quickRow);
   data.units.forEach((u) => {
     const done = unitCompleted(s.level, u);
     const passed = unitPassedCount(s.level, u);

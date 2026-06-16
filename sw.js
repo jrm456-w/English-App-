@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v5';
+const CACHE_VERSION = 'engflow-v6';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -19,6 +19,7 @@ const PRECACHE_URLS = [
   './src/js/gamification.js',
   './src/js/views.js',
   './src/js/stories.js',
+  './src/js/dictionary.js',
   './src/js/cloud.js',
   './src/js/firebase-config.js',
   './src/games/index.js',

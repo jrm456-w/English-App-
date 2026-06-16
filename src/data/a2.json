@@ -6,18 +6,22 @@
       "title": "Daily Routines / Rutinas",
       "vocabulary": [
         { "en": "Wake up", "es": "Despertarse" },
+        { "en": "Get up", "es": "Levantarse" },
         { "en": "Breakfast", "es": "Desayuno" },
         { "en": "Work", "es": "Trabajar" },
         { "en": "Lunch", "es": "Almuerzo" },
         { "en": "Study", "es": "Estudiar" },
         { "en": "Sleep", "es": "Dormir" },
         { "en": "Shower", "es": "Ducharse" },
-        { "en": "Dinner", "es": "Cena" }
+        { "en": "Dinner", "es": "Cena" },
+        { "en": "Get dressed", "es": "Vestirse" },
+        { "en": "Brush teeth", "es": "Cepillarse los dientes" },
+        { "en": "Go home", "es": "Ir a casa" }
       ],
       "grammar": {
         "rule": "Present Simple – He/She/It (+s)",
         "explanation_es": "Con he/she/it añadimos -s al verbo: 'She works', 'He studies'.",
-        "examples": ["She wakes up at seven.", "He works in an office.", "It rains in winter.", "My mother cooks dinner."]
+        "examples": ["She wakes up at seven.", "He works in an office.", "It rains in winter.", "My mother cooks dinner.", "He brushes his teeth."]
       },
       "fill": [
         { "sentence": "She ___ up at seven.", "answer": "wakes", "options": ["wake", "waking", "woke"] },
@@ -27,21 +31,25 @@
     },
     {
       "id": "u2",
-      "title": "Food / La comida",
+      "title": "Food & Drinks / Comida y bebidas",
       "vocabulary": [
-        { "en": "Bread", "es": "Pan" },
         { "en": "Cheese", "es": "Queso" },
-        { "en": "Apple", "es": "Manzana" },
-        { "en": "Water", "es": "Agua" },
-        { "en": "Milk", "es": "Leche" },
+        { "en": "Butter", "es": "Mantequilla" },
         { "en": "Meat", "es": "Carne" },
-        { "en": "Rice", "es": "Arroz" },
-        { "en": "Vegetables", "es": "Verduras" }
+        { "en": "Fish", "es": "Pescado" },
+        { "en": "Vegetables", "es": "Verduras" },
+        { "en": "Soup", "es": "Sopa" },
+        { "en": "Juice", "es": "Jugo" },
+        { "en": "Wine", "es": "Vino" },
+        { "en": "Breakfast", "es": "Desayuno" },
+        { "en": "Dessert", "es": "Postre" },
+        { "en": "Hungry", "es": "Hambriento" },
+        { "en": "Thirsty", "es": "Sediento" }
       ],
       "grammar": {
         "rule": "Countable & Uncountable (some/any)",
         "explanation_es": "Usamos 'some' en afirmativas y 'any' en negativas/preguntas: 'I have some bread', 'I don't have any milk'.",
-        "examples": ["I have some bread.", "There isn't any milk.", "Do you want some water?", "We need some rice."]
+        "examples": ["I have some cheese.", "There isn't any juice.", "Do you want some soup?", "We need some vegetables.", "I am very hungry."]
       },
       "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
     },
@@ -56,12 +64,16 @@
         { "en": "Cook", "es": "Cocinero" },
         { "en": "Engineer", "es": "Ingeniero" },
         { "en": "Lawyer", "es": "Abogado" },
-        { "en": "Waiter", "es": "Camarero" }
+        { "en": "Waiter", "es": "Camarero" },
+        { "en": "Farmer", "es": "Granjero" },
+        { "en": "Police officer", "es": "Policía" },
+        { "en": "Salesperson", "es": "Vendedor" },
+        { "en": "Manager", "es": "Gerente" }
       ],
       "grammar": {
         "rule": "Questions with 'do/does'",
         "explanation_es": "Para preguntar en presente simple usamos do/does: 'What do you do?', 'Where does she work?'.",
-        "examples": ["What do you do?", "Where does she work?", "Do you like your job?", "He works as a teacher."]
+        "examples": ["What do you do?", "Where does she work?", "Do you like your job?", "He works as a teacher.", "Does he drive a bus?"]
       },
       "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
     },
@@ -69,19 +81,23 @@
       "id": "u4",
       "title": "Simple Past / Pasado simple",
       "vocabulary": [
-        { "en": "Went", "es": "Fui/Fue" },
-        { "en": "Saw", "es": "Vi/Vio" },
-        { "en": "Ate", "es": "Comí/Comió" },
-        { "en": "Played", "es": "Jugué/Jugó" },
-        { "en": "Watched", "es": "Vi (mirar)" },
+        { "en": "Went", "es": "Fui / Fue" },
+        { "en": "Saw", "es": "Vi / Vio" },
+        { "en": "Ate", "es": "Comí / Comió" },
+        { "en": "Played", "es": "Jugué / Jugó" },
+        { "en": "Watched", "es": "Miré / Miró" },
         { "en": "Visited", "es": "Visité" },
         { "en": "Bought", "es": "Compré" },
+        { "en": "Made", "es": "Hice" },
+        { "en": "Took", "es": "Tomé" },
+        { "en": "Came", "es": "Vine" },
+        { "en": "Last night", "es": "Anoche" },
         { "en": "Yesterday", "es": "Ayer" }
       ],
       "grammar": {
         "rule": "Past Simple – Regular & Irregular",
         "explanation_es": "Los verbos regulares añaden -ed (played). Los irregulares cambian (go → went, eat → ate).",
-        "examples": ["Yesterday I went to the park.", "She ate pizza last night.", "We played football.", "They watched a movie."]
+        "examples": ["Yesterday I went to the park.", "She ate pizza last night.", "We played football.", "They watched a movie.", "He bought a new car."]
       },
       "sentences": [
         "Yesterday I went to the park.",
@@ -90,6 +106,90 @@
         "They watched a good movie."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Describing People / Describir personas",
+      "vocabulary": [
+        { "en": "Tall", "es": "Alto" },
+        { "en": "Short", "es": "Bajo" },
+        { "en": "Young", "es": "Joven" },
+        { "en": "Old", "es": "Viejo" },
+        { "en": "Kind", "es": "Amable" },
+        { "en": "Funny", "es": "Gracioso" },
+        { "en": "Smart", "es": "Inteligente" },
+        { "en": "Beautiful", "es": "Hermoso" },
+        { "en": "Strong", "es": "Fuerte" },
+        { "en": "Friendly", "es": "Amigable" },
+        { "en": "Shy", "es": "Tímido" },
+        { "en": "Busy", "es": "Ocupado" }
+      ],
+      "grammar": {
+        "rule": "Comparatives (-er / more)",
+        "explanation_es": "Para comparar: adjetivos cortos + -er (taller), largos con 'more' (more friendly). 'than' = que.",
+        "examples": ["He is taller than me.", "She is kinder than him.", "This book is more interesting.", "You are stronger than you think.", "He is younger than his sister."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Shopping / De compras",
+      "vocabulary": [
+        { "en": "Price", "es": "Precio" },
+        { "en": "Cheap", "es": "Barato" },
+        { "en": "Expensive", "es": "Caro" },
+        { "en": "Money", "es": "Dinero" },
+        { "en": "Buy", "es": "Comprar" },
+        { "en": "Sell", "es": "Vender" },
+        { "en": "Pay", "es": "Pagar" },
+        { "en": "Clothes", "es": "Ropa" },
+        { "en": "Shoes", "es": "Zapatos" },
+        { "en": "Size", "es": "Talla" },
+        { "en": "Discount", "es": "Descuento" },
+        { "en": "Receipt", "es": "Recibo" }
+      ],
+      "grammar": {
+        "rule": "How much / How many",
+        "explanation_es": "'How much' para incontables y precio (How much is it?), 'How many' para contables (How many shoes?).",
+        "examples": ["How much is this?", "How many shirts do you want?", "It is too expensive.", "Can I pay by card?", "These shoes are cheap."]
+      },
+      "sentences": [
+        "How much is this shirt?",
+        "These shoes are too expensive.",
+        "Can I pay by card?",
+        "I want to buy new clothes."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Future Plans / Planes",
+      "vocabulary": [
+        { "en": "Going to", "es": "Ir a (planes)" },
+        { "en": "Will", "es": "Verbo auxiliar futuro" },
+        { "en": "Plan", "es": "Plan" },
+        { "en": "Trip", "es": "Viaje" },
+        { "en": "Holiday", "es": "Vacaciones" },
+        { "en": "Next week", "es": "La próxima semana" },
+        { "en": "Soon", "es": "Pronto" },
+        { "en": "Later", "es": "Más tarde" },
+        { "en": "Maybe", "es": "Tal vez" },
+        { "en": "Hope", "es": "Esperar (deseo)" },
+        { "en": "Meeting", "es": "Reunión" },
+        { "en": "Party", "es": "Fiesta" }
+      ],
+      "grammar": {
+        "rule": "Future: going to / will",
+        "explanation_es": "'Going to' para planes e intenciones; 'will' para decisiones y predicciones.",
+        "examples": ["I am going to travel next week.", "She will call you later.", "We are going to have a party.", "It will rain tomorrow.", "They are going to study English."]
+      },
+      "sentences": [
+        "I am going to travel next week.",
+        "She will call you later.",
+        "We are going to have a party.",
+        "Maybe it will rain tomorrow."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }

@@ -12,12 +12,16 @@
         { "en": "Booking", "es": "Reserva" },
         { "en": "Departure", "es": "Salida" },
         { "en": "Arrival", "es": "Llegada" },
-        { "en": "Abroad", "es": "En el extranjero" }
+        { "en": "Abroad", "es": "En el extranjero" },
+        { "en": "Customs", "es": "Aduana" },
+        { "en": "Boarding pass", "es": "Tarjeta de embarque" },
+        { "en": "Delay", "es": "Retraso" },
+        { "en": "Round trip", "es": "Ida y vuelta" }
       ],
       "grammar": {
         "rule": "Present Perfect (have/has + past participle)",
         "explanation_es": "Usamos el present perfect para experiencias y acciones recientes: 'I have visited Paris', 'She has lost her passport'.",
-        "examples": ["I have visited Paris twice.", "She has lost her passport.", "Have you ever flown abroad?", "We have already booked the flight."]
+        "examples": ["I have visited Paris twice.", "She has lost her passport.", "Have you ever flown abroad?", "We have already booked the flight.", "They have never been to London."]
       },
       "fill": [
         { "sentence": "I have ___ to Paris twice.", "answer": "been", "options": ["go", "went", "going"] },
@@ -42,12 +46,16 @@
         { "en": "Symptom", "es": "Síntoma" },
         { "en": "Healthy", "es": "Saludable" },
         { "en": "Pain", "es": "Dolor" },
-        { "en": "Rest", "es": "Descansar" }
+        { "en": "Rest", "es": "Descansar" },
+        { "en": "Cough", "es": "Tos" },
+        { "en": "Injury", "es": "Lesión" },
+        { "en": "Treatment", "es": "Tratamiento" },
+        { "en": "Recover", "es": "Recuperarse" }
       ],
       "grammar": {
         "rule": "Should / Shouldn't for advice",
         "explanation_es": "Usamos 'should' para dar consejos: 'You should rest', 'You shouldn't work so much'.",
-        "examples": ["You should rest more.", "You shouldn't eat junk food.", "She should see a doctor.", "We should drink more water."]
+        "examples": ["You should rest more.", "You shouldn't eat junk food.", "She should see a doctor.", "We should drink more water.", "You should take this medicine."]
       },
       "sentences": [
         "You should rest more.",
@@ -68,12 +76,16 @@
         { "en": "However", "es": "Sin embargo" },
         { "en": "Probably", "es": "Probablemente" },
         { "en": "Maybe", "es": "Tal vez" },
-        { "en": "Of course", "es": "Por supuesto" }
+        { "en": "Of course", "es": "Por supuesto" },
+        { "en": "Actually", "es": "En realidad" },
+        { "en": "It depends", "es": "Depende" },
+        { "en": "I'm not sure", "es": "No estoy seguro" },
+        { "en": "Point of view", "es": "Punto de vista" }
       ],
       "grammar": {
         "rule": "Linking opinions",
         "explanation_es": "Conectamos ideas con palabras como 'because', 'however', 'so': 'I think so because it is cheaper'.",
-        "examples": ["In my opinion, reading is important.", "I agree with you.", "However, it is expensive.", "I think it will probably rain."]
+        "examples": ["In my opinion, reading is important.", "I agree with you.", "However, it is expensive.", "I think it will probably rain.", "Actually, I disagree with that."]
       },
       "sentences": [
         "In my opinion reading is important.",
@@ -82,6 +94,96 @@
         "However it is too expensive."
       ],
       "games": ["fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Work & Studies / Trabajo y estudios",
+      "vocabulary": [
+        { "en": "Experience", "es": "Experiencia" },
+        { "en": "Skill", "es": "Habilidad" },
+        { "en": "Interview", "es": "Entrevista" },
+        { "en": "Salary", "es": "Salario" },
+        { "en": "Deadline", "es": "Fecha límite" },
+        { "en": "Colleague", "es": "Colega" },
+        { "en": "Degree", "es": "Título / Carrera" },
+        { "en": "Career", "es": "Carrera profesional" },
+        { "en": "Apply", "es": "Postularse" },
+        { "en": "Hire", "es": "Contratar" },
+        { "en": "Goal", "es": "Meta" },
+        { "en": "Schedule", "es": "Horario" }
+      ],
+      "grammar": {
+        "rule": "Present Perfect Continuous",
+        "explanation_es": "Para acciones que empezaron en el pasado y continúan: 'I have been working here for two years'.",
+        "examples": ["I have been working here for two years.", "She has been studying all day.", "How long have you been learning English?", "They have been looking for a job.", "We have been waiting for an hour."]
+      },
+      "sentences": [
+        "I have been working here for two years.",
+        "She has been studying all day.",
+        "They have been looking for a job.",
+        "We have been waiting for an hour."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Technology / Tecnología",
+      "vocabulary": [
+        { "en": "Computer", "es": "Computadora" },
+        { "en": "Screen", "es": "Pantalla" },
+        { "en": "Password", "es": "Contraseña" },
+        { "en": "Download", "es": "Descargar" },
+        { "en": "Update", "es": "Actualizar" },
+        { "en": "Device", "es": "Dispositivo" },
+        { "en": "Network", "es": "Red" },
+        { "en": "Software", "es": "Programa" },
+        { "en": "Search", "es": "Buscar" },
+        { "en": "Account", "es": "Cuenta" },
+        { "en": "Settings", "es": "Configuración" },
+        { "en": "Battery", "es": "Batería" }
+      ],
+      "grammar": {
+        "rule": "Relative clauses (who/which/that)",
+        "explanation_es": "Conectamos información: 'who' para personas, 'which/that' para cosas: 'the app that I use'.",
+        "examples": ["This is the app that I use.", "She is the person who helped me.", "I bought a phone which has a great camera.", "The website that you sent is useful.", "He is someone who knows a lot."]
+      },
+      "sentences": [
+        "This is the app that I use.",
+        "She is the person who helped me.",
+        "I need to update my password.",
+        "The website that you sent is useful."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Feelings / Sentimientos",
+      "vocabulary": [
+        { "en": "Happy", "es": "Feliz" },
+        { "en": "Sad", "es": "Triste" },
+        { "en": "Angry", "es": "Enojado" },
+        { "en": "Tired", "es": "Cansado" },
+        { "en": "Excited", "es": "Emocionado" },
+        { "en": "Worried", "es": "Preocupado" },
+        { "en": "Bored", "es": "Aburrido" },
+        { "en": "Scared", "es": "Asustado" },
+        { "en": "Nervous", "es": "Nervioso" },
+        { "en": "Proud", "es": "Orgulloso" },
+        { "en": "Surprised", "es": "Sorprendido" },
+        { "en": "Confident", "es": "Seguro de sí mismo" }
+      ],
+      "grammar": {
+        "rule": "Gerunds after prepositions",
+        "explanation_es": "Tras una preposición usamos verbo + -ing: 'I am afraid of flying', 'tired of waiting'.",
+        "examples": ["I am excited about traveling.", "She is tired of waiting.", "He is worried about losing his job.", "We are happy about winning.", "They are scared of failing."]
+      },
+      "sentences": [
+        "I am excited about traveling.",
+        "She is tired of waiting.",
+        "He is worried about the exam.",
+        "We are happy about the news."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }

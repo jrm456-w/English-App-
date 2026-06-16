@@ -12,12 +12,16 @@
         { "en": "Significant", "es": "Significativo" },
         { "en": "To assess", "es": "Evaluar" },
         { "en": "To imply", "es": "Implicar" },
-        { "en": "Comprehensive", "es": "Exhaustivo" }
+        { "en": "Comprehensive", "es": "Exhaustivo" },
+        { "en": "Empirical", "es": "Empírico" },
+        { "en": "Framework", "es": "Marco (teórico)" },
+        { "en": "To derive", "es": "Derivar / Deducir" },
+        { "en": "Underlying", "es": "Subyacente" }
       ],
       "grammar": {
         "rule": "Formal connectors & nominalisation",
         "explanation_es": "En registro académico se usan conectores formales (furthermore, consequently) y nominalización para sonar objetivo.",
-        "examples": ["The findings are significant; furthermore, they are replicable.", "Consequently, the hypothesis was rejected.", "Nevertheless, further research is required.", "The data imply a strong correlation."]
+        "examples": ["The findings are significant; furthermore, they are replicable.", "Consequently, the hypothesis was rejected.", "Nevertheless, further research is required.", "The data imply a strong correlation.", "This framework underlies the entire study."]
       },
       "story": {
         "text": "The study presents a ___ analysis of the data. ___ , the results suggest a strong correlation. The authors ___ that the findings are robust. ___ , they acknowledge certain limitations. Further research is ___ to confirm the conclusions.",
@@ -42,13 +46,17 @@
         { "en": "Seldom", "es": "Rara vez" },
         { "en": "Were it not for", "es": "De no ser por" },
         { "en": "Hardly", "es": "Apenas" },
-        { "en": "No sooner", "es": "Apenas/Tan pronto" },
-        { "en": "Subordinate", "es": "Subordinado" }
+        { "en": "No sooner", "es": "Apenas / Tan pronto" },
+        { "en": "Subordinate", "es": "Subordinado" },
+        { "en": "Should you need", "es": "Si necesitara" },
+        { "en": "Little did he know", "es": "Poco sabía él" },
+        { "en": "Under no circumstances", "es": "Bajo ninguna circunstancia" },
+        { "en": "Only then", "es": "Solo entonces" }
       ],
       "grammar": {
         "rule": "Inversion for emphasis",
         "explanation_es": "Para enfatizar, invertimos sujeto y auxiliar: 'Not only did he win, but he also broke a record', 'Seldom have I seen such talent'.",
-        "examples": ["Not only did he win, but he also broke a record.", "Seldom have I seen such talent.", "Had I known, I would have helped.", "No sooner had we arrived than it started to rain."]
+        "examples": ["Not only did he win, but he also broke a record.", "Seldom have I seen such talent.", "Had I known, I would have helped.", "No sooner had we arrived than it started to rain.", "Under no circumstances should you give up."]
       },
       "story": {
         "text": "___ only is the report detailed, but it is also persuasive. ___ have I read such a compelling argument. ___ I known the deadline, I would have started earlier. No ___ had they finished than new issues arose. Were it ___ for her support, the project would have failed.",
@@ -71,17 +79,91 @@
         { "en": "On the contrary", "es": "Por el contrario" },
         { "en": "To play devil's advocate", "es": "Hacer de abogado del diablo" },
         { "en": "A compelling case", "es": "Un argumento convincente" },
-        { "en": "To concede", "es": "Conceder/Admitir" },
+        { "en": "To concede", "es": "Conceder / Admitir" },
         { "en": "Granted", "es": "Es cierto que" },
         { "en": "To refute", "es": "Refutar" },
-        { "en": "By and large", "es": "En general" }
+        { "en": "By and large", "es": "En general" },
+        { "en": "To put it bluntly", "es": "Para decirlo sin rodeos" },
+        { "en": "With all due respect", "es": "Con todo respeto" },
+        { "en": "That said", "es": "Dicho esto" },
+        { "en": "To bear in mind", "es": "Tener en cuenta" }
       ],
       "grammar": {
         "rule": "Hedging & concession",
         "explanation_es": "En debate formal matizamos (hedging) y concedemos puntos: 'Granted, that's true, but...', 'I would argue that...'.",
-        "examples": ["I would argue that education is the key.", "Granted, the cost is high, but the benefits outweigh it.", "On the contrary, the evidence suggests otherwise.", "Let me play devil's advocate for a moment."]
+        "examples": ["I would argue that education is the key.", "Granted, the cost is high, but the benefits outweigh it.", "On the contrary, the evidence suggests otherwise.", "Let me play devil's advocate for a moment.", "That said, we must bear the risks in mind."]
       },
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Professional World / Mundo profesional",
+      "vocabulary": [
+        { "en": "Stakeholder", "es": "Parte interesada" },
+        { "en": "Leverage", "es": "Aprovechar" },
+        { "en": "Deliverable", "es": "Entregable" },
+        { "en": "Streamline", "es": "Optimizar" },
+        { "en": "Negotiate", "es": "Negociar" },
+        { "en": "Milestone", "es": "Hito" },
+        { "en": "Outcome", "es": "Resultado" },
+        { "en": "Strategy", "es": "Estrategia" },
+        { "en": "Efficiency", "es": "Eficiencia" },
+        { "en": "Accountability", "es": "Responsabilidad" },
+        { "en": "Scope", "es": "Alcance" },
+        { "en": "Feasible", "es": "Viable" }
+      ],
+      "grammar": {
+        "rule": "Cleft sentences for emphasis",
+        "explanation_es": "Para enfatizar: 'What we need is more time', 'It is efficiency that matters most'.",
+        "examples": ["What we need is a clearer strategy.", "It is accountability that drives results.", "What matters most is the outcome.", "It was her leadership that saved the project.", "What I suggest is that we streamline the process."]
+      },
+      "story": {
+        "text": "To ensure success, every ___ must be aligned on the goals. The team agreed to ___ the workflow to improve ___ . After reaching the first ___ , they renegotiated the project ___ to keep it feasible.",
+        "answers": ["stakeholder", "streamline", "efficiency", "milestone", "scope"],
+        "bank": ["stakeholder", "streamline", "efficiency", "milestone", "scope", "outcome", "strategy"]
+      },
+      "sentences": [
+        "What we need is a clearer strategy.",
+        "It is accountability that drives results.",
+        "We must streamline the process.",
+        "The plan is feasible within the scope."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Nuance & Style / Matices y estilo",
+      "vocabulary": [
+        { "en": "Arguably", "es": "Podría decirse que" },
+        { "en": "Albeit", "es": "Aunque" },
+        { "en": "To a certain extent", "es": "Hasta cierto punto" },
+        { "en": "Notwithstanding", "es": "A pesar de" },
+        { "en": "Inevitably", "es": "Inevitablemente" },
+        { "en": "Subtle", "es": "Sutil" },
+        { "en": "Profound", "es": "Profundo" },
+        { "en": "Ambiguous", "es": "Ambiguo" },
+        { "en": "Compelling", "es": "Convincente" },
+        { "en": "Intricate", "es": "Intrincado" },
+        { "en": "To grasp", "es": "Captar / Comprender" },
+        { "en": "Insight", "es": "Perspicacia / Visión" }
+      ],
+      "grammar": {
+        "rule": "Advanced modality & nuance",
+        "explanation_es": "Matizar el grado de certeza: 'It may well be...', 'arguably', 'to a certain extent'.",
+        "examples": ["It may well be the best solution.", "This is, arguably, his finest work.", "The argument is compelling, albeit complex.", "Notwithstanding the risks, they proceeded.", "To a certain extent, I agree."]
+      },
+      "story": {
+        "text": "The author offers a ___ analysis that is ___ , though not without flaws. ___ the complexity, the central idea is easy to ___ . ___ , this book provides genuine ___ into human behavior.",
+        "answers": ["profound", "compelling", "Notwithstanding", "grasp", "Arguably", "insight"],
+        "bank": ["profound", "compelling", "Notwithstanding", "grasp", "Arguably", "insight", "subtle"]
+      },
+      "sentences": [
+        "It may well be the best solution.",
+        "This is arguably his finest work.",
+        "The argument is compelling albeit complex.",
+        "To a certain extent I agree with you."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
     }
   ]
 }

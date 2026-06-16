@@ -7,7 +7,8 @@ Aplicación web progresiva (PWA) para **aprender inglés desde cero hasta nivel 
 ## ✨ Características
 
 - **Prueba de nivel diagnóstica** (15 preguntas): vocabulario, gramática, comprensión lectora y auditiva → asigna A1, A2, B1, B2 o C1.
-- **5 niveles CEFR** con vocabulario y gramática progresivos.
+- **5 niveles CEFR** con vocabulario y gramática progresivos (≈400 palabras de alta frecuencia en 33 unidades, ampliable).
+- **Diccionario integrado y buscable** (`#/dictionary`): todas las palabras EN↔ES con audio y búsqueda instantánea.
 - **7 juegos interactivos**:
   1. Word Match — unir palabras español/inglés
   2. Fill the Blank — completar frases (opción múltiple)

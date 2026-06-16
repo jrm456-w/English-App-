@@ -8,9 +8,13 @@
         { "en": "Hello", "es": "Hola" },
         { "en": "Goodbye", "es": "Adiós" },
         { "en": "Good morning", "es": "Buenos días" },
+        { "en": "Good afternoon", "es": "Buenas tardes" },
         { "en": "Good night", "es": "Buenas noches" },
         { "en": "Please", "es": "Por favor" },
         { "en": "Thank you", "es": "Gracias" },
+        { "en": "You're welcome", "es": "De nada" },
+        { "en": "Excuse me", "es": "Disculpe" },
+        { "en": "Sorry", "es": "Lo siento" },
         { "en": "Yes", "es": "Sí" },
         { "en": "No", "es": "No" }
       ],
@@ -28,6 +32,30 @@
     },
     {
       "id": "u2",
+      "title": "Pronouns / Pronombres",
+      "vocabulary": [
+        { "en": "I", "es": "Yo" },
+        { "en": "You", "es": "Tú / Usted" },
+        { "en": "He", "es": "Él" },
+        { "en": "She", "es": "Ella" },
+        { "en": "It", "es": "Ello (cosa/animal)" },
+        { "en": "We", "es": "Nosotros" },
+        { "en": "They", "es": "Ellos" },
+        { "en": "My", "es": "Mi" },
+        { "en": "Your", "es": "Tu" },
+        { "en": "His", "es": "Su (de él)" },
+        { "en": "Her", "es": "Su (de ella)" },
+        { "en": "Our", "es": "Nuestro" }
+      ],
+      "grammar": {
+        "rule": "Subject pronouns + TO BE",
+        "explanation_es": "Cada pronombre usa una forma de 'to be': I am, you are, he/she/it is, we/they are.",
+        "examples": ["I am here.", "You are my friend.", "He is tall.", "It is a cat.", "They are at home."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u3",
       "title": "Colors / Colores",
       "vocabulary": [
         { "en": "Red", "es": "Rojo" },
@@ -37,17 +65,20 @@
         { "en": "Black", "es": "Negro" },
         { "en": "White", "es": "Blanco" },
         { "en": "Orange", "es": "Naranja" },
-        { "en": "Purple", "es": "Morado" }
+        { "en": "Purple", "es": "Morado" },
+        { "en": "Pink", "es": "Rosa" },
+        { "en": "Brown", "es": "Marrón" },
+        { "en": "Gray", "es": "Gris" }
       ],
       "grammar": {
         "rule": "Adjectives before nouns",
         "explanation_es": "En inglés el adjetivo va antes del sustantivo: 'a red car' (un coche rojo), no 'a car red'.",
-        "examples": ["The car is red.", "I have a blue pen.", "She likes green apples.", "It is a yellow flower."]
+        "examples": ["The car is red.", "I have a blue pen.", "She likes green apples.", "It is a yellow flower.", "He has a black dog."]
       },
       "games": ["word_match", "fill_blank", "flashcard"]
     },
     {
-      "id": "u3",
+      "id": "u4",
       "title": "Numbers / Números",
       "vocabulary": [
         { "en": "One", "es": "Uno" },
@@ -55,6 +86,10 @@
         { "en": "Three", "es": "Tres" },
         { "en": "Four", "es": "Cuatro" },
         { "en": "Five", "es": "Cinco" },
+        { "en": "Six", "es": "Seis" },
+        { "en": "Seven", "es": "Siete" },
+        { "en": "Eight", "es": "Ocho" },
+        { "en": "Nine", "es": "Nueve" },
         { "en": "Ten", "es": "Diez" },
         { "en": "Twenty", "es": "Veinte" },
         { "en": "Hundred", "es": "Cien" }
@@ -62,12 +97,12 @@
       "grammar": {
         "rule": "There is / There are",
         "explanation_es": "Usamos 'there is' para singular y 'there are' para plural: hay.",
-        "examples": ["There is one apple.", "There are five books.", "There are two cats.", "There is a problem."]
+        "examples": ["There is one apple.", "There are five books.", "There are two cats.", "There is a problem.", "There are ten students."]
       },
       "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
     },
     {
-      "id": "u4",
+      "id": "u5",
       "title": "Family / La familia",
       "vocabulary": [
         { "en": "Mother", "es": "Madre" },
@@ -77,32 +112,136 @@
         { "en": "Son", "es": "Hijo" },
         { "en": "Daughter", "es": "Hija" },
         { "en": "Grandmother", "es": "Abuela" },
+        { "en": "Grandfather", "es": "Abuelo" },
+        { "en": "Husband", "es": "Esposo" },
+        { "en": "Wife", "es": "Esposa" },
+        { "en": "Child", "es": "Niño/a" },
         { "en": "Family", "es": "Familia" }
       ],
       "grammar": {
         "rule": "Possessive 's",
         "explanation_es": "Para indicar posesión añadimos 's: 'my mother's car' (el coche de mi madre).",
-        "examples": ["This is my mother.", "He is my brother.", "Her sister is tall.", "My father's name is John."]
+        "examples": ["This is my mother.", "He is my brother.", "Her sister is tall.", "My father's name is John.", "Our family is big."]
       },
       "games": ["word_match", "fill_blank", "flashcard"]
     },
     {
-      "id": "u5",
-      "title": "Basic Verbs / Verbos básicos",
+      "id": "u6",
+      "title": "Common Verbs / Verbos comunes",
       "vocabulary": [
+        { "en": "To be", "es": "Ser / Estar" },
+        { "en": "To have", "es": "Tener" },
+        { "en": "To do", "es": "Hacer" },
+        { "en": "To go", "es": "Ir" },
         { "en": "To eat", "es": "Comer" },
         { "en": "To drink", "es": "Beber" },
-        { "en": "To go", "es": "Ir" },
-        { "en": "To have", "es": "Tener" },
         { "en": "To want", "es": "Querer" },
         { "en": "To like", "es": "Gustar" },
         { "en": "To live", "es": "Vivir" },
-        { "en": "To speak", "es": "Hablar" }
+        { "en": "To speak", "es": "Hablar" },
+        { "en": "To work", "es": "Trabajar" },
+        { "en": "To see", "es": "Ver" }
       ],
       "grammar": {
         "rule": "Present Simple – I/You/We/They",
         "explanation_es": "En presente simple, con I/you/we/they usamos el verbo base: 'I eat', 'they live'.",
-        "examples": ["I eat breakfast.", "They live in Madrid.", "We like music.", "You speak English."]
+        "examples": ["I eat breakfast.", "They live in Madrid.", "We like music.", "You speak English.", "I work every day."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u7",
+      "title": "Everyday Objects / Objetos cotidianos",
+      "vocabulary": [
+        { "en": "House", "es": "Casa" },
+        { "en": "Door", "es": "Puerta" },
+        { "en": "Table", "es": "Mesa" },
+        { "en": "Chair", "es": "Silla" },
+        { "en": "Bed", "es": "Cama" },
+        { "en": "Phone", "es": "Teléfono" },
+        { "en": "Book", "es": "Libro" },
+        { "en": "Car", "es": "Coche" },
+        { "en": "Key", "es": "Llave" },
+        { "en": "Money", "es": "Dinero" },
+        { "en": "Water", "es": "Agua" },
+        { "en": "Window", "es": "Ventana" }
+      ],
+      "grammar": {
+        "rule": "Articles a / an / the",
+        "explanation_es": "Usamos 'a' antes de consonante, 'an' antes de vocal, y 'the' para algo específico.",
+        "examples": ["a book", "an apple", "the house", "I have a car.", "Open the door."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u8",
+      "title": "Days & Time / Días y tiempo",
+      "vocabulary": [
+        { "en": "Monday", "es": "Lunes" },
+        { "en": "Tuesday", "es": "Martes" },
+        { "en": "Wednesday", "es": "Miércoles" },
+        { "en": "Thursday", "es": "Jueves" },
+        { "en": "Friday", "es": "Viernes" },
+        { "en": "Saturday", "es": "Sábado" },
+        { "en": "Sunday", "es": "Domingo" },
+        { "en": "Today", "es": "Hoy" },
+        { "en": "Tomorrow", "es": "Mañana" },
+        { "en": "Yesterday", "es": "Ayer" },
+        { "en": "Week", "es": "Semana" },
+        { "en": "Hour", "es": "Hora" }
+      ],
+      "grammar": {
+        "rule": "Prepositions of time: on / in / at",
+        "explanation_es": "Usamos 'on' con días (on Monday), 'in' con meses/años (in May), 'at' con horas (at 5).",
+        "examples": ["I work on Monday.", "See you tomorrow.", "The class is at three.", "We meet on Friday.", "It is in May."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u9",
+      "title": "Places & Prepositions / Lugares y preposiciones",
+      "vocabulary": [
+        { "en": "School", "es": "Escuela" },
+        { "en": "Store", "es": "Tienda" },
+        { "en": "City", "es": "Ciudad" },
+        { "en": "Street", "es": "Calle" },
+        { "en": "Park", "es": "Parque" },
+        { "en": "Here", "es": "Aquí" },
+        { "en": "There", "es": "Allí" },
+        { "en": "In", "es": "En (dentro)" },
+        { "en": "On", "es": "Sobre" },
+        { "en": "Under", "es": "Debajo" },
+        { "en": "Next to", "es": "Al lado de" },
+        { "en": "Near", "es": "Cerca" }
+      ],
+      "grammar": {
+        "rule": "Prepositions of place",
+        "explanation_es": "Indican dónde está algo: in (en), on (sobre), under (debajo), next to (al lado de).",
+        "examples": ["The cat is under the table.", "The book is on the chair.", "I live near the park.", "The store is next to the school.", "She is in the city."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u10",
+      "title": "Food Basics / Comida básica",
+      "vocabulary": [
+        { "en": "Bread", "es": "Pan" },
+        { "en": "Milk", "es": "Leche" },
+        { "en": "Egg", "es": "Huevo" },
+        { "en": "Apple", "es": "Manzana" },
+        { "en": "Rice", "es": "Arroz" },
+        { "en": "Chicken", "es": "Pollo" },
+        { "en": "Coffee", "es": "Café" },
+        { "en": "Tea", "es": "Té" },
+        { "en": "Fruit", "es": "Fruta" },
+        { "en": "Sugar", "es": "Azúcar" },
+        { "en": "Salt", "es": "Sal" },
+        { "en": "Food", "es": "Comida" }
+      ],
+      "grammar": {
+        "rule": "I like / I want",
+        "explanation_es": "Para expresar gustos y deseos: 'I like coffee' (me gusta el café), 'I want water' (quiero agua).",
+        "examples": ["I like apples.", "I want some bread.", "She likes tea.", "We want coffee.", "Do you like rice?"]
       },
       "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
     }

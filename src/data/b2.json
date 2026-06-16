@@ -10,14 +10,18 @@
         { "en": "Government", "es": "Gobierno" },
         { "en": "Election", "es": "Elección" },
         { "en": "Climate", "es": "Clima" },
-        { "en": "Issue", "es": "Asunto/Problema" },
+        { "en": "Issue", "es": "Asunto / Problema" },
         { "en": "Policy", "es": "Política (medida)" },
-        { "en": "Society", "es": "Sociedad" }
+        { "en": "Society", "es": "Sociedad" },
+        { "en": "Protest", "es": "Protesta" },
+        { "en": "Budget", "es": "Presupuesto" },
+        { "en": "Crisis", "es": "Crisis" },
+        { "en": "Reform", "es": "Reforma" }
       ],
       "grammar": {
         "rule": "Passive Voice",
         "explanation_es": "La voz pasiva enfatiza la acción sobre quién la hace: 'The law was passed', 'A decision has been made'.",
-        "examples": ["The new law was passed yesterday.", "A decision has been made.", "Taxes will be raised next year.", "The report is being reviewed."]
+        "examples": ["The new law was passed yesterday.", "A decision has been made.", "Taxes will be raised next year.", "The report is being reviewed.", "Millions were affected by the crisis."]
       },
       "story": {
         "text": "The government announced a new ___ to reduce pollution. The decision was ___ after months of debate. Many citizens believe it will improve the ___ . However, some experts remain ___ about the long-term effects on the ___ .",
@@ -37,18 +41,22 @@
       "title": "Conditionals / Condicionales",
       "vocabulary": [
         { "en": "If", "es": "Si" },
-        { "en": "Would", "es": "Haría/Sería" },
+        { "en": "Would", "es": "Haría / Sería" },
         { "en": "Unless", "es": "A menos que" },
         { "en": "Otherwise", "es": "De lo contrario" },
         { "en": "Provided that", "es": "Siempre que" },
         { "en": "In case", "es": "En caso de" },
         { "en": "As long as", "es": "Mientras que" },
-        { "en": "Were", "es": "Fuera/Estuviera" }
+        { "en": "Were", "es": "Fuera / Estuviera" },
+        { "en": "Suppose", "es": "Supongamos" },
+        { "en": "Whether", "es": "Si (o no)" },
+        { "en": "Even if", "es": "Incluso si" },
+        { "en": "Consequence", "es": "Consecuencia" }
       ],
       "grammar": {
         "rule": "Second Conditional",
         "explanation_es": "Para situaciones hipotéticas: 'If I were rich, I would travel'. Usamos 'were' para todas las personas.",
-        "examples": ["If I were rich, I would travel the world.", "If she studied more, she would pass.", "I wouldn't do that unless it was necessary.", "We would help if we could."]
+        "examples": ["If I were rich, I would travel the world.", "If she studied more, she would pass.", "I wouldn't do that unless it was necessary.", "We would help if we could.", "Even if it rained, we would go."]
       },
       "story": {
         "text": "If I ___ more time, I would learn three languages. I ___ travel to many countries and meet new people. Unless we ___ harder, we will not improve. ___ that you practice every day, fluency is possible. As long as you stay ___ , you will succeed.",
@@ -74,14 +82,88 @@
         { "en": "Once in a blue moon", "es": "Muy de vez en cuando" },
         { "en": "Cost an arm and a leg", "es": "Costar un ojo de la cara" },
         { "en": "Spill the beans", "es": "Revelar un secreto" },
-        { "en": "Hang in there", "es": "Aguanta/Resiste" }
+        { "en": "Hang in there", "es": "Aguanta / Resiste" },
+        { "en": "Out of the blue", "es": "De repente" },
+        { "en": "Get the hang of it", "es": "Agarrarle el truco" },
+        { "en": "On the same page", "es": "De acuerdo" },
+        { "en": "Bite the bullet", "es": "Hacer de tripas corazón" }
       ],
       "grammar": {
         "rule": "Using idioms naturally",
         "explanation_es": "Los modismos no se traducen literalmente. Apréndelos como bloques fijos y úsalos en contexto.",
-        "examples": ["The exam was a piece of cake.", "Good luck! Break a leg!", "I need to hit the books tonight.", "I'm feeling under the weather today."]
+        "examples": ["The exam was a piece of cake.", "Good luck! Break a leg!", "I need to hit the books tonight.", "I'm feeling under the weather today.", "Hang in there, it gets easier."]
       },
       "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Formal Writing / Escritura formal",
+      "vocabulary": [
+        { "en": "Furthermore", "es": "Además" },
+        { "en": "Therefore", "es": "Por lo tanto" },
+        { "en": "In addition", "es": "Adicionalmente" },
+        { "en": "On the other hand", "es": "Por otro lado" },
+        { "en": "To summarize", "es": "Para resumir" },
+        { "en": "Regarding", "es": "Con respecto a" },
+        { "en": "I am writing to", "es": "Le escribo para" },
+        { "en": "Sincerely", "es": "Atentamente" },
+        { "en": "Attached", "es": "Adjunto" },
+        { "en": "Request", "es": "Solicitar" },
+        { "en": "Inform", "es": "Informar" },
+        { "en": "Consider", "es": "Considerar" }
+      ],
+      "grammar": {
+        "rule": "Reported Speech",
+        "explanation_es": "Para contar lo que alguien dijo: 'He said that he was tired'. El verbo retrocede un tiempo.",
+        "examples": ["He said that he was busy.", "She told me she would call.", "They said they had finished.", "I asked if he could help.", "He explained that the report was ready."]
+      },
+      "story": {
+        "text": "I am writing to ___ about your recent order. ___ , we apologize for the delay. The product has been shipped and is ___ to this email. ___ , please contact us if you have questions. We look forward to hearing from you. ___ , the Support Team.",
+        "answers": ["inform", "Furthermore", "attached", "Therefore", "Sincerely"],
+        "bank": ["inform", "Furthermore", "attached", "Therefore", "Sincerely", "regarding", "request"]
+      },
+      "sentences": [
+        "He said that he was busy.",
+        "She told me she would call later.",
+        "They said they had finished the report.",
+        "I am writing to request information."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Environment / Medio ambiente",
+      "vocabulary": [
+        { "en": "Pollution", "es": "Contaminación" },
+        { "en": "Recycle", "es": "Reciclar" },
+        { "en": "Waste", "es": "Residuos / Desperdicio" },
+        { "en": "Renewable", "es": "Renovable" },
+        { "en": "Energy", "es": "Energía" },
+        { "en": "Global warming", "es": "Calentamiento global" },
+        { "en": "Sustainable", "es": "Sostenible" },
+        { "en": "Wildlife", "es": "Vida silvestre" },
+        { "en": "Resources", "es": "Recursos" },
+        { "en": "Carbon footprint", "es": "Huella de carbono" },
+        { "en": "Endangered", "es": "En peligro" },
+        { "en": "Greenhouse gas", "es": "Gas de efecto invernadero" }
+      ],
+      "grammar": {
+        "rule": "Future Perfect & Predictions",
+        "explanation_es": "'will have + participio' para algo que estará terminado en el futuro: 'By 2050, sea levels will have risen'.",
+        "examples": ["By 2050, sea levels will have risen.", "We must reduce pollution now.", "If we don't act, the planet will suffer.", "Renewable energy is becoming cheaper.", "Many species have become endangered."]
+      },
+      "story": {
+        "text": "Scientists warn that ___ is one of the biggest threats today. To protect the planet, we must ___ more and reduce ___ . Switching to ___ energy can lower our carbon footprint. If we act now, future generations will inherit a more ___ world.",
+        "answers": ["pollution", "recycle", "waste", "renewable", "sustainable"],
+        "bank": ["pollution", "recycle", "waste", "renewable", "sustainable", "energy", "wildlife"]
+      },
+      "sentences": [
+        "We must reduce pollution now.",
+        "Renewable energy is becoming cheaper.",
+        "Many species have become endangered.",
+        "We should recycle more at home."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
     }
   ]
 }

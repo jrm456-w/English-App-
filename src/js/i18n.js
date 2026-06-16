@@ -69,7 +69,9 @@ const DICT = {
     'gate.retry': 'Reintentar',
     'review.title': 'Repaso inteligente', 'review.subtitle': 'Repite en el momento justo para no olvidar (repetición espaciada).',
     'review.none': 'Nada que repasar hoy. ¡Vuelve mañana! 🎯',
-    'review.recalled': 'Recordadas', 'review.scheduled': 'Programamos cada palabra según lo bien que la recuerdas.'
+    'review.recalled': 'Recordadas', 'review.scheduled': 'Programamos cada palabra según lo bien que la recuerdas.',
+    'dict.title': 'Diccionario', 'dict.words': 'palabras', 'dict.search': 'Buscar palabra (inglés o español)…',
+    'dict.none': 'No se encontraron palabras.'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -138,7 +140,9 @@ const DICT = {
     'gate.retry': 'Retry',
     'review.title': 'Smart review', 'review.subtitle': 'Review at the right moment so you never forget (spaced repetition).',
     'review.none': 'Nothing to review today. Come back tomorrow! 🎯',
-    'review.recalled': 'Recalled', 'review.scheduled': 'Each word is scheduled based on how well you remember it.'
+    'review.recalled': 'Recalled', 'review.scheduled': 'Each word is scheduled based on how well you remember it.',
+    'dict.title': 'Dictionary', 'dict.words': 'words', 'dict.search': 'Search a word (English or Spanish)…',
+    'dict.none': 'No words found.'
   }
 };
 
