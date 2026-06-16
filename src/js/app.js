@@ -143,9 +143,52 @@ async function boot() {
 }
 boot();
 
-/* ---- Service worker ---- */
+/* ---- Service worker + auto-update ----
+   When we publish new content, the new SW installs in the background. We detect it
+   and show a small banner so the user can refresh and get the latest words/lessons. */
+function showUpdateBanner() {
+  if (document.getElementById('update-banner')) return;
+  const bar = el(`
+    <div id="update-banner" class="install-banner">
+      <span>${t('update.available')}</span>
+      <button class="btn btn--small" id="update-btn">${t('update.button')}</button>
+    </div>`);
+  document.body.appendChild(bar);
+  bar.querySelector('#update-btn').onclick = () => {
+    userTriggeredUpdate = true;
+    if (waitingWorker) waitingWorker.postMessage('SKIP_WAITING');
+    else location.reload();
+  };
+}
+
+let waitingWorker = null;
+let userTriggeredUpdate = false;
 if ('serviceWorker' in navigator) {
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    // Only reload when the user asked to update (avoids a reload on first install).
+    if (!userTriggeredUpdate || reloading) return;
+    reloading = true; location.reload();
+  });
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(() => {/* offline-first still works on next load */});
+    navigator.serviceWorker.register('./sw.js').then((reg) => {
+      // An update is already waiting.
+      if (reg.waiting && navigator.serviceWorker.controller) {
+        waitingWorker = reg.waiting; showUpdateBanner();
+      }
+      reg.addEventListener('updatefound', () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener('statechange', () => {
+          // New version installed while an old one is running => genuine update.
+          if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+            waitingWorker = nw; showUpdateBanner();
+          }
+        });
+      });
+      // Check for updates periodically and on focus.
+      setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+      window.addEventListener('focus', () => reg.update().catch(() => {}));
+    }).catch(() => {/* offline-first still works on next load */});
   });
 }

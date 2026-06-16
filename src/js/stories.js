@@ -222,6 +222,7 @@ export async function storyReader({ id }, view) {
   function runQuiz() {
     const qs = story.questions;
     let i = 0, correct = 0;
+    const results = [];
     function render() {
       const q = qs[i];
       clear(stage);
@@ -236,9 +237,12 @@ export async function storyReader({ id }, view) {
           const ok = opt === q.answer;
           if (ok) { correct++; b.classList.add('is-correct'); }
           else { b.classList.add('is-wrong'); card.querySelectorAll('.option').forEach((o) => { if (o.textContent === q.answer) o.classList.add('is-correct'); }); }
-          const next = el(`<button class="btn btn--block" style="margin-top:12px">${i + 1 < qs.length ? t('common.next') : t('story.finish')}</button>`);
-          next.onclick = () => { i++; i < qs.length ? render() : finish(correct, qs.length); };
-          card.querySelector('#fb').appendChild(next);
+          results.push({ q: q.q, answer: q.answer, ok });
+          const fb = card.querySelector('#fb');
+          fb.innerHTML = `<div class="feedback ${ok ? 'feedback--ok' : 'feedback--no'}">${ok ? '✅ ' + t('common.correct') : '❌ ' + t('common.wrong') + ' — ' + escapeHtml(q.answer)}</div>`;
+          const next = el(`<button class="btn btn--block" style="margin-top:8px">${i + 1 < qs.length ? t('common.next') : t('story.finish')}</button>`);
+          next.onclick = () => { i++; i < qs.length ? render() : finish(correct, qs.length, results); };
+          fb.appendChild(next);
         };
         opts.appendChild(b);
       });
@@ -246,26 +250,45 @@ export async function storyReader({ id }, view) {
     render();
   }
 
-  function finish(correct, total) {
+  function finish(correct, total, results = []) {
     const baseXp = markStoryRead(story.id);   // 15 XP first time, 0 if re-read
     const quizXp = correct * 2;
     if (quizXp) addXp(quizXp);
     const xp = baseXp + quizXp;
     clear(stage);
+    const pct = total ? Math.round((correct / total) * 100) : 100;
+    const emoji = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪';
     const card = el(`
       <div class="card center">
-        <div style="font-size:3rem">📖</div>
+        <div style="font-size:3rem">${emoji}</div>
         <h2 class="h2">${t('common.complete')}</h2>
-        ${total ? `<p>${t('common.score')}: <strong>${correct}/${total}</strong></p>` : ''}
+        ${total ? `<p>${t('common.score')}: <strong>${correct}/${total}</strong> (${pct}%)</p>` : ''}
         <div class="badge pill" style="font-size:1.2rem;padding:10px 22px;margin:8px 0">+${xp} XP</div>
-        <div class="row" style="justify-content:center;margin-top:8px">
-          <button class="btn" id="more">${t('stories.title')}</button>
-          <button class="btn btn--ghost" id="home">${t('nav.home')}</button>
-        </div>
       </div>`);
     stage.appendChild(card);
-    card.querySelector('#more').onclick = () => navigate('/stories');
-    card.querySelector('#home').onclick = () => navigate('/home');
+
+    // Per-question review so the user sees what they got right or wrong.
+    if (results.length) {
+      stage.appendChild(el(`<h2 class="h2">${t('story.review')}</h2>`));
+      const list = el(`<div class="card"></div>`);
+      results.forEach((r) => {
+        list.appendChild(el(`
+          <div class="setting-row">
+            <span>${r.ok ? '✅' : '❌'} ${escapeHtml(r.q)}</span>
+            <span class="muted" style="text-align:right">${escapeHtml(r.answer)}</span>
+          </div>`));
+      });
+      stage.appendChild(list);
+    }
+
+    const actions = el(`
+      <div class="row" style="justify-content:center;margin-top:8px">
+        <button class="btn" id="more">${t('stories.title')}</button>
+        <button class="btn btn--ghost" id="home">${t('nav.home')}</button>
+      </div>`);
+    stage.appendChild(actions);
+    actions.querySelector('#more').onclick = () => navigate('/stories');
+    actions.querySelector('#home').onclick = () => navigate('/home');
   }
 
   setActive();
