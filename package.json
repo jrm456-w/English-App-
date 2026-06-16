@@ -4,9 +4,9 @@
   "description": "PWA para aprender inglés dirigida a hispanohablantes (CEFR A1–C1). Vanilla JS, 100% offline.",
   "type": "module",
   "scripts": {
-    "icons": "node scripts/generate-icons.js",
+    "icons": "node scripts/generate-icons.cjs",
     "dev": "node scripts/serve.js",
-    "build": "node scripts/generate-icons.js",
+    "build": "node scripts/generate-icons.cjs",
     "start": "node scripts/serve.js"
   },
   "keywords": ["pwa", "english", "learning", "cefr", "spanish", "offline"],

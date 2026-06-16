@@ -47,7 +47,7 @@ Aplicación web progresiva (PWA) para **aprender inglés desde cero hasta nivel 
 ├── netlify.toml        # Configuración de Netlify
 ├── package.json
 ├── scripts/
-│   ├── generate-icons.js   # Genera iconos PNG (sin dependencias)
+│   ├── generate-icons.cjs   # Genera iconos PNG (sin dependencias)
 │   └── serve.js            # Servidor estático para desarrollo
 └── src/
     ├── css/styles.css
@@ -81,7 +81,7 @@ npm run icons
 1. En Netlify: **Add new site → Import an existing project** y conecta el repo `jrm456-w/English-App-`.
 2. Netlify leerá `netlify.toml` automáticamente:
    - **Publish directory:** `.` (raíz)
-   - **Build command:** `node scripts/generate-icons.js`
+   - **Build command:** `node scripts/generate-icons.cjs`
 3. **Deploy site**. ¡Listo!
 
 **Opción B — arrastrar y soltar:** sube la carpeta del proyecto en **Deploys → Drag and drop**.

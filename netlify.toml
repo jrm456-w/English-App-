@@ -2,7 +2,7 @@
 # This is more robust on Netlify than a bundler step (nothing to break on deploy).
 [build]
   publish = "."
-  command = "node scripts/generate-icons.js"
+  command = "node scripts/generate-icons.cjs"
 
 # SPA fallback: all routes resolve to index.html (app uses hash routing).
 [[redirects]]
