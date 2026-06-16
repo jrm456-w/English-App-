@@ -46,6 +46,11 @@ export const allowedEmails = [
   "jr944180@gmail.com",
 ];
 
+/* requireLogin = true  -> NADIE usa la app sin iniciar sesión (muro de acceso).
+   requireLogin = false -> el login es opcional (solo para sincronizar).
+   Solo tiene efecto si Firebase está configurado. */
+export const requireLogin = true;
+
 export function isEmailAllowed(email) {
   if (!allowedEmails.length) return true; // sin lista => abierto
   if (!email) return false;

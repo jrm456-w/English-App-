@@ -363,7 +363,7 @@ function accountCard(view, _p) {
     card.appendChild(el(`<p style="margin:8px 0">${t('auth.signedInAs')}<br><strong>${user.email || user.displayName || 'Google'}</strong></p>`));
     card.appendChild(el(`<p class="muted" style="margin:0 0 8px">${t('auth.synced')}</p>`));
     const out = el(`<button class="btn btn--ghost btn--block">${t('auth.signOut')}</button>`);
-    out.onclick = async () => { await signOutCloud(); settings(_p, view); };
+    out.onclick = async () => { await signOutCloud(); location.reload(); };
     card.appendChild(out);
   } else {
     card.appendChild(el(`<p class="muted" style="margin:8px 0">${t('auth.syncDesc')}</p>`));

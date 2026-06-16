@@ -61,7 +61,12 @@ const DICT = {
     'auth.notConfigured': 'La sincronización con Google no está configurada todavía. Tu progreso se guarda en este dispositivo.',
     'auth.synced': 'Progreso sincronizado ☁️', 'auth.error': 'No se pudo iniciar sesión',
     'auth.syncDesc': 'Inicia sesión para guardar tu progreso en la nube y usarlo en cualquier dispositivo.',
-    'auth.denied': '🚫 Acceso no autorizado para este correo'
+    'auth.denied': '🚫 Acceso no autorizado para este correo',
+    'gate.title': 'Inicia sesión para acceder',
+    'gate.subtitle': 'Esta app es privada. Entra con tu cuenta de Google autorizada.',
+    'gate.loading': 'Cargando…',
+    'gate.offlineFirst': '⚠️ Necesitas conexión a internet para iniciar sesión la primera vez.',
+    'gate.retry': 'Reintentar'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -122,7 +127,12 @@ const DICT = {
     'auth.notConfigured': 'Google sync is not configured yet. Your progress is saved on this device.',
     'auth.synced': 'Progress synced ☁️', 'auth.error': 'Sign-in failed',
     'auth.syncDesc': 'Sign in to save your progress to the cloud and use it on any device.',
-    'auth.denied': '🚫 This email is not authorized'
+    'auth.denied': '🚫 This email is not authorized',
+    'gate.title': 'Sign in to continue',
+    'gate.subtitle': 'This app is private. Sign in with your authorized Google account.',
+    'gate.loading': 'Loading…',
+    'gate.offlineFirst': '⚠️ You need an internet connection to sign in the first time.',
+    'gate.retry': 'Retry'
   }
 };
 

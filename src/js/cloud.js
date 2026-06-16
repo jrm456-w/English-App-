@@ -14,6 +14,13 @@ const authCbs = new Set();
 const deniedCbs = new Set();
 let pushTimer = null;
 
+/* Resolves once the first auth state is known (signed in or not). */
+let firstAuthResolve;
+const firstAuth = new Promise((r) => { firstAuthResolve = r; });
+function resolveFirstAuth(v) { if (firstAuthResolve) { firstAuthResolve(v); firstAuthResolve = null; } }
+
+const AUTH_FLAG = 'engflow.authorized';
+
 export function cloudEnabled() { return isFirebaseConfigured(); }
 export function getUser() { return currentUser; }
 export function onUser(cb) { authCbs.add(cb); cb(currentUser); return () => authCbs.delete(cb); }
@@ -42,7 +49,11 @@ async function ensureInit() {
         return;
       }
       currentUser = user;
-      if (user) await pullAndMerge();
+      if (user) {
+        try { localStorage.setItem(AUTH_FLAG, user.email || '1'); } catch {}
+        await pullAndMerge();
+      }
+      resolveFirstAuth(currentUser);
       authCbs.forEach((cb) => cb(currentUser));
     });
     ready = true;
@@ -55,6 +66,25 @@ async function ensureInit() {
 
 /* Restore a previous session on boot (no-op if not configured / offline). */
 export function autoStart() { ensureInit(); }
+
+/* True if this device has signed in with an allowed account at least once
+   (used to grant offline access to the owner after the first online login). */
+export function wasAuthorized() {
+  try { return !!localStorage.getItem(AUTH_FLAG); } catch { return false; }
+}
+
+/* Used by the login gate. Waits for the first auth state, with a timeout for
+   the offline case where the Firebase SDK cannot be loaded. */
+export async function waitForAuth(timeoutMs = 9000) {
+  const ok = await ensureInit();
+  if (!ok) return { status: 'offline' };
+  const r = await Promise.race([
+    firstAuth,
+    new Promise((res) => setTimeout(() => res('__timeout__'), timeoutMs))
+  ]);
+  if (r === '__timeout__') return { status: 'timeout' };
+  return { status: 'ok', user: r };
+}
 
 export async function signIn() {
   if (!(await ensureInit())) return { ok: false, reason: 'unavailable' };
@@ -73,6 +103,7 @@ export async function signIn() {
 }
 
 export async function signOutCloud() {
+  try { localStorage.removeItem(AUTH_FLAG); } catch {}
   if (!ready || !auth) return;
   try { await fns.signOut(auth); } catch {}
   currentUser = null;

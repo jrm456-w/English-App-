@@ -291,3 +291,8 @@ a { color: inherit; text-decoration: none; }
 .story-word:hover { background: rgba(124, 58, 237, 0.18); }
 .story-es { margin-top: 6px; font-style: italic; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Login gate: hide all navigation and center the sign-in card */
+.app--gated { grid-template-columns: 1fr !important; }
+.app--gated .sidebar, .app--gated .nav--bottom { display: none !important; }
+.login-screen { min-height: 88vh; display: flex; align-items: center; justify-content: center; }
