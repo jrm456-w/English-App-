@@ -6,6 +6,7 @@ import { home, learn, unit, games, progress, settings } from './views.js';
 import { renderQuiz } from './quiz.js';
 import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
+import { review } from '../games/review.js';
 import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
 import { cloudEnabled, waitForAuth, wasAuthorized, signIn, onUser, onAccessDenied, autoStart } from './cloud.js';
 import { requireLogin } from './firebase-config.js';
@@ -13,6 +14,8 @@ import { el, toast } from './ui.js';
 
 /* ---- Theme ---- */
 function applyTheme() {
+  // Set on <html> so <body>'s color/background variables resolve correctly.
+  document.documentElement.dataset.theme = getState().theme;
   document.getElementById('app').dataset.theme = getState().theme;
   document.querySelector('meta[name="theme-color"]').setAttribute('content', getState().theme === 'dark' ? '#0f172a' : '#2563eb');
 }
@@ -25,6 +28,7 @@ route('/games', (_p, v) => requireOnboard(() => games(_p, v)));
 route('/stories', (_p, v) => requireOnboard(() => storiesList(_p, v)));
 route('/story/:id', (p, v) => requireOnboard(() => storyReader(p, v)));
 route('/game/:type/:level/:id', (p, v) => requireOnboard(() => launchGame(p, v)));
+route('/review', (_p, v) => requireOnboard(() => review(_p, v)));
 route('/progress', (_p, v) => requireOnboard(() => progress(_p, v)));
 route('/settings', (_p, v) => settings(_p, v));
 route('/quiz', (_p, v) => renderQuiz(v));

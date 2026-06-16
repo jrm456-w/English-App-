@@ -66,7 +66,10 @@ const DICT = {
     'gate.subtitle': 'Esta app es privada. Entra con tu cuenta de Google autorizada.',
     'gate.loading': 'Cargando…',
     'gate.offlineFirst': '⚠️ Necesitas conexión a internet para iniciar sesión la primera vez.',
-    'gate.retry': 'Reintentar'
+    'gate.retry': 'Reintentar',
+    'review.title': 'Repaso inteligente', 'review.subtitle': 'Repite en el momento justo para no olvidar (repetición espaciada).',
+    'review.none': 'Nada que repasar hoy. ¡Vuelve mañana! 🎯',
+    'review.recalled': 'Recordadas', 'review.scheduled': 'Programamos cada palabra según lo bien que la recuerdas.'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -132,7 +135,10 @@ const DICT = {
     'gate.subtitle': 'This app is private. Sign in with your authorized Google account.',
     'gate.loading': 'Loading…',
     'gate.offlineFirst': '⚠️ You need an internet connection to sign in the first time.',
-    'gate.retry': 'Retry'
+    'gate.retry': 'Retry',
+    'review.title': 'Smart review', 'review.subtitle': 'Review at the right moment so you never forget (spaced repetition).',
+    'review.none': 'Nothing to review today. Come back tomorrow! 🎯',
+    'review.recalled': 'Recalled', 'review.scheduled': 'Each word is scheduled based on how well you remember it.'
   }
 };
 

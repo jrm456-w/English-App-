@@ -15,6 +15,7 @@ const DEFAULT_STATE = {
   mastered: {},            // flashcards: { "level:unitId:word": repetitions }
   storiesRead: {},         // { storyId: true }
   daily: null,             // { date, games, stories, xp, claimed }
+  srs: {},                 // spaced repetition: { "level:en": { box, due, en, es } }
   quizScore: null
 };
 

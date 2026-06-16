@@ -12,6 +12,7 @@ import {
 } from './gamification.js';
 import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
 import { GAMES, gamesForLevel } from '../games/index.js';
+import { dueCount } from '../games/review.js';
 
 const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 
@@ -109,6 +110,19 @@ export async function home(_p, view) {
     </div>`);
   storiesCard.onclick = () => navigate('/stories');
   view.appendChild(storiesCard);
+
+  // Smart review (spaced repetition)
+  const due = await dueCount(s.level);
+  const reviewCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>🔁 ${t('review.title')}</strong>
+        <span class="badge ${due ? 'pill' : ''}">${due}</span>
+      </div>
+      <small class="muted">${t('review.subtitle')}</small>
+    </div>`);
+  reviewCard.onclick = () => navigate('/review');
+  view.appendChild(reviewCard);
 
   // Quick games
   view.appendChild(el(`<h2 class="h2">${t('home.quickGames')}</h2>`));
@@ -298,7 +312,10 @@ export function settings(_p, view) {
     </div>`);
   dark.querySelector('#dark').onchange = (e) => {
     setState({ theme: e.target.checked ? 'dark' : 'light' });
-    document.getElementById('app').dataset.theme = getState().theme;
+    const th = getState().theme;
+    document.documentElement.dataset.theme = th;
+    document.getElementById('app').dataset.theme = th;
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', th === 'dark' ? '#0f172a' : '#2563eb');
   };
   card.appendChild(dark);
 
@@ -336,6 +353,7 @@ export function settings(_p, view) {
   reset.onclick = () => {
     if (confirm(t('settings.reset.confirm'))) {
       resetState();
+      document.documentElement.dataset.theme = 'light';
       document.getElementById('app').dataset.theme = 'light';
       applyTranslations();
       navigate('/quiz');
