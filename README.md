@@ -54,18 +54,44 @@ La app funciona offline sin cuenta. Si quieres **guardar el progreso en la nube*
 4. **Authentication → Settings → Authorized domains:** añade tu dominio de Netlify.
 5. Copia la config web (Project settings → Tus apps → Web) y pégala en **`src/js/firebase-config.js`**.
 
-Reglas de seguridad recomendadas para Firestore (cada usuario solo accede a su documento):
+### 🔐 Restringir quién puede entrar (lista blanca de correos)
+
+Hay **dos barreras** y debes configurar las dos:
+
+**1) En el navegador** — edita `src/js/firebase-config.js` y añade los correos permitidos:
+
+```js
+export const allowedEmails = [
+  "jr944180@gmail.com",
+  // "otro.permitido@gmail.com",
+];
+```
+Si dejas la lista vacía, cualquiera puede entrar. Con correos, los demás se **cierran automáticamente** y ven un aviso. (Esto es solo UX: un usuario avanzado podría saltárselo, por eso hace falta la barrera 2.)
+
+**2) En el servidor (Firestore Rules)** — esta es la seguridad real. Pega esta misma lista de correos:
 
 ```
 rules_version = '2';
 service cloud.firestore {
   match /databases/{db}/documents {
+    // Solo estos correos pueden leer/escribir, y solo su propio documento.
+    function allowed() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+             'jr944180@gmail.com'
+             // , 'otro.permitido@gmail.com'
+           ];
+    }
     match /users/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+      allow read, write: if allowed() && request.auth.uid == uid;
     }
   }
 }
 ```
+
+> **Escalable:** si tendrás muchos usuarios y no quieres tocar las reglas cada vez, en vez de la lista en línea crea una colección `allowlist` con un documento por correo (ID = el correo) y usa:
+> `allow read, write: if request.auth.uid == uid && exists(/databases/$(database)/documents/allowlist/$(request.auth.token.email));`
 
 > Mientras `firebase-config.js` tenga los valores `TU_...`, el login se oculta y la app sigue 100% local/offline. La config web de Firebase **no es secreta** (la seguridad la dan las reglas), por eso puede ir en el repositorio. Al iniciar sesión, el progreso local y el de la nube se **fusionan** sin perder datos.
 

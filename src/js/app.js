@@ -7,7 +7,7 @@ import { renderQuiz } from './quiz.js';
 import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
 import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
-import { autoStart } from './cloud.js';
+import { autoStart, onAccessDenied } from './cloud.js';
 import { toast } from './ui.js';
 
 /* ---- Theme ---- */
@@ -37,6 +37,7 @@ function requireOnboard(fn) {
 /* ---- Badge & daily-goal notifications ---- */
 onBadge((badge) => toast(`🏅 ${t('badge.unlocked')} ${badge.icon} ${badgeName(badge)}`, 3000));
 onDailyComplete((bonus) => toast(`${t('daily.allDone')} +${bonus} XP`, 3500));
+onAccessDenied((email) => toast(`${t('auth.denied')}${email ? ' (' + email + ')' : ''}`, 4000));
 
 /* ---- Install prompt (Add to Home Screen) ---- */
 let deferredPrompt = null;

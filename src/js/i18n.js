@@ -60,7 +60,8 @@ const DICT = {
     'auth.signOut': 'Cerrar sesión', 'auth.signedInAs': 'Sesión iniciada como',
     'auth.notConfigured': 'La sincronización con Google no está configurada todavía. Tu progreso se guarda en este dispositivo.',
     'auth.synced': 'Progreso sincronizado ☁️', 'auth.error': 'No se pudo iniciar sesión',
-    'auth.syncDesc': 'Inicia sesión para guardar tu progreso en la nube y usarlo en cualquier dispositivo.'
+    'auth.syncDesc': 'Inicia sesión para guardar tu progreso en la nube y usarlo en cualquier dispositivo.',
+    'auth.denied': '🚫 Acceso no autorizado para este correo'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -120,7 +121,8 @@ const DICT = {
     'auth.signOut': 'Sign out', 'auth.signedInAs': 'Signed in as',
     'auth.notConfigured': 'Google sync is not configured yet. Your progress is saved on this device.',
     'auth.synced': 'Progress synced ☁️', 'auth.error': 'Sign-in failed',
-    'auth.syncDesc': 'Sign in to save your progress to the cloud and use it on any device.'
+    'auth.syncDesc': 'Sign in to save your progress to the cloud and use it on any device.',
+    'auth.denied': '🚫 This email is not authorized'
   }
 };
 

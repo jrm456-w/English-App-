@@ -1,7 +1,7 @@
 /* Optional Google (Firebase) auth + Firestore progress sync.
    Loads the Firebase SDK from CDN only when configured. Falls back silently
    to local-only mode when offline or not configured, so the app always works. */
-import { firebaseConfig, isFirebaseConfigured } from './firebase-config.js';
+import { firebaseConfig, isFirebaseConfigured, isEmailAllowed } from './firebase-config.js';
 import { getState, setState, subscribe } from './store.js';
 import { LEVELS } from './gamification.js';
 
@@ -11,11 +11,14 @@ let auth = null, db = null, fns = {};
 let currentUser = null;
 let ready = false;
 const authCbs = new Set();
+const deniedCbs = new Set();
 let pushTimer = null;
 
 export function cloudEnabled() { return isFirebaseConfigured(); }
 export function getUser() { return currentUser; }
 export function onUser(cb) { authCbs.add(cb); cb(currentUser); return () => authCbs.delete(cb); }
+/* Notified when a sign-in is rejected because the email isn't allowed. */
+export function onAccessDenied(cb) { deniedCbs.add(cb); return () => deniedCbs.delete(cb); }
 
 async function ensureInit() {
   if (ready) return true;
@@ -31,9 +34,16 @@ async function ensureInit() {
     // Keep cloud copy updated as the user plays (debounced).
     subscribe(() => schedulePush());
     authMod.onAuthStateChanged(auth, async (user) => {
+      // Enforce the email allowlist on the client (Firestore rules enforce it on the server).
+      if (user && !isEmailAllowed(user.email)) {
+        const email = user.email;
+        await signOutCloud();
+        deniedCbs.forEach((cb) => cb(email));
+        return;
+      }
       currentUser = user;
       if (user) await pullAndMerge();
-      authCbs.forEach((cb) => cb(user));
+      authCbs.forEach((cb) => cb(currentUser));
     });
     ready = true;
     return true;

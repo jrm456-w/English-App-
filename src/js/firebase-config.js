@@ -30,3 +30,23 @@ export function isFirebaseConfigured() {
          firebaseConfig.apiKey.length > 0 &&
          !firebaseConfig.apiKey.startsWith('TU_');
 }
+
+/* ============================================================
+   Lista blanca de correos permitidos
+   ------------------------------------------------------------
+   - Si la dejas VACÍA, cualquier cuenta de Google puede entrar.
+   - Si pones uno o más correos, SOLO esos podrán iniciar sesión
+     (los demás se cierran automáticamente).
+   IMPORTANTE: esto es solo la primera barrera (en el navegador).
+   La seguridad REAL la dan las Reglas de Firestore (ver README),
+   donde debes repetir esta misma lista de correos.
+   ============================================================ */
+export const allowedEmails = [
+  // "jr944180@gmail.com",
+];
+
+export function isEmailAllowed(email) {
+  if (!allowedEmails.length) return true; // sin lista => abierto
+  if (!email) return false;
+  return allowedEmails.map((e) => e.toLowerCase().trim()).includes(email.toLowerCase().trim());
+}
