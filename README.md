@@ -17,7 +17,13 @@ Aplicación web progresiva (PWA) para **aprender inglés desde cero hasta nivel 
   6. Story Cloze — completar textos con banco de palabras (B2/C1)
   7. Speaking Mirror — practicar pronunciación con reconocimiento de voz (B1+)
 - **Audio con Web Speech API** (text-to-speech) — sin archivos de audio que descargar; *fallback* a texto si el navegador no lo soporta.
-- **Gamificación**: 10 XP por juego, 25 XP por hito, racha diaria e insignias.
+- **📖 Historias cortas (input comprensible)** — uno de los métodos más eficaces para aprender a hablar. Cada historia incluye:
+  - **Lectura con audio**: narración palabra por palabra (Web Speech API) con resaltado de la frase actual.
+  - **Toca cualquier palabra** para oír su pronunciación y ver su traducción al español.
+  - **Modo Shadowing** (técnica de políglotas): escuchas una frase y la repites; la app evalúa tu pronunciación.
+  - **Traducción frase a frase** que se revela bajo demanda.
+  - **Quiz de comprensión** al final, con XP e insignias "Primera Historia" / "Ratón de Biblioteca".
+- **Gamificación**: 10 XP por juego, 15 XP por historia, 25 XP por hito, racha diaria e insignias.
 - **PWA real**: instalable ("Añadir a pantalla de inicio"), Service Worker con estrategia *Cache-First*, página offline.
 - **UI bilingüe** (Español/English), **modo oscuro**, diseño *mobile-first* (320px–1440px) y accesible (ARIA + navegación por teclado).
 

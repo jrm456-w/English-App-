@@ -35,7 +35,18 @@ const DICT = {
     'game.speaking_mirror': 'Espejo de voz',
     'speak.prompt': 'Di esta frase en voz alta:', 'speak.listening': 'Escuchando…',
     'speak.unsupported': 'Tu navegador no soporta reconocimiento de voz. Practica leyendo en voz alta.',
-    'speak.heard': 'Escuché', 'badge.unlocked': '¡Insignia desbloqueada!'
+    'speak.heard': 'Escuché', 'badge.unlocked': '¡Insignia desbloqueada!',
+    'nav.stories': 'Historias', 'stories.title': 'Historias cortas',
+    'stories.subtitle': 'Aprende leyendo y escuchando inglés real.',
+    'stories.continue': 'Seguir leyendo', 'stories.read': '✅ Leída',
+    'story.modeRead': '📖 Leer', 'story.modeShadow': '🎧 Shadowing',
+    'story.playAll': '▶️ Escuchar todo', 'story.stop': '⏹️ Parar',
+    'story.showEs': 'Ver traducción', 'story.hideEs': 'Ocultar',
+    'story.tapWord': 'Toca cualquier palabra para oírla y traducirla.',
+    'story.shadowHint': 'Escucha la frase y repítela en voz alta. Luego pulsa el micrófono.',
+    'story.repeat': '🎤 Repetir', 'story.next': 'Siguiente frase',
+    'story.toQuiz': 'Comprobar comprensión →', 'story.finish': 'Terminar historia',
+    'story.quizTitle': 'Preguntas de comprensión', 'story.glossary': 'Vocabulario clave'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -70,7 +81,18 @@ const DICT = {
     'game.speaking_mirror': 'Speaking mirror',
     'speak.prompt': 'Say this sentence out loud:', 'speak.listening': 'Listening…',
     'speak.unsupported': 'Your browser does not support speech recognition. Practice by reading aloud.',
-    'speak.heard': 'I heard', 'badge.unlocked': 'Badge unlocked!'
+    'speak.heard': 'I heard', 'badge.unlocked': 'Badge unlocked!',
+    'nav.stories': 'Stories', 'stories.title': 'Short stories',
+    'stories.subtitle': 'Learn by reading and listening to real English.',
+    'stories.continue': 'Keep reading', 'stories.read': '✅ Read',
+    'story.modeRead': '📖 Read', 'story.modeShadow': '🎧 Shadowing',
+    'story.playAll': '▶️ Listen to all', 'story.stop': '⏹️ Stop',
+    'story.showEs': 'Show translation', 'story.hideEs': 'Hide',
+    'story.tapWord': 'Tap any word to hear and translate it.',
+    'story.shadowHint': 'Listen to the sentence and repeat it aloud. Then tap the mic.',
+    'story.repeat': '🎤 Repeat', 'story.next': 'Next sentence',
+    'story.toQuiz': 'Check comprehension →', 'story.finish': 'Finish story',
+    'story.quizTitle': 'Comprehension questions', 'story.glossary': 'Key vocabulary'
   }
 };
 

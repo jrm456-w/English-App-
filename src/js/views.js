@@ -43,6 +43,16 @@ export async function home(_p, view) {
   cont.onclick = () => navigate('/learn');
   view.appendChild(cont);
 
+  const storiesCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>📖 ${t('stories.title')}</strong><span>→</span>
+      </div>
+      <small class="muted">${t('stories.subtitle')}</small>
+    </div>`);
+  storiesCard.onclick = () => navigate('/stories');
+  view.appendChild(storiesCard);
+
   // Quick games
   view.appendChild(el(`<h2 class="h2">${t('home.quickGames')}</h2>`));
   const grid = el(`<div class="grid grid--2"></div>`);
@@ -70,6 +80,9 @@ export async function learn(_p, view) {
   clear(view);
   const data = await loadLevel(s.level);
   view.appendChild(el(`<h1 class="h1">${t('learn.title')} · ${s.level}</h1>`));
+  const storiesBtn = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:14px">📖 ${t('stories.title')}</button>`);
+  storiesBtn.onclick = () => navigate('/stories');
+  view.appendChild(storiesBtn);
   data.units.forEach((u) => {
     const studied = getState().completedUnits[`${s.level}:${u.id}`];
     const c = el(`

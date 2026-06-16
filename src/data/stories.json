@@ -1,0 +1,193 @@
+{
+  "stories": [
+    {
+      "id": "s_a1_1",
+      "level": "A1",
+      "emoji": "👋",
+      "title": "A New Friend",
+      "title_es": "Un nuevo amigo",
+      "summary_es": "Ana va al parque y conoce a alguien nuevo.",
+      "sentences": [
+        { "en": "Ana goes to the park every morning.", "es": "Ana va al parque cada mañana." },
+        { "en": "Today she sees a small dog.", "es": "Hoy ve un perro pequeño." },
+        { "en": "The dog is brown and happy.", "es": "El perro es marrón y feliz." },
+        { "en": "A boy runs to the dog.", "es": "Un niño corre hacia el perro." },
+        { "en": "\"Hello! Is this your dog?\" asks Ana.", "es": "\"¡Hola! ¿Es tuyo este perro?\", pregunta Ana." },
+        { "en": "\"Yes, his name is Max,\" says the boy.", "es": "\"Sí, se llama Max\", dice el niño." },
+        { "en": "Ana and the boy play with Max.", "es": "Ana y el niño juegan con Max." },
+        { "en": "Now they are good friends.", "es": "Ahora son buenos amigos." }
+      ],
+      "glossary": [
+        { "en": "park", "es": "parque" },
+        { "en": "morning", "es": "mañana" },
+        { "en": "dog", "es": "perro" },
+        { "en": "brown", "es": "marrón" },
+        { "en": "happy", "es": "feliz" },
+        { "en": "boy", "es": "niño" },
+        { "en": "friends", "es": "amigos" }
+      ],
+      "questions": [
+        { "q": "Where does Ana go?", "options": ["To school", "To the park", "To work"], "answer": "To the park" },
+        { "q": "What is the dog's name?", "options": ["Max", "Ana", "Sam"], "answer": "Max" },
+        { "q": "What color is the dog?", "options": ["Black", "White", "Brown"], "answer": "Brown" }
+      ]
+    },
+    {
+      "id": "s_a1_2",
+      "level": "A1",
+      "emoji": "🍎",
+      "title": "Breakfast Time",
+      "title_es": "La hora del desayuno",
+      "summary_es": "Una familia desayuna junta por la mañana.",
+      "sentences": [
+        { "en": "It is seven o'clock in the morning.", "es": "Son las siete de la mañana." },
+        { "en": "The family is in the kitchen.", "es": "La familia está en la cocina." },
+        { "en": "Mom makes coffee and bread.", "es": "Mamá hace café y pan." },
+        { "en": "Dad eats an apple.", "es": "Papá come una manzana." },
+        { "en": "The children drink milk.", "es": "Los niños beben leche." },
+        { "en": "\"I love breakfast!\" says the little girl.", "es": "\"¡Me encanta el desayuno!\", dice la niña pequeña." },
+        { "en": "They are all very happy.", "es": "Todos están muy felices." }
+      ],
+      "glossary": [
+        { "en": "morning", "es": "mañana" },
+        { "en": "family", "es": "familia" },
+        { "en": "kitchen", "es": "cocina" },
+        { "en": "coffee", "es": "café" },
+        { "en": "bread", "es": "pan" },
+        { "en": "apple", "es": "manzana" },
+        { "en": "milk", "es": "leche" },
+        { "en": "breakfast", "es": "desayuno" }
+      ],
+      "questions": [
+        { "q": "What does Dad eat?", "options": ["Bread", "An apple", "Cheese"], "answer": "An apple" },
+        { "q": "What do the children drink?", "options": ["Water", "Coffee", "Milk"], "answer": "Milk" },
+        { "q": "Where is the family?", "options": ["In the park", "In the kitchen", "At school"], "answer": "In the kitchen" }
+      ]
+    },
+    {
+      "id": "s_a2_1",
+      "level": "A2",
+      "emoji": "🚌",
+      "title": "A Busy Day",
+      "title_es": "Un día ocupado",
+      "summary_es": "Carlos cuenta lo que hizo ayer.",
+      "sentences": [
+        { "en": "Yesterday was a very busy day for Carlos.", "es": "Ayer fue un día muy ocupado para Carlos." },
+        { "en": "He woke up early and took a shower.", "es": "Se despertó temprano y se duchó." },
+        { "en": "He went to work by bus.", "es": "Fue al trabajo en autobús." },
+        { "en": "At noon, he had lunch with a friend.", "es": "Al mediodía, almorzó con un amigo." },
+        { "en": "After work, he bought some food.", "es": "Después del trabajo, compró algo de comida." },
+        { "en": "In the evening, he cooked dinner at home.", "es": "Por la tarde, cocinó la cena en casa." },
+        { "en": "He was tired, but he felt good.", "es": "Estaba cansado, pero se sentía bien." }
+      ],
+      "glossary": [
+        { "en": "yesterday", "es": "ayer" },
+        { "en": "busy", "es": "ocupado" },
+        { "en": "shower", "es": "ducha" },
+        { "en": "bus", "es": "autobús" },
+        { "en": "lunch", "es": "almuerzo" },
+        { "en": "bought", "es": "compró" },
+        { "en": "dinner", "es": "cena" },
+        { "en": "tired", "es": "cansado" }
+      ],
+      "questions": [
+        { "q": "How did Carlos go to work?", "options": ["By car", "By bus", "On foot"], "answer": "By bus" },
+        { "q": "What did he do after work?", "options": ["He slept", "He bought food", "He went to the park"], "answer": "He bought food" },
+        { "q": "How did he feel at the end?", "options": ["Tired but good", "Angry", "Bored"], "answer": "Tired but good" }
+      ]
+    },
+    {
+      "id": "s_b1_1",
+      "level": "B1",
+      "emoji": "✈️",
+      "title": "The Lost Suitcase",
+      "title_es": "La maleta perdida",
+      "summary_es": "Una viajera pierde su maleta en el aeropuerto.",
+      "sentences": [
+        { "en": "Marta had just arrived at the airport in London.", "es": "Marta acababa de llegar al aeropuerto de Londres." },
+        { "en": "She had travelled abroad many times before.", "es": "Había viajado al extranjero muchas veces antes." },
+        { "en": "However, this time her suitcase was missing.", "es": "Sin embargo, esta vez su maleta había desaparecido." },
+        { "en": "She went to the information desk to ask for help.", "es": "Fue al mostrador de información para pedir ayuda." },
+        { "en": "\"Don't worry, we have found it,\" said the agent.", "es": "\"No se preocupe, la hemos encontrado\", dijo el agente." },
+        { "en": "Her suitcase had been sent to the wrong city.", "es": "Su maleta había sido enviada a la ciudad equivocada." },
+        { "en": "It arrived the next morning, and Marta was relieved.", "es": "Llegó a la mañana siguiente, y Marta se sintió aliviada." }
+      ],
+      "glossary": [
+        { "en": "airport", "es": "aeropuerto" },
+        { "en": "travelled", "es": "viajado" },
+        { "en": "abroad", "es": "al extranjero" },
+        { "en": "suitcase", "es": "maleta" },
+        { "en": "missing", "es": "perdida/desaparecida" },
+        { "en": "help", "es": "ayuda" },
+        { "en": "relieved", "es": "aliviada" }
+      ],
+      "questions": [
+        { "q": "What problem did Marta have?", "options": ["She lost her passport", "Her suitcase was missing", "Her flight was cancelled"], "answer": "Her suitcase was missing" },
+        { "q": "Where was the suitcase sent?", "options": ["To the wrong city", "To her home", "To another person"], "answer": "To the wrong city" },
+        { "q": "How did Marta feel at the end?", "options": ["Angry", "Relieved", "Sad"], "answer": "Relieved" }
+      ]
+    },
+    {
+      "id": "s_b2_1",
+      "level": "B2",
+      "emoji": "🌍",
+      "title": "A Difficult Decision",
+      "title_es": "Una decisión difícil",
+      "summary_es": "Un joven debe elegir entre un trabajo seguro y su sueño.",
+      "sentences": [
+        { "en": "If David had taken the safe job, his life would have been simpler.", "es": "Si David hubiera aceptado el trabajo seguro, su vida habría sido más sencilla." },
+        { "en": "Nevertheless, he had always dreamed of starting his own company.", "es": "No obstante, siempre había soñado con crear su propia empresa." },
+        { "en": "His family was worried about the risks involved.", "es": "Su familia estaba preocupada por los riesgos que implicaba." },
+        { "en": "\"Unless you try, you will never know,\" his mentor told him.", "es": "\"A menos que lo intentes, nunca lo sabrás\", le dijo su mentor." },
+        { "en": "After months of doubt, he finally made up his mind.", "es": "Tras meses de duda, finalmente se decidió." },
+        { "en": "The decision was not easy, but it felt right.", "es": "La decisión no fue fácil, pero la sintió correcta." },
+        { "en": "Looking back, he was proud that he had followed his dream.", "es": "Mirando atrás, estaba orgulloso de haber seguido su sueño." }
+      ],
+      "glossary": [
+        { "en": "decision", "es": "decisión" },
+        { "en": "safe", "es": "seguro" },
+        { "en": "dreamed", "es": "soñado" },
+        { "en": "company", "es": "empresa" },
+        { "en": "risks", "es": "riesgos" },
+        { "en": "mentor", "es": "mentor" },
+        { "en": "proud", "es": "orgulloso" }
+      ],
+      "questions": [
+        { "q": "What did David dream of doing?", "options": ["Travelling", "Starting his own company", "Buying a house"], "answer": "Starting his own company" },
+        { "q": "What did his mentor advise?", "options": ["To stay safe", "To try", "To ask his family"], "answer": "To try" },
+        { "q": "How did he feel looking back?", "options": ["Proud", "Regretful", "Confused"], "answer": "Proud" }
+      ]
+    },
+    {
+      "id": "s_c1_1",
+      "level": "C1",
+      "emoji": "🔬",
+      "title": "The Power of Curiosity",
+      "title_es": "El poder de la curiosidad",
+      "summary_es": "Una reflexión sobre cómo la curiosidad impulsa el conocimiento.",
+      "sentences": [
+        { "en": "Seldom do we appreciate how curiosity shapes human progress.", "es": "Rara vez apreciamos cómo la curiosidad moldea el progreso humano." },
+        { "en": "Throughout history, the most significant discoveries arose from simple questions.", "es": "A lo largo de la historia, los descubrimientos más significativos surgieron de preguntas simples." },
+        { "en": "Furthermore, curiosity is not limited to scientists or scholars.", "es": "Además, la curiosidad no se limita a científicos o académicos." },
+        { "en": "Anyone willing to learn can contribute meaningfully to knowledge.", "es": "Cualquiera dispuesto a aprender puede contribuir de forma significativa al conocimiento." },
+        { "en": "Had society nurtured curiosity more deliberately, innovation would have flourished.", "es": "De haber cultivado la sociedad la curiosidad más deliberadamente, la innovación habría florecido." },
+        { "en": "Consequently, education should empower every citizen, not just a privileged few.", "es": "Por consiguiente, la educación debería empoderar a cada ciudadano, no solo a unos pocos privilegiados." },
+        { "en": "In the end, knowledge belongs to those who dare to ask.", "es": "Al final, el conocimiento pertenece a quienes se atreven a preguntar." }
+      ],
+      "glossary": [
+        { "en": "curiosity", "es": "curiosidad" },
+        { "en": "progress", "es": "progreso" },
+        { "en": "discoveries", "es": "descubrimientos" },
+        { "en": "scholars", "es": "académicos" },
+        { "en": "knowledge", "es": "conocimiento" },
+        { "en": "innovation", "es": "innovación" },
+        { "en": "citizen", "es": "ciudadano" }
+      ],
+      "questions": [
+        { "q": "According to the text, where do great discoveries often start?", "options": ["From simple questions", "From expensive labs", "From luck"], "answer": "From simple questions" },
+        { "q": "Who can contribute to knowledge?", "options": ["Only scientists", "Anyone willing to learn", "Only scholars"], "answer": "Anyone willing to learn" },
+        { "q": "What should education do?", "options": ["Empower every citizen", "Stay exclusive", "Focus on a few"], "answer": "Empower every citizen" }
+      ]
+    }
+  ]
+}

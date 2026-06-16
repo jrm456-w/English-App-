@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v1';
+const CACHE_VERSION = 'engflow-v2';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -18,6 +18,7 @@ const PRECACHE_URLS = [
   './src/js/quiz.js',
   './src/js/gamification.js',
   './src/js/views.js',
+  './src/js/stories.js',
   './src/games/index.js',
   './src/games/wordMatch.js',
   './src/games/fillBlank.js',
@@ -31,6 +32,7 @@ const PRECACHE_URLS = [
   './src/data/b1.json',
   './src/data/b2.json',
   './src/data/c1.json',
+  './src/data/stories.json',
   './src/data/quiz.json',
   './src/assets/icons/icon-192.png',
   './src/assets/icons/icon-512.png',

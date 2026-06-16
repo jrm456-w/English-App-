@@ -10,6 +10,8 @@ export const BADGES = [
   { id: 'xp_100', icon: '💯', name_es: '100 XP', name_en: '100 XP' },
   { id: 'xp_500', icon: '🚀', name_es: '500 XP', name_en: '500 XP' },
   { id: 'perfect', icon: '🎯', name_es: 'Puntaje Perfecto', name_en: 'Perfect Score' },
+  { id: 'first_story', icon: '📖', name_es: 'Primera Historia', name_en: 'First Story' },
+  { id: 'bookworm', icon: '📚', name_es: 'Ratón de Biblioteca', name_en: 'Bookworm' },
   { id: 'a2_grad', icon: '🥉', name_es: 'Graduado A2', name_en: 'A2 Graduate' },
   { id: 'b1_grad', icon: '🥈', name_es: 'Graduado B1', name_en: 'B1 Graduate' },
   { id: 'b2_grad', icon: '🥇', name_es: 'Graduado B2', name_en: 'B2 Graduate' }
@@ -77,6 +79,18 @@ export function recordGame({ level, unitId, gameType, attempts, correct, total, 
 export function markUnitStudied(level, unitId) {
   update((st) => { st.completedUnits[`${level}:${unitId}`] = true; });
   award('first_word');
+}
+
+/* Record a story as read; awards XP and reading badges. Returns XP earned. */
+export function markStoryRead(storyId) {
+  const already = !!getState().storiesRead[storyId];
+  update((st) => { st.storiesRead[storyId] = true; });
+  award('first_story');
+  if (Object.keys(getState().storiesRead).length >= 3) award('bookworm');
+  if (already) return 0;
+  const xp = 15;
+  addXp(xp);
+  return xp;
 }
 
 export function markGraduate(level) {

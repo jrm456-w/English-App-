@@ -13,6 +13,7 @@ const DEFAULT_STATE = {
   completedGames: {},      // { "level:unitId:gameType": { attempts, correct, bestTimeMs } }
   completedUnits: {},      // { "level:unitId": true } when grammar viewed
   mastered: {},            // flashcards: { "level:unitId:word": repetitions }
+  storiesRead: {},         // { storyId: true }
   quizScore: null
 };
 

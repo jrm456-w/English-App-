@@ -14,6 +14,19 @@ export async function loadLevel(level) {
   return json;
 }
 
+export async function loadStories() {
+  if (cache.stories) return cache.stories;
+  const res = await fetch('./src/data/stories.json');
+  const json = await res.json();
+  cache.stories = json.stories;
+  return json.stories;
+}
+
+export async function getStory(id) {
+  const stories = await loadStories();
+  return stories.find((s) => s.id === id);
+}
+
 export async function loadQuiz() {
   if (cache.quiz) return cache.quiz;
   const res = await fetch('./src/data/quiz.json');
