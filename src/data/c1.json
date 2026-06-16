@@ -164,6 +164,230 @@
         "To a certain extent I agree with you."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Advanced Idioms / Modismos avanzados",
+      "vocabulary": [
+        { "en": "To cut corners", "es": "Hacer las cosas a medias" },
+        { "en": "The bottom line", "es": "Lo esencial / El resultado final" },
+        { "en": "To be on the fence", "es": "Estar indeciso" },
+        { "en": "A blessing in disguise", "es": "Un mal que vino para bien" },
+        { "en": "To take it with a grain of salt", "es": "Tomarlo con cautela" },
+        { "en": "To go the extra mile", "es": "Hacer un esfuerzo adicional" },
+        { "en": "To be in the same boat", "es": "Estar en la misma situación" },
+        { "en": "To beat around the bush", "es": "Andarse por las ramas" },
+        { "en": "To call it a day", "es": "Dar por terminado" },
+        { "en": "Food for thought", "es": "Algo para reflexionar" },
+        { "en": "To touch base", "es": "Ponerse en contacto" },
+        { "en": "The tip of the iceberg", "es": "La punta del iceberg" }
+      ],
+      "grammar": {
+        "rule": "Idiomatic register",
+        "explanation_es": "Los modismos avanzados aportan naturalidad. Adáptalos al contexto formal o informal adecuado.",
+        "examples": ["Don't cut corners on safety.", "The bottom line is that we need more time.", "I'm still on the fence about it.", "Losing that job was a blessing in disguise.", "Let's go the extra mile for our clients."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Abstract Concepts / Conceptos abstractos",
+      "vocabulary": [
+        { "en": "Freedom", "es": "Libertad" },
+        { "en": "Justice", "es": "Justicia" },
+        { "en": "Purpose", "es": "Propósito" },
+        { "en": "Identity", "es": "Identidad" },
+        { "en": "Perception", "es": "Percepción" },
+        { "en": "Consciousness", "es": "Conciencia" },
+        { "en": "Morality", "es": "Moralidad" },
+        { "en": "Resilience", "es": "Resiliencia" },
+        { "en": "Ambiguity", "es": "Ambigüedad" },
+        { "en": "Legacy", "es": "Legado" },
+        { "en": "Wisdom", "es": "Sabiduría" },
+        { "en": "Dignity", "es": "Dignidad" }
+      ],
+      "grammar": {
+        "rule": "Abstract nouns & articles",
+        "explanation_es": "Los sustantivos abstractos suelen ir sin artículo cuando son generales: 'Freedom is essential', 'Wisdom comes with age'.",
+        "examples": ["Freedom is a fundamental right.", "Wisdom comes with experience.", "Resilience helps us overcome failure.", "Identity shapes our choices.", "His legacy will endure."]
+      },
+      "story": {
+        "text": "True ___ is not the absence of fear but the courage to act despite it. Over time, ___ teaches us that failure builds ___ . A person of ___ treats everyone with respect, leaving behind a lasting ___ .",
+        "answers": ["wisdom", "experience", "resilience", "dignity", "legacy"],
+        "bank": ["wisdom", "experience", "resilience", "dignity", "legacy", "freedom", "purpose"]
+      },
+      "sentences": [
+        "Freedom is a fundamental right.",
+        "Wisdom comes with experience.",
+        "Resilience helps us overcome failure.",
+        "His legacy will endure for years."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Arts & Literature / Arte y literatura",
+      "vocabulary": [
+        { "en": "Novel", "es": "Novela" },
+        { "en": "Author", "es": "Autor" },
+        { "en": "Character", "es": "Personaje" },
+        { "en": "Metaphor", "es": "Metáfora" },
+        { "en": "Symbolism", "es": "Simbolismo" },
+        { "en": "Genre", "es": "Género" },
+        { "en": "Masterpiece", "es": "Obra maestra" },
+        { "en": "Narrative", "es": "Narrativa" },
+        { "en": "Aesthetic", "es": "Estético" },
+        { "en": "Portray", "es": "Retratar" },
+        { "en": "Interpretation", "es": "Interpretación" },
+        { "en": "Theme", "es": "Tema" }
+      ],
+      "grammar": {
+        "rule": "Participle clauses",
+        "explanation_es": "Cláusulas con participio para un estilo elegante: 'Written in 1925, the novel...', 'Praised by critics, ...'.",
+        "examples": ["Written in 1925, the novel remains relevant.", "Praised by critics, the film won awards.", "The author portrays society with subtle irony.", "This metaphor enriches the narrative.", "Its themes are universal."]
+      },
+      "story": {
+        "text": "The ___ is widely regarded as a ___ of modern literature. Its ___ are complex and deeply human. Through powerful ___ , the ___ explores themes of love and loss, inviting endless ___ .",
+        "answers": ["novel", "masterpiece", "characters", "symbolism", "author", "interpretation"],
+        "bank": ["novel", "masterpiece", "characters", "symbolism", "author", "interpretation", "genre"]
+      },
+      "sentences": [
+        "The author portrays society with irony.",
+        "This novel is a true masterpiece.",
+        "Its themes are deeply universal.",
+        "The metaphor enriches the narrative."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "Research & Analysis / Investigación y análisis",
+      "vocabulary": [
+        { "en": "Methodology", "es": "Metodología" },
+        { "en": "Variable", "es": "Variable" },
+        { "en": "Correlation", "es": "Correlación" },
+        { "en": "Sample", "es": "Muestra" },
+        { "en": "Bias", "es": "Sesgo" },
+        { "en": "Findings", "es": "Hallazgos" },
+        { "en": "Conclusion", "es": "Conclusión" },
+        { "en": "Validate", "es": "Validar" },
+        { "en": "Estimate", "es": "Estimar" },
+        { "en": "Trend", "es": "Tendencia" },
+        { "en": "Outcome", "es": "Resultado" },
+        { "en": "Limitation", "es": "Limitación" }
+      ],
+      "grammar": {
+        "rule": "Cautious / hedged language",
+        "explanation_es": "La investigación usa lenguaje cauto: 'The data suggest...', 'This may indicate...', 'It appears that...'.",
+        "examples": ["The data suggest a clear trend.", "This may indicate a strong correlation.", "The sample was relatively small.", "These findings should be validated.", "There are some limitations to consider."]
+      },
+      "story": {
+        "text": "The research followed a rigorous ___ to minimize ___ . After analyzing a large ___ , the team identified a significant ___ between the variables. The ___ were promising, although the authors noted several ___ .",
+        "answers": ["methodology", "bias", "sample", "correlation", "findings", "limitations"],
+        "bank": ["methodology", "bias", "sample", "correlation", "findings", "limitations", "trend"]
+      },
+      "sentences": [
+        "The data suggest a clear trend.",
+        "The sample was relatively small.",
+        "These findings should be validated.",
+        "There are limitations to consider."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u10",
+      "title": "Register & Connotation / Registro y connotación",
+      "vocabulary": [
+        { "en": "Formal", "es": "Formal" },
+        { "en": "Informal", "es": "Informal" },
+        { "en": "Slang", "es": "Jerga" },
+        { "en": "Tone", "es": "Tono" },
+        { "en": "Euphemism", "es": "Eufemismo" },
+        { "en": "Connotation", "es": "Connotación" },
+        { "en": "Bluntly", "es": "Sin rodeos" },
+        { "en": "Tactfully", "es": "Con tacto" },
+        { "en": "Understatement", "es": "Atenuación" },
+        { "en": "Sarcasm", "es": "Sarcasmo" },
+        { "en": "Diplomatic", "es": "Diplomático" },
+        { "en": "Vague", "es": "Vago / Impreciso" }
+      ],
+      "grammar": {
+        "rule": "Softening & diplomacy",
+        "explanation_es": "Para sonar diplomático usamos atenuadores: 'I'm afraid...', 'It might be better to...', 'with respect'.",
+        "examples": ["I'm afraid that won't be possible.", "It might be better to wait.", "He put it rather bluntly.", "She handled it tactfully.", "That's a bit of an understatement."]
+      },
+      "sentences": [
+        "I'm afraid that won't be possible.",
+        "It might be better to wait.",
+        "She handled the issue tactfully.",
+        "He put it rather bluntly."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Collocations / Colocaciones",
+      "vocabulary": [
+        { "en": "Make a decision", "es": "Tomar una decisión" },
+        { "en": "Take responsibility", "es": "Asumir la responsabilidad" },
+        { "en": "Pay attention", "es": "Prestar atención" },
+        { "en": "Reach a conclusion", "es": "Llegar a una conclusión" },
+        { "en": "Raise awareness", "es": "Concienciar" },
+        { "en": "Meet a deadline", "es": "Cumplir un plazo" },
+        { "en": "Draw a comparison", "es": "Establecer una comparación" },
+        { "en": "Bear in mind", "es": "Tener presente" },
+        { "en": "Make progress", "es": "Avanzar / Progresar" },
+        { "en": "Set a goal", "es": "Fijar una meta" },
+        { "en": "Take into account", "es": "Tomar en cuenta" },
+        { "en": "Have an impact", "es": "Tener un impacto" }
+      ],
+      "grammar": {
+        "rule": "Collocations (natural word pairs)",
+        "explanation_es": "Los nativos combinan ciertas palabras: 'make a decision' (no 'do a decision'). Apréndelas en bloque.",
+        "examples": ["We need to make a decision soon.", "Please pay attention to the details.", "They reached a conclusion quickly.", "This will have a huge impact.", "Bear in mind the deadline."]
+      },
+      "sentences": [
+        "We need to make a decision soon.",
+        "Please pay attention to detail.",
+        "This will have a huge impact.",
+        "Bear in mind the final deadline."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Global Issues / Temas globales",
+      "vocabulary": [
+        { "en": "Inequality", "es": "Desigualdad" },
+        { "en": "Migration", "es": "Migración" },
+        { "en": "Sustainability", "es": "Sostenibilidad" },
+        { "en": "Globalization", "es": "Globalización" },
+        { "en": "Humanitarian", "es": "Humanitario" },
+        { "en": "Infrastructure", "es": "Infraestructura" },
+        { "en": "Pandemic", "es": "Pandemia" },
+        { "en": "Diplomacy", "es": "Diplomacia" },
+        { "en": "Sanctions", "es": "Sanciones" },
+        { "en": "Aid", "es": "Ayuda" },
+        { "en": "Refugee", "es": "Refugiado" },
+        { "en": "Crisis", "es": "Crisis" }
+      ],
+      "grammar": {
+        "rule": "Complex noun phrases",
+        "explanation_es": "El registro periodístico usa frases nominales densas: 'the growing threat of climate-driven migration'.",
+        "examples": ["Inequality remains a pressing global issue.", "The pandemic exposed weak infrastructure.", "Diplomacy can prevent conflict.", "Humanitarian aid reached the region.", "Sustainability must guide development."]
+      },
+      "story": {
+        "text": "The international community faced a growing ___ as conflict forced thousands to flee. ___ organizations rushed to provide ___ to the ___ . Experts argued that long-term ___ , not just short-term relief, was essential.",
+        "answers": ["crisis", "Humanitarian", "aid", "refugees", "sustainability"],
+        "bank": ["crisis", "Humanitarian", "aid", "refugees", "sustainability", "diplomacy", "migration"]
+      },
+      "sentences": [
+        "Inequality remains a global issue.",
+        "Diplomacy can help prevent conflict.",
+        "Humanitarian aid reached the region.",
+        "Sustainability must guide development."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
     }
   ]
 }

@@ -41,8 +41,8 @@
         { "en": "Soup", "es": "Sopa" },
         { "en": "Juice", "es": "Jugo" },
         { "en": "Wine", "es": "Vino" },
-        { "en": "Breakfast", "es": "Desayuno" },
         { "en": "Dessert", "es": "Postre" },
+        { "en": "Breakfast", "es": "Desayuno" },
         { "en": "Hungry", "es": "Hambriento" },
         { "en": "Thirsty", "es": "Sediento" }
       ],
@@ -166,7 +166,7 @@
       "title": "Future Plans / Planes",
       "vocabulary": [
         { "en": "Going to", "es": "Ir a (planes)" },
-        { "en": "Will", "es": "Verbo auxiliar futuro" },
+        { "en": "Will", "es": "Auxiliar de futuro" },
         { "en": "Plan", "es": "Plan" },
         { "en": "Trip", "es": "Viaje" },
         { "en": "Holiday", "es": "Vacaciones" },
@@ -188,6 +188,210 @@
         "She will call you later.",
         "We are going to have a party.",
         "Maybe it will rain tomorrow."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Transportation / Transporte",
+      "vocabulary": [
+        { "en": "Bus", "es": "Autobús" },
+        { "en": "Train", "es": "Tren" },
+        { "en": "Plane", "es": "Avión" },
+        { "en": "Bicycle", "es": "Bicicleta" },
+        { "en": "Taxi", "es": "Taxi" },
+        { "en": "Subway", "es": "Metro" },
+        { "en": "Ticket", "es": "Boleto" },
+        { "en": "Station", "es": "Estación" },
+        { "en": "Stop", "es": "Parada" },
+        { "en": "Drive", "es": "Conducir" },
+        { "en": "Ride", "es": "Montar / Viajar en" },
+        { "en": "Arrive", "es": "Llegar" }
+      ],
+      "grammar": {
+        "rule": "by + transport",
+        "explanation_es": "Usamos 'by' con medios de transporte: 'by bus', 'by car'. Excepción: 'on foot' (a pie).",
+        "examples": ["I go to work by bus.", "She travels by train.", "We went there by car.", "He rides a bicycle.", "They arrive at the station."]
+      },
+      "sentences": [
+        "I go to work by bus.",
+        "She travels by train every day.",
+        "We went there by car.",
+        "The train arrives at noon."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "House & Furniture / Casa y muebles",
+      "vocabulary": [
+        { "en": "Sofa", "es": "Sofá" },
+        { "en": "Desk", "es": "Escritorio" },
+        { "en": "Shelf", "es": "Estante" },
+        { "en": "Fridge", "es": "Refrigerador" },
+        { "en": "Stove", "es": "Estufa" },
+        { "en": "Sink", "es": "Fregadero" },
+        { "en": "Towel", "es": "Toalla" },
+        { "en": "Pillow", "es": "Almohada" },
+        { "en": "Blanket", "es": "Manta" },
+        { "en": "Drawer", "es": "Cajón" },
+        { "en": "Curtain", "es": "Cortina" },
+        { "en": "Furniture", "es": "Muebles" }
+      ],
+      "grammar": {
+        "rule": "Prepositions: between / in front of / behind",
+        "explanation_es": "Ubicamos objetos: 'between' (entre), 'in front of' (delante de), 'behind' (detrás de).",
+        "examples": ["The sofa is in front of the TV.", "The lamp is between the beds.", "My bag is behind the door.", "There is food in the fridge.", "Put the towel on the shelf."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u10",
+      "title": "Hobbies & Free Time / Pasatiempos",
+      "vocabulary": [
+        { "en": "Read", "es": "Leer" },
+        { "en": "Dance", "es": "Bailar" },
+        { "en": "Sing", "es": "Cantar" },
+        { "en": "Paint", "es": "Pintar" },
+        { "en": "Swim", "es": "Nadar" },
+        { "en": "Run", "es": "Correr" },
+        { "en": "Cook", "es": "Cocinar" },
+        { "en": "Travel", "es": "Viajar" },
+        { "en": "Photography", "es": "Fotografía" },
+        { "en": "Music", "es": "Música" },
+        { "en": "Game", "es": "Juego" },
+        { "en": "Sport", "es": "Deporte" }
+      ],
+      "grammar": {
+        "rule": "like / love / hate + -ing",
+        "explanation_es": "Tras like, love, hate, enjoy usamos verbo + -ing: 'I like reading', 'She loves dancing'.",
+        "examples": ["I like reading books.", "She loves dancing.", "He hates running.", "We enjoy traveling.", "They like playing games."]
+      },
+      "sentences": [
+        "I like reading books at night.",
+        "She loves dancing with friends.",
+        "We enjoy traveling in summer.",
+        "He hates running in the rain."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Directions / Direcciones",
+      "vocabulary": [
+        { "en": "Left", "es": "Izquierda" },
+        { "en": "Right", "es": "Derecha" },
+        { "en": "Straight", "es": "Recto" },
+        { "en": "Turn", "es": "Girar" },
+        { "en": "Corner", "es": "Esquina" },
+        { "en": "Block", "es": "Cuadra" },
+        { "en": "Map", "es": "Mapa" },
+        { "en": "Far", "es": "Lejos" },
+        { "en": "Close", "es": "Cerca" },
+        { "en": "Cross", "es": "Cruzar" },
+        { "en": "Between", "es": "Entre" },
+        { "en": "Opposite", "es": "Enfrente de" }
+      ],
+      "grammar": {
+        "rule": "Imperatives for directions",
+        "explanation_es": "Para dar indicaciones usamos el imperativo (verbo base): 'Turn left', 'Go straight'.",
+        "examples": ["Turn left at the corner.", "Go straight for two blocks.", "Cross the street.", "It is on your right.", "The bank is opposite the park."]
+      },
+      "sentences": [
+        "Turn left at the corner.",
+        "Go straight for two blocks.",
+        "The bank is on your right.",
+        "Cross the street and turn right."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Nature / La naturaleza",
+      "vocabulary": [
+        { "en": "Tree", "es": "Árbol" },
+        { "en": "Flower", "es": "Flor" },
+        { "en": "River", "es": "Río" },
+        { "en": "Mountain", "es": "Montaña" },
+        { "en": "Sea", "es": "Mar" },
+        { "en": "Beach", "es": "Playa" },
+        { "en": "Forest", "es": "Bosque" },
+        { "en": "Sky", "es": "Cielo" },
+        { "en": "Star", "es": "Estrella" },
+        { "en": "Moon", "es": "Luna" },
+        { "en": "Grass", "es": "Hierba" },
+        { "en": "Stone", "es": "Piedra" }
+      ],
+      "grammar": {
+        "rule": "Past continuous (was/were + -ing)",
+        "explanation_es": "Para acciones en progreso en el pasado: 'I was walking in the forest'.",
+        "examples": ["I was walking by the river.", "The sun was shining.", "They were swimming in the sea.", "Birds were singing in the trees.", "We were climbing the mountain."]
+      },
+      "sentences": [
+        "I was walking by the river.",
+        "The sun was shining brightly.",
+        "They were swimming in the sea.",
+        "We were climbing the mountain."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Frequency & Time / Frecuencia y tiempo",
+      "vocabulary": [
+        { "en": "Always", "es": "Siempre" },
+        { "en": "Usually", "es": "Normalmente" },
+        { "en": "Often", "es": "A menudo" },
+        { "en": "Sometimes", "es": "A veces" },
+        { "en": "Rarely", "es": "Rara vez" },
+        { "en": "Never", "es": "Nunca" },
+        { "en": "Every day", "es": "Cada día" },
+        { "en": "Once", "es": "Una vez" },
+        { "en": "Twice", "es": "Dos veces" },
+        { "en": "Early", "es": "Temprano" },
+        { "en": "Late", "es": "Tarde" },
+        { "en": "Now", "es": "Ahora" }
+      ],
+      "grammar": {
+        "rule": "Adverbs of frequency",
+        "explanation_es": "Van antes del verbo principal (pero después de 'to be'): 'I always study', 'She is never late'.",
+        "examples": ["I always have breakfast.", "She usually walks to work.", "We sometimes watch films.", "He is never late.", "They rarely eat out."]
+      },
+      "sentences": [
+        "I always have breakfast at home.",
+        "She usually walks to work.",
+        "We sometimes watch films together.",
+        "He is never late for class."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Communication / Comunicación",
+      "vocabulary": [
+        { "en": "Call", "es": "Llamar" },
+        { "en": "Message", "es": "Mensaje" },
+        { "en": "Answer", "es": "Responder" },
+        { "en": "Ask", "es": "Preguntar" },
+        { "en": "Tell", "es": "Decir / Contar" },
+        { "en": "Listen", "es": "Escuchar" },
+        { "en": "Explain", "es": "Explicar" },
+        { "en": "Understand", "es": "Entender" },
+        { "en": "Repeat", "es": "Repetir" },
+        { "en": "Email", "es": "Correo electrónico" },
+        { "en": "Letter", "es": "Carta" },
+        { "en": "Word", "es": "Palabra" }
+      ],
+      "grammar": {
+        "rule": "can / can't for ability",
+        "explanation_es": "Usamos 'can' para habilidad y posibilidad: 'I can speak English', 'She can't come today'.",
+        "examples": ["I can speak English.", "Can you repeat that, please?", "She can't understand the letter.", "We can call you tomorrow.", "He can explain the lesson."]
+      },
+      "sentences": [
+        "Can you repeat that please?",
+        "I can speak a little English.",
+        "She will call you tomorrow.",
+        "Please listen and answer."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }

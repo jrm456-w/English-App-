@@ -278,6 +278,96 @@
         { "q": "What can machines NOT do?", "options": ["Process data", "Grasp human meaning", "Compute"], "answer": "Grasp human meaning" },
         { "q": "What should technology do?", "options": ["Serve humanity", "Replace humans", "Make decisions alone"], "answer": "Serve humanity" }
       ]
+    },
+    {
+      "id": "s_a1_3",
+      "level": "A1",
+      "emoji": "🐶",
+      "title": "My Dog Rocky",
+      "title_es": "Mi perro Rocky",
+      "summary_es": "Un niño describe a su perro y su rutina diaria.",
+      "sentences": [
+        { "en": "I have a dog. His name is Rocky.", "es": "Tengo un perro. Se llama Rocky." },
+        { "en": "He is small and brown.", "es": "Es pequeño y marrón." },
+        { "en": "Every morning, Rocky wakes me up.", "es": "Cada mañana, Rocky me despierta." },
+        { "en": "We go to the park together.", "es": "Vamos al parque juntos." },
+        { "en": "He likes to run and play.", "es": "Le gusta correr y jugar." },
+        { "en": "In the evening, he eats his food.", "es": "Por la tarde, come su comida." },
+        { "en": "Rocky is my best friend.", "es": "Rocky es mi mejor amigo." }
+      ],
+      "glossary": [
+        { "en": "dog", "es": "perro" },
+        { "en": "small", "es": "pequeño" },
+        { "en": "morning", "es": "mañana" },
+        { "en": "park", "es": "parque" },
+        { "en": "run", "es": "correr" },
+        { "en": "friend", "es": "amigo" }
+      ],
+      "questions": [
+        { "q": "What is the dog's name?", "options": ["Rocky", "Max", "Bo"], "answer": "Rocky" },
+        { "q": "What color is the dog?", "options": ["Black", "Brown", "White"], "answer": "Brown" },
+        { "q": "Where do they go together?", "options": ["To school", "To the park", "To the store"], "answer": "To the park" }
+      ]
+    },
+    {
+      "id": "s_a2_3",
+      "level": "A2",
+      "emoji": "🎂",
+      "title": "A Surprise Party",
+      "title_es": "Una fiesta sorpresa",
+      "summary_es": "Los amigos preparan una fiesta sorpresa para Sara.",
+      "sentences": [
+        { "en": "Last Friday, we planned a surprise party for Sara.", "es": "El viernes pasado, planeamos una fiesta sorpresa para Sara." },
+        { "en": "We decorated the house and bought a big cake.", "es": "Decoramos la casa y compramos un pastel grande." },
+        { "en": "Everyone arrived early and stayed quiet.", "es": "Todos llegaron temprano y se quedaron callados." },
+        { "en": "When Sara opened the door, we shouted 'Surprise!'", "es": "Cuando Sara abrió la puerta, gritamos '¡Sorpresa!'" },
+        { "en": "She was very happy and a little surprised.", "es": "Estaba muy feliz y un poco sorprendida." },
+        { "en": "We danced and ate cake all night.", "es": "Bailamos y comimos pastel toda la noche." },
+        { "en": "It was a wonderful evening.", "es": "Fue una velada maravillosa." }
+      ],
+      "glossary": [
+        { "en": "surprise", "es": "sorpresa" },
+        { "en": "party", "es": "fiesta" },
+        { "en": "decorated", "es": "decoramos" },
+        { "en": "cake", "es": "pastel" },
+        { "en": "quiet", "es": "callado" },
+        { "en": "danced", "es": "bailamos" }
+      ],
+      "questions": [
+        { "q": "Who was the party for?", "options": ["Sara", "Pedro", "Ana"], "answer": "Sara" },
+        { "q": "What did they buy?", "options": ["A big cake", "Flowers", "A gift card"], "answer": "A big cake" },
+        { "q": "How did Sara feel?", "options": ["Angry", "Happy and surprised", "Bored"], "answer": "Happy and surprised" }
+      ]
+    },
+    {
+      "id": "s_b2_2",
+      "level": "B2",
+      "emoji": "🌱",
+      "title": "The Small Change",
+      "title_es": "El pequeño cambio",
+      "summary_es": "Una comunidad transforma su barrio con pequeñas acciones.",
+      "sentences": [
+        { "en": "When the residents noticed how polluted their street had become, they decided to act.", "es": "Cuando los residentes notaron lo contaminada que se había vuelto su calle, decidieron actuar." },
+        { "en": "Rather than waiting for the government, they organized themselves.", "es": "En lugar de esperar al gobierno, se organizaron." },
+        { "en": "Every weekend, volunteers collected waste and planted trees.", "es": "Cada fin de semana, los voluntarios recogían residuos y plantaban árboles." },
+        { "en": "At first, progress was slow and some neighbors were skeptical.", "es": "Al principio, el progreso era lento y algunos vecinos eran escépticos." },
+        { "en": "Nevertheless, within a year the neighborhood had completely changed.", "es": "No obstante, en un año el barrio había cambiado por completo." },
+        { "en": "The project proved that small, consistent actions can have a big impact.", "es": "El proyecto demostró que las acciones pequeñas y constantes pueden tener un gran impacto." },
+        { "en": "Today, other communities use it as an example to follow.", "es": "Hoy, otras comunidades lo usan como un ejemplo a seguir." }
+      ],
+      "glossary": [
+        { "en": "polluted", "es": "contaminada" },
+        { "en": "volunteers", "es": "voluntarios" },
+        { "en": "waste", "es": "residuos" },
+        { "en": "skeptical", "es": "escéptico" },
+        { "en": "impact", "es": "impacto" },
+        { "en": "community", "es": "comunidad" }
+      ],
+      "questions": [
+        { "q": "What did the residents decide to do?", "options": ["Wait for the government", "Act themselves", "Move away"], "answer": "Act themselves" },
+        { "q": "What did the volunteers do?", "options": ["Collected waste and planted trees", "Built houses", "Opened shops"], "answer": "Collected waste and planted trees" },
+        { "q": "What did the project prove?", "options": ["Small actions have a big impact", "Nothing changes", "Only money matters"], "answer": "Small actions have a big impact" }
+      ]
     }
   ]
 }

@@ -184,6 +184,216 @@
         "We are happy about the news."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Money & Banking / Dinero y banca",
+      "vocabulary": [
+        { "en": "Cash", "es": "Efectivo" },
+        { "en": "Credit card", "es": "Tarjeta de crédito" },
+        { "en": "Account", "es": "Cuenta" },
+        { "en": "Save", "es": "Ahorrar" },
+        { "en": "Spend", "es": "Gastar" },
+        { "en": "Borrow", "es": "Pedir prestado" },
+        { "en": "Lend", "es": "Prestar" },
+        { "en": "Loan", "es": "Préstamo" },
+        { "en": "Bill", "es": "Factura" },
+        { "en": "Budget", "es": "Presupuesto" },
+        { "en": "Income", "es": "Ingresos" },
+        { "en": "Afford", "es": "Permitirse" }
+      ],
+      "grammar": {
+        "rule": "too / enough",
+        "explanation_es": "'too' = demasiado (too expensive); 'enough' = suficiente (cheap enough, enough money).",
+        "examples": ["It is too expensive for me.", "I don't have enough money.", "Can you lend me some cash?", "We need to save more.", "I can't afford a new car."]
+      },
+      "sentences": [
+        "I don't have enough money.",
+        "It is too expensive for me.",
+        "Can you lend me some cash?",
+        "We need to save every month."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Relationships / Relaciones",
+      "vocabulary": [
+        { "en": "Friend", "es": "Amigo" },
+        { "en": "Partner", "es": "Pareja" },
+        { "en": "Neighbor", "es": "Vecino" },
+        { "en": "Trust", "es": "Confiar" },
+        { "en": "Argue", "es": "Discutir" },
+        { "en": "Apologize", "es": "Disculparse" },
+        { "en": "Promise", "es": "Prometer" },
+        { "en": "Support", "es": "Apoyar" },
+        { "en": "Meet", "es": "Conocer / Quedar" },
+        { "en": "Get along", "es": "Llevarse bien" },
+        { "en": "Couple", "es": "Pareja (dos)" },
+        { "en": "Advice", "es": "Consejo" }
+      ],
+      "grammar": {
+        "rule": "used to (past habits)",
+        "explanation_es": "'used to' describe hábitos o estados del pasado que ya no ocurren: 'We used to be friends'.",
+        "examples": ["We used to be close friends.", "I trust my partner.", "They always get along well.", "He apologized to his neighbor.", "She gave me good advice."]
+      },
+      "sentences": [
+        "We used to be close friends.",
+        "They always get along well.",
+        "He apologized for the argument.",
+        "She gave me very good advice."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "City Life / La vida en la ciudad",
+      "vocabulary": [
+        { "en": "Neighborhood", "es": "Barrio" },
+        { "en": "Building", "es": "Edificio" },
+        { "en": "Traffic", "es": "Tráfico" },
+        { "en": "Crowd", "es": "Multitud" },
+        { "en": "Square", "es": "Plaza" },
+        { "en": "Library", "es": "Biblioteca" },
+        { "en": "Hospital", "es": "Hospital" },
+        { "en": "Market", "es": "Mercado" },
+        { "en": "Bridge", "es": "Puente" },
+        { "en": "Sidewalk", "es": "Acera" },
+        { "en": "Noise", "es": "Ruido" },
+        { "en": "Public", "es": "Público" }
+      ],
+      "grammar": {
+        "rule": "Comparatives & superlatives",
+        "explanation_es": "Superlativo: 'the + adjetivo + -est' o 'the most': 'the biggest city', 'the most crowded square'.",
+        "examples": ["This is the biggest building in the city.", "The traffic is worse today.", "It is the most crowded square.", "My neighborhood is quieter.", "This is the best market."]
+      },
+      "sentences": [
+        "This is the biggest building here.",
+        "The traffic is worse on Mondays.",
+        "My neighborhood is very quiet.",
+        "It is the best market in town."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u10",
+      "title": "Media & Entertainment / Medios y entretenimiento",
+      "vocabulary": [
+        { "en": "Movie", "es": "Película" },
+        { "en": "Series", "es": "Serie" },
+        { "en": "News", "es": "Noticias" },
+        { "en": "Actor", "es": "Actor" },
+        { "en": "Audience", "es": "Público / Audiencia" },
+        { "en": "Channel", "es": "Canal" },
+        { "en": "Episode", "es": "Episodio" },
+        { "en": "Review", "es": "Reseña" },
+        { "en": "Concert", "es": "Concierto" },
+        { "en": "Stage", "es": "Escenario" },
+        { "en": "Plot", "es": "Trama" },
+        { "en": "Funny", "es": "Divertido" }
+      ],
+      "grammar": {
+        "rule": "so / such",
+        "explanation_es": "'so' + adjetivo (so funny); 'such' + (a) + sustantivo (such a good movie).",
+        "examples": ["The movie was so funny.", "It was such a good series.", "The plot is so exciting.", "I read a great review.", "The concert was amazing."]
+      },
+      "sentences": [
+        "The movie was so funny.",
+        "It was such a good series.",
+        "The plot is really exciting.",
+        "I read a great review online."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Education / Educación",
+      "vocabulary": [
+        { "en": "Subject", "es": "Asignatura" },
+        { "en": "Lesson", "es": "Lección" },
+        { "en": "Homework", "es": "Tarea" },
+        { "en": "Exam", "es": "Examen" },
+        { "en": "Grade", "es": "Calificación" },
+        { "en": "Teacher", "es": "Profesor" },
+        { "en": "Student", "es": "Estudiante" },
+        { "en": "University", "es": "Universidad" },
+        { "en": "Knowledge", "es": "Conocimiento" },
+        { "en": "Learn", "es": "Aprender" },
+        { "en": "Mistake", "es": "Error" },
+        { "en": "Improve", "es": "Mejorar" }
+      ],
+      "grammar": {
+        "rule": "have to / must (obligation)",
+        "explanation_es": "'have to' y 'must' expresan obligación: 'I have to study', 'You must do your homework'.",
+        "examples": ["I have to study for the exam.", "You must do your homework.", "She has to improve her grades.", "We must not be late.", "Everyone makes mistakes."]
+      },
+      "sentences": [
+        "I have to study for the exam.",
+        "You must do your homework.",
+        "We learn from our mistakes.",
+        "She wants to improve her English."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Common Phrasal Verbs / Verbos compuestos",
+      "vocabulary": [
+        { "en": "Wake up", "es": "Despertarse" },
+        { "en": "Get up", "es": "Levantarse" },
+        { "en": "Turn on", "es": "Encender" },
+        { "en": "Turn off", "es": "Apagar" },
+        { "en": "Look for", "es": "Buscar" },
+        { "en": "Give up", "es": "Rendirse" },
+        { "en": "Find out", "es": "Averiguar" },
+        { "en": "Pick up", "es": "Recoger" },
+        { "en": "Put on", "es": "Ponerse" },
+        { "en": "Take off", "es": "Quitarse / Despegar" },
+        { "en": "Come back", "es": "Regresar" },
+        { "en": "Go on", "es": "Continuar" }
+      ],
+      "grammar": {
+        "rule": "Phrasal verbs",
+        "explanation_es": "Verbo + partícula con significado propio: 'turn on' (encender), 'give up' (rendirse). Muy comunes al hablar.",
+        "examples": ["Please turn on the light.", "Don't give up!", "I need to look for my keys.", "She will pick up the kids.", "Turn off your phone."]
+      },
+      "sentences": [
+        "Please turn on the light.",
+        "Don't give up so easily.",
+        "I need to look for my keys.",
+        "She will pick up the kids later."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Environment / Medio ambiente",
+      "vocabulary": [
+        { "en": "Nature", "es": "Naturaleza" },
+        { "en": "Recycle", "es": "Reciclar" },
+        { "en": "Pollution", "es": "Contaminación" },
+        { "en": "Plastic", "es": "Plástico" },
+        { "en": "Energy", "es": "Energía" },
+        { "en": "Climate", "es": "Clima" },
+        { "en": "Planet", "es": "Planeta" },
+        { "en": "Protect", "es": "Proteger" },
+        { "en": "Save", "es": "Salvar / Ahorrar" },
+        { "en": "Waste", "es": "Desperdicio" },
+        { "en": "Clean", "es": "Limpio" },
+        { "en": "Damage", "es": "Daño" }
+      ],
+      "grammar": {
+        "rule": "First Conditional",
+        "explanation_es": "Para situaciones reales del futuro: 'If we recycle, we will protect the planet'. (If + presente, will + base).",
+        "examples": ["If we recycle, we will help the planet.", "If you waste water, it will run out.", "We must protect nature.", "Pollution damages the climate.", "If everyone helps, we will save energy."]
+      },
+      "sentences": [
+        "If we recycle we will help the planet.",
+        "We must protect nature now.",
+        "Pollution damages our climate.",
+        "If everyone helps we save energy."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }

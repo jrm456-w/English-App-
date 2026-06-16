@@ -244,6 +244,150 @@
         "examples": ["I like apples.", "I want some bread.", "She likes tea.", "We want coffee.", "Do you like rice?"]
       },
       "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u11",
+      "title": "The Body / El cuerpo",
+      "vocabulary": [
+        { "en": "Head", "es": "Cabeza" },
+        { "en": "Hair", "es": "Cabello" },
+        { "en": "Eye", "es": "Ojo" },
+        { "en": "Nose", "es": "Nariz" },
+        { "en": "Mouth", "es": "Boca" },
+        { "en": "Ear", "es": "Oreja" },
+        { "en": "Hand", "es": "Mano" },
+        { "en": "Arm", "es": "Brazo" },
+        { "en": "Leg", "es": "Pierna" },
+        { "en": "Foot", "es": "Pie" },
+        { "en": "Heart", "es": "Corazón" },
+        { "en": "Face", "es": "Cara" }
+      ],
+      "grammar": {
+        "rule": "have / has for description",
+        "explanation_es": "Usamos 'have/has' para describir: 'She has blue eyes', 'I have long hair'.",
+        "examples": ["She has blue eyes.", "I have long hair.", "He has big hands.", "They have brown eyes.", "My head hurts."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u12",
+      "title": "Clothes / La ropa",
+      "vocabulary": [
+        { "en": "Shirt", "es": "Camisa" },
+        { "en": "Pants", "es": "Pantalones" },
+        { "en": "Dress", "es": "Vestido" },
+        { "en": "Shoes", "es": "Zapatos" },
+        { "en": "Hat", "es": "Sombrero" },
+        { "en": "Jacket", "es": "Chaqueta" },
+        { "en": "Socks", "es": "Calcetines" },
+        { "en": "Skirt", "es": "Falda" },
+        { "en": "Coat", "es": "Abrigo" },
+        { "en": "Glasses", "es": "Gafas" },
+        { "en": "Watch", "es": "Reloj" },
+        { "en": "Bag", "es": "Bolsa" }
+      ],
+      "grammar": {
+        "rule": "to wear / to put on",
+        "explanation_es": "'wear' = llevar puesto; 'put on' = ponerse. 'She is wearing a red dress'.",
+        "examples": ["She is wearing a dress.", "I wear glasses.", "He puts on his jacket.", "They wear shoes.", "Put on your coat."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u13",
+      "title": "Animals / Animales",
+      "vocabulary": [
+        { "en": "Dog", "es": "Perro" },
+        { "en": "Cat", "es": "Gato" },
+        { "en": "Bird", "es": "Pájaro" },
+        { "en": "Fish", "es": "Pez" },
+        { "en": "Horse", "es": "Caballo" },
+        { "en": "Cow", "es": "Vaca" },
+        { "en": "Pig", "es": "Cerdo" },
+        { "en": "Chicken", "es": "Gallina" },
+        { "en": "Rabbit", "es": "Conejo" },
+        { "en": "Mouse", "es": "Ratón" },
+        { "en": "Lion", "es": "León" },
+        { "en": "Bear", "es": "Oso" }
+      ],
+      "grammar": {
+        "rule": "Plural nouns (-s / -es)",
+        "explanation_es": "Para el plural añadimos -s (dogs) o -es tras s/x/ch (boxes). Algunos son irregulares (mouse → mice).",
+        "examples": ["I have two dogs.", "The cats are sleeping.", "Birds can fly.", "There are three horses.", "She likes animals."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u14",
+      "title": "Weather & Seasons / Clima y estaciones",
+      "vocabulary": [
+        { "en": "Sun", "es": "Sol" },
+        { "en": "Rain", "es": "Lluvia" },
+        { "en": "Snow", "es": "Nieve" },
+        { "en": "Wind", "es": "Viento" },
+        { "en": "Cloud", "es": "Nube" },
+        { "en": "Hot", "es": "Caluroso" },
+        { "en": "Cold", "es": "Frío" },
+        { "en": "Warm", "es": "Cálido" },
+        { "en": "Summer", "es": "Verano" },
+        { "en": "Winter", "es": "Invierno" },
+        { "en": "Spring", "es": "Primavera" },
+        { "en": "Autumn", "es": "Otoño" }
+      ],
+      "grammar": {
+        "rule": "It is + weather",
+        "explanation_es": "Para el clima usamos 'It is': 'It is sunny', 'It is cold today'.",
+        "examples": ["It is sunny today.", "It is raining.", "It is very cold.", "I like summer.", "It is hot in July."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u15",
+      "title": "The House / La casa",
+      "vocabulary": [
+        { "en": "Kitchen", "es": "Cocina" },
+        { "en": "Bedroom", "es": "Dormitorio" },
+        { "en": "Bathroom", "es": "Baño" },
+        { "en": "Living room", "es": "Sala de estar" },
+        { "en": "Floor", "es": "Suelo" },
+        { "en": "Wall", "es": "Pared" },
+        { "en": "Roof", "es": "Techo" },
+        { "en": "Garden", "es": "Jardín" },
+        { "en": "Stairs", "es": "Escaleras" },
+        { "en": "Lamp", "es": "Lámpara" },
+        { "en": "Mirror", "es": "Espejo" },
+        { "en": "Clock", "es": "Reloj (de pared)" }
+      ],
+      "grammar": {
+        "rule": "There is / There are (rooms)",
+        "explanation_es": "Describimos la casa con 'there is/are': 'There is a kitchen', 'There are two bedrooms'.",
+        "examples": ["There is a big kitchen.", "There are two bathrooms.", "The bedroom is upstairs.", "We have a garden.", "The living room is large."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u16",
+      "title": "Question Words / Palabras de pregunta",
+      "vocabulary": [
+        { "en": "What", "es": "Qué" },
+        { "en": "Who", "es": "Quién" },
+        { "en": "Where", "es": "Dónde" },
+        { "en": "When", "es": "Cuándo" },
+        { "en": "Why", "es": "Por qué" },
+        { "en": "How", "es": "Cómo" },
+        { "en": "Which", "es": "Cuál" },
+        { "en": "How much", "es": "Cuánto" },
+        { "en": "How many", "es": "Cuántos" },
+        { "en": "Whose", "es": "De quién" },
+        { "en": "What time", "es": "A qué hora" },
+        { "en": "How old", "es": "Qué edad" }
+      ],
+      "grammar": {
+        "rule": "Questions with question words",
+        "explanation_es": "La pregunta empieza con la palabra interrogativa + auxiliar: 'Where do you live?', 'What is this?'.",
+        "examples": ["What is your name?", "Where do you live?", "How are you?", "Why are you sad?", "When is the class?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
     }
   ]
 }

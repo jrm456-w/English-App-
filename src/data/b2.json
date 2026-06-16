@@ -164,6 +164,231 @@
         "We should recycle more at home."
       ],
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Business & Economy / Negocios y economía",
+      "vocabulary": [
+        { "en": "Company", "es": "Empresa" },
+        { "en": "Profit", "es": "Ganancia" },
+        { "en": "Loss", "es": "Pérdida" },
+        { "en": "Customer", "es": "Cliente" },
+        { "en": "Market", "es": "Mercado" },
+        { "en": "Investment", "es": "Inversión" },
+        { "en": "Competition", "es": "Competencia" },
+        { "en": "Brand", "es": "Marca" },
+        { "en": "Demand", "es": "Demanda" },
+        { "en": "Supply", "es": "Oferta / Suministro" },
+        { "en": "Revenue", "es": "Ingresos" },
+        { "en": "Launch", "es": "Lanzar" }
+      ],
+      "grammar": {
+        "rule": "Modals of deduction (must/might/can't)",
+        "explanation_es": "Para deducir: 'must be' (debe de ser, casi seguro), 'might be' (podría ser), 'can't be' (no puede ser).",
+        "examples": ["The company must be doing well.", "They might launch a new product.", "It can't be a coincidence.", "Demand might increase next year.", "The investment must have paid off."]
+      },
+      "story": {
+        "text": "The startup decided to ___ a new product to gain ___ . At first, they faced strong ___ from bigger companies. However, growing ___ for the product increased their ___ within a year.",
+        "answers": ["launch", "customers", "competition", "demand", "revenue"],
+        "bank": ["launch", "customers", "competition", "demand", "revenue", "profit", "brand"]
+      },
+      "sentences": [
+        "The company must be doing well.",
+        "They might launch a new product.",
+        "Demand for the brand is growing.",
+        "The investment finally paid off."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Science / Ciencia",
+      "vocabulary": [
+        { "en": "Research", "es": "Investigación" },
+        { "en": "Experiment", "es": "Experimento" },
+        { "en": "Theory", "es": "Teoría" },
+        { "en": "Evidence", "es": "Evidencia" },
+        { "en": "Data", "es": "Datos" },
+        { "en": "Discovery", "es": "Descubrimiento" },
+        { "en": "Cell", "es": "Célula" },
+        { "en": "Brain", "es": "Cerebro" },
+        { "en": "Disease", "es": "Enfermedad" },
+        { "en": "Cure", "es": "Cura" },
+        { "en": "Measure", "es": "Medir" },
+        { "en": "Prove", "es": "Probar / Demostrar" }
+      ],
+      "grammar": {
+        "rule": "Passive in reporting research",
+        "explanation_es": "La ciencia usa pasiva impersonal: 'It is believed that...', 'The data were collected...'.",
+        "examples": ["The experiment was carefully designed.", "It is believed that exercise improves the brain.", "The data were collected over five years.", "New evidence supports the theory.", "The cure has not been found yet."]
+      },
+      "story": {
+        "text": "After years of ___ , the team made an important ___ . Their ___ was based on solid ___ collected from thousands of patients. The results may help scientists find a ___ for the disease.",
+        "answers": ["research", "discovery", "theory", "evidence", "cure"],
+        "bank": ["research", "discovery", "theory", "evidence", "cure", "data", "experiment"]
+      },
+      "sentences": [
+        "The experiment was carefully designed.",
+        "New evidence supports the theory.",
+        "The data were collected over years.",
+        "They are looking for a cure."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Law & Crime / Ley y delito",
+      "vocabulary": [
+        { "en": "Law", "es": "Ley" },
+        { "en": "Crime", "es": "Delito" },
+        { "en": "Court", "es": "Tribunal" },
+        { "en": "Judge", "es": "Juez" },
+        { "en": "Lawyer", "es": "Abogado" },
+        { "en": "Witness", "es": "Testigo" },
+        { "en": "Guilty", "es": "Culpable" },
+        { "en": "Innocent", "es": "Inocente" },
+        { "en": "Evidence", "es": "Pruebas" },
+        { "en": "Punishment", "es": "Castigo" },
+        { "en": "Arrest", "es": "Arrestar" },
+        { "en": "Trial", "es": "Juicio" }
+      ],
+      "grammar": {
+        "rule": "Third Conditional",
+        "explanation_es": "Para hipótesis del pasado: 'If he had told the truth, he wouldn't have been arrested'. (If + had + participio, would have + participio).",
+        "examples": ["If he had told the truth, he wouldn't have been arrested.", "The judge found her innocent.", "There wasn't enough evidence.", "The witness saw the crime.", "He should have called a lawyer."]
+      },
+      "story": {
+        "text": "The ___ examined all the ___ before the ___ began. A key ___ described what happened that night. In the end, the jury found the man not ___ .",
+        "answers": ["judge", "evidence", "trial", "witness", "guilty"],
+        "bank": ["judge", "evidence", "trial", "witness", "guilty", "court", "innocent"]
+      },
+      "sentences": [
+        "The judge found her innocent.",
+        "There wasn't enough evidence.",
+        "The witness saw the whole crime.",
+        "He should have called a lawyer."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "Personality / Personalidad",
+      "vocabulary": [
+        { "en": "Honest", "es": "Honesto" },
+        { "en": "Generous", "es": "Generoso" },
+        { "en": "Ambitious", "es": "Ambicioso" },
+        { "en": "Reliable", "es": "Confiable" },
+        { "en": "Stubborn", "es": "Terco" },
+        { "en": "Patient", "es": "Paciente" },
+        { "en": "Selfish", "es": "Egoísta" },
+        { "en": "Brave", "es": "Valiente" },
+        { "en": "Polite", "es": "Educado" },
+        { "en": "Hardworking", "es": "Trabajador" },
+        { "en": "Cheerful", "es": "Alegre" },
+        { "en": "Thoughtful", "es": "Considerado" }
+      ],
+      "grammar": {
+        "rule": "Adjective order & intensifiers",
+        "explanation_es": "Intensificamos con 'really', 'quite', 'extremely': 'She is extremely reliable', 'quite stubborn'.",
+        "examples": ["She is extremely reliable.", "He can be quite stubborn.", "They are very generous people.", "Be polite to everyone.", "He is a hardworking student."]
+      },
+      "sentences": [
+        "She is extremely reliable.",
+        "He can be quite stubborn.",
+        "They are very generous people.",
+        "Be polite and patient with others."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u10",
+      "title": "Advanced Phrasal Verbs / Verbos compuestos avanzados",
+      "vocabulary": [
+        { "en": "Put up with", "es": "Tolerar / Aguantar" },
+        { "en": "Come up with", "es": "Idear / Proponer" },
+        { "en": "Look forward to", "es": "Esperar con ganas" },
+        { "en": "Get along with", "es": "Llevarse bien con" },
+        { "en": "Run out of", "es": "Quedarse sin" },
+        { "en": "Take after", "es": "Parecerse a" },
+        { "en": "Bring up", "es": "Mencionar / Criar" },
+        { "en": "Carry out", "es": "Llevar a cabo" },
+        { "en": "Turn down", "es": "Rechazar" },
+        { "en": "Point out", "es": "Señalar" },
+        { "en": "Set up", "es": "Establecer / Montar" },
+        { "en": "Work out", "es": "Resolver / Ejercitarse" }
+      ],
+      "grammar": {
+        "rule": "Multi-word phrasal verbs",
+        "explanation_es": "Algunos phrasal verbs llevan dos partículas: 'look forward to', 'put up with'. Tras 'to' va -ing.",
+        "examples": ["I look forward to hearing from you.", "She came up with a great idea.", "We ran out of time.", "He takes after his father.", "They carried out the plan."]
+      },
+      "sentences": [
+        "I look forward to hearing from you.",
+        "She came up with a great idea.",
+        "We ran out of time yesterday.",
+        "He takes after his father."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Politics & Society / Política y sociedad",
+      "vocabulary": [
+        { "en": "Citizen", "es": "Ciudadano" },
+        { "en": "Rights", "es": "Derechos" },
+        { "en": "Equality", "es": "Igualdad" },
+        { "en": "Freedom", "es": "Libertad" },
+        { "en": "Vote", "es": "Votar" },
+        { "en": "Leader", "es": "Líder" },
+        { "en": "Community", "es": "Comunidad" },
+        { "en": "Justice", "es": "Justicia" },
+        { "en": "Poverty", "es": "Pobreza" },
+        { "en": "Welfare", "es": "Bienestar" },
+        { "en": "Debate", "es": "Debate" },
+        { "en": "Majority", "es": "Mayoría" }
+      ],
+      "grammar": {
+        "rule": "Expressing necessity & importance",
+        "explanation_es": "'It is essential/important that...', 'There is a need to...': para subrayar lo necesario.",
+        "examples": ["It is essential that everyone votes.", "Citizens have rights and duties.", "We must fight for equality.", "Justice should be for all.", "The majority supported the reform."]
+      },
+      "sentences": [
+        "It is essential that everyone votes.",
+        "Citizens have rights and duties.",
+        "We must fight for equality.",
+        "Justice should be for everyone."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Health & Lifestyle / Salud y estilo de vida",
+      "vocabulary": [
+        { "en": "Diet", "es": "Dieta" },
+        { "en": "Exercise", "es": "Ejercicio" },
+        { "en": "Stress", "es": "Estrés" },
+        { "en": "Habit", "es": "Hábito" },
+        { "en": "Sleep", "es": "Sueño / Dormir" },
+        { "en": "Balance", "es": "Equilibrio" },
+        { "en": "Mental health", "es": "Salud mental" },
+        { "en": "Wellbeing", "es": "Bienestar" },
+        { "en": "Avoid", "es": "Evitar" },
+        { "en": "Quit", "es": "Dejar (un hábito)" },
+        { "en": "Routine", "es": "Rutina" },
+        { "en": "Fit", "es": "En forma" }
+      ],
+      "grammar": {
+        "rule": "Verbs + gerund / infinitive",
+        "explanation_es": "Algunos verbos llevan -ing (avoid eating), otros 'to' (decide to quit). 'stop doing' vs 'stop to do' cambian de sentido.",
+        "examples": ["You should avoid eating late.", "He decided to quit smoking.", "She enjoys exercising daily.", "Try to reduce stress.", "I want to keep fit."]
+      },
+      "sentences": [
+        "You should avoid eating late.",
+        "He decided to quit smoking.",
+        "Try to reduce your stress.",
+        "A good routine improves wellbeing."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
     }
   ]
 }
