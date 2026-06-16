@@ -1,0 +1,87 @@
+{
+  "level": "B1",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Travel / Viajes",
+      "vocabulary": [
+        { "en": "Airport", "es": "Aeropuerto" },
+        { "en": "Flight", "es": "Vuelo" },
+        { "en": "Luggage", "es": "Equipaje" },
+        { "en": "Passport", "es": "Pasaporte" },
+        { "en": "Booking", "es": "Reserva" },
+        { "en": "Departure", "es": "Salida" },
+        { "en": "Arrival", "es": "Llegada" },
+        { "en": "Abroad", "es": "En el extranjero" }
+      ],
+      "grammar": {
+        "rule": "Present Perfect (have/has + past participle)",
+        "explanation_es": "Usamos el present perfect para experiencias y acciones recientes: 'I have visited Paris', 'She has lost her passport'.",
+        "examples": ["I have visited Paris twice.", "She has lost her passport.", "Have you ever flown abroad?", "We have already booked the flight."]
+      },
+      "fill": [
+        { "sentence": "I have ___ to Paris twice.", "answer": "been", "options": ["go", "went", "going"] },
+        { "sentence": "She has ___ her passport.", "answer": "lost", "options": ["lose", "losing", "loses"] }
+      ],
+      "sentences": [
+        "I have visited Paris twice.",
+        "She has lost her passport.",
+        "We have already booked the flight.",
+        "Have you ever travelled abroad?"
+      ],
+      "games": ["fill_blank", "flashcard", "listening_echo", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Health / La salud",
+      "vocabulary": [
+        { "en": "Headache", "es": "Dolor de cabeza" },
+        { "en": "Fever", "es": "Fiebre" },
+        { "en": "Medicine", "es": "Medicina" },
+        { "en": "Appointment", "es": "Cita" },
+        { "en": "Symptom", "es": "Síntoma" },
+        { "en": "Healthy", "es": "Saludable" },
+        { "en": "Pain", "es": "Dolor" },
+        { "en": "Rest", "es": "Descansar" }
+      ],
+      "grammar": {
+        "rule": "Should / Shouldn't for advice",
+        "explanation_es": "Usamos 'should' para dar consejos: 'You should rest', 'You shouldn't work so much'.",
+        "examples": ["You should rest more.", "You shouldn't eat junk food.", "She should see a doctor.", "We should drink more water."]
+      },
+      "sentences": [
+        "You should rest more.",
+        "She should see a doctor.",
+        "You shouldn't eat junk food.",
+        "We should drink more water."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u3",
+      "title": "Opinions / Opiniones",
+      "vocabulary": [
+        { "en": "I think", "es": "Creo que" },
+        { "en": "I agree", "es": "Estoy de acuerdo" },
+        { "en": "I disagree", "es": "No estoy de acuerdo" },
+        { "en": "In my opinion", "es": "En mi opinión" },
+        { "en": "However", "es": "Sin embargo" },
+        { "en": "Probably", "es": "Probablemente" },
+        { "en": "Maybe", "es": "Tal vez" },
+        { "en": "Of course", "es": "Por supuesto" }
+      ],
+      "grammar": {
+        "rule": "Linking opinions",
+        "explanation_es": "Conectamos ideas con palabras como 'because', 'however', 'so': 'I think so because it is cheaper'.",
+        "examples": ["In my opinion, reading is important.", "I agree with you.", "However, it is expensive.", "I think it will probably rain."]
+      },
+      "sentences": [
+        "In my opinion reading is important.",
+        "I agree with you completely.",
+        "I think it will probably rain.",
+        "However it is too expensive."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    }
+  ]
+}

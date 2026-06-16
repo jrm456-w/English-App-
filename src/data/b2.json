@@ -1,0 +1,87 @@
+{
+  "level": "B2",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Current Events / Actualidad",
+      "vocabulary": [
+        { "en": "Headline", "es": "Titular" },
+        { "en": "Economy", "es": "Economía" },
+        { "en": "Government", "es": "Gobierno" },
+        { "en": "Election", "es": "Elección" },
+        { "en": "Climate", "es": "Clima" },
+        { "en": "Issue", "es": "Asunto/Problema" },
+        { "en": "Policy", "es": "Política (medida)" },
+        { "en": "Society", "es": "Sociedad" }
+      ],
+      "grammar": {
+        "rule": "Passive Voice",
+        "explanation_es": "La voz pasiva enfatiza la acción sobre quién la hace: 'The law was passed', 'A decision has been made'.",
+        "examples": ["The new law was passed yesterday.", "A decision has been made.", "Taxes will be raised next year.", "The report is being reviewed."]
+      },
+      "story": {
+        "text": "The government announced a new ___ to reduce pollution. The decision was ___ after months of debate. Many citizens believe it will improve the ___ . However, some experts remain ___ about the long-term effects on the ___ .",
+        "answers": ["policy", "made", "climate", "skeptical", "economy"],
+        "bank": ["policy", "made", "climate", "skeptical", "economy", "headline", "election"]
+      },
+      "sentences": [
+        "The new law was passed yesterday.",
+        "A decision has been made.",
+        "Taxes will be raised next year.",
+        "The report is being reviewed carefully."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Conditionals / Condicionales",
+      "vocabulary": [
+        { "en": "If", "es": "Si" },
+        { "en": "Would", "es": "Haría/Sería" },
+        { "en": "Unless", "es": "A menos que" },
+        { "en": "Otherwise", "es": "De lo contrario" },
+        { "en": "Provided that", "es": "Siempre que" },
+        { "en": "In case", "es": "En caso de" },
+        { "en": "As long as", "es": "Mientras que" },
+        { "en": "Were", "es": "Fuera/Estuviera" }
+      ],
+      "grammar": {
+        "rule": "Second Conditional",
+        "explanation_es": "Para situaciones hipotéticas: 'If I were rich, I would travel'. Usamos 'were' para todas las personas.",
+        "examples": ["If I were rich, I would travel the world.", "If she studied more, she would pass.", "I wouldn't do that unless it was necessary.", "We would help if we could."]
+      },
+      "story": {
+        "text": "If I ___ more time, I would learn three languages. I ___ travel to many countries and meet new people. Unless we ___ harder, we will not improve. ___ that you practice every day, fluency is possible. As long as you stay ___ , you will succeed.",
+        "answers": ["had", "would", "work", "Provided", "motivated"],
+        "bank": ["had", "would", "work", "Provided", "motivated", "unless", "otherwise"]
+      },
+      "sentences": [
+        "If I were rich I would travel the world.",
+        "We would help if we could.",
+        "If she studied more she would pass.",
+        "I wouldn't do that unless necessary."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u3",
+      "title": "Idioms / Modismos",
+      "vocabulary": [
+        { "en": "A piece of cake", "es": "Pan comido" },
+        { "en": "Break a leg", "es": "Mucha suerte" },
+        { "en": "Hit the books", "es": "Ponerse a estudiar" },
+        { "en": "Under the weather", "es": "Indispuesto" },
+        { "en": "Once in a blue moon", "es": "Muy de vez en cuando" },
+        { "en": "Cost an arm and a leg", "es": "Costar un ojo de la cara" },
+        { "en": "Spill the beans", "es": "Revelar un secreto" },
+        { "en": "Hang in there", "es": "Aguanta/Resiste" }
+      ],
+      "grammar": {
+        "rule": "Using idioms naturally",
+        "explanation_es": "Los modismos no se traducen literalmente. Apréndelos como bloques fijos y úsalos en contexto.",
+        "examples": ["The exam was a piece of cake.", "Good luck! Break a leg!", "I need to hit the books tonight.", "I'm feeling under the weather today."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    }
+  ]
+}

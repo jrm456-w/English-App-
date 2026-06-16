@@ -1,0 +1,95 @@
+{
+  "level": "A2",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Daily Routines / Rutinas",
+      "vocabulary": [
+        { "en": "Wake up", "es": "Despertarse" },
+        { "en": "Breakfast", "es": "Desayuno" },
+        { "en": "Work", "es": "Trabajar" },
+        { "en": "Lunch", "es": "Almuerzo" },
+        { "en": "Study", "es": "Estudiar" },
+        { "en": "Sleep", "es": "Dormir" },
+        { "en": "Shower", "es": "Ducharse" },
+        { "en": "Dinner", "es": "Cena" }
+      ],
+      "grammar": {
+        "rule": "Present Simple – He/She/It (+s)",
+        "explanation_es": "Con he/she/it añadimos -s al verbo: 'She works', 'He studies'.",
+        "examples": ["She wakes up at seven.", "He works in an office.", "It rains in winter.", "My mother cooks dinner."]
+      },
+      "fill": [
+        { "sentence": "She ___ up at seven.", "answer": "wakes", "options": ["wake", "waking", "woke"] },
+        { "sentence": "He ___ in an office.", "answer": "works", "options": ["work", "working", "worked"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Food / La comida",
+      "vocabulary": [
+        { "en": "Bread", "es": "Pan" },
+        { "en": "Cheese", "es": "Queso" },
+        { "en": "Apple", "es": "Manzana" },
+        { "en": "Water", "es": "Agua" },
+        { "en": "Milk", "es": "Leche" },
+        { "en": "Meat", "es": "Carne" },
+        { "en": "Rice", "es": "Arroz" },
+        { "en": "Vegetables", "es": "Verduras" }
+      ],
+      "grammar": {
+        "rule": "Countable & Uncountable (some/any)",
+        "explanation_es": "Usamos 'some' en afirmativas y 'any' en negativas/preguntas: 'I have some bread', 'I don't have any milk'.",
+        "examples": ["I have some bread.", "There isn't any milk.", "Do you want some water?", "We need some rice."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u3",
+      "title": "Jobs / Trabajos",
+      "vocabulary": [
+        { "en": "Teacher", "es": "Profesor" },
+        { "en": "Doctor", "es": "Médico" },
+        { "en": "Nurse", "es": "Enfermero" },
+        { "en": "Driver", "es": "Conductor" },
+        { "en": "Cook", "es": "Cocinero" },
+        { "en": "Engineer", "es": "Ingeniero" },
+        { "en": "Lawyer", "es": "Abogado" },
+        { "en": "Waiter", "es": "Camarero" }
+      ],
+      "grammar": {
+        "rule": "Questions with 'do/does'",
+        "explanation_es": "Para preguntar en presente simple usamos do/does: 'What do you do?', 'Where does she work?'.",
+        "examples": ["What do you do?", "Where does she work?", "Do you like your job?", "He works as a teacher."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Simple Past / Pasado simple",
+      "vocabulary": [
+        { "en": "Went", "es": "Fui/Fue" },
+        { "en": "Saw", "es": "Vi/Vio" },
+        { "en": "Ate", "es": "Comí/Comió" },
+        { "en": "Played", "es": "Jugué/Jugó" },
+        { "en": "Watched", "es": "Vi (mirar)" },
+        { "en": "Visited", "es": "Visité" },
+        { "en": "Bought", "es": "Compré" },
+        { "en": "Yesterday", "es": "Ayer" }
+      ],
+      "grammar": {
+        "rule": "Past Simple – Regular & Irregular",
+        "explanation_es": "Los verbos regulares añaden -ed (played). Los irregulares cambian (go → went, eat → ate).",
+        "examples": ["Yesterday I went to the park.", "She ate pizza last night.", "We played football.", "They watched a movie."]
+      },
+      "sentences": [
+        "Yesterday I went to the park.",
+        "She ate pizza last night.",
+        "We played football together.",
+        "They watched a good movie."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    }
+  ]
+}

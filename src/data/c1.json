@@ -1,0 +1,87 @@
+{
+  "level": "C1",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Academic Vocabulary / Léxico académico",
+      "vocabulary": [
+        { "en": "Furthermore", "es": "Además" },
+        { "en": "Consequently", "es": "Por consiguiente" },
+        { "en": "Nevertheless", "es": "No obstante" },
+        { "en": "Hypothesis", "es": "Hipótesis" },
+        { "en": "Significant", "es": "Significativo" },
+        { "en": "To assess", "es": "Evaluar" },
+        { "en": "To imply", "es": "Implicar" },
+        { "en": "Comprehensive", "es": "Exhaustivo" }
+      ],
+      "grammar": {
+        "rule": "Formal connectors & nominalisation",
+        "explanation_es": "En registro académico se usan conectores formales (furthermore, consequently) y nominalización para sonar objetivo.",
+        "examples": ["The findings are significant; furthermore, they are replicable.", "Consequently, the hypothesis was rejected.", "Nevertheless, further research is required.", "The data imply a strong correlation."]
+      },
+      "story": {
+        "text": "The study presents a ___ analysis of the data. ___ , the results suggest a strong correlation. The authors ___ that the findings are robust. ___ , they acknowledge certain limitations. Further research is ___ to confirm the conclusions.",
+        "answers": ["comprehensive", "Furthermore", "imply", "Nevertheless", "required"],
+        "bank": ["comprehensive", "Furthermore", "imply", "Nevertheless", "required", "significant", "consequently"]
+      },
+      "sentences": [
+        "Consequently the hypothesis was rejected.",
+        "The data imply a strong correlation.",
+        "Nevertheless further research is required.",
+        "The findings are significant and replicable."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Complex Grammar / Gramática avanzada",
+      "vocabulary": [
+        { "en": "Had I known", "es": "De haber sabido" },
+        { "en": "Inversion", "es": "Inversión" },
+        { "en": "Not only", "es": "No solo" },
+        { "en": "Seldom", "es": "Rara vez" },
+        { "en": "Were it not for", "es": "De no ser por" },
+        { "en": "Hardly", "es": "Apenas" },
+        { "en": "No sooner", "es": "Apenas/Tan pronto" },
+        { "en": "Subordinate", "es": "Subordinado" }
+      ],
+      "grammar": {
+        "rule": "Inversion for emphasis",
+        "explanation_es": "Para enfatizar, invertimos sujeto y auxiliar: 'Not only did he win, but he also broke a record', 'Seldom have I seen such talent'.",
+        "examples": ["Not only did he win, but he also broke a record.", "Seldom have I seen such talent.", "Had I known, I would have helped.", "No sooner had we arrived than it started to rain."]
+      },
+      "story": {
+        "text": "___ only is the report detailed, but it is also persuasive. ___ have I read such a compelling argument. ___ I known the deadline, I would have started earlier. No ___ had they finished than new issues arose. Were it ___ for her support, the project would have failed.",
+        "answers": ["Not", "Seldom", "Had", "sooner", "not"],
+        "bank": ["Not", "Seldom", "Had", "sooner", "not", "hardly", "only"]
+      },
+      "sentences": [
+        "Seldom have I seen such talent.",
+        "Had I known I would have helped.",
+        "Not only did he win the prize.",
+        "No sooner had we arrived than it rained."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u3",
+      "title": "Debate Expressions / Debate",
+      "vocabulary": [
+        { "en": "I would argue that", "es": "Yo sostendría que" },
+        { "en": "On the contrary", "es": "Por el contrario" },
+        { "en": "To play devil's advocate", "es": "Hacer de abogado del diablo" },
+        { "en": "A compelling case", "es": "Un argumento convincente" },
+        { "en": "To concede", "es": "Conceder/Admitir" },
+        { "en": "Granted", "es": "Es cierto que" },
+        { "en": "To refute", "es": "Refutar" },
+        { "en": "By and large", "es": "En general" }
+      ],
+      "grammar": {
+        "rule": "Hedging & concession",
+        "explanation_es": "En debate formal matizamos (hedging) y concedemos puntos: 'Granted, that's true, but...', 'I would argue that...'.",
+        "examples": ["I would argue that education is the key.", "Granted, the cost is high, but the benefits outweigh it.", "On the contrary, the evidence suggests otherwise.", "Let me play devil's advocate for a moment."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    }
+  ]
+}

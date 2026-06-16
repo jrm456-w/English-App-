@@ -1,0 +1,268 @@
+/* Screen renderers for Home, Learn, Unit, Games, Progress, Settings. */
+import { el, clear, toast } from './ui.js';
+import { t, setLang, applyTranslations } from './i18n.js';
+import { getState, setState, resetState } from './store.js';
+import { loadLevel, levels } from './data.js';
+import { navigate } from './router.js';
+import { speak } from './speech.js';
+import {
+  levelProgress, recentBadges, BADGES, badgeName, markUnitStudied
+} from './gamification.js';
+import { GAMES, gamesForLevel } from '../games/index.js';
+
+const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
+
+/* ---------------- HOME ---------------- */
+export async function home(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  const prog = levelProgress(data);
+
+  view.appendChild(el(`
+    <div class="hero">
+      <h1 class="h1">${t('home.greeting')}</h1>
+      <p style="opacity:.9">${t('home.subtitle')}</p>
+    </div>`));
+
+  view.appendChild(el(`
+    <div class="stats">
+      <div class="stat"><div class="stat__num">${s.level}</div><div class="stat__label">${t('home.level')}</div></div>
+      <div class="stat"><div class="stat__num">${s.xp}</div><div class="stat__label">${t('home.xp')}</div></div>
+      <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
+    </div>`));
+
+  const cont = el(`
+    <div class="card card--tap" style="margin-top:16px">
+      <div class="row" style="justify-content:space-between">
+        <strong>${t('home.continue')}</strong><span>→</span>
+      </div>
+      <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
+      <small class="muted">${prog}%</small>
+    </div>`);
+  cont.onclick = () => navigate('/learn');
+  view.appendChild(cont);
+
+  // Quick games
+  view.appendChild(el(`<h2 class="h2">${t('home.quickGames')}</h2>`));
+  const grid = el(`<div class="grid grid--2"></div>`);
+  const firstUnit = data.units[0];
+  gamesForLevel(LEVEL_INDEX[s.level]).slice(0, 4).forEach((type) => {
+    const c = el(`<div class="card card--tap center"><div style="font-size:1.8rem">${GAMES[type].icon}</div><div>${t('game.' + type)}</div></div>`);
+    c.onclick = () => navigate(`/game/${type}/${s.level}/${firstUnit.id}`);
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+
+  // Recent badges
+  const badges = recentBadges(4);
+  if (badges.length) {
+    view.appendChild(el(`<h2 class="h2">${t('home.recentBadges')}</h2>`));
+    const bg = el(`<div class="grid grid--auto"></div>`);
+    badges.forEach((b) => bg.appendChild(el(`<div class="badge-tile"><div class="badge-tile__icon">${b.icon}</div><div class="badge-tile__name">${badgeName(b)}</div></div>`)));
+    view.appendChild(bg);
+  }
+}
+
+/* ---------------- LEARN (unit list) ---------------- */
+export async function learn(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  view.appendChild(el(`<h1 class="h1">${t('learn.title')} · ${s.level}</h1>`));
+  data.units.forEach((u) => {
+    const studied = getState().completedUnits[`${s.level}:${u.id}`];
+    const c = el(`
+      <div class="card card--tap">
+        <div class="row" style="justify-content:space-between">
+          <strong>${studied ? '✅ ' : ''}${u.title}</strong>
+          <span class="badge">${u.vocabulary.length} 📘</span>
+        </div>
+        <small class="muted">${u.grammar ? u.grammar.rule : ''}</small>
+      </div>`);
+    c.onclick = () => navigate(`/unit/${s.level}/${u.id}`);
+    view.appendChild(c);
+  });
+}
+
+/* ---------------- UNIT detail ---------------- */
+export async function unit({ level, id }, view) {
+  const data = await loadLevel(level);
+  const u = data.units.find((x) => x.id === id);
+  if (!u) { navigate('/learn'); return; }
+  clear(view);
+  markUnitStudied(level, u.id);
+
+  view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
+  view.querySelector('#back').onclick = () => navigate('/learn');
+  view.appendChild(el(`<h1 class="h1">${u.title}</h1>`));
+
+  // Vocabulary
+  view.appendChild(el(`<h2 class="h2">${t('learn.vocab')}</h2>`));
+  const vlist = el(`<div class="card"></div>`);
+  u.vocabulary.forEach((v) => {
+    const row = el(`
+      <div class="setting-row">
+        <span><strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
+        <button class="btn btn--ghost btn--small" aria-label="Listen ${v.en}">🔊</button>
+      </div>`);
+    row.querySelector('button').onclick = () => speak(v.en);
+    vlist.appendChild(row);
+  });
+  view.appendChild(vlist);
+
+  // Grammar
+  if (u.grammar) {
+    view.appendChild(el(`<h2 class="h2">${t('learn.grammar')}: ${u.grammar.rule}</h2>`));
+    const g = el(`<div class="card"><p>${u.grammar.explanation_es}</p><strong>${t('learn.examples')}:</strong></div>`);
+    (u.grammar.examples || []).forEach((ex) => {
+      const r = el(`<div class="setting-row"><span>${ex}</span><button class="btn btn--ghost btn--small">🔊</button></div>`);
+      r.querySelector('button').onclick = () => speak(ex);
+      g.appendChild(r);
+    });
+    view.appendChild(g);
+  }
+
+  // Practice games for this unit
+  view.appendChild(el(`<h2 class="h2">${t('learn.practice')}</h2>`));
+  const grid = el(`<div class="grid grid--2"></div>`);
+  (u.games || []).filter((type) => GAMES[type]).forEach((type) => {
+    const c = el(`<div class="card card--tap center"><div style="font-size:1.6rem">${GAMES[type].icon}</div><div>${t('game.' + type)}</div></div>`);
+    c.onclick = () => navigate(`/game/${type}/${level}/${u.id}`);
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+}
+
+/* ---------------- GAMES hub ---------------- */
+export async function games(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  view.appendChild(el(`<h1 class="h1">${t('games.title')}</h1><p class="muted">${t('games.choose')} · ${s.level}</p>`));
+
+  // Unit selector
+  const sel = el(`<select class="select" id="unit-sel" style="margin:12px 0"></select>`);
+  data.units.forEach((u) => sel.appendChild(el(`<option value="${u.id}">${u.title}</option>`)));
+  view.appendChild(sel);
+
+  const grid = el(`<div class="grid grid--2"></div>`);
+  view.appendChild(grid);
+
+  function renderGames() {
+    clear(grid);
+    const unitId = sel.value;
+    const u = data.units.find((x) => x.id === unitId);
+    const available = gamesForLevel(LEVEL_INDEX[s.level]);
+    // Prefer this unit's own games, then any other level-appropriate games.
+    const list = Array.from(new Set([...(u.games || []), ...available])).filter((type) => available.includes(type) && GAMES[type]);
+    list.forEach((type) => {
+      const key = `${s.level}:${unitId}:${type}`;
+      const done = getState().completedGames[key];
+      const c = el(`
+        <div class="card card--tap center">
+          <div style="font-size:2rem">${GAMES[type].icon}</div>
+          <div><strong>${t('game.' + type)}</strong></div>
+          ${done ? `<small class="muted">⭐ ${done.correct}/${done.attempts}</small>` : ''}
+        </div>`);
+      c.onclick = () => navigate(`/game/${type}/${s.level}/${unitId}`);
+      grid.appendChild(c);
+    });
+  }
+  sel.onchange = renderGames;
+  renderGames();
+}
+
+/* ---------------- PROGRESS ---------------- */
+export async function progress(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  const prog = levelProgress(data);
+
+  view.appendChild(el(`<h1 class="h1">${t('progress.title')}</h1>`));
+  view.appendChild(el(`
+    <div class="card">
+      <strong>${t('progress.overall')} · ${s.level}</strong>
+      <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
+      <small class="muted">${prog}%</small>
+    </div>`));
+
+  view.appendChild(el(`
+    <div class="stats">
+      <div class="stat"><div class="stat__num">${s.xp}</div><div class="stat__label">${t('home.xp')}</div></div>
+      <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
+      <div class="stat"><div class="stat__num">${s.badges.length}</div><div class="stat__label">${t('progress.badges')}</div></div>
+    </div>`));
+
+  view.appendChild(el(`<h2 class="h2">${t('progress.badges')}</h2>`));
+  const bg = el(`<div class="grid grid--auto"></div>`);
+  BADGES.forEach((b) => {
+    const owned = s.badges.includes(b.id);
+    bg.appendChild(el(`<div class="badge-tile ${owned ? '' : 'is-locked'}"><div class="badge-tile__icon">${b.icon}</div><div class="badge-tile__name">${badgeName(b)}</div></div>`));
+  });
+  view.appendChild(bg);
+}
+
+/* ---------------- SETTINGS ---------------- */
+export function settings(_p, view) {
+  const s = getState();
+  clear(view);
+  view.appendChild(el(`<h1 class="h1">${t('settings.title')}</h1>`));
+
+  const card = el(`<div class="card"></div>`);
+
+  // Dark mode
+  const dark = el(`
+    <div class="setting-row">
+      <span>${t('settings.theme')}</span>
+      <label class="switch"><input type="checkbox" id="dark" ${s.theme === 'dark' ? 'checked' : ''}><span class="switch__slider"></span></label>
+    </div>`);
+  dark.querySelector('#dark').onchange = (e) => {
+    setState({ theme: e.target.checked ? 'dark' : 'light' });
+    document.getElementById('app').dataset.theme = getState().theme;
+  };
+  card.appendChild(dark);
+
+  // Language
+  const lang = el(`
+    <div class="setting-row">
+      <span>${t('settings.language')}</span>
+      <select class="select" id="lang">
+        <option value="es" ${s.lang === 'es' ? 'selected' : ''}>Español</option>
+        <option value="en" ${s.lang === 'en' ? 'selected' : ''}>English</option>
+      </select>
+    </div>`);
+  lang.querySelector('#lang').onchange = (e) => { setLang(e.target.value); settings(_p, view); };
+  card.appendChild(lang);
+
+  // Level
+  const level = el(`<div class="setting-row" style="flex-wrap:wrap"><span>${t('settings.level')}</span><div class="row" id="levels"></div></div>`);
+  const lv = level.querySelector('#levels');
+  levels().forEach((L) => {
+    const chip = el(`<button class="level-chip ${s.level === L ? 'is-active' : ''}">${L}</button>`);
+    chip.onclick = () => { setState({ level: L }); toast(`${t('home.level')}: ${L}`); settings(_p, view); };
+    lv.appendChild(chip);
+  });
+  card.appendChild(level);
+  view.appendChild(card);
+
+  // Actions
+  const actions = el(`<div class="card"></div>`);
+  const retake = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:10px">${t('settings.retakeQuiz')}</button>`);
+  retake.onclick = () => navigate('/quiz');
+  const reset = el(`<button class="btn btn--block" style="background:var(--c-danger)">${t('settings.reset')}</button>`);
+  reset.onclick = () => {
+    if (confirm(t('settings.reset.confirm'))) {
+      resetState();
+      document.getElementById('app').dataset.theme = 'light';
+      applyTranslations();
+      navigate('/quiz');
+    }
+  };
+  actions.appendChild(retake);
+  actions.appendChild(reset);
+  view.appendChild(actions);
+
+  view.appendChild(el(`<p class="muted center" style="margin-top:16px">EngFlow · v1.0 · ${t('settings.about')}: PWA offline para aprender inglés.</p>`));
+}

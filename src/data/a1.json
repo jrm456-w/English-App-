@@ -1,0 +1,110 @@
+{
+  "level": "A1",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Greetings / Saludos",
+      "vocabulary": [
+        { "en": "Hello", "es": "Hola" },
+        { "en": "Goodbye", "es": "Adiós" },
+        { "en": "Good morning", "es": "Buenos días" },
+        { "en": "Good night", "es": "Buenas noches" },
+        { "en": "Please", "es": "Por favor" },
+        { "en": "Thank you", "es": "Gracias" },
+        { "en": "Yes", "es": "Sí" },
+        { "en": "No", "es": "No" }
+      ],
+      "grammar": {
+        "rule": "Verb TO BE – Affirmative",
+        "explanation_es": "El verbo 'to be' (ser/estar) cambia según el sujeto: I am, you are, he/she/it is, we/they are.",
+        "examples": ["I am a student.", "She is happy.", "We are friends.", "You are welcome.", "He is my brother."]
+      },
+      "fill": [
+        { "sentence": "I ___ a student.", "answer": "am", "options": ["is", "are", "be"] },
+        { "sentence": "She ___ happy.", "answer": "is", "options": ["am", "are", "be"] },
+        { "sentence": "We ___ friends.", "answer": "are", "options": ["am", "is", "be"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u2",
+      "title": "Colors / Colores",
+      "vocabulary": [
+        { "en": "Red", "es": "Rojo" },
+        { "en": "Blue", "es": "Azul" },
+        { "en": "Green", "es": "Verde" },
+        { "en": "Yellow", "es": "Amarillo" },
+        { "en": "Black", "es": "Negro" },
+        { "en": "White", "es": "Blanco" },
+        { "en": "Orange", "es": "Naranja" },
+        { "en": "Purple", "es": "Morado" }
+      ],
+      "grammar": {
+        "rule": "Adjectives before nouns",
+        "explanation_es": "En inglés el adjetivo va antes del sustantivo: 'a red car' (un coche rojo), no 'a car red'.",
+        "examples": ["The car is red.", "I have a blue pen.", "She likes green apples.", "It is a yellow flower."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u3",
+      "title": "Numbers / Números",
+      "vocabulary": [
+        { "en": "One", "es": "Uno" },
+        { "en": "Two", "es": "Dos" },
+        { "en": "Three", "es": "Tres" },
+        { "en": "Four", "es": "Cuatro" },
+        { "en": "Five", "es": "Cinco" },
+        { "en": "Ten", "es": "Diez" },
+        { "en": "Twenty", "es": "Veinte" },
+        { "en": "Hundred", "es": "Cien" }
+      ],
+      "grammar": {
+        "rule": "There is / There are",
+        "explanation_es": "Usamos 'there is' para singular y 'there are' para plural: hay.",
+        "examples": ["There is one apple.", "There are five books.", "There are two cats.", "There is a problem."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u4",
+      "title": "Family / La familia",
+      "vocabulary": [
+        { "en": "Mother", "es": "Madre" },
+        { "en": "Father", "es": "Padre" },
+        { "en": "Brother", "es": "Hermano" },
+        { "en": "Sister", "es": "Hermana" },
+        { "en": "Son", "es": "Hijo" },
+        { "en": "Daughter", "es": "Hija" },
+        { "en": "Grandmother", "es": "Abuela" },
+        { "en": "Family", "es": "Familia" }
+      ],
+      "grammar": {
+        "rule": "Possessive 's",
+        "explanation_es": "Para indicar posesión añadimos 's: 'my mother's car' (el coche de mi madre).",
+        "examples": ["This is my mother.", "He is my brother.", "Her sister is tall.", "My father's name is John."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u5",
+      "title": "Basic Verbs / Verbos básicos",
+      "vocabulary": [
+        { "en": "To eat", "es": "Comer" },
+        { "en": "To drink", "es": "Beber" },
+        { "en": "To go", "es": "Ir" },
+        { "en": "To have", "es": "Tener" },
+        { "en": "To want", "es": "Querer" },
+        { "en": "To like", "es": "Gustar" },
+        { "en": "To live", "es": "Vivir" },
+        { "en": "To speak", "es": "Hablar" }
+      ],
+      "grammar": {
+        "rule": "Present Simple – I/You/We/They",
+        "explanation_es": "En presente simple, con I/you/we/they usamos el verbo base: 'I eat', 'they live'.",
+        "examples": ["I eat breakfast.", "They live in Madrid.", "We like music.", "You speak English."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    }
+  ]
+}
