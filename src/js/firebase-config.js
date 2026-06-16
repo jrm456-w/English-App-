@@ -17,12 +17,13 @@
        5) Pega la config aquí abajo
    ============================================================ */
 export const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
-  storageBucket: "TU_PROYECTO.appspot.com",
-  messagingSenderId: "TU_SENDER_ID",
-  appId: "TU_APP_ID"
+  apiKey: "AIzaSyBi-vUMvspZ7yQELVA9QKwELxGVnT_OzNU",
+  authDomain: "english-app-17680.firebaseapp.com",
+  projectId: "english-app-17680",
+  storageBucket: "english-app-17680.firebasestorage.app",
+  messagingSenderId: "1054510351612",
+  appId: "1:1054510351612:web:9f32e86c3de4dadd414379",
+  measurementId: "G-H6K8JV09QS"
 };
 
 export function isFirebaseConfigured() {
@@ -42,7 +43,7 @@ export function isFirebaseConfigured() {
    donde debes repetir esta misma lista de correos.
    ============================================================ */
 export const allowedEmails = [
-  // "jr944180@gmail.com",
+  "jr944180@gmail.com",
 ];
 
 export function isEmailAllowed(email) {
