@@ -46,7 +46,21 @@ const DICT = {
     'story.shadowHint': 'Escucha la frase y repítela en voz alta. Luego pulsa el micrófono.',
     'story.repeat': '🎤 Repetir', 'story.next': 'Siguiente frase',
     'story.toQuiz': 'Comprobar comprensión →', 'story.finish': 'Terminar historia',
-    'story.quizTitle': 'Preguntas de comprensión', 'story.glossary': 'Vocabulario clave'
+    'story.quizTitle': 'Preguntas de comprensión', 'story.glossary': 'Vocabulario clave',
+    'daily.title': 'Misión diaria', 'daily.subtitle': 'Completa estas tareas hoy para tu racha.',
+    'daily.games': 'Completar juegos', 'daily.stories': 'Leer una historia',
+    'daily.xp': 'Ganar XP hoy', 'daily.allDone': '¡Meta diaria completada! 🎉',
+    'daily.bonus': 'Bonus diario',
+    'advance.title': 'Avanzar de nivel', 'advance.ready': '¡Listo para avanzar!',
+    'advance.button': 'Avanzar a', 'advance.howto': 'Para avanzar, completa al menos el 80% de las unidades de tu nivel.',
+    'advance.criteria': 'Una unidad se completa cuando apruebas (60%+) al menos 2 de sus juegos.',
+    'advance.unitsDone': 'Unidades completadas', 'advance.done': '¡Has avanzado a',
+    'learn.completed': 'Completada', 'learn.passed': 'aprobados',
+    'auth.account': 'Cuenta', 'auth.signIn': 'Iniciar sesión con Google',
+    'auth.signOut': 'Cerrar sesión', 'auth.signedInAs': 'Sesión iniciada como',
+    'auth.notConfigured': 'La sincronización con Google no está configurada todavía. Tu progreso se guarda en este dispositivo.',
+    'auth.synced': 'Progreso sincronizado ☁️', 'auth.error': 'No se pudo iniciar sesión',
+    'auth.syncDesc': 'Inicia sesión para guardar tu progreso en la nube y usarlo en cualquier dispositivo.'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -92,7 +106,21 @@ const DICT = {
     'story.shadowHint': 'Listen to the sentence and repeat it aloud. Then tap the mic.',
     'story.repeat': '🎤 Repeat', 'story.next': 'Next sentence',
     'story.toQuiz': 'Check comprehension →', 'story.finish': 'Finish story',
-    'story.quizTitle': 'Comprehension questions', 'story.glossary': 'Key vocabulary'
+    'story.quizTitle': 'Comprehension questions', 'story.glossary': 'Key vocabulary',
+    'daily.title': 'Daily mission', 'daily.subtitle': 'Complete these tasks today for your streak.',
+    'daily.games': 'Complete games', 'daily.stories': 'Read a story',
+    'daily.xp': 'Earn XP today', 'daily.allDone': 'Daily goal complete! 🎉',
+    'daily.bonus': 'Daily bonus',
+    'advance.title': 'Level up', 'advance.ready': 'Ready to level up!',
+    'advance.button': 'Advance to', 'advance.howto': 'To advance, complete at least 80% of your level’s units.',
+    'advance.criteria': 'A unit is complete when you pass (60%+) at least 2 of its games.',
+    'advance.unitsDone': 'Units completed', 'advance.done': 'You advanced to',
+    'learn.completed': 'Completed', 'learn.passed': 'passed',
+    'auth.account': 'Account', 'auth.signIn': 'Sign in with Google',
+    'auth.signOut': 'Sign out', 'auth.signedInAs': 'Signed in as',
+    'auth.notConfigured': 'Google sync is not configured yet. Your progress is saved on this device.',
+    'auth.synced': 'Progress synced ☁️', 'auth.error': 'Sign-in failed',
+    'auth.syncDesc': 'Sign in to save your progress to the cloud and use it on any device.'
   }
 };
 

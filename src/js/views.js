@@ -6,11 +6,60 @@ import { loadLevel, levels } from './data.js';
 import { navigate } from './router.js';
 import { speak } from './speech.js';
 import {
-  levelProgress, recentBadges, BADGES, badgeName, markUnitStudied
+  levelProgress, recentBadges, BADGES, badgeName, markUnitStudied,
+  getDaily, DAILY, unitCompleted, unitPassedCount, levelReadyToAdvance,
+  nextLevel, advanceLevel
 } from './gamification.js';
+import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
 import { GAMES, gamesForLevel } from '../games/index.js';
 
 const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
+
+/* ---------------- Reusable cards ---------------- */
+function taskRow(label, current, target) {
+  const done = current >= target;
+  const pct = Math.min(100, Math.round((current / target) * 100));
+  return `
+    <div style="margin-top:10px">
+      <div class="row" style="justify-content:space-between">
+        <span>${done ? '✅' : '⬜'} ${label}</span>
+        <small class="muted">${Math.min(current, target)}/${target}</small>
+      </div>
+      <div class="progress" style="margin-top:6px;height:8px"><div class="progress__fill" style="width:${pct}%"></div></div>
+    </div>`;
+}
+
+function dailyCard() {
+  const d = getDaily();
+  const card = el(`
+    <div class="card" style="margin-top:16px">
+      <div class="row" style="justify-content:space-between">
+        <strong>🎯 ${t('daily.title')}</strong>
+        ${d.done ? `<span class="badge pill">${t('daily.allDone')}</span>` : ''}
+      </div>
+      <small class="muted">${t('daily.subtitle')}</small>
+      ${taskRow(t('daily.games'), d.games, DAILY.games)}
+      ${taskRow(t('daily.stories'), d.stories, DAILY.stories)}
+      ${taskRow(t('daily.xp'), d.xp, DAILY.xp)}
+    </div>`);
+  return card;
+}
+
+function advanceCard(level) {
+  const next = nextLevel(level);
+  const card = el(`
+    <div class="card center" style="border:2px solid var(--c-success)">
+      <div style="font-size:2rem">🎓</div>
+      <strong>${t('advance.ready')}</strong>
+      <p class="muted">${t('advance.button')} ${next}</p>
+      <button class="btn btn--success btn--block" id="adv">${t('advance.button')} ${next} →</button>
+    </div>`);
+  card.querySelector('#adv').onclick = () => {
+    const to = advanceLevel();
+    if (to) { toast(`${t('advance.done')} ${to}! 🎉`); navigate('/home'); }
+  };
+  return card;
+}
 
 /* ---------------- HOME ---------------- */
 export async function home(_p, view) {
@@ -32,16 +81,24 @@ export async function home(_p, view) {
       <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
     </div>`));
 
+  // Daily mission
+  view.appendChild(dailyCard());
+
   const cont = el(`
     <div class="card card--tap" style="margin-top:16px">
       <div class="row" style="justify-content:space-between">
         <strong>${t('home.continue')}</strong><span>→</span>
       </div>
       <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
-      <small class="muted">${prog}%</small>
+      <small class="muted">${prog}% · ${t('advance.unitsDone')}: ${data.units.filter((u) => unitCompleted(s.level, u)).length}/${data.units.length}</small>
     </div>`);
   cont.onclick = () => navigate('/learn');
   view.appendChild(cont);
+
+  // Ready to advance?
+  if (levelReadyToAdvance(data) && nextLevel(s.level)) {
+    view.appendChild(advanceCard(s.level));
+  }
 
   const storiesCard = el(`
     <div class="card card--tap">
@@ -84,12 +141,14 @@ export async function learn(_p, view) {
   storiesBtn.onclick = () => navigate('/stories');
   view.appendChild(storiesBtn);
   data.units.forEach((u) => {
-    const studied = getState().completedUnits[`${s.level}:${u.id}`];
+    const done = unitCompleted(s.level, u);
+    const passed = unitPassedCount(s.level, u);
+    const totalGames = (u.games || []).length;
     const c = el(`
       <div class="card card--tap">
         <div class="row" style="justify-content:space-between">
-          <strong>${studied ? '✅ ' : ''}${u.title}</strong>
-          <span class="badge">${u.vocabulary.length} 📘</span>
+          <strong>${done ? '✅ ' : ''}${u.title}</strong>
+          <span class="badge">${passed}/${totalGames} ${t('learn.passed')}</span>
         </div>
         <small class="muted">${u.grammar ? u.grammar.rule : ''}</small>
       </div>`);
@@ -194,12 +253,18 @@ export async function progress(_p, view) {
   const prog = levelProgress(data);
 
   view.appendChild(el(`<h1 class="h1">${t('progress.title')}</h1>`));
+  const unitsDone = data.units.filter((u) => unitCompleted(s.level, u)).length;
   view.appendChild(el(`
     <div class="card">
       <strong>${t('progress.overall')} · ${s.level}</strong>
       <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
-      <small class="muted">${prog}%</small>
+      <small class="muted">${prog}% · ${t('advance.unitsDone')}: ${unitsDone}/${data.units.length}</small>
+      <p class="muted" style="margin:12px 0 0;font-size:.85rem">ℹ️ ${t('advance.criteria')}<br>${t('advance.howto')}</p>
     </div>`));
+
+  if (levelReadyToAdvance(data) && nextLevel(s.level)) view.appendChild(advanceCard(s.level));
+
+  view.appendChild(dailyCard());
 
   view.appendChild(el(`
     <div class="stats">
@@ -260,6 +325,9 @@ export function settings(_p, view) {
   card.appendChild(level);
   view.appendChild(card);
 
+  // Account / cloud sync
+  view.appendChild(accountCard(view, _p));
+
   // Actions
   const actions = el(`<div class="card"></div>`);
   const retake = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:10px">${t('settings.retakeQuiz')}</button>`);
@@ -278,4 +346,40 @@ export function settings(_p, view) {
   view.appendChild(actions);
 
   view.appendChild(el(`<p class="muted center" style="margin-top:16px">EngFlow · v1.0 · ${t('settings.about')}: PWA offline para aprender inglés.</p>`));
+}
+
+let authSubscribed = false;
+function accountCard(view, _p) {
+  const card = el(`<div class="card"></div>`);
+  card.appendChild(el(`<strong>☁️ ${t('auth.account')}</strong>`));
+
+  if (!cloudEnabled()) {
+    card.appendChild(el(`<p class="muted" style="margin:8px 0 0">${t('auth.notConfigured')}</p>`));
+    return card;
+  }
+
+  const user = getUser();
+  if (user) {
+    card.appendChild(el(`<p style="margin:8px 0">${t('auth.signedInAs')}<br><strong>${user.email || user.displayName || 'Google'}</strong></p>`));
+    card.appendChild(el(`<p class="muted" style="margin:0 0 8px">${t('auth.synced')}</p>`));
+    const out = el(`<button class="btn btn--ghost btn--block">${t('auth.signOut')}</button>`);
+    out.onclick = async () => { await signOutCloud(); settings(_p, view); };
+    card.appendChild(out);
+  } else {
+    card.appendChild(el(`<p class="muted" style="margin:8px 0">${t('auth.syncDesc')}</p>`));
+    const inBtn = el(`<button class="btn btn--block">${t('auth.signIn')}</button>`);
+    inBtn.onclick = async () => {
+      inBtn.disabled = true;
+      const r = await signIn();
+      if (!r.ok && r.reason !== 'unavailable') toast(t('auth.error'));
+    };
+    card.appendChild(inBtn);
+  }
+
+  // Re-render settings when auth state changes (once).
+  if (!authSubscribed) {
+    authSubscribed = true;
+    onUser(() => { if (location.hash.replace(/^#/, '').startsWith('/settings')) settings(_p, view); });
+  }
+  return card;
 }

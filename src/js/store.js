@@ -14,6 +14,7 @@ const DEFAULT_STATE = {
   completedUnits: {},      // { "level:unitId": true } when grammar viewed
   mastered: {},            // flashcards: { "level:unitId:word": repetitions }
   storiesRead: {},         // { storyId: true }
+  daily: null,             // { date, games, stories, xp, claimed }
   quizScore: null
 };
 

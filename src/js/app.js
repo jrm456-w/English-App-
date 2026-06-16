@@ -6,7 +6,8 @@ import { home, learn, unit, games, progress, settings } from './views.js';
 import { renderQuiz } from './quiz.js';
 import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
-import { touchStreak, onBadge, badgeName } from './gamification.js';
+import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
+import { autoStart } from './cloud.js';
 import { toast } from './ui.js';
 
 /* ---- Theme ---- */
@@ -33,8 +34,9 @@ function requireOnboard(fn) {
   fn();
 }
 
-/* ---- Badge notifications ---- */
+/* ---- Badge & daily-goal notifications ---- */
 onBadge((badge) => toast(`🏅 ${t('badge.unlocked')} ${badge.icon} ${badgeName(badge)}`, 3000));
+onDailyComplete((bonus) => toast(`${t('daily.allDone')} +${bonus} XP`, 3500));
 
 /* ---- Install prompt (Add to Home Screen) ---- */
 let deferredPrompt = null;
@@ -42,7 +44,7 @@ const banner = document.getElementById('install-banner');
 window.addEventListener('beforeinstallprompt', (e) => {
   e.preventDefault();
   deferredPrompt = e;
-  if (!sessionStorage.getItem('installDismissed')) banner.hidden = false;
+  if (!localStorage.getItem('installDismissed')) banner.hidden = false;
 });
 document.getElementById('install-btn').onclick = async () => {
   banner.hidden = true;
@@ -51,7 +53,10 @@ document.getElementById('install-btn').onclick = async () => {
   await deferredPrompt.userChoice;
   deferredPrompt = null;
 };
-document.getElementById('install-dismiss').onclick = () => { banner.hidden = true; sessionStorage.setItem('installDismissed', '1'); };
+document.getElementById('install-dismiss').onclick = () => {
+  banner.hidden = true;
+  localStorage.setItem('installDismissed', '1'); // don't nag again
+};
 window.addEventListener('appinstalled', () => { banner.hidden = true; toast('✅ EngFlow'); });
 
 /* ---- Boot ---- */
@@ -59,6 +64,7 @@ function boot() {
   applyTheme();
   applyTranslations();
   touchStreak();
+  autoStart();        // restore Google session + cloud sync if configured
   startRouter();
   if (!getState().onboarded && !location.hash) navigate('/quiz');
 }

@@ -262,6 +262,8 @@ a { color: inherit; text-decoration: none; }
   z-index: 150; font-weight: 600;
 }
 .install-banner span { flex: 1; }
+/* The [hidden] attribute must win over display:flex so the ✕ actually closes it. */
+.install-banner[hidden] { display: none; }
 @media (min-width: 900px) { .install-banner { left: auto; right: 24px; bottom: 24px; max-width: 360px; } }
 
 /* Badge grid */
