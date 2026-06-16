@@ -9,6 +9,8 @@ Aplicación web progresiva (PWA) para **aprender inglés desde cero hasta nivel 
 - **Prueba de nivel diagnóstica** (15 preguntas): vocabulario, gramática, comprensión lectora y auditiva → asigna A1, A2, B1, B2 o C1.
 - **5 niveles CEFR** con vocabulario y gramática progresivos (≈400 palabras de alta frecuencia en 33 unidades, ampliable).
 - **Diccionario integrado y buscable** (`#/dictionary`): todas las palabras EN↔ES con audio y búsqueda instantánea.
+- **Lección del día** (`#/daily`): sesión guiada distinta cada día (aprende palabras nuevas → practica → repasa) que avanza por el currículo del nivel — el modelo "365 días".
+- **Indicador de conexión**: la app es 100% offline, pero el contenido marcado con `"requiresConnection": true` muestra "🌐 Necesita conexión" y se bloquea con un aviso cuando no hay internet (para futuras lecciones con vídeo/streaming). Se ve una barra "Sin conexión" cuando el dispositivo está offline.
 - **7 juegos interactivos**:
   1. Word Match — unir palabras español/inglés
   2. Fill the Blank — completar frases (opción múltiple)

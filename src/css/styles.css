@@ -296,3 +296,13 @@ a { color: inherit; text-decoration: none; }
 .app--gated { grid-template-columns: 1fr !important; }
 .app--gated .sidebar, .app--gated .nav--bottom { display: none !important; }
 .login-screen { min-height: 88vh; display: flex; align-items: center; justify-content: center; }
+
+/* Offline indicator + "needs connection" badge */
+.net-status {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 120;
+  background: var(--c-warning); color: #1a1300; text-align: center;
+  font-weight: 700; font-size: var(--fs-sm); padding: 6px;
+}
+.net-status[hidden] { display: none; }
+.needs-net { color: var(--c-warning); font-weight: 700; font-size: var(--fs-sm); }
+.is-offline-locked { opacity: 0.55; }

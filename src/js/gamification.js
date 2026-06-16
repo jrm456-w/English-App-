@@ -49,9 +49,28 @@ export function ensureDaily() {
   const s = getState();
   const td = today();
   if (!s.daily || s.daily.date !== td) {
-    update((st) => { st.daily = { date: td, games: 0, stories: 0, xp: 0, claimed: false }; });
+    update((st) => { st.daily = { date: td, games: 0, stories: 0, xp: 0, lessonDone: false, claimed: false }; });
   }
   return getState().daily;
+}
+
+/* Mark today's guided lesson as completed (drives the 365-day habit). */
+export function markDailyLessonDone() {
+  ensureDaily();
+  update((st) => { st.daily.lessonDone = true; });
+}
+
+/* Schedule a vocabulary word in the spaced-repetition system. */
+export function scheduleWord(level, en, es, known) {
+  const BOX_DAYS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };
+  const k = `${level}:${en}`;
+  update((st) => {
+    st.srs = st.srs || {};
+    const prev = st.srs[k] || { box: 1 };
+    const box = known ? Math.min(5, (prev.box || 1) + 1) : 1;
+    const d = new Date(); d.setDate(d.getDate() + BOX_DAYS[box]);
+    st.srs[k] = { box, due: d.toISOString().slice(0, 10), en, es };
+  });
 }
 
 export function getDaily() {

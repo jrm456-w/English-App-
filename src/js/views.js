@@ -13,6 +13,8 @@ import {
 import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
 import { GAMES, gamesForLevel } from '../games/index.js';
 import { dueCount } from '../games/review.js';
+import { newWordsToday } from './dailyLesson.js';
+import { isOnline } from './net.js';
 
 const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 
@@ -81,6 +83,20 @@ export async function home(_p, view) {
       <div class="stat"><div class="stat__num">${s.xp}</div><div class="stat__label">${t('home.xp')}</div></div>
       <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
     </div>`));
+
+  // Daily lesson (the main "do this today" action)
+  const lessonDone = getDaily().lessonDone;
+  const newCount = (await newWordsToday(s.level)).length;
+  const lessonCard = el(`
+    <div class="card card--tap" style="margin-top:16px;border:2px solid var(--c-primary)">
+      <div class="row" style="justify-content:space-between">
+        <strong>📅 ${t('daily.lesson')}</strong>
+        <span class="badge ${lessonDone ? '' : 'pill'}">${lessonDone ? '✅' : '▶'}</span>
+      </div>
+      <small class="muted">${lessonDone ? t('daily.lessonDone') : (newCount ? `${newCount} ${t('daily.newWords')} + ${t('daily.review')}` : t('daily.reviewOnly'))}</small>
+    </div>`);
+  lessonCard.onclick = () => navigate('/daily');
+  view.appendChild(lessonCard);
 
   // Daily mission
   view.appendChild(dailyCard());
@@ -173,6 +189,7 @@ export async function learn(_p, view) {
     const done = unitCompleted(s.level, u);
     const passed = unitPassedCount(s.level, u);
     const totalGames = (u.games || []).length;
+    const needsNet = u.requiresConnection;
     const c = el(`
       <div class="card card--tap">
         <div class="row" style="justify-content:space-between">
@@ -180,7 +197,9 @@ export async function learn(_p, view) {
           <span class="badge">${passed}/${totalGames} ${t('learn.passed')}</span>
         </div>
         <small class="muted">${u.grammar ? u.grammar.rule : ''}</small>
+        ${needsNet ? `<div class="needs-net" style="margin-top:6px">${t('net.needsConnection')}</div>` : ''}
       </div>`);
+    if (needsNet && !isOnline()) c.classList.add('is-offline-locked');
     c.onclick = () => navigate(`/unit/${s.level}/${u.id}`);
     view.appendChild(c);
   });
@@ -192,10 +211,17 @@ export async function unit({ level, id }, view) {
   const u = data.units.find((x) => x.id === id);
   if (!u) { navigate('/learn'); return; }
   clear(view);
-  markUnitStudied(level, u.id);
 
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
   view.querySelector('#back').onclick = () => navigate('/learn');
+
+  // Gate content that requires a connection.
+  if (u.requiresConnection && !isOnline()) {
+    view.appendChild(el(`<h1 class="h1">${u.title}</h1>`));
+    view.appendChild(el(`<div class="card center"><div style="font-size:2.4rem">🌐</div><p>${t('net.lockedMsg')}</p></div>`));
+    return;
+  }
+  markUnitStudied(level, u.id);
   view.appendChild(el(`<h1 class="h1">${u.title}</h1>`));
 
   // Vocabulary

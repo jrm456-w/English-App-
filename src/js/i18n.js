@@ -71,7 +71,16 @@ const DICT = {
     'review.none': 'Nada que repasar hoy. ¡Vuelve mañana! 🎯',
     'review.recalled': 'Recordadas', 'review.scheduled': 'Programamos cada palabra según lo bien que la recuerdas.',
     'dict.title': 'Diccionario', 'dict.words': 'palabras', 'dict.search': 'Buscar palabra (inglés o español)…',
-    'dict.none': 'No se encontraron palabras.'
+    'dict.none': 'No se encontraron palabras.',
+    'net.offline': 'Sin conexión', 'net.needsConnection': '🌐 Necesita conexión',
+    'net.lockedMsg': 'Este contenido necesita conexión a internet. Conéctate para acceder.',
+    'daily.lesson': 'Lección del día', 'daily.lessonDone': '¡Lección de hoy completada! Vuelve mañana.',
+    'daily.newWords': 'palabras nuevas', 'daily.review': 'repaso', 'daily.reviewOnly': 'Repaso de hoy',
+    'daily.reviewed': 'repasadas', 'daily.done': '¡Lección completada!',
+    'daily.phaseLearn': 'Aprende', 'daily.phasePractice': 'Practica', 'daily.phaseReview': 'Repasa',
+    'daily.toPractice': 'A practicar →',
+    'daily.allLearned': '¡Aprendiste todo el vocabulario de este nivel!',
+    'daily.allLearnedDesc': 'Sigue practicando con juegos o avanza de nivel cuando estés listo.'
   },
   en: {
     'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
@@ -142,7 +151,16 @@ const DICT = {
     'review.none': 'Nothing to review today. Come back tomorrow! 🎯',
     'review.recalled': 'Recalled', 'review.scheduled': 'Each word is scheduled based on how well you remember it.',
     'dict.title': 'Dictionary', 'dict.words': 'words', 'dict.search': 'Search a word (English or Spanish)…',
-    'dict.none': 'No words found.'
+    'dict.none': 'No words found.',
+    'net.offline': 'Offline', 'net.needsConnection': '🌐 Needs connection',
+    'net.lockedMsg': 'This content needs an internet connection. Go online to access it.',
+    'daily.lesson': 'Daily lesson', 'daily.lessonDone': "Today's lesson done! Come back tomorrow.",
+    'daily.newWords': 'new words', 'daily.review': 'review', 'daily.reviewOnly': "Today's review",
+    'daily.reviewed': 'reviewed', 'daily.done': 'Lesson complete!',
+    'daily.phaseLearn': 'Learn', 'daily.phasePractice': 'Practice', 'daily.phaseReview': 'Review',
+    'daily.toPractice': 'To practice →',
+    'daily.allLearned': 'You learned all the vocabulary in this level!',
+    'daily.allLearnedDesc': 'Keep practicing with games or advance to the next level when ready.'
   }
 };
 

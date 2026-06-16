@@ -8,6 +8,8 @@ import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
 import { review } from '../games/review.js';
 import { dictionary } from './dictionary.js';
+import { dailyLesson } from './dailyLesson.js';
+import { isOnline, onNetChange } from './net.js';
 import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
 import { cloudEnabled, waitForAuth, wasAuthorized, signIn, onUser, onAccessDenied, autoStart } from './cloud.js';
 import { requireLogin } from './firebase-config.js';
@@ -31,6 +33,7 @@ route('/story/:id', (p, v) => requireOnboard(() => storyReader(p, v)));
 route('/game/:type/:level/:id', (p, v) => requireOnboard(() => launchGame(p, v)));
 route('/review', (_p, v) => requireOnboard(() => review(_p, v)));
 route('/dictionary', (_p, v) => requireOnboard(() => dictionary(_p, v)));
+route('/daily', (_p, v) => requireOnboard(() => dailyLesson(_p, v)));
 route('/progress', (_p, v) => requireOnboard(() => progress(_p, v)));
 route('/settings', (_p, v) => settings(_p, v));
 route('/quiz', (_p, v) => renderQuiz(v));
@@ -40,6 +43,12 @@ function requireOnboard(fn) {
   if (!getState().onboarded) { navigate('/quiz'); return; }
   fn();
 }
+
+/* ---- Network status indicator ---- */
+const netStatus = document.getElementById('net-status');
+function refreshNet(online) { netStatus.hidden = online; }
+refreshNet(isOnline());
+onNetChange(refreshNet);
 
 /* ---- Badge & daily-goal notifications ---- */
 onBadge((badge) => toast(`🏅 ${t('badge.unlocked')} ${badge.icon} ${badgeName(badge)}`, 3000));
