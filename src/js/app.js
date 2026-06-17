@@ -152,6 +152,12 @@ boot();
 /* ---- Service worker + auto-update ----
    When we publish new content, the new SW installs in the background. We detect it
    and show a small banner so the user can refresh and get the latest words/lessons. */
+let swReg = null;
+let waitingWorker = null;
+let reloading = false;
+
+function doReload() { if (reloading) return; reloading = true; location.reload(); }
+
 function showUpdateBanner() {
   if (document.getElementById('update-banner')) return;
   const bar = el(`
@@ -161,24 +167,22 @@ function showUpdateBanner() {
     </div>`);
   document.body.appendChild(bar);
   bar.querySelector('#update-btn').onclick = () => {
-    userTriggeredUpdate = true;
-    if (waitingWorker) waitingWorker.postMessage('SKIP_WAITING');
-    else location.reload();
+    const btn = bar.querySelector('#update-btn');
+    btn.disabled = true; btn.textContent = '…';
+    const w = waitingWorker || (swReg && swReg.waiting);
+    if (w) w.postMessage('SKIP_WAITING');
+    // Fail-safe: if the controller doesn't switch quickly, reload anyway so the
+    // user is never stuck (the new SW will take over on the next load).
+    setTimeout(doReload, 1800);
   };
 }
 
-let waitingWorker = null;
-let userTriggeredUpdate = false;
 if ('serviceWorker' in navigator) {
-  let reloading = false;
-  navigator.serviceWorker.addEventListener('controllerchange', () => {
-    // Only reload when the user asked to update (avoids a reload on first install).
-    if (!userTriggeredUpdate || reloading) return;
-    reloading = true; location.reload();
-  });
+  // The new SW took control -> load fresh content.
+  navigator.serviceWorker.addEventListener('controllerchange', doReload);
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('./sw.js').then((reg) => {
-      // An update is already waiting.
+      swReg = reg;
       if (reg.waiting && navigator.serviceWorker.controller) {
         waitingWorker = reg.waiting; showUpdateBanner();
       }
@@ -186,14 +190,12 @@ if ('serviceWorker' in navigator) {
         const nw = reg.installing;
         if (!nw) return;
         nw.addEventListener('statechange', () => {
-          // New version installed while an old one is running => genuine update.
           if (nw.state === 'installed' && navigator.serviceWorker.controller) {
             waitingWorker = nw; showUpdateBanner();
           }
         });
       });
-      // Check for updates periodically and on focus.
-      setInterval(() => reg.update().catch(() => {}), 60 * 60 * 1000);
+      setInterval(() => reg.update().catch(() => {}), 30 * 60 * 1000);
       window.addEventListener('focus', () => reg.update().catch(() => {}));
     }).catch(() => {/* offline-first still works on next load */});
   });
