@@ -5,7 +5,7 @@ import { el, clear, shuffle, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { speak, ttsSupported } from './speech.js';
 import { addXp } from './gamification.js';
-import { navigate } from './router.js';
+import { navigate, goBack } from './router.js';
 
 let cache = null;
 async function loadSets() {
@@ -44,7 +44,7 @@ export async function pronunciationSet({ id }, view) {
   clear(view);
 
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/pronunciation');
+  view.querySelector('#back').onclick = () => goBack('/pronunciation');
   view.appendChild(el(`<h1 class="h1">${set.title}</h1>`));
   view.appendChild(el(`<div class="card"><small class="muted">💡 ${set.tip_es}</small></div>`));
 

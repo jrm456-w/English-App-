@@ -9,7 +9,7 @@ import { vocabPool } from './data.js';
 import { speak } from './speech.js';
 import { addXp, markDailyLessonDone, scheduleWord, levelReadyToAdvance, nextLevel } from './gamification.js';
 import { loadLevel } from './data.js';
-import { navigate } from './router.js';
+import { navigate, goBack } from './router.js';
 
 const NEW_PER_DAY = 5;
 const REVIEW_PER_DAY = 6;
@@ -35,7 +35,7 @@ export async function dailyLesson(_p, view) {
 
   // Header
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/home');
+  view.querySelector('#back').onclick = () => goBack('/home');
   view.appendChild(el(`<h1 class="h1">📅 ${t('daily.lesson')}</h1>`));
   const stage = el(`<div></div>`);
   view.appendChild(stage);

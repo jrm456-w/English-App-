@@ -3,7 +3,7 @@ import { el, clear, toast } from './ui.js';
 import { t, setLang, applyTranslations } from './i18n.js';
 import { getState, setState, resetState } from './store.js';
 import { loadLevel, levels } from './data.js';
-import { navigate } from './router.js';
+import { navigate, goBack } from './router.js';
 import { speak } from './speech.js';
 import {
   levelProgress, recentBadges, BADGES, badgeName, markUnitStudied,
@@ -220,7 +220,7 @@ export async function unit({ level, id }, view) {
   clear(view);
 
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('path.title')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/home');
+  view.querySelector('#back').onclick = () => goBack('/home');
 
   // Gate content that requires a connection.
   if (u.requiresConnection && !isOnline()) {
@@ -307,7 +307,7 @@ export async function unit({ level, id }, view) {
     card.querySelector('#next').onclick = () => next ? navigate(`/unit/${level}/${next.id}`) : navigate('/home');
   } else {
     const back = el(`<button class="btn btn--ghost btn--block" style="margin-top:8px">← ${t('path.title')}</button>`);
-    back.onclick = () => navigate('/home');
+    back.onclick = () => goBack('/home');
     view.appendChild(back);
   }
 }

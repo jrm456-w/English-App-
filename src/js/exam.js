@@ -7,7 +7,7 @@ import { loadLevel, loadStories, vocabPool } from './data.js';
 import { speak, ttsSupported, normalize } from './speech.js';
 import { advanceLevel, nextLevel } from './gamification.js';
 import { getState } from './store.js';
-import { navigate } from './router.js';
+import { navigate, goBack } from './router.js';
 
 const PASS = 70;
 
@@ -68,7 +68,7 @@ export async function exam({ level }, view) {
 
   // Intro
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('path.title')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/home');
+  view.querySelector('#back').onclick = () => goBack('/home');
   const intro = el(`
     <div class="card center">
       <div style="font-size:3rem">📝</div>

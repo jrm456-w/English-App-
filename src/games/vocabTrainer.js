@@ -6,7 +6,7 @@ import { t } from '../js/i18n.js';
 import { loadLevel } from '../js/data.js';
 import { speak, normalize } from '../js/speech.js';
 import { addXp, scheduleWord, markUnitStudied } from '../js/gamification.js';
-import { navigate } from '../js/router.js';
+import { navigate, goBack } from '../js/router.js';
 
 function exampleFor(examples, enWord) {
   const w = enWord.toLowerCase().replace(/^to\s+/, '').trim();
@@ -28,7 +28,7 @@ export async function vocabTrainer({ level, id }, view) {
 
   clear(view);
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${unit.title}</button>`));
-  view.querySelector('#back').onclick = () => navigate(`/unit/${level}/${id}`);
+  view.querySelector('#back').onclick = () => goBack(`/unit/${level}/${id}`);
   view.appendChild(el(`<h1 class="h1">🧠 ${t('train.title')}</h1>`));
   const stage = el(`<div></div>`);
   view.appendChild(stage);

@@ -7,7 +7,7 @@ import { getState, update } from '../js/store.js';
 import { vocabPool } from '../js/data.js';
 import { speak } from '../js/speech.js';
 import { addXp } from '../js/gamification.js';
-import { navigate } from '../js/router.js';
+import { navigate, goBack } from '../js/router.js';
 
 // Days until the next review for each Leitner box (1 = new/failed, 5 = mastered).
 const BOX_DAYS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };
@@ -41,7 +41,7 @@ export async function review(_p, view) {
     .slice(0, SESSION_MAX);
 
   view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/home');
+  view.querySelector('#back').onclick = () => goBack('/home');
   view.appendChild(el(`<h1 class="h1">🔁 ${t('review.title')}</h1>`));
 
   if (!queue.length) {

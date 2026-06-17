@@ -16,6 +16,21 @@ export function navigate(path) {
   else location.hash = path;
 }
 
+/* Simple in-app history stack so "Back" returns to the previous screen
+   (not always Home), consistently across every section. */
+const histStack = [];
+let prevPath = null;
+let goingBack = false;
+
+export function goBack(fallback = '/home') {
+  if (histStack.length) {
+    goingBack = true;
+    navigate(histStack.pop());
+  } else {
+    navigate(fallback);
+  }
+}
+
 function match(hashPath) {
   const segs = hashPath.split('/').filter(Boolean);
   for (const r of routes) {
@@ -33,6 +48,13 @@ function match(hashPath) {
 
 export function handle() {
   const hashPath = location.hash.replace(/^#/, '') || '/home';
+  // Maintain the back stack (skip when we're navigating back).
+  if (!goingBack && prevPath !== null && prevPath !== hashPath) {
+    histStack.push(prevPath);
+    if (histStack.length > 50) histStack.shift();
+  }
+  goingBack = false;
+  prevPath = hashPath;
   const m = match(hashPath);
   const view = document.getElementById('view');
   view.scrollTop = 0;

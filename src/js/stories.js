@@ -3,7 +3,7 @@ import { el, clear, toast, escapeHtml, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadStories, getStory } from './data.js';
-import { navigate } from './router.js';
+import { navigate, goBack } from './router.js';
 import { speak, ttsSupported, sttSupported, listenOnce, normalize } from './speech.js';
 import { markStoryRead, addXp } from './gamification.js';
 
@@ -53,7 +53,7 @@ export async function storyReader({ id }, view) {
       <button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>
       <span class="badge pill">${story.emoji} ${story.level}</span>
     </div>`));
-  view.querySelector('#back').onclick = () => navigate('/stories');
+  view.querySelector('#back').onclick = () => goBack('/stories');
   view.appendChild(el(`<h1 class="h1">${escapeHtml(story.title)}</h1><p class="muted">${escapeHtml(story.title_es)}</p>`));
 
   // Mode switch

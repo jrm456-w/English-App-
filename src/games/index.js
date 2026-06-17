@@ -3,7 +3,7 @@ import { getUnit, loadLevel } from '../js/data.js';
 import { recordGame } from '../js/gamification.js';
 import { el, clear, fmtTime, celebrate } from '../js/ui.js';
 import { t } from '../js/i18n.js';
-import { navigate } from '../js/router.js';
+import { navigate, goBack } from '../js/router.js';
 
 import { wordMatch } from './wordMatch.js';
 import { fillBlank } from './fillBlank.js';
@@ -47,7 +47,7 @@ export async function launchGame({ type, level, id }, view) {
       <span class="badge pill">${game.icon} ${t('game.' + type)}</span>
     </div>`);
   view.appendChild(header);
-  header.querySelector('#game-back').onclick = () => navigate('/games');
+  header.querySelector('#game-back').onclick = () => goBack('/games');
 
   const stage = el(`<div id="game-stage"></div>`);
   view.appendChild(stage);
