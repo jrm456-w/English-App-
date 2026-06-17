@@ -60,6 +60,24 @@ export function markDailyLessonDone() {
   update((st) => { st.daily.lessonDone = true; });
 }
 
+/* Track grammar mastery: a wrong answer raises the rule's "weak" score, a correct one
+   lowers it. Weak rules surface so the user is pushed to reinforce exactly what they fail. */
+export function recordGrammarResult(rule, ok) {
+  if (!rule) return;
+  update((st) => {
+    st.weakGrammar = st.weakGrammar || {};
+    const cur = st.weakGrammar[rule] || 0;
+    const next = cur + (ok ? -1 : 2); // misses weigh more than hits
+    if (next <= 0) delete st.weakGrammar[rule];
+    else st.weakGrammar[rule] = next;
+  });
+}
+
+export function weakGrammarList(n = 5) {
+  const w = getState().weakGrammar || {};
+  return Object.entries(w).sort((a, b) => b[1] - a[1]).slice(0, n).map(([rule]) => rule);
+}
+
 /* Schedule a vocabulary word in the spaced-repetition system. */
 export function scheduleWord(level, en, es, known) {
   const BOX_DAYS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };

@@ -2,6 +2,7 @@
 import { el, clear, shuffle, sample, toast } from '../js/ui.js';
 import { speak } from '../js/speech.js';
 import { t } from '../js/i18n.js';
+import { scheduleWord } from '../js/gamification.js';
 
 export function wordMatch(stage, ctx) {
   const pairs = sample(ctx.unit.vocabulary, Math.min(5, ctx.unit.vocabulary.length));
@@ -38,11 +39,13 @@ export function wordMatch(stage, ctx) {
       const selBtn = colEs.querySelector('.option.is-selected');
       if (selectedEs.en === p.en) {
         correct++;
+        scheduleWord(ctx.level, p.en, p.es, true); // remembered -> space it out
         b.classList.add('is-correct'); b.disabled = true;
         if (selBtn) { selBtn.classList.add('is-correct'); selBtn.disabled = true; selBtn.classList.remove('is-selected'); }
         selectedEs = null;
         if (correct === total) setTimeout(() => ctx.finish({ attempts, correct, total }), 600);
       } else {
+        scheduleWord(ctx.level, selectedEs.en, selectedEs.es, false); // missed -> bring it back soon
         b.classList.add('is-wrong');
         setTimeout(() => b.classList.remove('is-wrong'), 600);
       }

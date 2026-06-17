@@ -2,6 +2,7 @@
 import { el, clear, shuffle, sample } from '../js/ui.js';
 import { speak } from '../js/speech.js';
 import { t } from '../js/i18n.js';
+import { recordGrammarResult } from '../js/gamification.js';
 
 /* Build questions from unit.fill if present, else derive from grammar examples. */
 function buildQuestions(unit) {
@@ -52,6 +53,8 @@ export function fillBlank(stage, ctx) {
 
   function choose(btn, opt, q, card) {
     attempts++;
+    const rule = ctx.unit && ctx.unit.grammar && ctx.unit.grammar.rule;
+    recordGrammarResult(rule, opt === q.answer); // learn what the user struggles with
     card.querySelectorAll('.option').forEach((o) => o.disabled = true);
     const fb = card.querySelector('#fb');
     if (opt === q.answer) {

@@ -3,6 +3,7 @@ import { el, clear, shuffle } from '../js/ui.js';
 import { speak } from '../js/speech.js';
 import { t } from '../js/i18n.js';
 import { getState, update } from '../js/store.js';
+import { scheduleWord } from '../js/gamification.js';
 
 export function flashcard(stage, ctx) {
   const deck = shuffle(ctx.unit.vocabulary.slice());
@@ -56,6 +57,7 @@ export function flashcard(stage, ctx) {
       const k = masteryKey(card.en);
       st.mastered[k] = known ? (st.mastered[k] || 0) + 1 : 0;
     });
+    scheduleWord(ctx.level, card.en, card.es, known); // feed spaced repetition
     i++;
     i < total ? render() : ctx.finish({ attempts, correct, total });
   }

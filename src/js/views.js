@@ -8,7 +8,7 @@ import { speak } from './speech.js';
 import {
   levelProgress, recentBadges, BADGES, badgeName, markUnitStudied,
   getDaily, DAILY, unitCompleted, unitPassedCount, levelReadyToAdvance,
-  nextLevel, advanceLevel, gamePassed
+  nextLevel, advanceLevel, gamePassed, weakGrammarList
 } from './gamification.js';
 import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
 import { GAMES, gamesForLevel } from '../games/index.js';
@@ -378,6 +378,15 @@ export async function progress(_p, view) {
       <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
       <div class="stat"><div class="stat__num">${s.badges.length}</div><div class="stat__label">${t('progress.badges')}</div></div>
     </div>`));
+
+  // Grammar the user keeps missing -> shown so they know what to reinforce.
+  const weak = weakGrammarList(6);
+  if (weak.length) {
+    view.appendChild(el(`<h2 class="h2">📘 ${t('progress.weak')}</h2>`));
+    const wc = el(`<div class="card"></div>`);
+    weak.forEach((rule) => wc.appendChild(el(`<div class="setting-row"><span>⚠️ ${rule}</span></div>`)));
+    view.appendChild(wc);
+  }
 
   view.appendChild(el(`<h2 class="h2">${t('progress.badges')}</h2>`));
   const bg = el(`<div class="grid grid--auto"></div>`);

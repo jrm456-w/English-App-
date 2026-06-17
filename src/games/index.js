@@ -1,6 +1,6 @@
 /* Game registry + shared launcher and result screen. */
 import { getUnit, loadLevel } from '../js/data.js';
-import { recordGame } from '../js/gamification.js';
+import { recordGame, unitCompleted, weakGrammarList } from '../js/gamification.js';
 import { el, clear, fmtTime, celebrate } from '../js/ui.js';
 import { t } from '../js/i18n.js';
 import { navigate, goBack } from '../js/router.js';
@@ -64,29 +64,66 @@ export async function launchGame({ type, level, id }, view) {
   game.play(stage, ctx);
 }
 
-function showResult(stage, { correct, total, timeMs, xp, type, level, id }) {
+async function showResult(stage, { correct, total, timeMs, xp, type, level, id }) {
   clear(stage);
   const pct = total ? Math.round((correct / total) * 100) : 100;
-  const emoji = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  const passed = pct >= 60;
+  const emoji = pct >= 80 ? '🎉' : passed ? '👍' : '💪';
   if (pct >= 70) celebrate();
+
+  // Work out the next step so the user always knows what to do.
+  let unit = null, next = null, completed = false;
+  try {
+    const data = await loadLevel(level);
+    const idx = data.units.findIndex((u) => u.id === id);
+    unit = data.units[idx];
+    next = data.units[idx + 1] || null;
+    completed = unit ? unitCompleted(level, unit) : false;
+  } catch {}
+
+  let verdict, hint, primaryLabel, primaryAction, secondaryLabel, secondaryAction;
+  if (!passed) {
+    verdict = '💪 ' + t('result.almost');
+    hint = t('result.willReview');
+    primaryLabel = '🔁 ' + t('review.title'); primaryAction = () => navigate('/review');
+    secondaryLabel = t('common.again'); secondaryAction = retry;
+  } else if (completed && next) {
+    verdict = '✅ ' + t('result.lessonDone');
+    primaryLabel = t('path.nextLesson') + ' →'; primaryAction = () => navigate(`/unit/${level}/${next.id}`);
+    secondaryLabel = t('common.again'); secondaryAction = retry;
+  } else if (completed && !next) {
+    verdict = '✅ ' + t('result.lessonDone');
+    hint = t('result.levelReady');
+    primaryLabel = '📝 ' + t('exam.take'); primaryAction = () => navigate(`/exam/${level}`);
+    secondaryLabel = t('path.title'); secondaryAction = () => goBack('/home');
+  } else { // passed but lesson not complete yet
+    verdict = '👍 ' + t('result.good');
+    hint = t('result.needMore');
+    primaryLabel = t('result.backLesson'); primaryAction = () => navigate(`/unit/${level}/${id}`);
+    secondaryLabel = t('common.again'); secondaryAction = retry;
+  }
+
+  const weak = weakGrammarList(1)[0];
+
   const card = el(`
     <div class="card center pop-in">
       <div style="font-size:3rem">${emoji}</div>
-      <h2 class="h2">${t('common.complete')}</h2>
-      <div class="stats" style="margin:16px 0">
+      <h2 class="h2">${verdict}</h2>
+      <div class="stats" style="margin:14px 0">
         <div class="stat"><div class="stat__num">${correct}/${total}</div><div class="stat__label">${t('common.score')}</div></div>
         <div class="stat"><div class="stat__num">+${xp}</div><div class="stat__label">${t('common.xpEarned')}</div></div>
-        <div class="stat"><div class="stat__num">${fmtTime(timeMs)}</div><div class="stat__label">${t('common.time')}</div></div>
+        <div class="stat"><div class="stat__num">${pct}%</div><div class="stat__label">${t('common.score')}</div></div>
       </div>
-      <div class="row" style="justify-content:center">
-        <button class="btn" id="r-again">${t('common.again')}</button>
-        <button class="btn btn--ghost" id="r-games">${t('nav.games')}</button>
-      </div>
+      ${hint ? `<p class="muted">${hint}</p>` : ''}
+      ${weak ? `<div class="feedback feedback--no" style="text-align:left">📘 ${t('result.reinforce')}: <strong>${weak}</strong></div>` : ''}
+      <button class="btn btn--block" id="r-primary" style="margin-top:8px">${primaryLabel}</button>
+      <button class="btn btn--ghost btn--block" id="r-secondary" style="margin-top:8px">${secondaryLabel}</button>
     </div>`);
   stage.appendChild(card);
-  // Re-enter the same game route (bounce via /games so the screen fully re-renders).
-  card.querySelector('#r-again').onclick = () => { navigate('/games'); setTimeout(() => navigate(`/game/${type}/${level}/${id}`), 0); };
-  card.querySelector('#r-games').onclick = () => navigate('/games');
+  card.querySelector('#r-primary').onclick = primaryAction;
+  card.querySelector('#r-secondary').onclick = secondaryAction;
+
+  function retry() { navigate('/games'); setTimeout(() => navigate(`/game/${type}/${level}/${id}`), 0); }
 }
 
 /* Which games are valid for a given level index (0=A1 .. 4=C1). */

@@ -16,6 +16,7 @@ const DEFAULT_STATE = {
   storiesRead: {},         // { storyId: true }
   daily: null,             // { date, games, stories, xp, claimed }
   srs: {},                 // spaced repetition: { "level:en": { box, due, en, es } }
+  weakGrammar: {},         // grammar rules to reinforce: { rule: missScore }
   quizScore: null
 };
 
