@@ -57,12 +57,20 @@ export async function vocabTrainer({ level, id }, view) {
         <button class="btn btn--ghost btn--small" id="say">🔊</button>
         <div style="font-size:1.2rem;color:var(--c-text-muted);margin:12px 0">${w.es}</div>
         ${ex ? `<div class="muted" style="font-style:italic">"${ex}"</div>` : ''}
-        <button class="btn btn--block" id="next" style="margin-top:14px">${t('common.next')}</button>
+        <div class="row" style="margin-top:14px">
+          <button class="btn btn--ghost" id="prev">${t('common.prev')}</button>
+          <button class="btn" id="next" style="flex:1">${t('common.next')}</button>
+        </div>
       </div>`);
     stage.appendChild(card);
     setTimeout(() => speak(w.en), 200);
     card.querySelector('#say').onclick = () => speak(w.en);
     card.querySelector('#next').onclick = () => expose(batch, k + 1);
+    card.querySelector('#prev').onclick = () => {
+      if (k > 0) expose(batch, k - 1);
+      else if (bi > 0) { bi--; const pb = batches[bi]; expose(pb, pb.length - 1); }
+      else goBack(`/unit/${level}/${id}`);
+    };
   }
 
   /* Build retrieval items: recognition for all, production for short answers. */
