@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v14';
+const CACHE_VERSION = 'engflow-v15';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -55,9 +55,7 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_VERSION).then((cache) =>
       // Use individual adds so one failure doesn't abort the whole install.
       Promise.allSettled(PRECACHE_URLS.map((url) => cache.add(url)))
-    )
-    // Note: we do NOT skipWaiting() here. The page shows an "update" banner and
-    // the user taps it to activate the new version (see SKIP_WAITING handler).
+    ).then(() => self.skipWaiting()) // activate the new version right away
   );
 });
 

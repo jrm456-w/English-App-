@@ -1,13 +1,12 @@
 /* Vocabulary Trainer — a "see → recall → produce" loop that guarantees active learning.
    Best practice: exposure followed immediately by retrieval (recognition + production),
    feeding the spaced-repetition system. Far more effective than a passive word list. */
-import { el, clear, shuffle, sample, celebrate } from './ui.js';
-import { t } from './i18n.js';
-import { getState } from './store.js';
-import { loadLevel } from './data.js';
-import { speak, normalize } from './speech.js';
-import { addXp, scheduleWord, markUnitStudied } from './gamification.js';
-import { navigate } from './router.js';
+import { el, clear, shuffle, sample, celebrate } from '../js/ui.js';
+import { t } from '../js/i18n.js';
+import { loadLevel } from '../js/data.js';
+import { speak, normalize } from '../js/speech.js';
+import { addXp, scheduleWord, markUnitStudied } from '../js/gamification.js';
+import { navigate } from '../js/router.js';
 
 function exampleFor(examples, enWord) {
   const w = enWord.toLowerCase().replace(/^to\s+/, '').trim();
