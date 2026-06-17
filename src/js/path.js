@@ -62,7 +62,12 @@ export async function learningPath(_p, view) {
   dailyBtn.onclick = () => navigate('/daily');
   const reviewBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🔁</div><strong>${t('review.title')}</strong><div class="muted" style="font-size:.78rem">${due} ${t('path.due')}</div></div>`);
   reviewBtn.onclick = () => navigate('/review');
+  const pronBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🗣️</div><strong>${t('pron.title')}</strong><div class="muted" style="font-size:.78rem">${t('pron.short')}</div></div>`);
+  pronBtn.onclick = () => navigate('/pronunciation');
+  const dictBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🔤</div><strong>${t('dict.title')}</strong><div class="muted" style="font-size:.78rem">${t('dict.words')}</div></div>`);
+  dictBtn.onclick = () => navigate('/dictionary');
   quick.appendChild(dailyBtn); quick.appendChild(reviewBtn);
+  quick.appendChild(pronBtn); quick.appendChild(dictBtn);
   view.appendChild(quick);
 
   view.appendChild(el(`<h2 class="h2">${t('path.yourPath')}</h2>`));
@@ -114,14 +119,13 @@ export async function learningPath(_p, view) {
       <div class="card center" style="border:2px solid var(--c-success);margin-top:8px">
         <div style="font-size:2.5rem">🎓</div>
         <h2 class="h2">${t('path.levelComplete')}</h2>
-        ${next ? `<button class="btn btn--success btn--block" id="adv">${t('advance.button')} ${next} →</button>` : `<p class="muted">${t('path.topLevel')}</p>`}
+        ${next ? `<button class="btn btn--success btn--block" id="adv">📝 ${t('exam.take')} ${next} →</button>` : `<p class="muted">${t('path.topLevel')}</p>`}
       </div>`);
     view.appendChild(end);
-    if (next) end.querySelector('#adv').onclick = () => { const to = advanceLevel(); if (to) { celebrate(50); toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
+    if (next) end.querySelector('#adv').onclick = () => navigate(`/exam/${s.level}`);
   } else if (levelReadyToAdvance(data) && nextLevel(s.level)) {
-    const next = nextLevel(s.level);
-    const adv = el(`<div class="card center" style="border:2px solid var(--c-success)"><strong>🎓 ${t('advance.ready')}</strong><button class="btn btn--success btn--block" id="adv2" style="margin-top:8px">${t('advance.button')} ${next} →</button></div>`);
+    const adv = el(`<div class="card center" style="border:2px solid var(--c-success)"><strong>🎓 ${t('advance.ready')}</strong><button class="btn btn--success btn--block" id="adv2" style="margin-top:8px">📝 ${t('exam.take')} →</button></div>`);
     view.appendChild(adv);
-    adv.querySelector('#adv2').onclick = () => { const to = advanceLevel(); if (to) { celebrate(50); toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
+    adv.querySelector('#adv2').onclick = () => navigate(`/exam/${s.level}`);
   }
 }

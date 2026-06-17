@@ -1,0 +1,82 @@
+{
+  "sets": [
+    {
+      "id": "i_short_long",
+      "title": "/ɪ/ vs /iː/",
+      "tip_es": "El español solo tiene una 'i'. En inglés hay una corta y relajada (ship) y una larga y tensa (sheep). Alarga y sonríe para la larga.",
+      "pairs": [
+        { "a": "ship", "b": "sheep" },
+        { "a": "bit", "b": "beat" },
+        { "a": "live", "b": "leave" },
+        { "a": "fill", "b": "feel" },
+        { "a": "sit", "b": "seat" },
+        { "a": "chip", "b": "cheap" }
+      ]
+    },
+    {
+      "id": "b_v",
+      "title": "/b/ vs /v/",
+      "tip_es": "En español 'b' y 'v' suenan igual. En inglés, la 'v' se hace mordiendo suavemente el labio inferior con los dientes.",
+      "pairs": [
+        { "a": "best", "b": "vest" },
+        { "a": "ban", "b": "van" },
+        { "a": "berry", "b": "very" },
+        { "a": "boat", "b": "vote" },
+        { "a": "bat", "b": "vat" },
+        { "a": "curb", "b": "curve" }
+      ]
+    },
+    {
+      "id": "th",
+      "title": "'th' /θ/ vs /t/, /s/",
+      "tip_es": "La 'th' no existe en español: saca un poco la lengua entre los dientes y sopla. No la cambies por 't' ni 's'.",
+      "pairs": [
+        { "a": "think", "b": "sink" },
+        { "a": "thin", "b": "sin" },
+        { "a": "thank", "b": "sank" },
+        { "a": "three", "b": "tree" },
+        { "a": "path", "b": "pass" },
+        { "a": "mouth", "b": "mouse" }
+      ]
+    },
+    {
+      "id": "h",
+      "title": "La 'h' aspirada",
+      "tip_es": "En español la 'h' es muda. En inglés se pronuncia con un soplo de aire. Si no la dices, 'hair' suena como 'air'.",
+      "pairs": [
+        { "a": "hair", "b": "air" },
+        { "a": "heat", "b": "eat" },
+        { "a": "hill", "b": "ill" },
+        { "a": "hold", "b": "old" },
+        { "a": "ham", "b": "am" },
+        { "a": "heart", "b": "art" }
+      ]
+    },
+    {
+      "id": "ae_e",
+      "title": "/æ/ vs /e/",
+      "tip_es": "La 'a' de 'bad' es abierta (boca más abierta) y distinta de la 'e' de 'bed'. Los hispanohablantes tienden a confundirlas.",
+      "pairs": [
+        { "a": "bad", "b": "bed" },
+        { "a": "man", "b": "men" },
+        { "a": "sat", "b": "set" },
+        { "a": "bat", "b": "bet" },
+        { "a": "had", "b": "head" },
+        { "a": "pan", "b": "pen" }
+      ]
+    },
+    {
+      "id": "final_consonants",
+      "title": "Consonantes finales",
+      "tip_es": "El español rara vez termina en consonantes fuertes. En inglés debes pronunciarlas claramente: 'bed' no es 'be', y 'd' final suena distinto de 't'.",
+      "pairs": [
+        { "a": "bed", "b": "bet" },
+        { "a": "dog", "b": "dock" },
+        { "a": "bag", "b": "back" },
+        { "a": "card", "b": "cart" },
+        { "a": "seed", "b": "seat" },
+        { "a": "hard", "b": "heart" }
+      ]
+    }
+  ]
+}

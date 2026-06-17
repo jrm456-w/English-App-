@@ -62,7 +62,10 @@ export function fillBlank(stage, ctx) {
     } else {
       btn.classList.add('is-wrong');
       card.querySelectorAll('.option').forEach((o) => { if (o.textContent === q.answer) o.classList.add('is-correct'); });
-      fb.innerHTML = `<div class="feedback feedback--no">${t('common.wrong')} — ${q.answer}</div>`;
+      // Explain WHY using the unit's grammar rule (the error is a teaching moment).
+      const rule = ctx.unit && ctx.unit.grammar && ctx.unit.grammar.rule;
+      fb.innerHTML = `<div class="feedback feedback--no">${t('common.wrong')} — <strong>${q.answer}</strong>${rule ? `<br><small>📘 ${rule}</small>` : ''}</div>`;
+      speak(q.full);
     }
     const next = el(`<button class="btn btn--block">${i + 1 < total ? t('common.next') : t('quiz.finish')}</button>`);
     next.onclick = () => { i++; i < total ? render() : ctx.finish({ attempts, correct, total }); };

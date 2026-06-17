@@ -18,6 +18,13 @@ import { isOnline } from './net.js';
 
 const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 
+/* Find a grammar example sentence that uses the word, so vocabulary is shown in context. */
+function exampleFor(examples, enWord) {
+  const w = enWord.toLowerCase().replace(/^to\s+/, '').trim();
+  const re = new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+  return examples.find((ex) => re.test(ex)) || null;
+}
+
 /* ---------------- Reusable cards ---------------- */
 function taskRow(label, current, target) {
   const done = current >= target;
@@ -225,6 +232,11 @@ export async function unit({ level, id }, view) {
   const idx = data.units.findIndex((x) => x.id === id);
   view.appendChild(el(`<p class="muted" style="margin-bottom:0">${t('path.lesson')} ${idx + 1} / ${data.units.length}</p>`));
   view.appendChild(el(`<h1 class="h1" style="margin-top:4px">${u.title}</h1>`));
+  // "Can-do" goal so the learner knows what this lesson is FOR (CEFR best practice).
+  view.appendChild(el(`
+    <div class="card" style="background:var(--c-surface-2);border-style:dashed">
+      🎯 <strong>${t('lesson.goal')}:</strong> ${t('lesson.goalText')} <strong>${u.title.split(' / ')[0]}</strong>${u.grammar ? ` ${t('lesson.and')} <strong>${u.grammar.rule}</strong>` : ''}.
+    </div>`));
   // 3-step guide so the user always knows what to do.
   view.appendChild(el(`
     <div class="steps">
@@ -233,16 +245,21 @@ export async function unit({ level, id }, view) {
       <span class="steps__item ${unitCompleted(level, u) ? 'is-on' : ''}">3 · ${t('learn.practice')}</span>
     </div>`));
 
-  // Vocabulary
+  // Vocabulary (shown in context with an example sentence when available)
   view.appendChild(el(`<h2 class="h2">${t('learn.vocab')}</h2>`));
+  const examples = (u.grammar && u.grammar.examples) || [];
   const vlist = el(`<div class="card"></div>`);
   u.vocabulary.forEach((v) => {
+    const ex = exampleFor(examples, v.en);
     const row = el(`
-      <div class="setting-row">
-        <span><strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
-        <button class="btn btn--ghost btn--small" aria-label="Listen ${v.en}">🔊</button>
+      <div style="padding:10px 0;border-bottom:1px solid var(--c-border)">
+        <div class="row" style="justify-content:space-between">
+          <span><strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
+          <button class="btn btn--ghost btn--small" aria-label="Listen ${v.en}">🔊</button>
+        </div>
+        ${ex ? `<div class="muted" style="font-style:italic;font-size:.9rem;margin-top:4px">"${ex}"</div>` : ''}
       </div>`);
-    row.querySelector('button').onclick = () => speak(v.en);
+    row.querySelector('button').onclick = () => speak(ex || v.en);
     vlist.appendChild(row);
   });
   view.appendChild(vlist);

@@ -10,6 +10,8 @@ import { launchGame } from '../games/index.js';
 import { review } from '../games/review.js';
 import { dictionary } from './dictionary.js';
 import { dailyLesson } from './dailyLesson.js';
+import { pronunciation, pronunciationSet } from './pronunciation.js';
+import { exam } from './exam.js';
 import { isOnline, onNetChange } from './net.js';
 import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
 import { cloudEnabled, waitForAuth, wasAuthorized, signIn, onUser, onAccessDenied, autoStart } from './cloud.js';
@@ -35,6 +37,9 @@ route('/game/:type/:level/:id', (p, v) => requireOnboard(() => launchGame(p, v))
 route('/review', (_p, v) => requireOnboard(() => review(_p, v)));
 route('/dictionary', (_p, v) => requireOnboard(() => dictionary(_p, v)));
 route('/daily', (_p, v) => requireOnboard(() => dailyLesson(_p, v)));
+route('/pronunciation', (_p, v) => requireOnboard(() => pronunciation(_p, v)));
+route('/pron/:id', (p, v) => requireOnboard(() => pronunciationSet(p, v)));
+route('/exam/:level', (p, v) => requireOnboard(() => exam(p, v)));
 route('/progress', (_p, v) => requireOnboard(() => progress(_p, v)));
 route('/settings', (_p, v) => settings(_p, v));
 route('/quiz', (_p, v) => renderQuiz(v));
