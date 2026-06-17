@@ -3,8 +3,17 @@ import { getState, setState } from './store.js';
 
 const DICT = {
   es: {
-    'nav.home': 'Inicio', 'nav.learn': 'Aprender', 'nav.games': 'Juegos',
+    'nav.home': 'Aprender', 'nav.learn': 'Aprender', 'nav.games': 'Juegos',
     'nav.progress': 'Progreso', 'nav.settings': 'Ajustes',
+    'path.title': 'Tu ruta', 'path.level': 'Nivel', 'path.continue': 'Continuar',
+    'path.lessons': 'lecciones', 'path.lesson': 'Lección', 'path.yourPath': 'Tu ruta de aprendizaje',
+    'path.locked': '🔒 Completa la lección anterior', 'path.lockedMsg': 'Completa la lección anterior primero',
+    'path.story': 'Lectura', 'path.storyNew': 'Nueva lectura', 'path.due': 'por repasar',
+    'path.levelComplete': '¡Nivel completado!', 'path.levelDone': 'Nivel completado',
+    'path.topLevel': 'Has llegado al nivel máximo. ¡Felicidades!',
+    'path.passToComplete': 'Aprueba 2 juegos (60%+) para completar la lección.',
+    'path.lessonDone': '¡Lección completada!', 'path.nextLesson': 'Siguiente lección',
+    'path.backToPath': 'Volver a la ruta',
     'install.text': 'Instala EngFlow en tu dispositivo', 'install.button': 'Instalar',
     'home.greeting': 'Hola, ¡a practicar!', 'home.subtitle': 'Aprende inglés un poco cada día.',
     'home.continue': 'Continuar aprendiendo', 'home.level': 'Nivel', 'home.xp': 'XP',
@@ -85,8 +94,17 @@ const DICT = {
     'daily.allLearnedDesc': 'Sigue practicando con juegos o avanza de nivel cuando estés listo.'
   },
   en: {
-    'nav.home': 'Home', 'nav.learn': 'Learn', 'nav.games': 'Games',
+    'nav.home': 'Learn', 'nav.learn': 'Learn', 'nav.games': 'Games',
     'nav.progress': 'Progress', 'nav.settings': 'Settings',
+    'path.title': 'Your path', 'path.level': 'Level', 'path.continue': 'Continue',
+    'path.lessons': 'lessons', 'path.lesson': 'Lesson', 'path.yourPath': 'Your learning path',
+    'path.locked': '🔒 Complete the previous lesson', 'path.lockedMsg': 'Complete the previous lesson first',
+    'path.story': 'Reading', 'path.storyNew': 'New reading', 'path.due': 'to review',
+    'path.levelComplete': 'Level complete!', 'path.levelDone': 'Level complete',
+    'path.topLevel': 'You reached the top level. Congratulations!',
+    'path.passToComplete': 'Pass 2 games (60%+) to complete the lesson.',
+    'path.lessonDone': 'Lesson complete!', 'path.nextLesson': 'Next lesson',
+    'path.backToPath': 'Back to path',
     'install.text': 'Install EngFlow on your device', 'install.button': 'Install',
     'home.greeting': "Hi, let's practice!", 'home.subtitle': 'Learn a little English every day.',
     'home.continue': 'Continue learning', 'home.level': 'Level', 'home.xp': 'XP',

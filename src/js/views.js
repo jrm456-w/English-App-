@@ -8,7 +8,7 @@ import { speak } from './speech.js';
 import {
   levelProgress, recentBadges, BADGES, badgeName, markUnitStudied,
   getDaily, DAILY, unitCompleted, unitPassedCount, levelReadyToAdvance,
-  nextLevel, advanceLevel
+  nextLevel, advanceLevel, gamePassed
 } from './gamification.js';
 import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
 import { GAMES, gamesForLevel } from '../games/index.js';
@@ -212,8 +212,8 @@ export async function unit({ level, id }, view) {
   if (!u) { navigate('/learn'); return; }
   clear(view);
 
-  view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>`));
-  view.querySelector('#back').onclick = () => navigate('/learn');
+  view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('path.title')}</button>`));
+  view.querySelector('#back').onclick = () => navigate('/home');
 
   // Gate content that requires a connection.
   if (u.requiresConnection && !isOnline()) {
@@ -222,7 +222,16 @@ export async function unit({ level, id }, view) {
     return;
   }
   markUnitStudied(level, u.id);
-  view.appendChild(el(`<h1 class="h1">${u.title}</h1>`));
+  const idx = data.units.findIndex((x) => x.id === id);
+  view.appendChild(el(`<p class="muted" style="margin-bottom:0">${t('path.lesson')} ${idx + 1} / ${data.units.length}</p>`));
+  view.appendChild(el(`<h1 class="h1" style="margin-top:4px">${u.title}</h1>`));
+  // 3-step guide so the user always knows what to do.
+  view.appendChild(el(`
+    <div class="steps">
+      <span class="steps__item is-on">1 · ${t('learn.vocab')}</span>
+      <span class="steps__item is-on">2 · ${t('learn.grammar')}</span>
+      <span class="steps__item ${unitCompleted(level, u) ? 'is-on' : ''}">3 · ${t('learn.practice')}</span>
+    </div>`));
 
   // Vocabulary
   view.appendChild(el(`<h2 class="h2">${t('learn.vocab')}</h2>`));
@@ -250,15 +259,36 @@ export async function unit({ level, id }, view) {
     view.appendChild(g);
   }
 
-  // Practice games for this unit
+  // Practice games for this unit (passing 2 completes the lesson)
   view.appendChild(el(`<h2 class="h2">${t('learn.practice')}</h2>`));
+  view.appendChild(el(`<p class="muted" style="margin-top:-8px">${t('path.passToComplete')}</p>`));
   const grid = el(`<div class="grid grid--2"></div>`);
   (u.games || []).filter((type) => GAMES[type]).forEach((type) => {
-    const c = el(`<div class="card card--tap center"><div style="font-size:1.6rem">${GAMES[type].icon}</div><div>${t('game.' + type)}</div></div>`);
+    const passed = gamePassed(level, u.id, type);
+    const c = el(`<div class="card card--tap center"><div style="font-size:1.6rem">${GAMES[type].icon}</div><div>${passed ? '✅ ' : ''}${t('game.' + type)}</div></div>`);
     c.onclick = () => navigate(`/game/${type}/${level}/${u.id}`);
     grid.appendChild(c);
   });
   view.appendChild(grid);
+
+  // Completion footer with a clear "next lesson" action.
+  const done = unitCompleted(level, u);
+  const next = data.units[idx + 1];
+  if (done) {
+    const card = el(`
+      <div class="card center" style="border:2px solid var(--c-success)">
+        <div style="font-size:2rem">✅</div>
+        <strong>${t('path.lessonDone')}</strong>
+        ${next ? `<button class="btn btn--success btn--block" id="next" style="margin-top:10px">${t('path.nextLesson')} →</button>`
+               : `<button class="btn btn--success btn--block" id="next" style="margin-top:10px">${t('path.backToPath')}</button>`}
+      </div>`);
+    view.appendChild(card);
+    card.querySelector('#next').onclick = () => next ? navigate(`/unit/${level}/${next.id}`) : navigate('/home');
+  } else {
+    const back = el(`<button class="btn btn--ghost btn--block" style="margin-top:8px">← ${t('path.title')}</button>`);
+    back.onclick = () => navigate('/home');
+    view.appendChild(back);
+  }
 }
 
 /* ---------------- GAMES hub ---------------- */

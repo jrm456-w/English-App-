@@ -3,6 +3,7 @@ import { getState } from './store.js';
 import { applyTranslations, t } from './i18n.js';
 import { route, setNotFound, startRouter, navigate } from './router.js';
 import { home, learn, unit, games, progress, settings } from './views.js';
+import { learningPath } from './path.js';
 import { renderQuiz } from './quiz.js';
 import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
@@ -24,8 +25,8 @@ function applyTheme() {
 }
 
 /* ---- Routes ---- */
-route('/home', (_p, v) => requireOnboard(() => home(_p, v)));
-route('/learn', (_p, v) => requireOnboard(() => learn(_p, v)));
+route('/home', (_p, v) => requireOnboard(() => learningPath(_p, v)));
+route('/learn', (_p, v) => requireOnboard(() => learningPath(_p, v)));
 route('/unit/:level/:id', (p, v) => requireOnboard(() => unit(p, v)));
 route('/games', (_p, v) => requireOnboard(() => games(_p, v)));
 route('/stories', (_p, v) => requireOnboard(() => storiesList(_p, v)));

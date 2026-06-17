@@ -45,7 +45,10 @@ export function handle() {
 function updateActiveNav(hashPath) {
   const top = hashPath.split('/').filter(Boolean)[0] || 'home';
   // unit & game screens belong under their parent tab
-  const tabMap = { unit: 'learn', game: 'games', quiz: 'home', story: 'stories' };
+  const tabMap = {
+    unit: 'home', learn: 'home', game: 'games', quiz: 'home', story: 'stories',
+    daily: 'home', review: 'home', dictionary: 'home'
+  };
   const active = tabMap[top] || top;
   document.querySelectorAll('.nav__item').forEach((el) => {
     el.classList.toggle('is-active', el.dataset.route === active);

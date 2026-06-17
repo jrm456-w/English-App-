@@ -368,6 +368,66 @@
         { "q": "What did the volunteers do?", "options": ["Collected waste and planted trees", "Built houses", "Opened shops"], "answer": "Collected waste and planted trees" },
         { "q": "What did the project prove?", "options": ["Small actions have a big impact", "Nothing changes", "Only money matters"], "answer": "Small actions have a big impact" }
       ]
+    },
+    {
+      "id": "s_b2_3",
+      "level": "B2",
+      "emoji": "💡",
+      "title": "The Late Bloomer",
+      "title_es": "El que florece tarde",
+      "summary_es": "Una mujer cambia de carrera a los cuarenta y encuentra su pasión.",
+      "sentences": [
+        { "en": "For most of her life, Marina had worked in a job she found unfulfilling.", "es": "Durante casi toda su vida, Marina había trabajado en un empleo que le resultaba insatisfactorio." },
+        { "en": "It wasn't until her forties that she discovered a passion for design.", "es": "No fue hasta los cuarenta cuando descubrió una pasión por el diseño." },
+        { "en": "Many people told her it was too late to start over.", "es": "Mucha gente le decía que era demasiado tarde para empezar de nuevo." },
+        { "en": "Nevertheless, she enrolled in evening classes while keeping her day job.", "es": "Sin embargo, se inscribió en clases nocturnas mientras mantenía su trabajo diurno." },
+        { "en": "Progress was slow, and there were moments when she nearly gave up.", "es": "El progreso era lento, y hubo momentos en que casi se rindió." },
+        { "en": "Eventually, her persistence paid off and she launched her own studio.", "es": "Con el tiempo, su perseverancia dio frutos y abrió su propio estudio." },
+        { "en": "Her story reminds us that it is never too late to reinvent ourselves.", "es": "Su historia nos recuerda que nunca es demasiado tarde para reinventarnos." }
+      ],
+      "glossary": [
+        { "en": "unfulfilling", "es": "insatisfactorio" },
+        { "en": "passion", "es": "pasión" },
+        { "en": "enrolled", "es": "se inscribió" },
+        { "en": "persistence", "es": "perseverancia" },
+        { "en": "paid off", "es": "dio frutos" },
+        { "en": "reinvent", "es": "reinventar" }
+      ],
+      "questions": [
+        { "q": "When did Marina discover her passion?", "options": ["In her twenties", "In her forties", "As a child"], "answer": "In her forties" },
+        { "q": "What did she do to pursue it?", "options": ["Quit immediately", "Took evening classes", "Did nothing"], "answer": "Took evening classes" },
+        { "q": "What is the message of the story?", "options": ["It's never too late to reinvent yourself", "Always play it safe", "Money is everything"], "answer": "It's never too late to reinvent yourself" }
+      ]
+    },
+    {
+      "id": "s_b2_4",
+      "level": "B2",
+      "emoji": "🤝",
+      "title": "The Misunderstanding",
+      "title_es": "El malentendido",
+      "summary_es": "Dos colegas resuelven un conflicto gracias a la comunicación.",
+      "sentences": [
+        { "en": "Tom assumed his colleague had ignored his email on purpose.", "es": "Tom supuso que su colega había ignorado su correo a propósito." },
+        { "en": "Feeling offended, he started avoiding her at the office.", "es": "Sintiéndose ofendido, empezó a evitarla en la oficina." },
+        { "en": "The tension between them grew over several days.", "es": "La tensión entre ellos creció durante varios días." },
+        { "en": "Eventually, their manager suggested they talk it through.", "es": "Finalmente, su jefe sugirió que lo hablaran." },
+        { "en": "It turned out the email had gone straight to her spam folder.", "es": "Resultó que el correo había ido directo a su carpeta de spam." },
+        { "en": "Both of them realized how easily assumptions can damage a relationship.", "es": "Ambos se dieron cuenta de lo fácil que las suposiciones pueden dañar una relación." },
+        { "en": "From then on, they made a point of communicating clearly.", "es": "A partir de entonces, se propusieron comunicarse con claridad." }
+      ],
+      "glossary": [
+        { "en": "assumed", "es": "supuso" },
+        { "en": "offended", "es": "ofendido" },
+        { "en": "tension", "es": "tensión" },
+        { "en": "turned out", "es": "resultó" },
+        { "en": "assumptions", "es": "suposiciones" },
+        { "en": "clearly", "es": "con claridad" }
+      ],
+      "questions": [
+        { "q": "Why did Tom avoid his colleague?", "options": ["He thought she ignored him", "She was rude", "He was busy"], "answer": "He thought she ignored him" },
+        { "q": "What had actually happened to the email?", "options": ["It went to spam", "She deleted it", "He never sent it"], "answer": "It went to spam" },
+        { "q": "What did they learn?", "options": ["To communicate clearly", "To avoid each other", "To change jobs"], "answer": "To communicate clearly" }
+      ]
     }
   ]
 }
