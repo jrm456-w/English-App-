@@ -247,6 +247,10 @@ export async function unit({ level, id }, view) {
 
   // Vocabulary (shown in context with an example sentence when available)
   view.appendChild(el(`<h2 class="h2">${t('learn.vocab')}</h2>`));
+  // Active-learning trainer: see -> recall -> produce (guarantees real learning).
+  const trainBtn = el(`<button class="btn btn--block" style="margin-bottom:12px">🧠 ${t('train.cta')}</button>`);
+  trainBtn.onclick = () => navigate(`/study/${level}/${u.id}`);
+  view.appendChild(trainBtn);
   const examples = (u.grammar && u.grammar.examples) || [];
   const vlist = el(`<div class="card"></div>`);
   u.vocabulary.forEach((v) => {
