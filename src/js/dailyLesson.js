@@ -2,7 +2,7 @@
    Learn new words -> Practice them -> Review due words.
    It walks sequentially through the level's vocabulary (a real curriculum),
    so each day brings something new and each level leads into the next. */
-import { el, clear, shuffle, sample } from './ui.js';
+import { el, clear, shuffle, sample, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { vocabPool } from './data.js';
@@ -163,9 +163,10 @@ export async function dailyLesson(_p, view) {
     markDailyLessonDone();
     const xp = 20;
     addXp(xp);
+    celebrate();
     clear(stage);
     const card = el(`
-      <div class="card center">
+      <div class="card center pop-in">
         <div style="font-size:3rem">🎉</div>
         <h2 class="h2">${t('daily.done')}</h2>
         <p>${newWords.length} ${t('daily.newWords')} · ${dueWords.length} ${t('daily.reviewed')}</p>

@@ -14,7 +14,7 @@ import { isOnline, onNetChange } from './net.js';
 import { touchStreak, onBadge, badgeName, onDailyComplete } from './gamification.js';
 import { cloudEnabled, waitForAuth, wasAuthorized, signIn, onUser, onAccessDenied, autoStart } from './cloud.js';
 import { requireLogin } from './firebase-config.js';
-import { el, toast } from './ui.js';
+import { el, toast, celebrate } from './ui.js';
 
 /* ---- Theme ---- */
 function applyTheme() {
@@ -52,7 +52,7 @@ refreshNet(isOnline());
 onNetChange(refreshNet);
 
 /* ---- Badge & daily-goal notifications ---- */
-onBadge((badge) => toast(`🏅 ${t('badge.unlocked')} ${badge.icon} ${badgeName(badge)}`, 3000));
+onBadge((badge) => { celebrate(); toast(`🏅 ${t('badge.unlocked')} ${badge.icon} ${badgeName(badge)}`, 3000); });
 onDailyComplete((bonus) => toast(`${t('daily.allDone')} +${bonus} XP`, 3500));
 onAccessDenied((email) => toast(`${t('auth.denied')}${email ? ' (' + email + ')' : ''}`, 4000));
 

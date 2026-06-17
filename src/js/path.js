@@ -1,7 +1,7 @@
 /* Learning Path — the single, clear, guided journey.
    Lessons (units) unlock one after another; stories are interleaved for variety.
    One "Continue" button always tells the user exactly what to do next. */
-import { el, clear } from './ui.js';
+import { el, clear, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadLevel, loadStories } from './data.js';
@@ -117,11 +117,11 @@ export async function learningPath(_p, view) {
         ${next ? `<button class="btn btn--success btn--block" id="adv">${t('advance.button')} ${next} →</button>` : `<p class="muted">${t('path.topLevel')}</p>`}
       </div>`);
     view.appendChild(end);
-    if (next) end.querySelector('#adv').onclick = () => { const to = advanceLevel(); if (to) { toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
+    if (next) end.querySelector('#adv').onclick = () => { const to = advanceLevel(); if (to) { celebrate(50); toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
   } else if (levelReadyToAdvance(data) && nextLevel(s.level)) {
     const next = nextLevel(s.level);
     const adv = el(`<div class="card center" style="border:2px solid var(--c-success)"><strong>🎓 ${t('advance.ready')}</strong><button class="btn btn--success btn--block" id="adv2" style="margin-top:8px">${t('advance.button')} ${next} →</button></div>`);
     view.appendChild(adv);
-    adv.querySelector('#adv2').onclick = () => { const to = advanceLevel(); if (to) { toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
+    adv.querySelector('#adv2').onclick = () => { const to = advanceLevel(); if (to) { celebrate(50); toast(`${t('advance.done')} ${to}! 🎉`); learningPath(_p, view); } };
   }
 }

@@ -325,6 +325,19 @@ a { color: inherit; text-decoration: none; }
 }
 .steps__item.is-on { background: var(--c-primary); color: #fff; border-color: var(--c-primary); }
 
+/* Celebration confetti + pop-in */
+.confetti { position: fixed; inset: 0; pointer-events: none; z-index: 300; overflow: hidden; }
+.confetti__piece {
+  position: absolute; top: -16px; width: 10px; height: 14px; border-radius: 2px;
+  opacity: 0.95; animation-name: confetti-fall; animation-timing-function: linear; animation-fill-mode: forwards;
+}
+@keyframes confetti-fall {
+  0% { transform: translateY(-16px) rotate(0deg); }
+  100% { transform: translateY(108vh) rotate(720deg); opacity: 0.9; }
+}
+.pop-in { animation: pop-in 0.45s cubic-bezier(0.2, 0.8, 0.3, 1.2); }
+@keyframes pop-in { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
 /* Offline indicator + "needs connection" badge */
 .net-status {
   position: fixed; top: 0; left: 0; right: 0; z-index: 120;

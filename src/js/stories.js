@@ -1,5 +1,5 @@
 /* Short stories: reading + listening + tap-to-translate + shadowing + comprehension quiz. */
-import { el, clear, toast, escapeHtml } from './ui.js';
+import { el, clear, toast, escapeHtml, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadStories, getStory } from './data.js';
@@ -258,8 +258,9 @@ export async function storyReader({ id }, view) {
     clear(stage);
     const pct = total ? Math.round((correct / total) * 100) : 100;
     const emoji = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪';
+    if (pct >= 70) celebrate();
     const card = el(`
-      <div class="card center">
+      <div class="card center pop-in">
         <div style="font-size:3rem">${emoji}</div>
         <h2 class="h2">${t('common.complete')}</h2>
         ${total ? `<p>${t('common.score')}: <strong>${correct}/${total}</strong> (${pct}%)</p>` : ''}

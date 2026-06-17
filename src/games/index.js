@@ -1,7 +1,7 @@
 /* Game registry + shared launcher and result screen. */
 import { getUnit, loadLevel } from '../js/data.js';
 import { recordGame } from '../js/gamification.js';
-import { el, clear, fmtTime } from '../js/ui.js';
+import { el, clear, fmtTime, celebrate } from '../js/ui.js';
 import { t } from '../js/i18n.js';
 import { navigate } from '../js/router.js';
 
@@ -68,8 +68,9 @@ function showResult(stage, { correct, total, timeMs, xp, type, level, id }) {
   clear(stage);
   const pct = total ? Math.round((correct / total) * 100) : 100;
   const emoji = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '💪';
+  if (pct >= 70) celebrate();
   const card = el(`
-    <div class="card center">
+    <div class="card center pop-in">
       <div style="font-size:3rem">${emoji}</div>
       <h2 class="h2">${t('common.complete')}</h2>
       <div class="stats" style="margin:16px 0">
