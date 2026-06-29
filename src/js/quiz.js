@@ -34,6 +34,7 @@ export async function renderQuiz(view) {
 
   function run() {
     let i = 0, score = 0;
+    const byCat = {}; // per-skill breakdown
     const total = questions.length;
 
     function render() {
@@ -61,6 +62,9 @@ export async function renderQuiz(view) {
         b.onclick = () => {
           card.querySelectorAll('.option').forEach((o) => o.disabled = true);
           const ok = opt === q.answer;
+          const cat = q.type === 'listening' ? 'listening' : q.type === 'reading' ? 'reading' : q.type === 'grammar' ? 'grammar' : 'vocab';
+          byCat[cat] = byCat[cat] || { c: 0, t: 0 };
+          byCat[cat].t++; if (ok) byCat[cat].c++;
           if (ok) { score++; b.classList.add('is-correct'); }
           else {
             b.classList.add('is-wrong');
@@ -79,12 +83,25 @@ export async function renderQuiz(view) {
       setState({ level, onboarded: true, quizScore: score });
       touchStreak();
       clear(view);
+
+      // Per-skill breakdown so the learner sees exactly what to strengthen.
+      const order = ['vocab', 'grammar', 'listening', 'reading'];
+      const rows = order.filter((c) => byCat[c]).map((c) => {
+        const { c: ok, t: tot } = byCat[c];
+        const strong = ok / tot >= 0.6;
+        return `<div class="setting-row"><span>${strong ? '✅' : '⚠️'} ${t('exam.' + c)}</span><span class="muted">${ok}/${tot}${strong ? '' : ' · ' + t('quiz.toWork')}</span></div>`;
+      }).join('');
+
       const res = el(`
-        <div class="card center">
-          <div style="font-size:3rem">🎓</div>
-          <p class="muted">${t('quiz.result')}</p>
-          <div class="badge pill" style="font-size:2rem;padding:12px 28px;margin:12px 0">${level}</div>
-          <p>${t('quiz.score')}: <strong>${score}/${total}</strong></p>
+        <div>
+          <div class="card center pop-in">
+            <div style="font-size:3rem">🎓</div>
+            <p class="muted">${t('quiz.result')}</p>
+            <div class="badge pill" style="font-size:2rem;padding:12px 28px;margin:12px 0">${level}</div>
+            <p>${t('quiz.score')}: <strong>${score}/${total}</strong></p>
+          </div>
+          <h2 class="h2">${t('quiz.breakdown')}</h2>
+          <div class="card">${rows}</div>
           <button class="btn btn--block" id="go">${t('quiz.go')}</button>
         </div>`);
       view.appendChild(res);
