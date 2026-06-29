@@ -30,8 +30,8 @@ export async function learningPath(_p, view) {
   if (allDone) currentIdx = units.length;
   const doneCount = units.filter((u) => unitCompleted(s.level, u)).length;
 
-  /* ---- Hero with the single clear next action ---- */
-  const hero = el(`
+  /* ---- Hero (status only) ---- */
+  view.appendChild(el(`
     <div class="hero">
       <div class="row" style="justify-content:space-between;align-items:center">
         <div>
@@ -44,48 +44,32 @@ export async function learningPath(_p, view) {
         <div class="progress__fill" style="width:${prog}%;background:#fff"></div>
       </div>
       <div style="opacity:.9;font-size:.85rem;margin-top:6px">${doneCount}/${units.length} ${t('path.lessons')} · ${prog}%</div>
-      <button class="btn" id="continue" style="margin-top:14px;background:#fff;color:var(--c-primary);width:100%">
-        ${allDone ? '🎓 ' + t('path.levelDone') : '▶ ' + t('path.continue')}
-      </button>
-    </div>`);
-  view.appendChild(hero);
-  hero.querySelector('#continue').onclick = () => {
-    if (allDone) { navigate('/progress'); return; }
-    navigate(`/unit/${s.level}/${units[currentIdx].id}`);
-  };
+    </div>`));
 
-  /* ---- THE main action: one cohesive story-based lesson ---- */
-  const lessonStory = await pickLessonStory(s.level);
-  if (lessonStory) {
-    const card = el(`
-      <div class="card card--tap" style="margin-top:14px;border:2px solid var(--c-primary)">
-        <div class="row" style="justify-content:space-between">
-          <strong>${lessonStory.emoji} ${t('sl.cta')}</strong>
-          <span class="badge pill">▶</span>
-        </div>
-        <div style="margin-top:4px">${escapeHtml(lessonStory.title)}</div>
-        <small class="muted">${t('sl.flow')}</small>
-      </div>`);
-    card.onclick = () => navigate(`/lesson/${lessonStory.id}`);
-    view.appendChild(card);
-  }
-
-  /* ---- Daily lesson shortcut (small, optional) ---- */
-  const dailyDone = getDaily().lessonDone;
-  const newCount = (await newWordsToday(s.level)).length;
+  /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
+  const d = getDaily();
   const due = await dueCount(s.level);
-  const quick = el(`<div class="grid grid--2" style="margin-bottom:8px"></div>`);
-  const dailyBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">📅</div><strong>${t('daily.lesson')}</strong><div class="muted" style="font-size:.78rem">${dailyDone ? '✅' : newCount + ' ' + t('daily.newWords')}</div></div>`);
-  dailyBtn.onclick = () => navigate('/daily');
-  const reviewBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🔁</div><strong>${t('review.title')}</strong><div class="muted" style="font-size:.78rem">${due} ${t('path.due')}</div></div>`);
-  reviewBtn.onclick = () => navigate('/review');
-  const pronBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🗣️</div><strong>${t('pron.title')}</strong><div class="muted" style="font-size:.78rem">${t('pron.short')}</div></div>`);
-  pronBtn.onclick = () => navigate('/pronunciation');
-  const dictBtn = el(`<div class="card card--tap center" style="padding:14px"><div style="font-size:1.5rem">🔤</div><strong>${t('dict.title')}</strong><div class="muted" style="font-size:.78rem">${t('dict.words')}</div></div>`);
-  dictBtn.onclick = () => navigate('/dictionary');
-  quick.appendChild(dailyBtn); quick.appendChild(reviewBtn);
-  quick.appendChild(pronBtn); quick.appendChild(dictBtn);
-  view.appendChild(quick);
+  const lessonStory = await pickLessonStory(s.level);
+  const steps = [
+    { icon: '📖', label: t('plan.lesson'), sub: lessonStory ? escapeHtml(lessonStory.title) : '', done: !!d.storyLesson, ok: !!lessonStory, run: () => lessonStory && navigate(`/lesson/${lessonStory.id}`) },
+    { icon: '🔁', label: t('plan.review'), sub: due ? (due + ' ' + t('path.due')) : t('plan.allReviewed'), done: due === 0 || !!d.reviewed, ok: true, run: () => navigate('/review') },
+    { icon: '🗣️', label: t('plan.speak'), sub: t('pron.short'), done: !!d.spoke, ok: true, run: () => navigate('/pronunciation') }
+  ];
+  const next = steps.find((st) => !st.done && st.ok);
+  const doneSteps = steps.filter((st) => st.done).length;
+
+  const plan = el(`<div class="card" style="border:2px solid var(--c-primary)"></div>`);
+  plan.appendChild(el(`<div class="row" style="justify-content:space-between"><strong>🎯 ${t('plan.title')}</strong><small class="muted">${doneSteps}/${steps.length}</small></div>`));
+  steps.forEach((st) => {
+    const mark = st.done ? '✅' : (st === next ? '▶️' : '⬜');
+    const row = el(`<div class="setting-row"><span>${mark} ${st.icon} <strong>${st.label}</strong>${st.sub ? ` <span class="muted" style="font-size:.8rem">· ${st.sub}</span>` : ''}</span></div>`);
+    if (st.ok) { row.style.cursor = 'pointer'; row.onclick = st.run; }
+    plan.appendChild(row);
+  });
+  const cta = el(`<button class="btn btn--block" style="margin-top:12px">${next ? '▶ ' + t('plan.start') : '🎉 ' + t('plan.done')}</button>`);
+  if (next) cta.onclick = next.run; else cta.disabled = true;
+  plan.appendChild(cta);
+  view.appendChild(plan);
 
   view.appendChild(el(`<h2 class="h2">${t('path.yourPath')}</h2>`));
 
@@ -145,4 +129,13 @@ export async function learningPath(_p, view) {
     view.appendChild(adv);
     adv.querySelector('#adv2').onclick = () => navigate(`/exam/${s.level}`);
   }
+
+  // Small footer tools (secondary, not cluttering the main flow).
+  const tools = el(`<div class="row" style="justify-content:center;margin-top:16px;gap:18px">
+    <button class="btn btn--ghost btn--small" id="t-dict">🔤 ${t('dict.title')}</button>
+    <button class="btn btn--ghost btn--small" id="t-daily">📅 ${t('daily.lesson')}</button>
+  </div>`);
+  tools.querySelector('#t-dict').onclick = () => navigate('/dictionary');
+  tools.querySelector('#t-daily').onclick = () => navigate('/daily');
+  view.appendChild(tools);
 }

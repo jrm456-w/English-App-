@@ -6,7 +6,7 @@ import { t } from '../js/i18n.js';
 import { getState, update } from '../js/store.js';
 import { vocabPool } from '../js/data.js';
 import { speak } from '../js/speech.js';
-import { addXp } from '../js/gamification.js';
+import { addXp, markDailyTask } from '../js/gamification.js';
 import { navigate, goBack } from '../js/router.js';
 
 // Days until the next review for each Leitner box (1 = new/failed, 5 = mastered).
@@ -100,6 +100,7 @@ export async function review(_p, view) {
   function finish() {
     const xp = 10;
     addXp(xp);
+    markDailyTask('reviewed');
     clear(stage);
     const mastered = queue.filter((v) => (getState().srs[keyFor(s.level, v.en)] || {}).box >= 4).length;
     const card = el(`

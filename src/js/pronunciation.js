@@ -4,7 +4,7 @@
 import { el, clear, shuffle, celebrate } from './ui.js';
 import { t } from './i18n.js';
 import { speak, ttsSupported } from './speech.js';
-import { addXp } from './gamification.js';
+import { addXp, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 
 let cache = null;
@@ -97,6 +97,7 @@ export async function pronunciationSet({ id }, view) {
   function finish() {
     const xp = 10;
     addXp(xp);
+    markDailyTask('spoke');
     const pct = Math.round((correct / total) * 100);
     if (pct >= 70) celebrate();
     clear(stage);

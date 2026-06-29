@@ -10,7 +10,7 @@ import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadStories, getStory } from './data.js';
 import { speak, ttsSupported } from './speech.js';
-import { addXp, scheduleWord, markStoryRead } from './gamification.js';
+import { addXp, scheduleWord, markStoryRead, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 import { emojiFor } from './emoji.js';
 
@@ -266,6 +266,7 @@ export async function storyLesson({ id }, view) {
   function finish() {
     drawTracker();
     words.forEach((w) => scheduleWord(story.level, w.en, w.es, true));
+    markDailyTask('storyLesson');
     const baseXp = markStoryRead(story.id);
     const quizXp = quizCorrect * 2;
     if (quizXp) addXp(quizXp);

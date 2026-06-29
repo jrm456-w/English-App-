@@ -60,6 +60,12 @@ export function markDailyLessonDone() {
   update((st) => { st.daily.lessonDone = true; });
 }
 
+/* Mark a step of the daily plan done (storyLesson / reviewed / spoke). */
+export function markDailyTask(key) {
+  ensureDaily();
+  update((st) => { st.daily[key] = true; });
+}
+
 /* Track grammar mastery: a wrong answer raises the rule's "weak" score, a correct one
    lowers it. Weak rules surface so the user is pushed to reinforce exactly what they fail. */
 export function recordGrammarResult(rule, ok) {
