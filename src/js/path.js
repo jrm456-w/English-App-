@@ -1,7 +1,7 @@
 /* Learning Path — the single, clear, guided journey.
    Lessons (units) unlock one after another; stories are interleaved for variety.
    One "Continue" button always tells the user exactly what to do next. */
-import { el, clear, celebrate } from './ui.js';
+import { el, clear, celebrate, escapeHtml } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadLevel, loadStories } from './data.js';
@@ -12,6 +12,7 @@ import {
 } from './gamification.js';
 import { dueCount } from '../games/review.js';
 import { newWordsToday } from './dailyLesson.js';
+import { pickLessonStory } from './storyLesson.js';
 import { toast } from './ui.js';
 
 export async function learningPath(_p, view) {
@@ -52,6 +53,22 @@ export async function learningPath(_p, view) {
     if (allDone) { navigate('/progress'); return; }
     navigate(`/unit/${s.level}/${units[currentIdx].id}`);
   };
+
+  /* ---- THE main action: one cohesive story-based lesson ---- */
+  const lessonStory = await pickLessonStory(s.level);
+  if (lessonStory) {
+    const card = el(`
+      <div class="card card--tap" style="margin-top:14px;border:2px solid var(--c-primary)">
+        <div class="row" style="justify-content:space-between">
+          <strong>${lessonStory.emoji} ${t('sl.cta')}</strong>
+          <span class="badge pill">▶</span>
+        </div>
+        <div style="margin-top:4px">${escapeHtml(lessonStory.title)}</div>
+        <small class="muted">${t('sl.flow')}</small>
+      </div>`);
+    card.onclick = () => navigate(`/lesson/${lessonStory.id}`);
+    view.appendChild(card);
+  }
 
   /* ---- Daily lesson shortcut (small, optional) ---- */
   const dailyDone = getDaily().lessonDone;
