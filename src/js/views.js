@@ -15,6 +15,7 @@ import { GAMES, gamesForLevel } from '../games/index.js';
 import { dueCount } from '../games/review.js';
 import { newWordsToday } from './dailyLesson.js';
 import { isOnline } from './net.js';
+import { emojiFor } from './emoji.js';
 
 const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
 
@@ -258,7 +259,7 @@ export async function unit({ level, id }, view) {
     const row = el(`
       <div style="padding:10px 0;border-bottom:1px solid var(--c-border)">
         <div class="row" style="justify-content:space-between">
-          <span><strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
+          <span>${emojiFor(v.en) ? `<span style="font-size:1.3rem">${emojiFor(v.en)}</span> ` : ''}<strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
           <button class="btn btn--ghost btn--small" aria-label="Listen ${v.en}">🔊</button>
         </div>
         ${ex ? `<div class="muted" style="font-style:italic;font-size:.9rem;margin-top:4px">"${ex}"</div>` : ''}

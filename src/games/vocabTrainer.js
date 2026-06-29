@@ -7,6 +7,7 @@ import { loadLevel } from '../js/data.js';
 import { speak, normalize } from '../js/speech.js';
 import { addXp, scheduleWord, markUnitStudied } from '../js/gamification.js';
 import { navigate, goBack } from '../js/router.js';
+import { emojiFor } from '../js/emoji.js';
 
 function exampleFor(examples, enWord) {
   const w = enWord.toLowerCase().replace(/^to\s+/, '').trim();
@@ -53,6 +54,7 @@ export async function vocabTrainer({ level, id }, view) {
     const card = el(`
       <div class="card center pop-in">
         <p class="muted">${t('train.learn')} · ${t('train.batch')} ${bi + 1}/${batches.length}</p>
+        ${emojiFor(w.en) ? `<div style="font-size:3.4rem;line-height:1">${emojiFor(w.en)}</div>` : ''}
         <div style="font-size:1.9rem;font-weight:800;margin:6px 0">${w.en}</div>
         <button class="btn btn--ghost btn--small" id="say">🔊</button>
         <div style="font-size:1.2rem;color:var(--c-text-muted);margin:12px 0">${w.es}</div>

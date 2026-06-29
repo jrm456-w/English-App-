@@ -4,6 +4,7 @@ import { speak } from '../js/speech.js';
 import { t } from '../js/i18n.js';
 import { getState, update } from '../js/store.js';
 import { scheduleWord } from '../js/gamification.js';
+import { emojiFor } from '../js/emoji.js';
 
 export function flashcard(stage, ctx) {
   const deck = shuffle(ctx.unit.vocabulary.slice());
@@ -26,12 +27,13 @@ export function flashcard(stage, ctx) {
           <div class="flashcard__inner">
             <div class="flashcard__face">
               <div>
+                ${emojiFor(card.en) ? `<div style="font-size:2.6rem">${emojiFor(card.en)}</div>` : ''}
                 <div>${card.es}</div>
                 <small class="muted">${t('common.flip')}</small>
               </div>
             </div>
             <div class="flashcard__face flashcard__face--back">
-              <div>${card.en} <span aria-hidden="true">🔊</span></div>
+              <div>${emojiFor(card.en) ? emojiFor(card.en) + ' ' : ''}${card.en} <span aria-hidden="true">🔊</span></div>
             </div>
           </div>
         </div>
