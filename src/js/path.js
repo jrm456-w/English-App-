@@ -30,6 +30,20 @@ export async function learningPath(_p, view) {
   if (allDone) currentIdx = units.length;
   const doneCount = units.filter((u) => unitCompleted(s.level, u)).length;
 
+  // Unified journey: units with readings interleaved, in one ordered sequence.
+  const stops = [];
+  let sp = 0;
+  units.forEach((u, idx) => {
+    stops.push({ type: 'unit', id: u.id, title: u.title, unit: u });
+    if ((idx + 1) % 3 === 0 && sp < stories.length) {
+      const st = stories[sp++];
+      stops.push({ type: 'reading', id: st.id, title: st.title, emoji: st.emoji, story: st });
+    }
+  });
+  const stopDone = (st) => st.type === 'unit' ? unitCompleted(s.level, st.unit) : !!read[st.id];
+  const currentStop = stops.find((st) => !stopDone(st)) || null;
+  const curIndex = currentStop ? stops.indexOf(currentStop) : stops.length;
+
   /* ---- Hero (status only) ---- */
   view.appendChild(el(`
     <div class="hero">
@@ -49,9 +63,16 @@ export async function learningPath(_p, view) {
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();
   const due = await dueCount(s.level);
-  const lessonStory = await pickLessonStory(s.level);
+  const goStop = () => {
+    if (!currentStop) return;
+    currentStop.type === 'reading' ? navigate(`/lesson/${currentStop.id}`) : navigate(`/unit/${s.level}/${currentStop.id}`);
+  };
   const steps = [
-    { icon: '📖', label: t('plan.lesson'), sub: lessonStory ? escapeHtml(lessonStory.title) : '', done: !!d.storyLesson, ok: !!lessonStory, run: () => lessonStory && navigate(`/lesson/${lessonStory.id}`) },
+    { icon: currentStop && currentStop.type === 'reading' ? (currentStop.emoji || '📖') : '📖',
+      label: t('plan.lesson'),
+      sub: currentStop ? escapeHtml(currentStop.title) : t('plan.journeyDone'),
+      done: !currentStop || !!d.storyLesson || d.games > 0,
+      ok: !!currentStop, run: goStop },
     { icon: '🔁', label: t('plan.review'), sub: due ? (due + ' ' + t('path.due')) : t('plan.allReviewed'), done: due === 0 || !!d.reviewed, ok: true, run: () => navigate('/review') },
     { icon: '🗣️', label: t('plan.speak'), sub: t('pron.short'), done: !!d.spoke, ok: true, run: () => navigate('/pronunciation') }
   ];
@@ -72,45 +93,38 @@ export async function learningPath(_p, view) {
   view.appendChild(plan);
 
   view.appendChild(el(`<h2 class="h2">${t('path.yourPath')}</h2>`));
+  view.appendChild(el(`<p class="muted" style="margin-top:-8px;font-size:.85rem">${t('path.mapHint')}</p>`));
 
-  /* ---- The path itself ---- */
-  let storyPtr = 0;
-  units.forEach((u, idx) => {
-    const done = unitCompleted(s.level, u);
-    const isCurrent = idx === currentIdx;
-    const locked = idx > currentIdx;
-    const passed = unitPassedCount(s.level, u);
-    const totalGames = (u.games || []).length;
+  /* ---- The journey map (units + readings as one sequence) ---- */
+  let lessonNo = 0;
+  stops.forEach((st, idx) => {
+    if (st.type === 'unit') lessonNo++;
+    const done = stopDone(st);
+    const isCurrent = idx === curIndex;
+    const locked = idx > curIndex;
+    const isReading = st.type === 'reading';
 
-    const icon = done ? '✅' : isCurrent ? '🎯' : '🔒';
-    const cls = 'lesson-node' + (isCurrent ? ' is-current' : '') + (locked ? ' is-locked' : '') + (done ? ' is-done' : '');
+    const icon = done ? '✅' : isCurrent ? '🎯' : locked ? '🔒' : (isReading ? (st.emoji || '📖') : '•');
+    const cls = 'lesson-node' + (isCurrent ? ' is-current' : '') + (locked ? ' is-locked' : '') + (done ? ' is-done' : '') + (isReading ? ' lesson-node--story' : '');
+    const title = isReading ? `${t('path.story')}: ${st.title}` : `${t('path.lesson')} ${lessonNo}: ${st.title}`;
+    let sub;
+    if (locked) sub = t('path.locked');
+    else if (done) sub = isReading ? t('stories.read') : t('learn.completed');
+    else if (isReading) sub = t('path.storyNew');
+    else sub = unitPassedCount(s.level, st.unit) + '/' + Math.min(2, (st.unit.games || []).length) + ' ' + t('learn.passed');
+
     const node = el(`
       <div class="${cls}">
         <div class="lesson-node__icon">${icon}</div>
         <div class="lesson-node__body">
-          <div class="lesson-node__title">${t('path.lesson')} ${idx + 1}: ${u.title}</div>
-          <div class="lesson-node__sub">${locked ? t('path.locked') : (done ? t('learn.completed') : passed + '/' + Math.min(2, totalGames) + ' ' + t('learn.passed'))}</div>
+          <div class="lesson-node__title">${isCurrent ? '▶️ ' : ''}${title}</div>
+          <div class="lesson-node__sub">${isCurrent ? t('path.todayHere') + ' · ' : ''}${sub}</div>
         </div>
         ${isCurrent ? `<span class="lesson-node__cta">${t('common.start')} →</span>` : ''}
       </div>`);
-    if (!locked) node.onclick = () => navigate(`/unit/${s.level}/${u.id}`);
-    else node.onclick = () => toast('🔒 ' + t('path.lockedMsg'));
+    if (locked) node.onclick = () => toast('🔒 ' + t('path.lockedMsg'));
+    else node.onclick = () => isReading ? navigate(`/lesson/${st.id}`) : navigate(`/unit/${s.level}/${st.id}`);
     view.appendChild(node);
-
-    // Interleave a story every 3 lessons for variety.
-    if ((idx + 1) % 3 === 0 && storyPtr < stories.length) {
-      const st = stories[storyPtr++];
-      const sNode = el(`
-        <div class="lesson-node lesson-node--story">
-          <div class="lesson-node__icon">${st.emoji || '📖'}</div>
-          <div class="lesson-node__body">
-            <div class="lesson-node__title">${t('path.story')}: ${st.title}</div>
-            <div class="lesson-node__sub">${read[st.id] ? t('stories.read') : t('path.storyNew')}</div>
-          </div>
-        </div>`);
-      sNode.onclick = () => navigate(`/story/${st.id}`);
-      view.appendChild(sNode);
-    }
   });
 
   /* ---- End of level ---- */
