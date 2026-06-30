@@ -74,7 +74,7 @@ export async function learningPath(_p, view) {
       done: !currentStop || !!d.storyLesson || d.games > 0,
       ok: !!currentStop, run: goStop },
     { icon: '🔁', label: t('plan.review'), sub: due ? (due + ' ' + t('path.due')) : t('plan.allReviewed'), done: due === 0 || !!d.reviewed, ok: true, run: () => navigate('/review') },
-    { icon: '🗣️', label: t('plan.speak'), sub: t('pron.short'), done: !!d.spoke, ok: true, run: () => navigate('/pronunciation') }
+    { icon: '🗣️', label: t('plan.speak'), sub: t('speak2.short'), done: !!d.spoke, ok: true, run: () => navigate('/speak') }
   ];
   const next = steps.find((st) => !st.done && st.ok);
   const doneSteps = steps.filter((st) => st.done).length;
@@ -145,10 +145,14 @@ export async function learningPath(_p, view) {
   }
 
   // Small footer tools (secondary, not cluttering the main flow).
-  const tools = el(`<div class="row" style="justify-content:center;margin-top:16px;gap:18px">
+  const tools = el(`<div class="row" style="justify-content:center;margin-top:16px;gap:14px;flex-wrap:wrap">
+    <button class="btn btn--ghost btn--small" id="t-convo">💬 ${t('convo.title')}</button>
+    <button class="btn btn--ghost btn--small" id="t-pron">🗣️ ${t('pron.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-dict">🔤 ${t('dict.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-daily">📅 ${t('daily.lesson')}</button>
   </div>`);
+  tools.querySelector('#t-convo').onclick = () => navigate('/convo');
+  tools.querySelector('#t-pron').onclick = () => navigate('/pronunciation');
   tools.querySelector('#t-dict').onclick = () => navigate('/dictionary');
   tools.querySelector('#t-daily').onclick = () => navigate('/daily');
   view.appendChild(tools);

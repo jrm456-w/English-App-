@@ -279,6 +279,9 @@ export async function unit({ level, id }, view) {
       g.appendChild(r);
     });
     view.appendChild(g);
+    const gBtn = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:10px">🧩 ${t('gram.practice')}</button>`);
+    gBtn.onclick = () => navigate(`/grammar/${level}/${u.id}`);
+    view.appendChild(gBtn);
   }
 
   // Practice games for this unit (passing 2 completes the lesson)
@@ -385,7 +388,12 @@ export async function progress(_p, view) {
   if (weak.length) {
     view.appendChild(el(`<h2 class="h2">📘 ${t('progress.weak')}</h2>`));
     const wc = el(`<div class="card"></div>`);
-    weak.forEach((rule) => wc.appendChild(el(`<div class="setting-row"><span>⚠️ ${rule}</span></div>`)));
+    weak.forEach((rule) => {
+      const u = data.units.find((x) => x.grammar && x.grammar.rule === rule);
+      const row = el(`<div class="setting-row" style="${u ? 'cursor:pointer' : ''}"><span>⚠️ ${rule}</span>${u ? `<span class="lesson-node__cta">🧩 ${t('gram.practice')}</span>` : ''}</div>`);
+      if (u) row.onclick = () => navigate(`/grammar/${s.level}/${u.id}`);
+      wc.appendChild(row);
+    });
     view.appendChild(wc);
   }
 
