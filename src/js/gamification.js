@@ -139,7 +139,15 @@ export function touchStreak() {
 /* ---------------- XP ---------------- */
 export function addXp(amount, isBonus = false) {
   ensureDaily();
-  update((st) => { st.xp += amount; st.daily.xp += amount; });
+  const td = today();
+  update((st) => {
+    st.xp += amount; st.daily.xp += amount;
+    // Keep a rolling daily-activity history (last ~60 days) for the progress charts.
+    st.xpLog = st.xpLog || {};
+    st.xpLog[td] = (st.xpLog[td] || 0) + amount;
+    const keys = Object.keys(st.xpLog).sort();
+    while (keys.length > 60) delete st.xpLog[keys.shift()];
+  });
   const xp = getState().xp;
   if (xp >= 100) award('xp_100');
   if (xp >= 500) award('xp_500');

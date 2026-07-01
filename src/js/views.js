@@ -383,6 +383,76 @@ export async function progress(_p, view) {
       <div class="stat"><div class="stat__num">${s.badges.length}</div><div class="stat__label">${t('progress.badges')}</div></div>
     </div>`));
 
+  // ---- Memory strength: how far each word has travelled toward mastery (SRS boxes) ----
+  const srs = Object.values(s.srs || {});
+  if (srs.length) {
+    const boxes = [0, 0, 0, 0, 0];
+    srs.forEach((e) => { boxes[Math.min(4, Math.max(0, (e.box || 1) - 1))]++; });
+    const maxBox = Math.max(...boxes, 1);
+    const seq = ['#93c5fd', '#60a5fa', '#3b82f6', '#2563eb', '#1d4ed8']; // one hue, light→dark
+    const names = [t('viz.box1'), t('viz.box2'), t('viz.box3'), t('viz.box4'), t('viz.box5')];
+    const mastered = boxes[3] + boxes[4];
+    const mem = el(`<div class="card"></div>`);
+    mem.appendChild(el(`<div class="row" style="justify-content:space-between"><strong>🧠 ${t('viz.memory')}</strong><small class="muted">${srs.length} ${t('dict.words')} · ${mastered} ${t('viz.mastered')}</small></div>`));
+    mem.appendChild(el(`<p class="muted" style="font-size:.8rem;margin:4px 0 10px">${t('viz.memoryHint')}</p>`));
+    boxes.forEach((n, i2) => {
+      mem.appendChild(el(`
+        <div class="memrow">
+          <span class="memrow__name">${names[i2]}</span>
+          <span class="memrow__track"><span class="memrow__fill" style="width:${Math.round((n / maxBox) * 100)}%;background:${seq[i2]}"></span></span>
+          <span class="memrow__val">${n}</span>
+        </div>`));
+    });
+    view.appendChild(mem);
+  }
+
+  // ---- Activity: XP earned in the last 7 days (single series, one hue) ----
+  {
+    const log = s.xpLog || {};
+    const days = [];
+    for (let k = 6; k >= 0; k--) {
+      const dte = new Date(); dte.setDate(dte.getDate() - k);
+      const iso = dte.toISOString().slice(0, 10);
+      days.push({ iso, xp: log[iso] || 0, dow: dte.getDay(), today: k === 0 });
+    }
+    const maxXp = Math.max(...days.map((d2) => d2.xp), 1);
+    const dini = (getState().lang === 'en') ? ['S', 'M', 'T', 'W', 'T', 'F', 'S'] : ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+    const act = el(`<div class="card"></div>`);
+    act.appendChild(el(`<strong>📈 ${t('viz.activity')}</strong>`));
+    const cols = el(`<div class="viz-cols" role="img" aria-label="${t('viz.activity')}"></div>`);
+    days.forEach((d2) => {
+      const h = d2.xp ? Math.max(6, Math.round((d2.xp / maxXp) * 84)) : 2;
+      // Label only today's bar and the week's max — selective, not every point.
+      const showVal = d2.xp > 0 && (d2.today || d2.xp === maxXp);
+      cols.appendChild(el(`
+        <div class="viz-col" title="${d2.iso} · ${d2.xp} XP">
+          <span class="viz-col__val">${showVal ? d2.xp : ''}</span>
+          <span class="viz-col__bar${d2.today ? ' is-today' : ''}" style="height:${h}px"></span>
+          <span class="viz-col__day">${dini[d2.dow]}</span>
+        </div>`));
+    });
+    act.appendChild(cols);
+    view.appendChild(act);
+  }
+
+  // ---- Consistency: last 4 weeks as a calendar heatmap ----
+  {
+    const log = s.xpLog || {};
+    const cal = el(`<div class="card"></div>`);
+    cal.appendChild(el(`<strong>📆 ${t('viz.consistency')}</strong>`));
+    const grid = el(`<div class="viz-cal"></div>`);
+    for (let k = 27; k >= 0; k--) {
+      const dte = new Date(); dte.setDate(dte.getDate() - k);
+      const iso = dte.toISOString().slice(0, 10);
+      const xp = log[iso] || 0;
+      const lvl2 = xp >= 50 ? 3 : xp >= 20 ? 2 : xp > 0 ? 1 : 0;
+      grid.appendChild(el(`<span class="viz-cell viz-cell--${lvl2}" title="${iso} · ${xp} XP"></span>`));
+    }
+    cal.appendChild(grid);
+    cal.appendChild(el(`<small class="muted">${t('viz.calHint')}</small>`));
+    view.appendChild(cal);
+  }
+
   // Grammar the user keeps missing -> shown so they know what to reinforce.
   const weak = weakGrammarList(6);
   if (weak.length) {
@@ -428,6 +498,15 @@ export function settings(_p, view) {
     document.querySelector('meta[name="theme-color"]').setAttribute('content', th === 'dark' ? '#0f172a' : '#2563eb');
   };
   card.appendChild(dark);
+
+  // Slow audio (easier listening)
+  const slow = el(`
+    <div class="setting-row">
+      <span>🐢 ${t('settings.slowAudio')}</span>
+      <label class="switch"><input type="checkbox" id="slow" ${s.slowAudio ? 'checked' : ''}><span class="switch__slider"></span></label>
+    </div>`);
+  slow.querySelector('#slow').onchange = (e) => setState({ slowAudio: e.target.checked });
+  card.appendChild(slow);
 
   // Language
   const lang = el(`

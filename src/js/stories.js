@@ -4,7 +4,7 @@ import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadStories, getStory } from './data.js';
 import { navigate, goBack } from './router.js';
-import { speak, ttsSupported, sttSupported, listenOnce, normalize } from './speech.js';
+import { speak, ttsSupported, sttSupported, listenOnce, normalize, currentRate } from './speech.js';
 import { markStoryRead, addXp } from './gamification.js';
 
 const LEVEL_ORDER = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -139,7 +139,7 @@ export async function storyReader({ id }, view) {
       rows[i].classList.add('is-playing');
       rows[i].scrollIntoView({ block: 'center', behavior: 'smooth' });
       const u = new SpeechSynthesisUtterance(story.sentences[i].en);
-      u.lang = 'en-US'; u.rate = 0.9;
+      u.lang = 'en-US'; u.rate = currentRate();
       u.onend = () => setTimeout(() => playSequential(i + 1), 250);
       u.onerror = () => playSequential(i + 1);
       window.speechSynthesis.speak(u);

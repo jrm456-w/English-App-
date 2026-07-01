@@ -17,6 +17,8 @@ const DEFAULT_STATE = {
   daily: null,             // { date, games, stories, xp, claimed }
   srs: {},                 // spaced repetition: { "level:en": { box, due, en, es } }
   weakGrammar: {},         // grammar rules to reinforce: { rule: missScore }
+  xpLog: {},               // daily activity history: { "YYYY-MM-DD": xpEarned }
+  slowAudio: false,        // 🐢 slower TTS for easier listening
   quizScore: null
 };
 

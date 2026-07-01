@@ -9,7 +9,7 @@ import { el, clear, shuffle, sample, toast, celebrate, escapeHtml } from './ui.j
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadStories, getStory } from './data.js';
-import { speak, ttsSupported } from './speech.js';
+import { speak, ttsSupported, currentRate } from './speech.js';
 import { addXp, scheduleWord, markStoryRead, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 import { emojiFor } from './emoji.js';
@@ -104,7 +104,7 @@ export async function storyLesson({ id }, view) {
       const speakNext = () => {
         if (!playing || i >= story.sentences.length) { playing = false; playBtn.textContent = t('story.playAll'); return; }
         const u = new SpeechSynthesisUtterance(story.sentences[i].en);
-        u.lang = 'en-US'; u.rate = 0.9; u.onend = () => { i++; setTimeout(speakNext, 200); }; u.onerror = () => { i++; speakNext(); };
+        u.lang = 'en-US'; u.rate = currentRate(); u.onend = () => { i++; setTimeout(speakNext, 200); }; u.onerror = () => { i++; speakNext(); };
         window.speechSynthesis.speak(u);
       };
       speakNext();

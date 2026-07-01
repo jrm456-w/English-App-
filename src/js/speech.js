@@ -1,7 +1,13 @@
 /* Web Speech API helpers with graceful fallbacks. */
+import { getState } from './store.js';
 
 export function ttsSupported() {
   return 'speechSynthesis' in window;
+}
+
+/* Global speech rate: slower when the 🐢 setting is on (easier listening). */
+export function currentRate() {
+  return getState().slowAudio ? 0.7 : 0.92;
 }
 
 let cachedVoice = null;
@@ -19,12 +25,12 @@ if (ttsSupported()) {
 }
 
 /* Speak an English string aloud. Returns true if TTS was available. */
-export function speak(text, { rate = 0.92, lang = 'en-US' } = {}) {
+export function speak(text, { rate, lang = 'en-US' } = {}) {
   if (!ttsSupported()) return false;
   window.speechSynthesis.cancel();
   const u = new SpeechSynthesisUtterance(text);
   u.lang = lang;
-  u.rate = rate;
+  u.rate = rate ?? currentRate();
   const v = pickEnglishVoice();
   if (v) u.voice = v;
   window.speechSynthesis.speak(u);
