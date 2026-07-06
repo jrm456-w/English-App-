@@ -81,16 +81,38 @@ export async function grammarTrainer({ level, id }, view) {
     });
     function update() { checkBtn.disabled = answer.querySelectorAll('.chip').length !== words.length; }
 
+    let hinted = false;
     checkBtn.onclick = () => {
       const built = Array.from(answer.querySelectorAll('.chip')).map((c) => c.textContent).join(' ');
       const ok = normalize(built) === normalize(target);
-      if (ok) correct++;
-      recordGrammarResult(g.rule, ok);
-      checkBtn.disabled = true;
       const fb = card.querySelector('#fb');
+
+      // First miss: teach HOW to think (strategy + sentence opening) and let them retry.
+      if (!ok && !hinted) {
+        hinted = true;
+        recordGrammarResult(g.rule, false);
+        checkBtn.disabled = true;
+        fb.innerHTML = `
+          <div class="feedback feedback--no">
+            💭 <strong>${t('hint.title')}:</strong> ${t('hint.order')}<br>
+            <small>${t('hint.startsWith')}: “${words.slice(0, 2).join(' ')}…” · 📘 ${g.rule}</small>
+          </div>`;
+        const retry = el(`<button class="btn btn--block" style="margin-top:8px">↻ ${t('hint.tryAgain')}</button>`);
+        retry.onclick = () => {
+          answer.querySelectorAll('.chip').forEach((c) => c.remove());
+          bank.querySelectorAll('.chip').forEach((c) => c.classList.remove('is-used'));
+          fb.innerHTML = '';
+          update();
+        };
+        fb.appendChild(retry);
+        return;
+      }
+
+      if (ok && !hinted) { correct++; recordGrammarResult(g.rule, true); }
+      checkBtn.disabled = true;
       fb.innerHTML = ok
-        ? `<div class="feedback feedback--ok">✅ ${t('common.correct')}</div>`
-        : `<div class="feedback feedback--no">❌ <strong>${target}</strong><br><small>📘 ${g.rule}</small></div>`;
+        ? `<div class="feedback feedback--ok">✅ ${t('common.correct')}${hinted ? ' · ' + t('hint.withHint') : ''}</div>`
+        : `<div class="feedback feedback--no">❌ <strong>${target}</strong><br><small>📘 ${g.rule}: ${g.explanation_es}</small></div>`;
       if (ok) speak(target);
       const nb = el(`<button class="btn btn--block" style="margin-top:8px">${i + 1 < list.length ? t('common.next') : t('gram.finish')}</button>`);
       nb.onclick = () => { i++; i < list.length ? drill() : finish(); };

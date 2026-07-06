@@ -144,7 +144,22 @@ export async function vocabTrainer({ level, id }, view) {
       const input = card.querySelector('#ans');
       input.focus();
       card.querySelector('#hint').onclick = () => speak(word.en);
-      const submit = () => { input.disabled = true; grade(accept(input.value, word.en), word, null, card, () => recall(batch, tests, k + 1)); };
+      let hinted = false;
+      const submit = () => {
+        const ok = accept(input.value, word.en);
+        // First miss: show the first letter + word shape, let them think again.
+        if (!ok && !hinted) {
+          hinted = true;
+          const base = word.en.replace(/^to\s+/i, '');
+          const shape = base[0].toUpperCase() + ' ' + base.slice(1).replace(/[a-zA-Z]/g, '·').replace(/\s/g, '  ');
+          card.querySelector('#fb').innerHTML =
+            `<div class="feedback feedback--no">💭 <strong>${t('hint.title')}:</strong> ${t('hint.startsWith')} “${shape}”</div>`;
+          input.focus(); input.select();
+          return;
+        }
+        input.disabled = true;
+        grade(ok, word, null, card, () => recall(batch, tests, k + 1));
+      };
       card.querySelector('#check').onclick = submit;
       input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submit(); });
     }

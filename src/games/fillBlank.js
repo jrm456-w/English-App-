@@ -54,13 +54,24 @@ export function fillBlank(stage, ctx) {
   function choose(btn, opt, q, card) {
     attempts++;
     const rule = ctx.unit && ctx.unit.grammar && ctx.unit.grammar.rule;
-    recordGrammarResult(rule, opt === q.answer); // learn what the user struggles with
-    card.querySelectorAll('.option').forEach((o) => o.disabled = true);
     const fb = card.querySelector('#fb');
+
+    // First miss: rule out that option, give the rule as a thinking hint, allow a retry.
+    if (opt !== q.answer && !q._hinted) {
+      q._hinted = true;
+      recordGrammarResult(rule, false);
+      btn.disabled = true;
+      btn.classList.add('is-wrong');
+      fb.innerHTML = `<div class="feedback feedback--no">💭 <strong>${t('hint.title')}:</strong> ${rule ? '📘 ' + rule + '. ' : ''}${t('hint.tryAgain')}</div>`;
+      return;
+    }
+
+    if (!q._hinted) recordGrammarResult(rule, opt === q.answer);
+    card.querySelectorAll('.option').forEach((o) => o.disabled = true);
     if (opt === q.answer) {
-      correct++;
+      if (!q._hinted) correct++;
       btn.classList.add('is-correct');
-      fb.innerHTML = `<div class="feedback feedback--ok">${t('common.correct')}</div>`;
+      fb.innerHTML = `<div class="feedback feedback--ok">${t('common.correct')}${q._hinted ? ' · ' + t('hint.withHint') : ''}</div>`;
       speak(q.full);
     } else {
       btn.classList.add('is-wrong');
