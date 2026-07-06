@@ -1,7 +1,8 @@
 /* Vocabulary Trainer — a "see → recall → produce" loop that guarantees active learning.
    Best practice: exposure followed immediately by retrieval (recognition + production),
    feeding the spaced-repetition system. Far more effective than a passive word list. */
-import { el, clear, shuffle, sample, celebrate } from '../js/ui.js';
+import { el, clear, shuffle, sample, celebrate, toast } from '../js/ui.js';
+import { saveResume, getResume, clearResume } from '../js/resume.js';
 import { t } from '../js/i18n.js';
 import { loadLevel } from '../js/data.js';
 import { speak, normalize } from '../js/speech.js';
@@ -39,7 +40,19 @@ export async function vocabTrainer({ level, id }, view) {
   for (let i = 0; i < allWords.length; i += BATCH) batches.push(allWords.slice(i, i + BATCH));
   let bi = 0, correct = 0, totalTests = 0;
 
+  // Resume where the learner left off (leaving mid-way must never restart from zero).
+  const resumeKey = `study:${level}:${id}`;
+  const saved = getResume(resumeKey);
+  if (saved && saved.bi > 0 && saved.bi < batches.length) {
+    bi = saved.bi;
+    toast(`▶️ ${t('resume.continuing')} · ${t('train.batch')} ${bi + 1}/${batches.length}`, 3000);
+    const restart = el(`<button class="btn btn--ghost btn--small" style="margin-bottom:8px">↺ ${t('resume.restart')}</button>`);
+    restart.onclick = () => { clearResume(resumeKey); vocabTrainer({ level, id }, view); };
+    view.insertBefore(restart, stage);
+  }
+
   function runBatch() {
+    saveResume(resumeKey, { bi });
     const batch = batches[bi];
     expose(batch, 0);
   }
@@ -152,6 +165,7 @@ export async function vocabTrainer({ level, id }, view) {
   }
 
   function finish() {
+    clearResume(resumeKey);
     markUnitStudied(level, id);
     const xp = 15;
     addXp(xp);

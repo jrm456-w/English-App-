@@ -13,6 +13,7 @@ import { speak, ttsSupported, currentRate } from './speech.js';
 import { addXp, scheduleWord, markStoryRead, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 import { emojiFor } from './emoji.js';
+import { saveResume, getResume, clearResume } from './resume.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
@@ -39,6 +40,14 @@ export async function storyLesson({ id }, view) {
   const steps = ['read', 'words', 'game', 'search', 'quiz'];
   let stepIdx = 0;
 
+  // Resume mid-lesson: coming back must not restart from phase 1.
+  const resumeKey = `lesson:${story.id}`;
+  const saved = getResume(resumeKey);
+  if (saved && saved.stepIdx > 0 && saved.stepIdx < steps.length) {
+    stepIdx = saved.stepIdx;
+    toast(`▶️ ${t('resume.continuing')}`, 2600);
+  }
+
   // Header with progress through the 5 phases.
   view.appendChild(el(`
     <div class="row" style="justify-content:space-between">
@@ -58,7 +67,7 @@ export async function storyLesson({ id }, view) {
       `<span class="steps__item ${k <= stepIdx ? 'is-on' : ''}">${labels[s]}</span>`).join('');
   }
 
-  function nextPhase() { stepIdx++; run(); }
+  function nextPhase() { stepIdx++; saveResume(resumeKey, { stepIdx }); run(); }
   function run() {
     drawTracker();
     const phase = steps[stepIdx];
@@ -265,6 +274,7 @@ export async function storyLesson({ id }, view) {
   /* ---------- DONE ---------- */
   function finish() {
     drawTracker();
+    clearResume(resumeKey);
     words.forEach((w) => scheduleWord(story.level, w.en, w.es, true));
     markDailyTask('storyLesson');
     const baseXp = markStoryRead(story.id);

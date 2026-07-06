@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v26';
+const CACHE_VERSION = 'engflow-v27';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -26,6 +26,7 @@ const PRECACHE_URLS = [
   './src/js/exam.js',
   './src/js/net.js',
   './src/js/emoji.js',
+  './src/js/resume.js',
   './src/js/storyLesson.js',
   './src/js/speaking.js',
   './src/js/grammarTrainer.js',
