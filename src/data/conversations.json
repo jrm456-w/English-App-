@@ -129,6 +129,58 @@
         ] },
         { "who": "them", "en": "Likewise. Thanks for your professionalism.", "es": "Igualmente. Gracias por su profesionalismo." }
       ]
+    },
+    {
+      "id": "cv_b2_2",
+      "level": "B2",
+      "emoji": "🩺",
+      "title": "At the doctor's office",
+      "title_es": "En el consultorio médico",
+      "lines": [
+        { "who": "them", "en": "Good morning. What seems to be the problem?", "es": "Buenos días. ¿Cuál parece ser el problema?" },
+        { "who": "you", "prompt_es": "Describe tus síntomas (dolor de cabeza y cansancio desde hace una semana)", "options": [
+          { "en": "I've been having headaches and feeling exhausted for about a week.", "ok": true },
+          { "en": "My head is pain and tired one week.", "ok": false },
+          { "en": "Since one week I am headache.", "ok": false }
+        ] },
+        { "who": "them", "en": "I see. Have you been sleeping well lately?", "es": "Entiendo. ¿Ha dormido bien últimamente?" },
+        { "who": "you", "prompt_es": "Di que no, que duermes 4-5 horas por el trabajo", "options": [
+          { "en": "Not really — I've only been getting four or five hours because of work.", "ok": true },
+          { "en": "No sleep because job takes hours four or five.", "ok": false }
+        ] },
+        { "who": "them", "en": "That could explain a lot. I'd recommend rest before we try any medication.", "es": "Eso podría explicar mucho. Le recomendaría descanso antes de probar medicación." },
+        { "who": "you", "prompt_es": "Pregunta si deberías hacerte algún examen", "options": [
+          { "en": "Should I get any tests done, just in case?", "ok": true },
+          { "en": "You make me exam now or no?", "ok": false }
+        ] },
+        { "who": "them", "en": "Let's do a basic blood test. Come back in a week with the results.", "es": "Hagamos un análisis de sangre básico. Vuelva en una semana con los resultados." }
+      ]
+    },
+    {
+      "id": "cv_b2_3",
+      "level": "B2",
+      "emoji": "📦",
+      "title": "Complaining about an order",
+      "title_es": "Reclamar por un pedido",
+      "lines": [
+        { "who": "them", "en": "Customer service, how can I help you today?", "es": "Servicio al cliente, ¿en qué puedo ayudarle hoy?" },
+        { "who": "you", "prompt_es": "Explica que tu pedido llegó dañado", "options": [
+          { "en": "I'm calling because my order arrived damaged.", "ok": true },
+          { "en": "My order is broke when arrive.", "ok": false },
+          { "en": "You send me broken thing.", "ok": false }
+        ] },
+        { "who": "them", "en": "I'm sorry to hear that. Could you give me your order number?", "es": "Lamento oír eso. ¿Podría darme su número de pedido?" },
+        { "who": "you", "prompt_es": "Da el número y pide una solución", "options": [
+          { "en": "It's 58214. I'd like a replacement or a full refund, please.", "ok": true },
+          { "en": "58214. Give money back now.", "ok": false }
+        ] },
+        { "who": "them", "en": "We can send a replacement tomorrow, free of charge. Would that work?", "es": "Podemos enviar un reemplazo mañana, sin costo. ¿Le parece bien?" },
+        { "who": "you", "prompt_es": "Acepta y agradece la gestión", "options": [
+          { "en": "That works perfectly. I appreciate you resolving this so quickly.", "ok": true },
+          { "en": "Ok is fine I suppose whatever.", "ok": false }
+        ] },
+        { "who": "them", "en": "My pleasure. You'll receive a confirmation email shortly.", "es": "Un placer. Recibirá un correo de confirmación en breve." }
+      ]
     }
   ]
 }

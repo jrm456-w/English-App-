@@ -98,6 +98,7 @@ export async function pronunciationSet({ id }, view) {
     const xp = 10;
     addXp(xp);
     markDailyTask('spoke');
+    markDailyTask('challenge');
     const pct = Math.round((correct / total) * 100);
     if (pct >= 70) celebrate();
     clear(stage);

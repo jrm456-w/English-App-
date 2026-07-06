@@ -5,7 +5,7 @@ import { el, clear, shuffle, celebrate, escapeHtml } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { speak } from './speech.js';
-import { addXp } from './gamification.js';
+import { addXp, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 
 let cache = null;
@@ -118,6 +118,7 @@ export async function convoPlay({ id }, view) {
   function finish() {
     const xp = 15;
     addXp(xp);
+    markDailyTask('challenge');
     const pct = choices ? Math.round((correct / choices) * 100) : 100;
     if (pct >= 70) celebrate();
     clear(ctrl);

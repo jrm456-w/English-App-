@@ -428,6 +428,66 @@
         { "q": "What had actually happened to the email?", "options": ["It went to spam", "She deleted it", "He never sent it"], "answer": "It went to spam" },
         { "q": "What did they learn?", "options": ["To communicate clearly", "To avoid each other", "To change jobs"], "answer": "To communicate clearly" }
       ]
+    },
+    {
+      "id": "s_b2_5",
+      "level": "B2",
+      "emoji": "🏝️",
+      "title": "The Island Without Wi-Fi",
+      "title_es": "La isla sin wifi",
+      "summary_es": "Un adicto al trabajo pasa una semana desconectado y descubre algo inesperado.",
+      "sentences": [
+        { "en": "When Daniel booked a week on a remote island, he didn't realize there would be no signal at all.", "es": "Cuando Daniel reservó una semana en una isla remota, no se dio cuenta de que no habría señal en absoluto." },
+        { "en": "For the first two days, he kept checking a phone that had nothing to show him.", "es": "Durante los dos primeros días, no dejaba de mirar un teléfono que no tenía nada que mostrarle." },
+        { "en": "By the third day, something strange happened: he started noticing things.", "es": "Al tercer día, ocurrió algo extraño: empezó a fijarse en las cosas." },
+        { "en": "The fishermen repaired their nets while telling stories he half understood.", "es": "Los pescadores reparaban sus redes mientras contaban historias que él entendía a medias." },
+        { "en": "He helped an old man carry water, and they talked for an hour using simple words and gestures.", "es": "Ayudó a un anciano a cargar agua, y hablaron durante una hora usando palabras sencillas y gestos." },
+        { "en": "On the last night, Daniel wrote in a notebook instead of typing on a screen.", "es": "La última noche, Daniel escribió en un cuaderno en lugar de teclear en una pantalla." },
+        { "en": "\"I came here to disconnect,\" he wrote, \"but actually, I finally connected.\"", "es": "\"Vine aquí a desconectarme\", escribió, \"pero en realidad, por fin me conecté.\"" }
+      ],
+      "glossary": [
+        { "en": "remote", "es": "remoto" },
+        { "en": "signal", "es": "señal" },
+        { "en": "noticing", "es": "fijándose en" },
+        { "en": "nets", "es": "redes" },
+        { "en": "gestures", "es": "gestos" },
+        { "en": "notebook", "es": "cuaderno" }
+      ],
+      "questions": [
+        { "q": "What surprised Daniel about the island?", "options": ["There was no signal", "It was crowded", "It was expensive"], "answer": "There was no signal" },
+        { "q": "What changed on the third day?", "options": ["He started noticing things", "He found Wi-Fi", "He went home"], "answer": "He started noticing things" },
+        { "q": "What did he write on the last night?", "options": ["That he finally connected", "That he hated the island", "A work email"], "answer": "That he finally connected" }
+      ]
+    },
+    {
+      "id": "s_c1_3",
+      "level": "C1",
+      "emoji": "⏳",
+      "title": "The Art of Slow Thinking",
+      "title_es": "El arte de pensar despacio",
+      "summary_es": "Un ensayo breve sobre por qué las mejores decisiones no son las más rápidas.",
+      "sentences": [
+        { "en": "We live in an age that mistakes speed for intelligence.", "es": "Vivimos en una época que confunde la velocidad con la inteligencia." },
+        { "en": "Notifications reward the instant reply; algorithms amplify the hasty opinion.", "es": "Las notificaciones premian la respuesta instantánea; los algoritmos amplifican la opinión apresurada." },
+        { "en": "Yet the decisions we regret most are rarely the ones we made too slowly.", "es": "Sin embargo, las decisiones de las que más nos arrepentimos rara vez son las que tomamos demasiado despacio." },
+        { "en": "Slow thinking is not hesitation; it is deliberate resistance to the shallow.", "es": "Pensar despacio no es titubear; es una resistencia deliberada a lo superficial." },
+        { "en": "It asks uncomfortable questions: What am I assuming? What would change my mind?", "es": "Plantea preguntas incómodas: ¿Qué estoy asumiendo? ¿Qué me haría cambiar de opinión?" },
+        { "en": "Paradoxically, those who pause the longest often act the most decisively.", "es": "Paradójicamente, quienes más se detienen suelen actuar con mayor decisión." },
+        { "en": "In a noisy world, patience may be the last true competitive advantage.", "es": "En un mundo ruidoso, la paciencia puede ser la última ventaja competitiva verdadera." }
+      ],
+      "glossary": [
+        { "en": "hasty", "es": "apresurado" },
+        { "en": "regret", "es": "arrepentirse" },
+        { "en": "hesitation", "es": "titubeo" },
+        { "en": "deliberate", "es": "deliberado" },
+        { "en": "assuming", "es": "asumiendo" },
+        { "en": "advantage", "es": "ventaja" }
+      ],
+      "questions": [
+        { "q": "What does the age we live in mistake speed for?", "options": ["Intelligence", "Kindness", "Wealth"], "answer": "Intelligence" },
+        { "q": "According to the text, slow thinking is…", "options": ["Deliberate resistance to the shallow", "A form of fear", "A waste of time"], "answer": "Deliberate resistance to the shallow" },
+        { "q": "What may be the last true competitive advantage?", "options": ["Patience", "Technology", "Money"], "answer": "Patience" }
+      ]
     }
   ]
 }

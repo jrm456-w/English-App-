@@ -18,6 +18,7 @@ const DEFAULT_STATE = {
   srs: {},                 // spaced repetition: { "level:en": { box, due, en, es } }
   weakGrammar: {},         // grammar rules to reinforce: { rule: missScore }
   xpLog: {},               // daily activity history: { "YYYY-MM-DD": xpEarned }
+  endingsFound: {},        // adventures: { advId: [endingNodeIds] }
   slowAudio: false,        // 🐢 slower TTS for easier listening
   quizScore: null
 };

@@ -75,6 +75,7 @@ export async function speaking(_p, view) {
 
   function finish() {
     markDailyTask('spoke');
+    markDailyTask('challenge');
     const xp = 15;
     addXp(xp);
     celebrate();
