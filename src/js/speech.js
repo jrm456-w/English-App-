@@ -65,7 +65,14 @@ export function listenOnce({ lang = 'en-US', timeoutMs = 8000 } = {}) {
   });
 }
 
-/* Normalize text for lenient comparison (strip punctuation/case). */
+/* Normalize text for lenient comparison (strip punctuation/case).
+   Hyphens count as spaces so "hard-working" === "hard working", and curly
+   apostrophes match straight ones so "don’t" === "don't". */
 export function normalize(s) {
-  return s.toLowerCase().replace(/[^a-z0-9\s']/g, '').replace(/\s+/g, ' ').trim();
+  return s.toLowerCase()
+    .replace(/[’‘]/g, "'")
+    .replace(/[-–—/]/g, ' ')
+    .replace(/[^a-z0-9\s']/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
