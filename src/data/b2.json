@@ -166,6 +166,125 @@
       "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
     },
     {
+      "id": "hw1",
+      "title": "Academy: Personality I / Personalidad (rasgos positivos)",
+      "vocabulary": [
+        { "en": "Ambitious", "es": "Ambicioso/a" },
+        { "en": "Brave", "es": "Valiente" },
+        { "en": "Carefree", "es": "Despreocupado/a" },
+        { "en": "Charming", "es": "Encantador/a" },
+        { "en": "Cheerful", "es": "Animado/a" },
+        { "en": "Friendly", "es": "Amable / Amigable" },
+        { "en": "Generous", "es": "Generoso/a" },
+        { "en": "Hard-working", "es": "Trabajador/a" },
+        { "en": "Honest", "es": "Honesto/a" },
+        { "en": "Kind", "es": "Bondadoso/a" },
+        { "en": "Laid-back", "es": "Tranquilo/a, relajado/a" },
+        { "en": "Loyal", "es": "Leal" }
+      ],
+      "grammar": {
+        "rule": "Describing personality: be + adjective",
+        "explanation_es": "Para describir la personalidad usamos 'to be' + adjetivo: 'She is friendly'. Intensificamos con very, really, quite: 'He is really hard-working'.",
+        "examples": ["She is very friendly and kind.", "He is honest and hard-working.", "My best friend is loyal and generous.", "Our teacher is cheerful and charming.", "I am quite laid-back about most things."]
+      },
+      "fill": [
+        { "sentence": "She always tells the truth — she is very ___.", "answer": "honest", "options": ["lazy", "boring", "cruel"] },
+        { "sentence": "He works twelve hours a day. He is really ___.", "answer": "hard-working", "options": ["carefree", "shy", "mean"] },
+        { "sentence": "My dog never leaves my side — he is so ___.", "answer": "loyal", "options": ["ugly", "naive", "proud"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw2",
+      "title": "Academy: Personality II / Personalidad (rasgos negativos)",
+      "vocabulary": [
+        { "en": "Annoying", "es": "Irritante" },
+        { "en": "Bad-tempered", "es": "Malhumorado/a" },
+        { "en": "Bitchy", "es": "Maldiciente, venenoso/a" },
+        { "en": "Boring", "es": "Aburrido/a" },
+        { "en": "Cruel", "es": "Cruel" },
+        { "en": "Dull", "es": "Sin gracia, soso/a" },
+        { "en": "Lazy", "es": "Perezoso/a" },
+        { "en": "Mean", "es": "Mezquino/a" },
+        { "en": "Narrow-minded", "es": "De mente cerrada" },
+        { "en": "Selfish", "es": "Egoísta" },
+        { "en": "Stubborn", "es": "Obstinado/a, terco/a" },
+        { "en": "Two-faced", "es": "Falso/a, de doble cara" }
+      ],
+      "grammar": {
+        "rule": "Softening negative descriptions",
+        "explanation_es": "Para criticar con tacto usamos 'a bit', 'a little', 'can be': 'He can be a bit stubborn' suena mucho mejor que 'He is stubborn'.",
+        "examples": ["He can be a bit stubborn sometimes.", "My neighbor is quite bad-tempered in the morning.", "That movie was really boring.", "Don't be so selfish — share with your brother.", "She seemed a little annoying at first, but she is kind."]
+      },
+      "fill": [
+        { "sentence": "He never shares anything. He is so ___.", "answer": "selfish", "options": ["generous", "loyal", "brave"] },
+        { "sentence": "She refuses to change her mind — she is very ___.", "answer": "stubborn", "options": ["carefree", "cheerful", "elegant"] },
+        { "sentence": "He says one thing to you and another behind your back. He is ___.", "answer": "two-faced", "options": ["honest", "kind", "polite"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw3",
+      "title": "Academy: Personality III / Más rasgos (¡ojo con sensible!)",
+      "vocabulary": [
+        { "en": "Cautious", "es": "Cauteloso/a" },
+        { "en": "Conservative", "es": "Conservador/a" },
+        { "en": "Modest", "es": "Modesto/a" },
+        { "en": "Naive", "es": "Ingenuo/a" },
+        { "en": "Naughty", "es": "Travieso/a" },
+        { "en": "Open-minded", "es": "De mente abierta" },
+        { "en": "Polite", "es": "Educado/a, cortés" },
+        { "en": "Proud", "es": "Orgulloso/a" },
+        { "en": "Reliable", "es": "Confiable" },
+        { "en": "Self-confident", "es": "Seguro/a de sí mismo/a" },
+        { "en": "Sensible", "es": "Sensato/a (¡NO 'sensible'!)" },
+        { "en": "Sensitive", "es": "Sensible" },
+        { "en": "Shy", "es": "Tímido/a" },
+        { "en": "Talkative", "es": "Hablador/a" },
+        { "en": "Weird", "es": "Raro/a, extraño/a" }
+      ],
+      "grammar": {
+        "rule": "False friends: sensible ≠ sensible",
+        "explanation_es": "¡Trampa clásica! En inglés 'sensible' significa SENSATO (que piensa bien), y 'sensitive' significa SENSIBLE (que siente mucho). Son falsos amigos: no las traduzcas directo.",
+        "examples": ["She is very sensible with money.", "He is too sensitive to criticism.", "Be sensible — don't spend it all.", "My little brother is quite naughty.", "She is shy at first, but very talkative later."]
+      },
+      "fill": [
+        { "sentence": "She cries with every sad movie — she is very ___.", "answer": "sensitive", "options": ["sensible", "reliable", "cautious"] },
+        { "sentence": "Saving money instead of spending it all is the ___ thing to do.", "answer": "sensible", "options": ["sensitive", "naughty", "weird"] },
+        { "sentence": "You can always count on her. She is completely ___.", "answer": "reliable", "options": ["naive", "shy", "proud"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw4",
+      "title": "Academy: Looks / La apariencia",
+      "vocabulary": [
+        { "en": "Tall", "es": "Alto/a" },
+        { "en": "Short", "es": "Bajo/a" },
+        { "en": "Of medium height", "es": "De estatura mediana" },
+        { "en": "Fat", "es": "Gordo/a" },
+        { "en": "Thin", "es": "Flaco/a, delgado/a" },
+        { "en": "Chubby", "es": "Rechoncho/a" },
+        { "en": "Beautiful", "es": "Bonita, hermosa" },
+        { "en": "Handsome", "es": "Guapo" },
+        { "en": "Ugly", "es": "Feo/a" },
+        { "en": "Attractive", "es": "Atractivo/a" },
+        { "en": "Sexy", "es": "Sexy" },
+        { "en": "Elegant", "es": "Elegante" }
+      ],
+      "grammar": {
+        "rule": "What does he/she look like?",
+        "explanation_es": "Para preguntar por la apariencia: 'What does she look like?' (¿cómo es físicamente?). Respuesta: 'She is tall and thin'. Ojo: 'beautiful' se usa para mujeres y 'handsome' para hombres.",
+        "examples": ["What does your brother look like?", "He is tall and thin.", "She is of medium height.", "My grandfather was a handsome man.", "She looked very elegant at the party."]
+      },
+      "fill": [
+        { "sentence": "He is not tall and not short — he is of medium ___.", "answer": "height", "options": ["weight", "size", "length"] },
+        { "sentence": "We usually say a man is ___ and a woman is beautiful.", "answer": "handsome", "options": ["pretty", "chubby", "elegant"] },
+        { "sentence": "The baby is not fat, just a little ___.", "answer": "chubby", "options": ["ugly", "tall", "thin"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
       "id": "u6",
       "title": "Business & Economy / Negocios y economía",
       "vocabulary": [
