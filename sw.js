@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v31';
+const CACHE_VERSION = 'engflow-v32';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -33,6 +33,7 @@ const PRECACHE_URLS = [
   './src/js/convo.js',
   './src/js/adventure.js',
   './src/js/classMaterial.js',
+  './src/js/chatPartner.js',
   './src/js/cloud.js',
   './src/js/firebase-config.js',
   './src/games/index.js',
@@ -55,6 +56,7 @@ const PRECACHE_URLS = [
   './src/data/conversations.json',
   './src/data/adventures.json',
   './src/data/classMaterial.json',
+  './src/data/chatTopics.json',
   './src/data/quiz.json',
   './src/assets/icons/icon-192.png',
   './src/assets/icons/icon-512.png',

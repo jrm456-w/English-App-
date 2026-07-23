@@ -19,12 +19,12 @@ import { toast } from './ui.js';
 /* Step 3 of the plan rotates by weekday so every day feels different. */
 function dailyChallenge(d) {
   const ROTATION = [
-    { icon: '🗺️', key: 'adv.title', route: '/adventure' },   // Sun
+    { icon: '🤖', key: 'chat.title', route: '/chat' },        // Sun
     { icon: '🗣️', key: 'speak2.title', route: '/speak' },    // Mon
     { icon: '💬', key: 'convo.title', route: '/convo' },      // Tue
     { icon: '👂', key: 'pron.title', route: '/pronunciation' }, // Wed
     { icon: '🗺️', key: 'adv.title', route: '/adventure' },   // Thu
-    { icon: '💬', key: 'convo.title', route: '/convo' },      // Fri
+    { icon: '🤖', key: 'chat.title', route: '/chat' },        // Fri
     { icon: '🗣️', key: 'speak2.title', route: '/speak' }     // Sat
   ];
   const c = ROTATION[new Date().getDay()];
@@ -180,12 +180,14 @@ export async function learningPath(_p, view) {
 
   // Small footer tools (secondary, not cluttering the main flow).
   const tools = el(`<div class="row" style="justify-content:center;margin-top:16px;gap:14px;flex-wrap:wrap">
+    <button class="btn btn--ghost btn--small" id="t-chat">🤖 ${t('chat.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-adv">🗺️ ${t('adv.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-convo">💬 ${t('convo.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-pron">🗣️ ${t('pron.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-dict">🔤 ${t('dict.title')}</button>
     <button class="btn btn--ghost btn--small" id="t-daily">📅 ${t('daily.lesson')}</button>
   </div>`);
+  tools.querySelector('#t-chat').onclick = () => navigate('/chat');
   tools.querySelector('#t-adv').onclick = () => navigate('/adventure');
   tools.querySelector('#t-convo').onclick = () => navigate('/convo');
   tools.querySelector('#t-pron').onclick = () => navigate('/pronunciation');

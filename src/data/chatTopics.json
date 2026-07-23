@@ -1,0 +1,88 @@
+{
+  "topics": [
+    {
+      "id": "ct_about_you",
+      "level": "A1",
+      "emoji": "👋",
+      "title": "Getting to know you",
+      "title_es": "Conocernos",
+      "opener_en": "Hi! I'm your practice partner. Let's chat a little. Answer in English — full sentences if you can!",
+      "prompts": [
+        { "ask_en": "What's your name and where are you from?", "ask_es": "¿Cómo te llamas y de dónde eres?", "model_en": "My name is Carlos and I'm from Mexico." },
+        { "ask_en": "What do you do? Do you work or study?", "ask_es": "¿A qué te dedicas? ¿Trabajas o estudias?", "model_en": "I work in an office and I'm also studying English." },
+        { "ask_en": "What do you like to do in your free time?", "ask_es": "¿Qué te gusta hacer en tu tiempo libre?", "model_en": "In my free time I like watching series and going for a walk." },
+        { "ask_en": "Why are you learning English?", "ask_es": "¿Por qué estás aprendiendo inglés?", "model_en": "I'm learning English to get a better job and to travel." }
+      ]
+    },
+    {
+      "id": "ct_weekend",
+      "level": "A2",
+      "emoji": "🗓️",
+      "title": "Your weekend",
+      "title_es": "Tu fin de semana",
+      "opener_en": "Let's talk about your weekend! Tell me about it.",
+      "prompts": [
+        { "ask_en": "What did you do last weekend?", "ask_es": "¿Qué hiciste el fin de semana pasado?", "model_en": "Last weekend I relaxed at home and watched a movie with my family." },
+        { "ask_en": "Did you go anywhere nice?", "ask_es": "¿Fuiste a algún lugar bonito?", "model_en": "Yes, I went to a park near my house. It was sunny and quiet." },
+        { "ask_en": "What do you usually do on Sundays?", "ask_es": "¿Qué sueles hacer los domingos?", "model_en": "On Sundays I usually cook lunch and rest before the new week." },
+        { "ask_en": "What are your plans for next weekend?", "ask_es": "¿Qué planes tienes para el próximo fin de semana?", "model_en": "Next weekend I'm going to visit my friends and maybe go running." }
+      ]
+    },
+    {
+      "id": "ct_health",
+      "level": "A2",
+      "emoji": "🥗",
+      "title": "Health & habits",
+      "title_es": "Salud y hábitos",
+      "opener_en": "Health is a great topic to practice. Let's chat about it!",
+      "prompts": [
+        { "ask_en": "What does 'feeling good in your body' mean to you?", "ask_es": "¿Qué significa para ti sentirte bien en tu cuerpo?", "model_en": "For me, feeling good means having energy and a positive mood, not only being thin." },
+        { "ask_en": "Do you think weight loss drugs are a good idea? Why?", "ask_es": "¿Crees que los medicamentos para adelgazar son buena idea? ¿Por qué?", "model_en": "In my opinion they can help people with obesity, but they also have side effects." },
+        { "ask_en": "What healthy habits do you have?", "ask_es": "¿Qué hábitos saludables tienes?", "model_en": "I try to drink a lot of water and walk every day." },
+        { "ask_en": "If a product promised to quiet 'food noise', what would you ask first?", "ask_es": "Si un producto prometiera calmar el 'ruido de comida', ¿qué preguntarías?", "model_en": "I would ask about the side effects and if it is safe for a long time." }
+      ]
+    },
+    {
+      "id": "ct_travel",
+      "level": "B1",
+      "emoji": "✈️",
+      "title": "Travel & experiences",
+      "title_es": "Viajes y experiencias",
+      "opener_en": "I love talking about travel. Where shall we start?",
+      "prompts": [
+        { "ask_en": "What's the best place you have ever visited?", "ask_es": "¿Cuál es el mejor lugar que has visitado?", "model_en": "The best place I've ever visited is the beach in Cancun. The water was amazing." },
+        { "ask_en": "Do you prefer the mountains or the sea? Why?", "ask_es": "¿Prefieres la montaña o el mar? ¿Por qué?", "model_en": "I prefer the sea because I find it relaxing and I love swimming." },
+        { "ask_en": "Tell me about a trip that didn't go as planned.", "ask_es": "Cuéntame de un viaje que no salió como esperabas.", "model_en": "Once my flight was delayed for six hours, so I missed a concert. It was frustrating." },
+        { "ask_en": "If you could travel anywhere tomorrow, where would you go?", "ask_es": "Si pudieras viajar a cualquier lugar mañana, ¿a dónde irías?", "model_en": "If I could travel anywhere, I would go to Japan to see the culture and the food." }
+      ]
+    },
+    {
+      "id": "ct_work",
+      "level": "B2",
+      "emoji": "💼",
+      "title": "Work & goals",
+      "title_es": "Trabajo y metas",
+      "opener_en": "Let's have a professional chat. Ready to practice?",
+      "prompts": [
+        { "ask_en": "Tell me about what you do at work.", "ask_es": "Cuéntame qué haces en tu trabajo.", "model_en": "I'm responsible for customer service, so I help clients and solve their problems." },
+        { "ask_en": "What's the most challenging part of your job?", "ask_es": "¿Cuál es la parte más difícil de tu trabajo?", "model_en": "The most challenging part is meeting tight deadlines while keeping quality high." },
+        { "ask_en": "Where do you see yourself in five years?", "ask_es": "¿Dónde te ves en cinco años?", "model_en": "In five years I see myself leading a team and speaking English fluently." },
+        { "ask_en": "How would you convince someone to hire you?", "ask_es": "¿Cómo convencerías a alguien de contratarte?", "model_en": "I would say that I'm reliable, hard-working, and eager to grow with the company." }
+      ]
+    },
+    {
+      "id": "ct_opinions",
+      "level": "C1",
+      "emoji": "🧠",
+      "title": "Ideas & opinions",
+      "title_es": "Ideas y opiniones",
+      "opener_en": "Let's stretch your English with a deeper conversation.",
+      "prompts": [
+        { "ask_en": "Do you think technology makes us more or less connected?", "ask_es": "¿Crees que la tecnología nos conecta más o menos?", "model_en": "Arguably, technology connects us instantly, yet it can also make real conversations rarer." },
+        { "ask_en": "Is it better to be fast or thorough when making decisions?", "ask_es": "¿Es mejor ser rápido o minucioso al decidir?", "model_en": "It depends on the stakes; for important decisions, I'd rather be thorough than hasty." },
+        { "ask_en": "What's one belief you've changed your mind about?", "ask_es": "¿Sobre qué creencia has cambiado de opinión?", "model_en": "I used to think talent mattered most, but I've come to believe consistency matters far more." },
+        { "ask_en": "If you could fix one problem in the world, what would it be?", "ask_es": "Si pudieras resolver un problema del mundo, ¿cuál sería?", "model_en": "If I could fix one problem, it would be unequal access to education, since it shapes everything else." }
+      ]
+    }
+  ]
+}
