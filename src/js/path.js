@@ -13,6 +13,7 @@ import {
 import { dueCount } from '../games/review.js';
 import { newWordsToday } from './dailyLesson.js';
 import { pickLessonStory } from './storyLesson.js';
+import { materialStatus } from './classMaterial.js';
 import { toast } from './ui.js';
 
 /* Step 3 of the plan rotates by weekday so every day feels different. */
@@ -77,6 +78,21 @@ export async function learningPath(_p, view) {
       </div>
       <div style="opacity:.9;font-size:.85rem;margin-top:6px">${doneCount}/${units.length} ${t('path.lessons')} · ${prog}%</div>
     </div>`));
+
+  /* ---- Class material (from your academy) — shows only while it's fresh ---- */
+  const mat = await materialStatus();
+  if (mat) {
+    const card = el(`
+      <div class="card card--tap" style="border:2px solid var(--c-accent)">
+        <div class="row" style="justify-content:space-between">
+          <strong>📄 ${t('cm.forClass')}: ${escapeHtml(mat.material.title)}</strong>
+          <span class="badge ${mat.daysLeft <= 2 ? 'pill' : ''}">⏳ ${mat.daysLeft}d</span>
+        </div>
+        <small class="muted">${t('cm.forClassHint')}</small>
+      </div>`);
+    card.onclick = () => navigate('/material');
+    view.appendChild(card);
+  }
 
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();

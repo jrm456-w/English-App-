@@ -19,6 +19,7 @@ const DEFAULT_STATE = {
   weakGrammar: {},         // grammar rules to reinforce: { rule: missScore }
   xpLog: {},               // daily activity history: { "YYYY-MM-DD": xpEarned }
   endingsFound: {},        // adventures: { advId: [endingNodeIds] }
+  materialSeen: {},         // class material first-seen timestamps: { id: ms }
   slowAudio: false,        // 🐢 slower TTS for easier listening
   quizScore: null
 };
