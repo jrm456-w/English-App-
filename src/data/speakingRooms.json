@@ -1,6 +1,36 @@
 {
   "rooms": [
     {
+      "id": "room_hello",
+      "level": "A1",
+      "emoji": "👋",
+      "title": "First hellos",
+      "title_es": "Primeros saludos",
+      "intro_en": "Let's practice simple hellos. Short answers are fine!",
+      "turns": [
+        { "ask_en": "Hello! How are you?", "model_en": "I'm fine, thank you. And you?", "model_es": "Estoy bien, gracias. ¿Y tú?" },
+        { "ask_en": "What's your name?", "model_en": "My name is Carlos.", "model_es": "Me llamo Carlos." },
+        { "ask_en": "Where are you from?", "model_en": "I'm from Mexico.", "model_es": "Soy de México." },
+        { "ask_en": "Nice to meet you! Do you speak English?", "model_en": "A little. I am learning.", "model_es": "Un poco. Estoy aprendiendo." },
+        { "ask_en": "See you later! Have a nice day.", "model_en": "Thank you! You too. Goodbye!", "model_es": "¡Gracias! Igualmente. ¡Adiós!" }
+      ]
+    },
+    {
+      "id": "room_basics",
+      "level": "A1",
+      "emoji": "🙂",
+      "title": "Simple questions",
+      "title_es": "Preguntas simples",
+      "intro_en": "Easy questions to warm up. Answer in short sentences.",
+      "turns": [
+        { "ask_en": "Do you work or study?", "model_en": "I work in an office.", "model_es": "Trabajo en una oficina." },
+        { "ask_en": "What do you like?", "model_en": "I like music and coffee.", "model_es": "Me gusta la música y el café." },
+        { "ask_en": "How is the weather today?", "model_en": "It is sunny and warm.", "model_es": "Está soleado y templado." },
+        { "ask_en": "What time is it?", "model_en": "It is three o'clock.", "model_es": "Son las tres en punto." },
+        { "ask_en": "Are you happy today?", "model_en": "Yes, I am happy. Thank you!", "model_es": "Sí, estoy feliz. ¡Gracias!" }
+      ]
+    },
+    {
       "id": "room_smalltalk",
       "level": "A2",
       "emoji": "☕",

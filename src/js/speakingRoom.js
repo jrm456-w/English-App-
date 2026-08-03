@@ -31,7 +31,7 @@ export async function roomList(_p, view) {
   view.appendChild(session);
 
   view.appendChild(el(`<h2 class="h2">${t('room.scenarios')}</h2>`));
-  ['A2', 'B1', 'B2', 'C1'].forEach((lvl) => {
+  ['A1', 'A2', 'B1', 'B2', 'C1'].forEach((lvl) => {
     const g = all.filter((x) => x.level === lvl);
     if (!g.length) return;
     view.appendChild(el(`<h3 style="margin:8px 0">${lvl}</h3>`));
@@ -74,6 +74,8 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
   const stage = el(`<div></div>`);
   view.appendChild(stage);
 
+  // Beginners understand reading before listening — show the text and offer slow audio.
+  const lowLevel = ['A1', 'A2'].includes(getState().level);
   let i = 0, spoken = 0;
   const started = Date.now();
   let introDone = false;
@@ -93,6 +95,7 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
         <button class="btn btn--ghost btn--block" id="help" style="margin-top:8px">🤔 ${t('room.help')}</button>
         <div class="row" style="justify-content:center;margin-top:6px">
           <button class="btn btn--ghost btn--small" id="repeat">🔁 ${t('room.again')}</button>
+          <button class="btn btn--ghost btn--small" id="slow">🐢 ${t('room.slow')}</button>
           <button class="btn btn--ghost btn--small" id="skip">${t('common.next')} →</button>
         </div>
       </div>`);
@@ -103,9 +106,16 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
     const heard = card.querySelector('#heard');
     const helpBox = card.querySelector('#help-box');
 
-    let revealed = false;
-    card.querySelector('#reveal').onclick = () => { revealed = !revealed; qEl.textContent = revealed ? turn.ask_en : '🔊 …'; };
+    let revealed = lowLevel; // beginners see the text while they listen
+    const revealBtn = card.querySelector('#reveal');
+    const paintReveal = () => {
+      qEl.textContent = revealed ? turn.ask_en : '🔊 …';
+      revealBtn.textContent = revealed ? '🙈 ' + t('room.hide') : '👁️ ' + t('room.show');
+    };
+    paintReveal();
+    revealBtn.onclick = () => { revealed = !revealed; paintReveal(); };
     card.querySelector('#repeat').onclick = () => speak(turn.ask_en);
+    card.querySelector('#slow').onclick = () => speak(turn.ask_en, { rate: 0.55 });
     card.querySelector('#skip').onclick = () => next();
 
     // "I don't know how to answer" -> teach it: show the phrase + translation, say it,
