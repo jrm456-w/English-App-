@@ -8,11 +8,11 @@
       "title_es": "Charla rápida (calentamiento)",
       "intro_en": "Let's warm up with quick small talk. Answer fast, out loud. Don't overthink!",
       "turns": [
-        { "ask_en": "Hi! How are you doing today?", "model_en": "I'm doing great, thanks! How about you?" },
-        { "ask_en": "How was your weekend?", "model_en": "It was relaxing. I spent time with my family." },
-        { "ask_en": "The weather is crazy, right? What's it like where you are?", "model_en": "Yes! It's quite hot and sunny here today." },
-        { "ask_en": "Have you had a busy week?", "model_en": "Pretty busy, actually. I've had a lot of meetings." },
-        { "ask_en": "Nice chatting with you! Any plans later?", "model_en": "Thanks! Later I'm going to relax and maybe cook dinner." }
+        { "ask_en": "Hi! How are you doing today?", "model_en": "I'm doing great, thanks! How about you?", "model_es": "Estoy muy bien, ¡gracias! ¿Y tú?" },
+        { "ask_en": "How was your weekend?", "model_en": "It was relaxing. I spent time with my family.", "model_es": "Fue relajante. Pasé tiempo con mi familia." },
+        { "ask_en": "The weather is crazy, right? What's it like where you are?", "model_en": "Yes! It's quite hot and sunny here today.", "model_es": "¡Sí! Aquí hoy hace bastante calor y sol." },
+        { "ask_en": "Have you had a busy week?", "model_en": "Pretty busy, actually. I've had a lot of meetings.", "model_es": "Bastante ocupada, la verdad. He tenido muchas reuniones." },
+        { "ask_en": "Nice chatting with you! Any plans later?", "model_en": "Thanks! Later I'm going to relax and maybe cook dinner.", "model_es": "¡Gracias! Más tarde voy a relajarme y quizás cocinar la cena." }
       ]
     },
     {
@@ -23,11 +23,11 @@
       "title_es": "Reunión diaria (standup)",
       "intro_en": "You're in your team's daily standup. I'll ask, you speak. Ready?",
       "turns": [
-        { "ask_en": "Good morning! What did you work on yesterday?", "model_en": "Yesterday I worked on the report and fixed two small issues." },
-        { "ask_en": "Great. What are you focusing on today?", "model_en": "Today I'm going to finish the presentation and review the results." },
-        { "ask_en": "Any blockers I can help you with?", "model_en": "Yes, I'm waiting for access to the database. Could you help me with that?" },
-        { "ask_en": "Sure, I'll sort it out. Is the deadline still realistic?", "model_en": "I think so, as long as I get the access today." },
-        { "ask_en": "Perfect. Anything else for the team?", "model_en": "No, that's all from me. Thanks, everyone." }
+        { "ask_en": "Good morning! What did you work on yesterday?", "model_en": "Yesterday I worked on the report and fixed two small issues.", "model_es": "Ayer trabajé en el informe y arreglé dos problemas pequeños." },
+        { "ask_en": "Great. What are you focusing on today?", "model_en": "Today I'm going to finish the presentation and review the results.", "model_es": "Hoy voy a terminar la presentación y revisar los resultados." },
+        { "ask_en": "Any blockers I can help you with?", "model_en": "Yes, I'm waiting for access to the database. Could you help me with that?", "model_es": "Sí, estoy esperando acceso a la base de datos. ¿Podrías ayudarme con eso?" },
+        { "ask_en": "Sure, I'll sort it out. Is the deadline still realistic?", "model_en": "I think so, as long as I get the access today.", "model_es": "Creo que sí, siempre que consiga el acceso hoy." },
+        { "ask_en": "Perfect. Anything else for the team?", "model_en": "No, that's all from me. Thanks, everyone.", "model_es": "No, eso es todo de mi parte. Gracias a todos." }
       ]
     },
     {
@@ -38,12 +38,12 @@
       "title_es": "Llamada con un partner",
       "intro_en": "You're on a call with an international partner. Speak clearly and confidently.",
       "turns": [
-        { "ask_en": "Thanks for joining. Could you introduce yourself and your role?", "model_en": "Of course. My name is Carlos and I'm responsible for the operations team." },
-        { "ask_en": "Great to meet you. Can you give us a quick update on the project?", "model_en": "Sure. We're on track. We finished the first phase and we're starting the second." },
-        { "ask_en": "Sorry, could you clarify what you mean by the second phase?", "model_en": "Yes, of course. By the second phase I mean testing the product with real users." },
-        { "ask_en": "What do you think is the biggest risk right now?", "model_en": "In my opinion, the biggest risk is the tight timeline, but we're managing it." },
-        { "ask_en": "Understood. What do you need from our side?", "model_en": "It would help if your team could share the data by Friday." },
-        { "ask_en": "We can do that. Let's wrap up — any final thoughts?", "model_en": "Just to say thank you. I look forward to working with your team." }
+        { "ask_en": "Thanks for joining. Could you introduce yourself and your role?", "model_en": "Of course. My name is Carlos and I'm responsible for the operations team.", "model_es": "Por supuesto. Me llamo Carlos y soy responsable del equipo de operaciones." },
+        { "ask_en": "Great to meet you. Can you give us a quick update on the project?", "model_en": "Sure. We're on track. We finished the first phase and we're starting the second.", "model_es": "Claro. Vamos según lo previsto. Terminamos la primera fase y empezamos la segunda." },
+        { "ask_en": "Sorry, could you clarify what you mean by the second phase?", "model_en": "Yes, of course. By the second phase I mean testing the product with real users.", "model_es": "Sí, claro. Con la segunda fase me refiero a probar el producto con usuarios reales." },
+        { "ask_en": "What do you think is the biggest risk right now?", "model_en": "In my opinion, the biggest risk is the tight timeline, but we're managing it.", "model_es": "En mi opinión, el mayor riesgo es el plazo ajustado, pero lo estamos gestionando." },
+        { "ask_en": "Understood. What do you need from our side?", "model_en": "It would help if your team could share the data by Friday.", "model_es": "Ayudaría si su equipo pudiera compartir los datos para el viernes." },
+        { "ask_en": "We can do that. Let's wrap up — any final thoughts?", "model_en": "Just to say thank you. I look forward to working with your team.", "model_es": "Solo dar las gracias. Tengo muchas ganas de trabajar con su equipo." }
       ]
     },
     {
@@ -54,10 +54,10 @@
       "title_es": "Preséntate en una reunión",
       "intro_en": "New people just joined the meeting. Introduce yourself naturally.",
       "turns": [
-        { "ask_en": "Welcome! Could you tell us a bit about yourself?", "model_en": "Hi everyone, I'm Carlos. I work in customer operations and I've been here two years." },
-        { "ask_en": "Nice! What does your team actually do?", "model_en": "My team handles support and makes sure our clients are happy." },
-        { "ask_en": "Cool. What are you hoping to get from this meeting?", "model_en": "I'm hoping we can agree on the next steps and clarify our roles." },
-        { "ask_en": "Makes sense. How do you prefer to communicate — email or calls?", "model_en": "I prefer short calls for quick things and email for details." }
+        { "ask_en": "Welcome! Could you tell us a bit about yourself?", "model_en": "Hi everyone, I'm Carlos. I work in customer operations and I've been here two years.", "model_es": "Hola a todos, soy Carlos. Trabajo en operaciones de clientes y llevo aquí dos años." },
+        { "ask_en": "Nice! What does your team actually do?", "model_en": "My team handles support and makes sure our clients are happy.", "model_es": "Mi equipo se encarga del soporte y de que nuestros clientes estén contentos." },
+        { "ask_en": "Cool. What are you hoping to get from this meeting?", "model_en": "I'm hoping we can agree on the next steps and clarify our roles.", "model_es": "Espero que podamos acordar los próximos pasos y aclarar nuestros roles." },
+        { "ask_en": "Makes sense. How do you prefer to communicate — email or calls?", "model_en": "I prefer short calls for quick things and email for details.", "model_es": "Prefiero llamadas cortas para cosas rápidas y correo para los detalles." }
       ]
     },
     {
@@ -68,11 +68,11 @@
       "title_es": "Da tu opinión",
       "intro_en": "In meetings you must share opinions fast. Let's practice that pressure.",
       "turns": [
-        { "ask_en": "We need to cut the budget. What's your opinion?", "model_en": "In my opinion, we should cut travel costs before we touch the team." },
-        { "ask_en": "Some people disagree. How would you respond?", "model_en": "I understand their concern, but I think it's the safest option for now." },
-        { "ask_en": "Should we launch now or wait one more month?", "model_en": "I'd rather wait a month to make sure the quality is high." },
-        { "ask_en": "Interesting. Can you give one reason to support that?", "model_en": "Sure. If we launch too early, the bugs could damage our reputation." },
-        { "ask_en": "Good point. How do we convince the client?", "model_en": "We should show them the data and explain the long-term benefits." }
+        { "ask_en": "We need to cut the budget. What's your opinion?", "model_en": "In my opinion, we should cut travel costs before we touch the team.", "model_es": "En mi opinión, deberíamos recortar los gastos de viaje antes de tocar al equipo." },
+        { "ask_en": "Some people disagree. How would you respond?", "model_en": "I understand their concern, but I think it's the safest option for now.", "model_es": "Entiendo su preocupación, pero creo que es la opción más segura por ahora." },
+        { "ask_en": "Should we launch now or wait one more month?", "model_en": "I'd rather wait a month to make sure the quality is high.", "model_es": "Preferiría esperar un mes para asegurar que la calidad sea alta." },
+        { "ask_en": "Interesting. Can you give one reason to support that?", "model_en": "Sure. If we launch too early, the bugs could damage our reputation.", "model_es": "Claro. Si lanzamos demasiado pronto, los errores podrían dañar nuestra reputación." },
+        { "ask_en": "Good point. How do we convince the client?", "model_en": "We should show them the data and explain the long-term benefits.", "model_es": "Deberíamos mostrarles los datos y explicar los beneficios a largo plazo." }
       ]
     }
   ]

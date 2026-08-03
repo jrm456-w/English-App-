@@ -370,6 +370,8 @@ a { color: inherit; text-decoration: none; }
   100% { box-shadow: 0 0 0 26px rgba(37, 99, 235, 0); }
 }
 .room-state { font-weight: 700; min-height: 22px; }
+.pulse-help { animation: help-pulse 1.1s ease-in-out infinite; border-color: var(--c-accent) !important; }
+@keyframes help-pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.03); } }
 
 /* Conversation chat bubbles */
 .chat { display: flex; flex-direction: column; gap: var(--sp-2); margin: var(--sp-3) 0; }

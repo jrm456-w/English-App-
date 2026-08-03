@@ -89,9 +89,10 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
         <div class="mic-orb" id="orb" role="button" tabindex="0" aria-label="speak">🎤</div>
         <div class="room-state" id="state">${t('room.tapToSpeak')}</div>
         <div id="heard" class="muted" style="font-style:italic;min-height:20px"></div>
-        <div class="row" style="justify-content:center;margin-top:8px">
+        <div id="help-box"></div>
+        <button class="btn btn--ghost btn--block" id="help" style="margin-top:8px">🤔 ${t('room.help')}</button>
+        <div class="row" style="justify-content:center;margin-top:6px">
           <button class="btn btn--ghost btn--small" id="repeat">🔁 ${t('room.again')}</button>
-          <button class="btn btn--ghost btn--small" id="model">💡 ${t('room.model')}</button>
           <button class="btn btn--ghost btn--small" id="skip">${t('common.next')} →</button>
         </div>
       </div>`);
@@ -100,12 +101,30 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
     const orb = card.querySelector('#orb');
     const state = card.querySelector('#state');
     const heard = card.querySelector('#heard');
+    const helpBox = card.querySelector('#help-box');
 
     let revealed = false;
     card.querySelector('#reveal').onclick = () => { revealed = !revealed; qEl.textContent = revealed ? turn.ask_en : '🔊 …'; };
     card.querySelector('#repeat').onclick = () => speak(turn.ask_en);
-    card.querySelector('#model').onclick = () => { speak(turn.model_en); heard.textContent = '💡 ' + turn.model_en; };
     card.querySelector('#skip').onclick = () => next();
+
+    // "I don't know how to answer" -> teach it: show the phrase + translation, say it,
+    // then let the learner repeat it out loud (learning by producing).
+    card.querySelector('#help').onclick = () => {
+      speak(turn.model_en);
+      helpBox.innerHTML = `
+        <div class="feedback feedback--ok" style="text-align:left;margin-top:8px">
+          👉 ${t('room.youCanSay')}:<br>
+          <strong style="font-size:1.05rem">${escapeHtml(turn.model_en)}</strong>
+          ${turn.model_es ? `<div class="muted" style="font-size:.85rem;margin-top:2px">${escapeHtml(turn.model_es)}</div>` : ''}
+          <div class="row" style="margin-top:8px">
+            <button class="btn btn--ghost btn--small" id="say-model">🔊 ${t('room.model')}</button>
+            <button class="btn btn--accent btn--small" id="rep-model" style="flex:1">🎤 ${t('room.repeatIt')}</button>
+          </div>
+        </div>`;
+      helpBox.querySelector('#say-model').onclick = () => speak(turn.model_en);
+      helpBox.querySelector('#rep-model').onclick = () => listen();
+    };
 
     const say = (introDone || !intro) ? turn.ask_en : (intro + ' ' + turn.ask_en);
     introDone = true;
@@ -125,13 +144,14 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
           state.textContent = '✅';
           const ack = ACKS[(i + said.length) % ACKS.length];
           setTimeout(() => { speak(ack); setTimeout(next, 850); }, 250);
-        } else { state.textContent = t('room.retry'); }
+        } else { state.textContent = t('room.retry'); card.querySelector('#help').classList.add('pulse-help'); }
       } catch {
         orb.classList.remove('is-listening');
         state.textContent = t('room.retry');
+        card.querySelector('#help').classList.add('pulse-help'); // nudge: "don't know? tap here"
       }
     }
-    orb.onclick = listen;
+    orb.onclick = () => listen();
     orb.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); listen(); } };
   }
 
