@@ -102,7 +102,7 @@ export async function learningPath(_p, view) {
       </div>
       <small class="muted">${t('room.ctaHint')}</small>
     </div>`);
-  room.onclick = () => navigate('/room');
+  room.onclick = () => navigate('/room/session');
   view.appendChild(room);
 
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
