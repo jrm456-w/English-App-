@@ -19,13 +19,13 @@ import { toast } from './ui.js';
 /* Step 3 of the plan rotates by weekday so every day feels different. */
 function dailyChallenge(d) {
   const ROTATION = [
-    { icon: '🤖', key: 'chat.title', route: '/chat' },        // Sun
+    { icon: '🎙️', key: 'room.title', route: '/room' },       // Sun
     { icon: '🗣️', key: 'speak2.title', route: '/speak' },    // Mon
-    { icon: '💬', key: 'convo.title', route: '/convo' },      // Tue
+    { icon: '🎙️', key: 'room.title', route: '/room' },       // Tue
     { icon: '👂', key: 'pron.title', route: '/pronunciation' }, // Wed
-    { icon: '🗺️', key: 'adv.title', route: '/adventure' },   // Thu
-    { icon: '🤖', key: 'chat.title', route: '/chat' },        // Fri
-    { icon: '🗣️', key: 'speak2.title', route: '/speak' }     // Sat
+    { icon: '🎙️', key: 'room.title', route: '/room' },       // Thu
+    { icon: '💬', key: 'convo.title', route: '/convo' },      // Fri
+    { icon: '🎙️', key: 'room.title', route: '/room' }        // Sat
   ];
   const c = ROTATION[new Date().getDay()];
   return {
@@ -93,6 +93,17 @@ export async function learningPath(_p, view) {
     card.onclick = () => navigate('/material');
     view.appendChild(card);
   }
+
+  /* ---- Speaking Room: fastest way to build spoken fluency (voice only) ---- */
+  const room = el(`
+    <div class="card card--tap" style="border:2px solid var(--c-accent);background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.06))">
+      <div class="row" style="justify-content:space-between">
+        <strong>🎙️ ${t('room.cta')}</strong><span class="badge pill">🎤</span>
+      </div>
+      <small class="muted">${t('room.ctaHint')}</small>
+    </div>`);
+  room.onclick = () => navigate('/room');
+  view.appendChild(room);
 
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();

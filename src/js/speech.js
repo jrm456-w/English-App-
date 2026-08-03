@@ -37,6 +37,23 @@ export function speak(text, { rate, lang = 'en-US' } = {}) {
   return true;
 }
 
+/* Speak, then run a callback when the audio finishes (used for hands-free flow). */
+export function speakThen(text, cb, { lang = 'en-US' } = {}) {
+  if (!ttsSupported()) { setTimeout(cb, 200); return; }
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = lang;
+  u.rate = currentRate();
+  const v = pickEnglishVoice();
+  if (v) u.voice = v;
+  let done = false;
+  const finish = () => { if (!done) { done = true; cb(); } };
+  u.onend = finish;
+  u.onerror = finish;
+  setTimeout(finish, Math.min(9000, 1500 + text.length * 90)); // safety net
+  window.speechSynthesis.speak(u);
+}
+
 export function sttSupported() {
   return 'SpeechRecognition' in window || 'webkitSpeechRecognition' in window;
 }
