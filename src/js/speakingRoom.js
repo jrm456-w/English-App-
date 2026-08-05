@@ -1,15 +1,23 @@
-/* Speaking Room — VOICE-ONLY conversation to build fluency fast (like real meetings).
-   The bot speaks; you answer OUT LOUD (speech recognition); it acknowledges and moves on.
-   No reading, no typing. "Voice Mode" chains many questions for non-stop speaking. */
+/* Speaking Room — VOICE-ONLY practice. The bot speaks; you answer OUT LOUD.
+   For beginners (A1/A2) it shows the target answer, VALIDATES your pronunciation and
+   makes you retry until you say it well. For B1+ it allows free answers (fluency).
+   "Voice Mode" chains many questions for non-stop speaking. */
 import { el, clear, celebrate, escapeHtml, shuffle } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
-import { speak, speakThen, listenOnce, sttSupported } from './speech.js';
+import { speak, speakThen, listenOnce, sttSupported, normalize } from './speech.js';
 import { addXp, markDailyTask } from './gamification.js';
 import { navigate, goBack } from './router.js';
 
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const ACKS = ['Got it. ', 'Thanks! ', 'I see. ', 'Nice. ', 'Good. ', 'Great. ', 'Okay, and ', 'Right. '];
+const PASS = 0.6; // word-overlap threshold vs the model answer
+
+function overlap(a, b) {
+  const wa = a.split(' ').filter(Boolean), wb = new Set(b.split(' ').filter(Boolean));
+  if (!wa.length) return 0;
+  return wa.filter((w) => wb.has(w)).length / Math.max(wa.length, wb.size, 1);
+}
 
 let cache = null;
 async function loadRooms() {
@@ -25,13 +33,12 @@ export async function roomList(_p, view) {
   view.appendChild(el(`<h1 class="h1">🎙️ ${t('room.title')}</h1><p class="muted">${t('room.subtitle')}</p>`));
   if (!sttSupported()) view.appendChild(el(`<div class="card"><p class="muted">⚠️ ${t('room.noStt')}</p></div>`));
 
-  // Non-stop voice session (the "just talk" mode).
   const session = el(`<div class="card card--tap" style="border:2px solid var(--c-accent)"><div class="row" style="justify-content:space-between"><strong>♾️ ${t('room.session')}</strong><span>🎤</span></div><small class="muted">${t('room.sessionHint')}</small></div>`);
   session.onclick = () => navigate('/room/session');
   view.appendChild(session);
 
   view.appendChild(el(`<h2 class="h2">${t('room.scenarios')}</h2>`));
-  ['A1', 'A2', 'B1', 'B2', 'C1'].forEach((lvl) => {
+  LEVELS.forEach((lvl) => {
     const g = all.filter((x) => x.level === lvl);
     if (!g.length) return;
     view.appendChild(el(`<h3 style="margin:8px 0">${lvl}</h3>`));
@@ -43,7 +50,6 @@ export async function roomList(_p, view) {
   });
 }
 
-/* Play a single scenario. */
 export async function roomPlay({ id }, view) {
   const all = await loadRooms();
   const r = all.find((x) => x.id === id);
@@ -51,7 +57,6 @@ export async function roomPlay({ id }, view) {
   playTurns(view, { title: r.title, level: r.level, emoji: r.emoji, turns: r.turns, intro: r.intro_en });
 }
 
-/* Voice Mode: chain questions from several scenarios for non-stop speaking. */
 export async function roomSession(_p, view) {
   const all = await loadRooms();
   const lvl = getState().level;
@@ -61,7 +66,6 @@ export async function roomSession(_p, view) {
   playTurns(view, { title: t('room.session'), level: lvl, emoji: '♾️', turns, intro: "Let's just talk. I'll keep asking — you keep speaking. Ready?" });
 }
 
-/* Shared voice engine: speak a question -> auto-listen -> acknowledge -> next. */
 function playTurns(view, { title, level, emoji, turns, intro }) {
   clear(view);
   view.appendChild(el(`
@@ -74,11 +78,10 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
   const stage = el(`<div></div>`);
   view.appendChild(stage);
 
-  // Beginners understand reading before listening — show the text and offer slow audio.
-  const lowLevel = ['A1', 'A2'].includes(getState().level);
-  let i = 0, spoken = 0;
+  // Beginners: show the target answer, validate pronunciation, retry until correct.
+  const strict = ['A1', 'A2'].includes(getState().level);
+  let i = 0, spoken = 0, introDone = false;
   const started = Date.now();
-  let introDone = false;
 
   function render() {
     const turn = turns[i];
@@ -87,16 +90,19 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
       <div class="card center">
         <p class="muted">${i + 1} / ${turns.length}</p>
         <div class="room-q" id="q">🔊 …</div>
-        <button class="btn btn--ghost btn--small" id="reveal" style="margin-top:6px">👁️ ${t('room.show')}</button>
+        <button class="btn btn--ghost btn--small" id="reveal" style="margin-top:4px"></button>
+        ${strict ? `<div class="feedback feedback--ok" style="text-align:left;margin-top:10px" id="target">
+            👉 ${t('room.sayThis')}:<br><strong style="font-size:1.05rem">${escapeHtml(turn.model_en)}</strong>
+            ${turn.model_es ? `<div class="muted" style="font-size:.85rem">${escapeHtml(turn.model_es)}</div>` : ''}
+          </div>` : ''}
         <div class="mic-orb" id="orb" role="button" tabindex="0" aria-label="speak">🎤</div>
         <div class="room-state" id="state">${t('room.tapToSpeak')}</div>
         <div id="heard" class="muted" style="font-style:italic;min-height:20px"></div>
-        <div id="help-box"></div>
-        <button class="btn btn--ghost btn--block" id="help" style="margin-top:8px">🤔 ${t('room.help')}</button>
-        <div class="row" style="justify-content:center;margin-top:6px">
-          <button class="btn btn--ghost btn--small" id="repeat">🔁 ${t('room.again')}</button>
+        <div id="extra"></div>
+        <div class="row" style="justify-content:center;margin-top:8px">
+          <button class="btn btn--ghost btn--small" id="model">🔊 ${t('room.model')}</button>
           <button class="btn btn--ghost btn--small" id="slow">🐢 ${t('room.slow')}</button>
-          <button class="btn btn--ghost btn--small" id="skip">${t('common.next')} →</button>
+          <button class="btn btn--ghost btn--small" id="repeat">🔁 ${t('room.again')}</button>
         </div>
       </div>`);
     stage.appendChild(card);
@@ -104,9 +110,9 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
     const orb = card.querySelector('#orb');
     const state = card.querySelector('#state');
     const heard = card.querySelector('#heard');
-    const helpBox = card.querySelector('#help-box');
+    const extra = card.querySelector('#extra');
 
-    let revealed = lowLevel; // beginners see the text while they listen
+    let revealed = strict; // in strict/beginner mode we show everything
     const revealBtn = card.querySelector('#reveal');
     const paintReveal = () => {
       qEl.textContent = revealed ? turn.ask_en : '🔊 …';
@@ -115,31 +121,18 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
     paintReveal();
     revealBtn.onclick = () => { revealed = !revealed; paintReveal(); };
     card.querySelector('#repeat').onclick = () => speak(turn.ask_en);
-    card.querySelector('#slow').onclick = () => speak(turn.ask_en, { rate: 0.55 });
-    card.querySelector('#skip').onclick = () => next();
-
-    // "I don't know how to answer" -> teach it: show the phrase + translation, say it,
-    // then let the learner repeat it out loud (learning by producing).
-    card.querySelector('#help').onclick = () => {
-      speak(turn.model_en);
-      helpBox.innerHTML = `
-        <div class="feedback feedback--ok" style="text-align:left;margin-top:8px">
-          👉 ${t('room.youCanSay')}:<br>
-          <strong style="font-size:1.05rem">${escapeHtml(turn.model_en)}</strong>
-          ${turn.model_es ? `<div class="muted" style="font-size:.85rem;margin-top:2px">${escapeHtml(turn.model_es)}</div>` : ''}
-          <div class="row" style="margin-top:8px">
-            <button class="btn btn--ghost btn--small" id="say-model">🔊 ${t('room.model')}</button>
-            <button class="btn btn--accent btn--small" id="rep-model" style="flex:1">🎤 ${t('room.repeatIt')}</button>
-          </div>
-        </div>`;
-      helpBox.querySelector('#say-model').onclick = () => speak(turn.model_en);
-      helpBox.querySelector('#rep-model').onclick = () => listen();
-    };
+    card.querySelector('#slow').onclick = () => speak(turn.model_en, { rate: 0.5 });
+    card.querySelector('#model').onclick = () => speak(turn.model_en);
 
     const say = (introDone || !intro) ? turn.ask_en : (intro + ' ' + turn.ask_en);
     introDone = true;
-    speakThen(say, () => { state.textContent = t('room.tapToSpeak'); listen(); });
+    // Speak the question; in strict mode also say the target answer once as a guide.
+    speakThen(say, () => {
+      if (strict) speakThen(turn.model_en, () => { state.textContent = t('room.nowYou'); listen(); });
+      else { state.textContent = t('room.tapToSpeak'); listen(); }
+    });
 
+    let attempts = 0;
     async function listen() {
       orb.classList.add('is-listening');
       state.textContent = '🎤 ' + t('speak.listening');
@@ -148,17 +141,34 @@ function playTurns(view, { title, level, emoji, turns, intro }) {
         const res = await listenOnce({ timeoutMs: 9000 });
         orb.classList.remove('is-listening');
         const said = (res && res[0]) || '';
-        if (said) {
+        if (!said) { state.textContent = t('room.retry'); orb.classList.add('pulse-help'); return; }
+        heard.textContent = '“' + said + '”';
+
+        // Validate against the model answer (strict for beginners; lenient for free mode).
+        const sim = overlap(normalize(said), normalize(turn.model_en));
+        const ok = !strict || normalize(said) === normalize(turn.model_en) || sim >= PASS;
+
+        if (ok) {
           spoken++;
-          heard.textContent = '“' + said + '”';
-          state.textContent = '✅';
+          state.textContent = '✅ ' + t('room.wellSaid');
+          orb.classList.remove('pulse-help');
           const ack = ACKS[(i + said.length) % ACKS.length];
-          setTimeout(() => { speak(ack); setTimeout(next, 850); }, 250);
-        } else { state.textContent = t('room.retry'); card.querySelector('#help').classList.add('pulse-help'); }
+          setTimeout(() => { speak(ack); setTimeout(next, 900); }, 300);
+        } else {
+          attempts++;
+          state.textContent = '🔁 ' + t('room.tryAgain2');
+          speak(turn.model_en); // hear the correct version again
+          orb.classList.add('pulse-help');
+          if (attempts >= 3 && !extra.querySelector('#skip')) {
+            const skip = el(`<button class="btn btn--ghost btn--block" id="skip" style="margin-top:8px">${t('room.skipAnyway')} →</button>`);
+            skip.onclick = () => next();
+            extra.appendChild(skip);
+          }
+        }
       } catch {
         orb.classList.remove('is-listening');
         state.textContent = t('room.retry');
-        card.querySelector('#help').classList.add('pulse-help'); // nudge: "don't know? tap here"
+        orb.classList.add('pulse-help');
       }
     }
     orb.onclick = () => listen();
