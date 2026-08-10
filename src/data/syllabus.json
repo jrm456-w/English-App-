@@ -1,0 +1,236 @@
+{
+  "month": "Agosto",
+  "note_es": "Tu ritmo: Lunes taller (vocabulario) · Martes clase/tarea del mismo tema · Miércoles video BBC (tema nuevo) · Jueves repaso de ese tema.",
+  "weeks": [
+    {
+      "id": "w1",
+      "label": "Semana 1 · Ago 3–8",
+      "start": "2026-08-03",
+      "end": "2026-08-08",
+      "lessons": [
+        {
+          "num": "149", "part": "Lun · Mar", "title": "Controversial issues", "title_es": "Temas controvertidos",
+          "link": "/functions",
+          "prep_es": "Repasa cómo dar opiniones y estar de acuerdo/desacuerdo — es exactamente la lección de Comunicación de la app.",
+          "vocab": [
+            { "en": "a controversial issue", "es": "un tema controvertido" },
+            { "en": "an argument", "es": "un argumento / una discusión" },
+            { "en": "to be in favour of", "es": "estar a favor de" },
+            { "en": "to be against", "es": "estar en contra de" },
+            { "en": "a point of view", "es": "un punto de vista" },
+            { "en": "to debate", "es": "debatir" },
+            { "en": "abortion / immigration / climate change", "es": "aborto / inmigración / cambio climático" },
+            { "en": "It depends.", "es": "Depende." }
+          ],
+          "phrases": [
+            "In my opinion, …",
+            "I'm in favour of / I'm against …",
+            "On the one hand… on the other hand…",
+            "I see your point, but…",
+            "There are two sides to this."
+          ]
+        },
+        {
+          "num": "150", "part": "Mié (BBC) · Jue", "title": "Stopping violence", "title_es": "Detener la violencia", "bbc": true,
+          "prep_es": "El miércoles suele haber un video de BBC. Busca en YouTube 'BBC Learning English violence' y anota 3 palabras nuevas antes de clase.",
+          "vocab": [
+            { "en": "violence / violent", "es": "violencia / violento" },
+            { "en": "crime", "es": "crimen / delito" },
+            { "en": "to prevent", "es": "prevenir / evitar" },
+            { "en": "a weapon", "es": "un arma" },
+            { "en": "safety / safe", "es": "seguridad / seguro" },
+            { "en": "a victim", "es": "una víctima" },
+            { "en": "to protect", "es": "proteger" },
+            { "en": "peaceful", "es": "pacífico" }
+          ],
+          "phrases": [
+            "We need to prevent violence.",
+            "The best way to stop it is…",
+            "Violence is caused by…",
+            "It makes people feel unsafe.",
+            "I think the solution is…"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w2",
+      "label": "Semana 2 · Ago 10–15",
+      "start": "2026-08-10",
+      "end": "2026-08-15",
+      "lessons": [
+        {
+          "num": "151", "part": "Lun · Mar", "title": "Politeness and eating out", "title_es": "Cortesía y comer fuera",
+          "prep_es": "Practica pedir con educación. Usa 'Could I…?' y 'Would you like…?' en vez de 'I want'.",
+          "vocab": [
+            { "en": "polite / politeness", "es": "educado / cortesía" },
+            { "en": "to eat out", "es": "comer fuera" },
+            { "en": "a starter / main course / dessert", "es": "entrada / plato principal / postre" },
+            { "en": "the bill", "es": "la cuenta" },
+            { "en": "a waiter / waitress", "es": "camarero / camarera" },
+            { "en": "to order", "es": "pedir / ordenar" },
+            { "en": "a reservation", "es": "una reserva" },
+            { "en": "the tip", "es": "la propina" }
+          ],
+          "phrases": [
+            "Could I have the menu, please?",
+            "I'd like the chicken, please.",
+            "Would you like anything to drink?",
+            "Could we have the bill, please?",
+            "Excuse me, could you…?"
+          ]
+        },
+        {
+          "num": "152", "part": "Mié (BBC) · Jue", "title": "Restaurants, menus and addresses", "title_es": "Restaurantes, menús y direcciones", "bbc": true,
+          "prep_es": "Repasa números, calles y cómo dar una dirección. Practica leer un menú en voz alta.",
+          "vocab": [
+            { "en": "a menu", "es": "un menú" },
+            { "en": "an address", "es": "una dirección" },
+            { "en": "a street / avenue", "es": "una calle / avenida" },
+            { "en": "on the corner of…", "es": "en la esquina de…" },
+            { "en": "next to / opposite", "es": "al lado de / enfrente de" },
+            { "en": "to book a table", "es": "reservar una mesa" },
+            { "en": "a starter / side dish", "es": "una entrada / guarnición" },
+            { "en": "How much is it?", "es": "¿Cuánto cuesta?" }
+          ],
+          "phrases": [
+            "What's the address?",
+            "It's on Main Street, next to the bank.",
+            "I'd like to book a table for two.",
+            "What do you recommend?",
+            "Turn left / go straight on."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w3",
+      "label": "Semana 3 · Ago 17–22",
+      "start": "2026-08-17",
+      "end": "2026-08-22",
+      "lessons": [
+        {
+          "num": "153", "part": "Lun · Mar", "title": "Jazz class", "title_es": "Clase de jazz",
+          "prep_es": "Tema de música y aficiones. Practica hablar de gustos: 'I'm into…', 'I'm keen on…'.",
+          "vocab": [
+            { "en": "jazz / a band", "es": "jazz / una banda" },
+            { "en": "an instrument", "es": "un instrumento" },
+            { "en": "a rhythm", "es": "un ritmo" },
+            { "en": "to play (an instrument)", "es": "tocar (un instrumento)" },
+            { "en": "a concert / a gig", "es": "un concierto" },
+            { "en": "lyrics", "es": "la letra (de una canción)" },
+            { "en": "a tune", "es": "una melodía" },
+            { "en": "to be into music", "es": "estar metido en la música" }
+          ],
+          "phrases": [
+            "I'm really into jazz.",
+            "Who's your favourite artist?",
+            "I play the guitar.",
+            "This song has a great rhythm.",
+            "Let's go to a concert."
+          ]
+        },
+        {
+          "num": "154", "part": "Mié (BBC) · Jue", "title": "Computers and life", "title_es": "Las computadoras y la vida", "bbc": true,
+          "prep_es": "Vocabulario de tecnología. Prepara tu opinión: ¿la tecnología mejora o empeora la vida?",
+          "vocab": [
+            { "en": "a device", "es": "un dispositivo" },
+            { "en": "a screen", "es": "una pantalla" },
+            { "en": "software / an app", "es": "software / una app" },
+            { "en": "to download / upload", "es": "descargar / subir" },
+            { "en": "the internet / online", "es": "internet / en línea" },
+            { "en": "a password", "es": "una contraseña" },
+            { "en": "social media", "es": "redes sociales" },
+            { "en": "to save / to delete", "es": "guardar / borrar" }
+          ],
+          "phrases": [
+            "Computers make life easier.",
+            "I spend too much time online.",
+            "In my opinion, technology is…",
+            "It has both advantages and disadvantages.",
+            "I use it every day for…"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w4",
+      "label": "Semana 4 · Ago 24–29",
+      "start": "2026-08-24",
+      "end": "2026-08-29",
+      "lessons": [
+        {
+          "num": "155", "part": "Lun · Mar", "title": "A glance at tomorrow", "title_es": "Una mirada al mañana",
+          "prep_es": "Tema del futuro y predicciones. Prepárate para usar 'will' y 'going to'.",
+          "vocab": [
+            { "en": "the future", "es": "el futuro" },
+            { "en": "a prediction", "es": "una predicción" },
+            { "en": "technology", "es": "la tecnología" },
+            { "en": "to predict", "es": "predecir" },
+            { "en": "probably / maybe", "es": "probablemente / quizás" },
+            { "en": "in ten years", "es": "en diez años" },
+            { "en": "to change", "es": "cambiar" },
+            { "en": "progress", "es": "el progreso" }
+          ],
+          "phrases": [
+            "In the future, we will…",
+            "I think robots will…",
+            "Maybe people will…",
+            "Things are going to change.",
+            "I'm not sure what will happen."
+          ]
+        },
+        {
+          "num": "156", "part": "Mié (BBC) · Jue", "title": "My life with \"will\"", "title_es": "Mi vida con \"will\"", "bbc": true, "grammar": "Future: will",
+          "prep_es": "GRAMÁTICA CLAVE: el futuro con 'will'. will + verbo (I will go / I'll go). Negativo: won't. Preguntas: Will you…?",
+          "vocab": [
+            { "en": "will / won't", "es": "futuro afirmativo / negativo (no)" },
+            { "en": "I'll (I will)", "es": "yo (contracción)" },
+            { "en": "a promise", "es": "una promesa" },
+            { "en": "a decision", "es": "una decisión" },
+            { "en": "to plan", "es": "planear" },
+            { "en": "soon", "es": "pronto" },
+            { "en": "next year", "es": "el año que viene" },
+            { "en": "I hope / I expect", "es": "espero / supongo" }
+          ],
+          "phrases": [
+            "I will study English every day.",
+            "I won't give up.",
+            "Will you help me?",
+            "I think it'll be fine.",
+            "One day I'll speak fluently."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w5",
+      "label": "Semana 5 · Ago 31",
+      "start": "2026-08-31",
+      "end": "2026-08-31",
+      "lessons": [
+        {
+          "num": "157", "part": "Lun", "title": "The biggest house in the world", "title_es": "La casa más grande del mundo",
+          "prep_es": "Tema de casas y comparativos/superlativos. Practica 'bigger than' y 'the biggest'.",
+          "vocab": [
+            { "en": "a house / a mansion", "es": "una casa / una mansión" },
+            { "en": "a room / a floor", "es": "una habitación / un piso" },
+            { "en": "the biggest / the largest", "es": "la más grande" },
+            { "en": "bigger than", "es": "más grande que" },
+            { "en": "huge / enormous", "es": "enorme" },
+            { "en": "a garden / a pool", "es": "un jardín / una piscina" },
+            { "en": "to own", "es": "poseer / tener" },
+            { "en": "luxury / luxurious", "es": "lujo / lujoso" }
+          ],
+          "phrases": [
+            "It's the biggest house in the world.",
+            "It's bigger than a hotel.",
+            "It has more than 100 rooms.",
+            "I would love to live there.",
+            "It's the most luxurious house I've seen."
+          ]
+        }
+      ]
+    }
+  ]
+}

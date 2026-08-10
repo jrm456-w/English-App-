@@ -116,6 +116,17 @@ export async function learningPath(_p, view) {
   comm.onclick = () => navigate('/functions');
   view.appendChild(comm);
 
+  /* ---- Class Prep: get ready before each class (aligned to the real calendar) ---- */
+  const prep = el(`
+    <div class="card card--tap" style="border:2px solid var(--c-accent)">
+      <div class="row" style="justify-content:space-between">
+        <strong>📅 ${t('prep.cta')}</strong><span class="badge pill">${t('prep.thisWeek')}</span>
+      </div>
+      <small class="muted">Vocabulario y frases de tu clase, antes de ir. Lun→Jue.</small>
+    </div>`);
+  prep.onclick = () => navigate('/prep');
+  view.appendChild(prep);
+
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();
   const due = await dueCount(s.level);
