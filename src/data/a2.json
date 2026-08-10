@@ -1,0 +1,789 @@
+{
+  "level": "A2",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Daily Routines / Rutinas",
+      "vocabulary": [
+        { "en": "Wake up", "es": "Despertarse" },
+        { "en": "Get up", "es": "Levantarse" },
+        { "en": "Breakfast", "es": "Desayuno" },
+        { "en": "Work", "es": "Trabajar" },
+        { "en": "Lunch", "es": "Almuerzo" },
+        { "en": "Study", "es": "Estudiar" },
+        { "en": "Sleep", "es": "Dormir" },
+        { "en": "Shower", "es": "Ducharse" },
+        { "en": "Dinner", "es": "Cena" },
+        { "en": "Get dressed", "es": "Vestirse" },
+        { "en": "Brush teeth", "es": "Cepillarse los dientes" },
+        { "en": "Go home", "es": "Ir a casa" }
+      ],
+      "grammar": {
+        "rule": "Present Simple – He/She/It (+s)",
+        "explanation_es": "Con he/she/it añadimos -s al verbo: 'She works', 'He studies'.",
+        "examples": ["She wakes up at seven.", "He works in an office.", "It rains in winter.", "My mother cooks dinner.", "He brushes his teeth."]
+      },
+      "fill": [
+        { "sentence": "She ___ up at seven.", "answer": "wakes", "options": ["wake", "waking", "woke"] },
+        { "sentence": "He ___ in an office.", "answer": "works", "options": ["work", "working", "worked"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Food & Drinks / Comida y bebidas",
+      "vocabulary": [
+        { "en": "Cheese", "es": "Queso" },
+        { "en": "Butter", "es": "Mantequilla" },
+        { "en": "Meat", "es": "Carne" },
+        { "en": "Fish", "es": "Pescado" },
+        { "en": "Vegetables", "es": "Verduras" },
+        { "en": "Soup", "es": "Sopa" },
+        { "en": "Juice", "es": "Jugo" },
+        { "en": "Wine", "es": "Vino" },
+        { "en": "Dessert", "es": "Postre" },
+        { "en": "Breakfast", "es": "Desayuno" },
+        { "en": "Hungry", "es": "Hambriento" },
+        { "en": "Thirsty", "es": "Sediento" }
+      ],
+      "grammar": {
+        "rule": "Countable & Uncountable (some/any)",
+        "explanation_es": "Usamos 'some' en afirmativas y 'any' en negativas/preguntas: 'I have some bread', 'I don't have any milk'.",
+        "examples": ["I have some cheese.", "There isn't any juice.", "Do you want some soup?", "We need some vegetables.", "I am very hungry."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u3",
+      "title": "Jobs / Trabajos",
+      "vocabulary": [
+        { "en": "Teacher", "es": "Profesor" },
+        { "en": "Doctor", "es": "Médico" },
+        { "en": "Nurse", "es": "Enfermero" },
+        { "en": "Driver", "es": "Conductor" },
+        { "en": "Cook", "es": "Cocinero" },
+        { "en": "Engineer", "es": "Ingeniero" },
+        { "en": "Lawyer", "es": "Abogado" },
+        { "en": "Waiter", "es": "Camarero" },
+        { "en": "Farmer", "es": "Granjero" },
+        { "en": "Police officer", "es": "Policía" },
+        { "en": "Salesperson", "es": "Vendedor" },
+        { "en": "Manager", "es": "Gerente" }
+      ],
+      "grammar": {
+        "rule": "Questions with 'do/does'",
+        "explanation_es": "Para preguntar en presente simple usamos do/does: 'What do you do?', 'Where does she work?'.",
+        "examples": ["What do you do?", "Where does she work?", "Do you like your job?", "He works as a teacher.", "Does he drive a bus?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Simple Past / Pasado simple",
+      "vocabulary": [
+        { "en": "Went", "es": "Fui / Fue" },
+        { "en": "Saw", "es": "Vi / Vio" },
+        { "en": "Ate", "es": "Comí / Comió" },
+        { "en": "Played", "es": "Jugué / Jugó" },
+        { "en": "Watched", "es": "Miré / Miró" },
+        { "en": "Visited", "es": "Visité" },
+        { "en": "Bought", "es": "Compré" },
+        { "en": "Made", "es": "Hice" },
+        { "en": "Took", "es": "Tomé" },
+        { "en": "Came", "es": "Vine" },
+        { "en": "Last night", "es": "Anoche" },
+        { "en": "Yesterday", "es": "Ayer" }
+      ],
+      "grammar": {
+        "rule": "Past Simple – Regular & Irregular",
+        "explanation_es": "Los verbos regulares añaden -ed (played). Los irregulares cambian (go → went, eat → ate).",
+        "examples": ["Yesterday I went to the park.", "She ate pizza last night.", "We played football.", "They watched a movie.", "He bought a new car."]
+      },
+      "sentences": [
+        "Yesterday I went to the park.",
+        "She ate pizza last night.",
+        "We played football together.",
+        "They watched a good movie."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Describing People / Describir personas",
+      "vocabulary": [
+        { "en": "Tall", "es": "Alto" },
+        { "en": "Short", "es": "Bajo" },
+        { "en": "Young", "es": "Joven" },
+        { "en": "Old", "es": "Viejo" },
+        { "en": "Kind", "es": "Amable" },
+        { "en": "Funny", "es": "Gracioso" },
+        { "en": "Smart", "es": "Inteligente" },
+        { "en": "Beautiful", "es": "Hermoso" },
+        { "en": "Strong", "es": "Fuerte" },
+        { "en": "Friendly", "es": "Amigable" },
+        { "en": "Shy", "es": "Tímido" },
+        { "en": "Busy", "es": "Ocupado" }
+      ],
+      "grammar": {
+        "rule": "Comparatives (-er / more)",
+        "explanation_es": "Para comparar: adjetivos cortos + -er (taller), largos con 'more' (more friendly). 'than' = que.",
+        "examples": ["He is taller than me.", "She is kinder than him.", "This book is more interesting.", "You are stronger than you think.", "He is younger than his sister."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Shopping / De compras",
+      "vocabulary": [
+        { "en": "Price", "es": "Precio" },
+        { "en": "Cheap", "es": "Barato" },
+        { "en": "Expensive", "es": "Caro" },
+        { "en": "Money", "es": "Dinero" },
+        { "en": "Buy", "es": "Comprar" },
+        { "en": "Sell", "es": "Vender" },
+        { "en": "Pay", "es": "Pagar" },
+        { "en": "Clothes", "es": "Ropa" },
+        { "en": "Shoes", "es": "Zapatos" },
+        { "en": "Size", "es": "Talla" },
+        { "en": "Discount", "es": "Descuento" },
+        { "en": "Receipt", "es": "Recibo" }
+      ],
+      "grammar": {
+        "rule": "How much / How many",
+        "explanation_es": "'How much' para incontables y precio (How much is it?), 'How many' para contables (How many shoes?).",
+        "examples": ["How much is this?", "How many shirts do you want?", "It is too expensive.", "Can I pay by card?", "These shoes are cheap."]
+      },
+      "sentences": [
+        "How much is this shirt?",
+        "These shoes are too expensive.",
+        "Can I pay by card?",
+        "I want to buy new clothes."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Future Plans / Planes",
+      "vocabulary": [
+        { "en": "Going to", "es": "Ir a (planes)" },
+        { "en": "Will", "es": "Auxiliar de futuro" },
+        { "en": "Plan", "es": "Plan" },
+        { "en": "Trip", "es": "Viaje" },
+        { "en": "Holiday", "es": "Vacaciones" },
+        { "en": "Next week", "es": "La próxima semana" },
+        { "en": "Soon", "es": "Pronto" },
+        { "en": "Later", "es": "Más tarde" },
+        { "en": "Maybe", "es": "Tal vez" },
+        { "en": "Hope", "es": "Esperar (deseo)" },
+        { "en": "Meeting", "es": "Reunión" },
+        { "en": "Party", "es": "Fiesta" }
+      ],
+      "grammar": {
+        "rule": "Future: going to / will",
+        "explanation_es": "'Going to' para planes e intenciones; 'will' para decisiones y predicciones.",
+        "examples": ["I am going to travel next week.", "She will call you later.", "We are going to have a party.", "It will rain tomorrow.", "They are going to study English."]
+      },
+      "sentences": [
+        "I am going to travel next week.",
+        "She will call you later.",
+        "We are going to have a party.",
+        "Maybe it will rain tomorrow."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Transportation / Transporte",
+      "vocabulary": [
+        { "en": "Bus", "es": "Autobús" },
+        { "en": "Train", "es": "Tren" },
+        { "en": "Plane", "es": "Avión" },
+        { "en": "Bicycle", "es": "Bicicleta" },
+        { "en": "Taxi", "es": "Taxi" },
+        { "en": "Subway", "es": "Metro" },
+        { "en": "Ticket", "es": "Boleto" },
+        { "en": "Station", "es": "Estación" },
+        { "en": "Stop", "es": "Parada" },
+        { "en": "Drive", "es": "Conducir" },
+        { "en": "Ride", "es": "Montar / Viajar en" },
+        { "en": "Arrive", "es": "Llegar" }
+      ],
+      "grammar": {
+        "rule": "by + transport",
+        "explanation_es": "Usamos 'by' con medios de transporte: 'by bus', 'by car'. Excepción: 'on foot' (a pie).",
+        "examples": ["I go to work by bus.", "She travels by train.", "We went there by car.", "He rides a bicycle.", "They arrive at the station."]
+      },
+      "sentences": [
+        "I go to work by bus.",
+        "She travels by train every day.",
+        "We went there by car.",
+        "The train arrives at noon."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "House & Furniture / Casa y muebles",
+      "vocabulary": [
+        { "en": "Sofa", "es": "Sofá" },
+        { "en": "Desk", "es": "Escritorio" },
+        { "en": "Shelf", "es": "Estante" },
+        { "en": "Fridge", "es": "Refrigerador" },
+        { "en": "Stove", "es": "Estufa" },
+        { "en": "Sink", "es": "Fregadero" },
+        { "en": "Towel", "es": "Toalla" },
+        { "en": "Pillow", "es": "Almohada" },
+        { "en": "Blanket", "es": "Manta" },
+        { "en": "Drawer", "es": "Cajón" },
+        { "en": "Curtain", "es": "Cortina" },
+        { "en": "Furniture", "es": "Muebles" }
+      ],
+      "grammar": {
+        "rule": "Prepositions: between / in front of / behind",
+        "explanation_es": "Ubicamos objetos: 'between' (entre), 'in front of' (delante de), 'behind' (detrás de).",
+        "examples": ["The sofa is in front of the TV.", "The lamp is between the beds.", "My bag is behind the door.", "There is food in the fridge.", "Put the towel on the shelf."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u10",
+      "title": "Hobbies & Free Time / Pasatiempos",
+      "vocabulary": [
+        { "en": "Read", "es": "Leer" },
+        { "en": "Dance", "es": "Bailar" },
+        { "en": "Sing", "es": "Cantar" },
+        { "en": "Paint", "es": "Pintar" },
+        { "en": "Swim", "es": "Nadar" },
+        { "en": "Run", "es": "Correr" },
+        { "en": "Cook", "es": "Cocinar" },
+        { "en": "Travel", "es": "Viajar" },
+        { "en": "Photography", "es": "Fotografía" },
+        { "en": "Music", "es": "Música" },
+        { "en": "Game", "es": "Juego" },
+        { "en": "Sport", "es": "Deporte" }
+      ],
+      "grammar": {
+        "rule": "like / love / hate + -ing",
+        "explanation_es": "Tras like, love, hate, enjoy usamos verbo + -ing: 'I like reading', 'She loves dancing'.",
+        "examples": ["I like reading books.", "She loves dancing.", "He hates running.", "We enjoy traveling.", "They like playing games."]
+      },
+      "sentences": [
+        "I like reading books at night.",
+        "She loves dancing with friends.",
+        "We enjoy traveling in summer.",
+        "He hates running in the rain."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Directions / Direcciones",
+      "vocabulary": [
+        { "en": "Left", "es": "Izquierda" },
+        { "en": "Right", "es": "Derecha" },
+        { "en": "Straight", "es": "Recto" },
+        { "en": "Turn", "es": "Girar" },
+        { "en": "Corner", "es": "Esquina" },
+        { "en": "Block", "es": "Cuadra" },
+        { "en": "Map", "es": "Mapa" },
+        { "en": "Far", "es": "Lejos" },
+        { "en": "Close", "es": "Cerca" },
+        { "en": "Cross", "es": "Cruzar" },
+        { "en": "Between", "es": "Entre" },
+        { "en": "Opposite", "es": "Enfrente de" }
+      ],
+      "grammar": {
+        "rule": "Imperatives for directions",
+        "explanation_es": "Para dar indicaciones usamos el imperativo (verbo base): 'Turn left', 'Go straight'.",
+        "examples": ["Turn left at the corner.", "Go straight for two blocks.", "Cross the street.", "It is on your right.", "The bank is opposite the park."]
+      },
+      "sentences": [
+        "Turn left at the corner.",
+        "Go straight for two blocks.",
+        "The bank is on your right.",
+        "Cross the street and turn right."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Nature / La naturaleza",
+      "vocabulary": [
+        { "en": "Tree", "es": "Árbol" },
+        { "en": "Flower", "es": "Flor" },
+        { "en": "River", "es": "Río" },
+        { "en": "Mountain", "es": "Montaña" },
+        { "en": "Sea", "es": "Mar" },
+        { "en": "Beach", "es": "Playa" },
+        { "en": "Forest", "es": "Bosque" },
+        { "en": "Sky", "es": "Cielo" },
+        { "en": "Star", "es": "Estrella" },
+        { "en": "Moon", "es": "Luna" },
+        { "en": "Grass", "es": "Hierba" },
+        { "en": "Stone", "es": "Piedra" }
+      ],
+      "grammar": {
+        "rule": "Past continuous (was/were + -ing)",
+        "explanation_es": "Para acciones en progreso en el pasado: 'I was walking in the forest'.",
+        "examples": ["I was walking by the river.", "The sun was shining.", "They were swimming in the sea.", "Birds were singing in the trees.", "We were climbing the mountain."]
+      },
+      "sentences": [
+        "I was walking by the river.",
+        "The sun was shining brightly.",
+        "They were swimming in the sea.",
+        "We were climbing the mountain."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Frequency & Time / Frecuencia y tiempo",
+      "vocabulary": [
+        { "en": "Always", "es": "Siempre" },
+        { "en": "Usually", "es": "Normalmente" },
+        { "en": "Often", "es": "A menudo" },
+        { "en": "Sometimes", "es": "A veces" },
+        { "en": "Rarely", "es": "Rara vez" },
+        { "en": "Never", "es": "Nunca" },
+        { "en": "Every day", "es": "Cada día" },
+        { "en": "Once", "es": "Una vez" },
+        { "en": "Twice", "es": "Dos veces" },
+        { "en": "Early", "es": "Temprano" },
+        { "en": "Late", "es": "Tarde" },
+        { "en": "Now", "es": "Ahora" }
+      ],
+      "grammar": {
+        "rule": "Adverbs of frequency",
+        "explanation_es": "Van antes del verbo principal (pero después de 'to be'): 'I always study', 'She is never late'.",
+        "examples": ["I always have breakfast.", "She usually walks to work.", "We sometimes watch films.", "He is never late.", "They rarely eat out."]
+      },
+      "sentences": [
+        "I always have breakfast at home.",
+        "She usually walks to work.",
+        "We sometimes watch films together.",
+        "He is never late for class."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Communication / Comunicación",
+      "vocabulary": [
+        { "en": "Call", "es": "Llamar" },
+        { "en": "Message", "es": "Mensaje" },
+        { "en": "Answer", "es": "Responder" },
+        { "en": "Ask", "es": "Preguntar" },
+        { "en": "Tell", "es": "Decir / Contar" },
+        { "en": "Listen", "es": "Escuchar" },
+        { "en": "Explain", "es": "Explicar" },
+        { "en": "Understand", "es": "Entender" },
+        { "en": "Repeat", "es": "Repetir" },
+        { "en": "Email", "es": "Correo electrónico" },
+        { "en": "Letter", "es": "Carta" },
+        { "en": "Word", "es": "Palabra" }
+      ],
+      "grammar": {
+        "rule": "can / can't for ability",
+        "explanation_es": "Usamos 'can' para habilidad y posibilidad: 'I can speak English', 'She can't come today'.",
+        "examples": ["I can speak English.", "Can you repeat that, please?", "She can't understand the letter.", "We can call you tomorrow.", "He can explain the lesson."]
+      },
+      "sentences": [
+        "Can you repeat that please?",
+        "I can speak a little English.",
+        "She will call you tomorrow.",
+        "Please listen and answer."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "At the Restaurant / En el restaurante",
+      "vocabulary": [
+        { "en": "Menu", "es": "Menú" },
+        { "en": "Waiter", "es": "Camarero" },
+        { "en": "Order", "es": "Pedir / Pedido" },
+        { "en": "Bill", "es": "Cuenta" },
+        { "en": "Tip", "es": "Propina" },
+        { "en": "Table", "es": "Mesa" },
+        { "en": "Dish", "es": "Plato" },
+        { "en": "Drink", "es": "Bebida" },
+        { "en": "Starter", "es": "Entrante" },
+        { "en": "Main course", "es": "Plato principal" },
+        { "en": "Delicious", "es": "Delicioso" },
+        { "en": "Reservation", "es": "Reserva" }
+      ],
+      "grammar": {
+        "rule": "Would like (polite requests)",
+        "explanation_es": "Para pedir con cortesía usamos 'I would like' ('d like): 'I'd like the soup, please'.",
+        "examples": ["I would like the menu, please.", "Can we have the bill?", "She'd like a coffee.", "We have a reservation for two.", "The dish is delicious."]
+      },
+      "sentences": [
+        "I would like the menu please.",
+        "Can we have the bill please?",
+        "We have a reservation for two.",
+        "This main course is delicious."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "At the Hotel / En el hotel",
+      "vocabulary": [
+        { "en": "Room", "es": "Habitación" },
+        { "en": "Key", "es": "Llave" },
+        { "en": "Reception", "es": "Recepción" },
+        { "en": "Guest", "es": "Huésped" },
+        { "en": "Check in", "es": "Registrarse" },
+        { "en": "Check out", "es": "Dejar la habitación" },
+        { "en": "Floor", "es": "Piso" },
+        { "en": "Elevator", "es": "Ascensor" },
+        { "en": "Towel", "es": "Toalla" },
+        { "en": "Breakfast", "es": "Desayuno" },
+        { "en": "Single room", "es": "Habitación individual" },
+        { "en": "Double room", "es": "Habitación doble" }
+      ],
+      "grammar": {
+        "rule": "Could / Can for requests",
+        "explanation_es": "'Could' es más formal que 'can' para pedir: 'Could I have the key?', 'Can I check in?'.",
+        "examples": ["Could I have the key, please?", "What time is check out?", "Is breakfast included?", "I booked a double room.", "The room is on the third floor."]
+      },
+      "sentences": [
+        "Could I have the key please?",
+        "What time is check out?",
+        "Is breakfast included in the price?",
+        "I booked a double room."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Health Basics / Salud básica",
+      "vocabulary": [
+        { "en": "Doctor", "es": "Médico" },
+        { "en": "Sick", "es": "Enfermo" },
+        { "en": "Pain", "es": "Dolor" },
+        { "en": "Cold", "es": "Resfriado" },
+        { "en": "Fever", "es": "Fiebre" },
+        { "en": "Pill", "es": "Pastilla" },
+        { "en": "Hurt", "es": "Doler / Lastimar" },
+        { "en": "Better", "es": "Mejor" },
+        { "en": "Worse", "es": "Peor" },
+        { "en": "Stomach", "es": "Estómago" },
+        { "en": "Tooth", "es": "Diente" },
+        { "en": "Nurse", "es": "Enfermero" }
+      ],
+      "grammar": {
+        "rule": "have got + symptom",
+        "explanation_es": "Para síntomas: 'I have a headache', 'I've got a cold'. También 'My ... hurts'.",
+        "examples": ["I have a headache.", "She has a cold.", "My stomach hurts.", "You should see a doctor.", "I feel better today."]
+      },
+      "sentences": [
+        "I have a bad headache.",
+        "My stomach hurts a lot.",
+        "You should see a doctor.",
+        "She is feeling better today."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Housework / Tareas del hogar",
+      "vocabulary": [
+        { "en": "Clean", "es": "Limpiar" },
+        { "en": "Wash", "es": "Lavar" },
+        { "en": "Cook", "es": "Cocinar" },
+        { "en": "Iron", "es": "Planchar" },
+        { "en": "Sweep", "es": "Barrer" },
+        { "en": "Tidy up", "es": "Ordenar" },
+        { "en": "Dishes", "es": "Platos" },
+        { "en": "Laundry", "es": "Ropa sucia" },
+        { "en": "Trash", "es": "Basura" },
+        { "en": "Vacuum", "es": "Aspirar" },
+        { "en": "Make the bed", "es": "Hacer la cama" },
+        { "en": "Chores", "es": "Tareas" }
+      ],
+      "grammar": {
+        "rule": "have to (obligation)",
+        "explanation_es": "Para obligaciones cotidianas: 'I have to wash the dishes', 'She has to clean her room'.",
+        "examples": ["I have to wash the dishes.", "She has to clean the kitchen.", "We take out the trash.", "He makes the bed every day.", "Do you do the laundry?"]
+      },
+      "sentences": [
+        "I have to wash the dishes.",
+        "She has to clean the kitchen.",
+        "We take out the trash on Mondays.",
+        "He makes the bed every morning."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "More Verbs / Más verbos",
+      "vocabulary": [
+        { "en": "Bring", "es": "Traer" },
+        { "en": "Carry", "es": "Llevar / Cargar" },
+        { "en": "Choose", "es": "Elegir" },
+        { "en": "Find", "es": "Encontrar" },
+        { "en": "Keep", "es": "Guardar / Mantener" },
+        { "en": "Leave", "es": "Dejar / Salir" },
+        { "en": "Meet", "es": "Conocer / Encontrarse" },
+        { "en": "Pay", "es": "Pagar" },
+        { "en": "Send", "es": "Enviar" },
+        { "en": "Show", "es": "Mostrar" },
+        { "en": "Win", "es": "Ganar" },
+        { "en": "Lose", "es": "Perder" }
+      ],
+      "grammar": {
+        "rule": "Irregular past forms",
+        "explanation_es": "Muchos verbos comunes son irregulares: bring → brought, find → found, leave → left.",
+        "examples": ["I brought my lunch.", "She found her keys.", "We left early.", "He sent an email.", "They won the game."]
+      },
+      "sentences": [
+        "I brought my lunch today.",
+        "She found her keys at last.",
+        "We left the party early.",
+        "He sent me an email."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Adjectives 2 / Adjetivos 2",
+      "vocabulary": [
+        { "en": "Interesting", "es": "Interesante" },
+        { "en": "Boring", "es": "Aburrido" },
+        { "en": "Difficult", "es": "Difícil" },
+        { "en": "Important", "es": "Importante" },
+        { "en": "Famous", "es": "Famoso" },
+        { "en": "Dangerous", "es": "Peligroso" },
+        { "en": "Comfortable", "es": "Cómodo" },
+        { "en": "Quiet", "es": "Tranquilo" },
+        { "en": "Noisy", "es": "Ruidoso" },
+        { "en": "Modern", "es": "Moderno" },
+        { "en": "Crowded", "es": "Concurrido" },
+        { "en": "Empty", "es": "Vacío" }
+      ],
+      "grammar": {
+        "rule": "Adjectives -ed / -ing",
+        "explanation_es": "'-ed' describe cómo te sientes (I am bored); '-ing' describe la cosa (the film is boring).",
+        "examples": ["The movie was interesting.", "I am bored at home.", "This street is very noisy.", "The hotel was comfortable.", "The exam is important."]
+      },
+      "sentences": [
+        "The movie was very interesting.",
+        "This street is too noisy.",
+        "The hotel room was comfortable.",
+        "This exam is really important."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "Connectors / Conectores",
+      "vocabulary": [
+        { "en": "And", "es": "Y" },
+        { "en": "But", "es": "Pero" },
+        { "en": "Because", "es": "Porque" },
+        { "en": "So", "es": "Así que" },
+        { "en": "Also", "es": "También" },
+        { "en": "Then", "es": "Luego" },
+        { "en": "After", "es": "Después" },
+        { "en": "Before", "es": "Antes" },
+        { "en": "First", "es": "Primero" },
+        { "en": "Finally", "es": "Finalmente" },
+        { "en": "Or", "es": "O" },
+        { "en": "Although", "es": "Aunque" }
+      ],
+      "grammar": {
+        "rule": "Linking words",
+        "explanation_es": "Conectan ideas: 'and' (suma), 'but' (contraste), 'because' (causa), 'so' (consecuencia).",
+        "examples": ["I was tired, so I went home.", "She likes tea but not coffee.", "We stayed because it rained.", "First I study, then I relax.", "He is smart and kind."]
+      },
+      "sentences": [
+        "I was tired so I went home.",
+        "She likes tea but not coffee.",
+        "We stayed because it rained.",
+        "First I study then I relax."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Free Time 2 / Tiempo libre 2",
+      "vocabulary": [
+        { "en": "Watch TV", "es": "Ver televisión" },
+        { "en": "Play games", "es": "Jugar videojuegos" },
+        { "en": "Go out", "es": "Salir" },
+        { "en": "Relax", "es": "Relajarse" },
+        { "en": "Hang out", "es": "Pasar el rato" },
+        { "en": "Hobby", "es": "Pasatiempo" },
+        { "en": "Walk", "es": "Pasear" },
+        { "en": "Camping", "es": "Acampar" },
+        { "en": "Painting", "es": "Pintura" },
+        { "en": "Garden", "es": "Jardín / Jardinería" },
+        { "en": "Collect", "es": "Coleccionar" },
+        { "en": "Weekend", "es": "Fin de semana" }
+      ],
+      "grammar": {
+        "rule": "How often...?",
+        "explanation_es": "Preguntamos por frecuencia: 'How often do you...?' y respondemos con 'once a week', 'every weekend'.",
+        "examples": ["How often do you go out?", "I watch TV every evening.", "We hang out on weekends.", "She relaxes by painting.", "They go camping once a year."]
+      },
+      "sentences": [
+        "How often do you go out?",
+        "I watch TV every evening.",
+        "We hang out on weekends.",
+        "She relaxes by painting."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u23",
+      "title": "Appearance / Apariencia",
+      "vocabulary": [
+        { "en": "Blonde", "es": "Rubio" },
+        { "en": "Dark hair", "es": "Pelo oscuro" },
+        { "en": "Curly", "es": "Rizado" },
+        { "en": "Straight", "es": "Liso" },
+        { "en": "Bald", "es": "Calvo" },
+        { "en": "Beard", "es": "Barba" },
+        { "en": "Slim", "es": "Delgado" },
+        { "en": "Overweight", "es": "Con sobrepeso" },
+        { "en": "Handsome", "es": "Guapo" },
+        { "en": "Pretty", "es": "Bonita" },
+        { "en": "Middle-aged", "es": "De mediana edad" },
+        { "en": "Look like", "es": "Parecerse a" }
+      ],
+      "grammar": {
+        "rule": "look like / be like",
+        "explanation_es": "'look like' = apariencia física; 'be like' = personalidad. 'What does she look like?'",
+        "examples": ["She has long curly hair.", "He looks like his father.", "What does he look like?", "She is tall and slim.", "He has a short beard."]
+      },
+      "sentences": [
+        "She has long curly hair.",
+        "He looks just like his father.",
+        "What does your sister look like?",
+        "He is tall slim and handsome."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u24",
+      "title": "Technology Basics / Tecnología básica",
+      "vocabulary": [
+        { "en": "Phone", "es": "Teléfono" },
+        { "en": "App", "es": "Aplicación" },
+        { "en": "Internet", "es": "Internet" },
+        { "en": "Email", "es": "Correo" },
+        { "en": "Message", "es": "Mensaje" },
+        { "en": "Click", "es": "Hacer clic" },
+        { "en": "Online", "es": "En línea" },
+        { "en": "Charger", "es": "Cargador" },
+        { "en": "Screen", "es": "Pantalla" },
+        { "en": "Save", "es": "Guardar" },
+        { "en": "Delete", "es": "Borrar" },
+        { "en": "Wifi", "es": "Wifi" }
+      ],
+      "grammar": {
+        "rule": "Imperatives for instructions",
+        "explanation_es": "Para instrucciones tecnológicas: 'Click here', 'Open the app', 'Save the file'.",
+        "examples": ["Open the app and click here.", "Send me a message.", "I need to charge my phone.", "Save the file, please.", "Is there free wifi?"]
+      },
+      "sentences": [
+        "Open the app and click here.",
+        "Please send me a message.",
+        "I need to charge my phone.",
+        "Is there free wifi here?"
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u25",
+      "title": "Money Basics / Dinero básico",
+      "vocabulary": [
+        { "en": "Coin", "es": "Moneda" },
+        { "en": "Note", "es": "Billete" },
+        { "en": "Change", "es": "Cambio (vuelto)" },
+        { "en": "Wallet", "es": "Cartera" },
+        { "en": "Cost", "es": "Costar" },
+        { "en": "Free", "es": "Gratis" },
+        { "en": "Cheap", "es": "Barato" },
+        { "en": "Expensive", "es": "Caro" },
+        { "en": "Save", "es": "Ahorrar" },
+        { "en": "Spend", "es": "Gastar" },
+        { "en": "Card", "es": "Tarjeta" },
+        { "en": "Cash", "es": "Efectivo" }
+      ],
+      "grammar": {
+        "rule": "How much does it cost?",
+        "explanation_es": "Para precios: 'How much does it cost?', 'It costs ten dollars'.",
+        "examples": ["How much does it cost?", "It costs ten dollars.", "Can I pay in cash?", "This is too expensive.", "I want to save money."]
+      },
+      "sentences": [
+        "How much does this cost?",
+        "Can I pay in cash or card?",
+        "This jacket is too expensive.",
+        "I want to save more money."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u26",
+      "title": "Travel Verbs / Verbos de viaje",
+      "vocabulary": [
+        { "en": "Pack", "es": "Empacar" },
+        { "en": "Book", "es": "Reservar" },
+        { "en": "Arrive", "es": "Llegar" },
+        { "en": "Leave", "es": "Salir / Partir" },
+        { "en": "Stay", "es": "Quedarse" },
+        { "en": "Visit", "es": "Visitar" },
+        { "en": "Catch", "es": "Tomar (transporte)" },
+        { "en": "Miss", "es": "Perder (un tren)" },
+        { "en": "Rent", "es": "Alquilar" },
+        { "en": "Explore", "es": "Explorar" },
+        { "en": "Return", "es": "Regresar" },
+        { "en": "Trip", "es": "Viaje" }
+      ],
+      "grammar": {
+        "rule": "Present continuous for future plans",
+        "explanation_es": "Para planes concretos: 'We are leaving tomorrow', 'I am flying to Rome on Friday'.",
+        "examples": ["We are leaving tomorrow morning.", "I booked a hotel for two nights.", "She is visiting her family.", "Don't miss the train!", "We rented a car."]
+      },
+      "sentences": [
+        "We are leaving tomorrow morning.",
+        "I booked a hotel for two nights.",
+        "Don't miss the early train!",
+        "We rented a car for the trip."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u27",
+      "title": "Weather 2 / El tiempo 2",
+      "vocabulary": [
+        { "en": "Sunny", "es": "Soleado" },
+        { "en": "Rainy", "es": "Lluvioso" },
+        { "en": "Cloudy", "es": "Nublado" },
+        { "en": "Windy", "es": "Ventoso" },
+        { "en": "Snowy", "es": "Nevado" },
+        { "en": "Foggy", "es": "Con niebla" },
+        { "en": "Wet", "es": "Mojado" },
+        { "en": "Dry", "es": "Seco" },
+        { "en": "Umbrella", "es": "Paraguas" },
+        { "en": "Coat", "es": "Abrigo" },
+        { "en": "Season", "es": "Estación" },
+        { "en": "Degrees", "es": "Grados" }
+      ],
+      "grammar": {
+        "rule": "What's the weather like?",
+        "explanation_es": "Para preguntar por el clima: 'What's the weather like?'. Respuesta: 'It's sunny'.",
+        "examples": ["What's the weather like today?", "It is sunny and warm.", "Take an umbrella, it's rainy.", "It's very windy outside.", "It is ten degrees."]
+      },
+      "sentences": [
+        "What's the weather like today?",
+        "Take an umbrella it's rainy.",
+        "It's very windy outside now.",
+        "It is sunny and warm today."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    }
+  ]
+}

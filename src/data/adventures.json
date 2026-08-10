@@ -1,0 +1,118 @@
+{
+  "adventures": [
+    {
+      "id": "adv_train",
+      "level": "B1",
+      "emoji": "🚆",
+      "title": "The Midnight Train",
+      "title_es": "El tren de medianoche",
+      "summary_es": "Despiertas en un tren nocturno y tu boleto ha desaparecido. Tus decisiones cambian el final.",
+      "start": "n1",
+      "endings": 5,
+      "nodes": {
+        "n1": {
+          "en": "You wake up on a night train. The lights are dim and the car is almost empty. You reach into your pocket... your ticket is gone.",
+          "es": "Despiertas en un tren nocturno. Las luces están tenues y el vagón está casi vacío. Buscas en tu bolsillo... tu boleto ha desaparecido.",
+          "choices": [
+            { "en": "Search under the seats.", "next": "n2" },
+            { "en": "Ask the old woman across the aisle.", "next": "n3" }
+          ]
+        },
+        "n2": {
+          "en": "You kneel down and search. Under the seat you find a wallet — but it isn't yours. Inside there is a photo of the old woman across the aisle.",
+          "es": "Te arrodillas y buscas. Debajo del asiento encuentras una cartera — pero no es tuya. Dentro hay una foto de la anciana del otro lado del pasillo.",
+          "choices": [
+            { "en": "Return the wallet to her.", "next": "n4" },
+            { "en": "Keep it and stay quiet.", "next": "n5" }
+          ]
+        },
+        "n3": {
+          "en": "\"Excuse me, have you seen my ticket?\" The woman smiles slowly. \"Tickets get lost on this train all the time,\" she says. \"Especially when the inspector is near.\"",
+          "es": "\"Disculpe, ¿ha visto mi boleto?\" La mujer sonríe despacio. \"Los boletos se pierden en este tren todo el tiempo\", dice. \"Sobre todo cuando el inspector está cerca.\"",
+          "choices": [
+            { "en": "Ask her what she means.", "next": "n6" },
+            { "en": "Walk to another car to hide.", "next": "n7" }
+          ]
+        },
+        "n4": {
+          "en": "She takes the wallet with shaking hands. \"You are honest,\" she whispers. \"Honest people deserve help.\" She hands you a small golden ticket. \"This one opens more than doors.\"",
+          "es": "Ella toma la cartera con manos temblorosas. \"Eres honesto\", susurra. \"La gente honesta merece ayuda.\" Te entrega un pequeño boleto dorado. \"Este abre más que puertas.\"",
+          "choices": [
+            { "en": "Thank her and take the golden ticket.", "next": "n8" },
+            { "en": "Refuse politely — you only want YOUR ticket.", "next": "n9" }
+          ]
+        },
+        "n5": {
+          "en": "You slip the wallet into your jacket. At that exact moment, the inspector appears. \"Ticket, please.\" You have no ticket... and a wallet that is not yours.",
+          "es": "Guardas la cartera en tu chaqueta. En ese preciso momento, aparece el inspector. \"Boleto, por favor.\" No tienes boleto... y llevas una cartera que no es tuya.",
+          "choices": [
+            { "en": "Confess everything.", "next": "end_off" },
+            { "en": "Say the wallet is yours.", "next": "end_caught" }
+          ]
+        },
+        "n6": {
+          "en": "She leans closer. \"The inspector on this train collects tickets... and secrets. Give him something more interesting than a ticket, and he will let you ride forever.\"",
+          "es": "Se acerca más. \"El inspector de este tren colecciona boletos... y secretos. Dale algo más interesante que un boleto, y te dejará viajar para siempre.\"",
+          "choices": [
+            { "en": "Prepare a secret to tell him.", "next": "n8" },
+            { "en": "Decide to find your real ticket instead.", "next": "n2" }
+          ]
+        },
+        "n7": {
+          "en": "You move quietly through the sleeping cars. In the last car, a door stands open to the night wind. A note is pinned to it: \"Only passengers who stop running ever arrive.\"",
+          "es": "Te mueves en silencio por los vagones dormidos. En el último vagón, una puerta está abierta al viento nocturno. Hay una nota clavada: \"Solo los pasajeros que dejan de huir llegan alguna vez.\"",
+          "choices": [
+            { "en": "Go back and face the inspector.", "next": "n9" },
+            { "en": "Stay hidden in the last car.", "next": "end_lost" }
+          ]
+        },
+        "n8": {
+          "en": "The inspector arrives. You offer him the golden ticket — and a story. He examines both, then smiles for the first time in years. \"Welcome aboard, permanent passenger.\"",
+          "es": "Llega el inspector. Le ofreces el boleto dorado — y una historia. Examina ambos, y luego sonríe por primera vez en años. \"Bienvenido a bordo, pasajero permanente.\"",
+          "choices": [
+            { "en": "Accept your new life on the train.", "next": "end_forever" },
+            { "en": "Ask him for one stop: home.", "next": "end_home" }
+          ]
+        },
+        "n9": {
+          "en": "The inspector arrives, tall and gray. \"Ticket, please.\" You explain everything honestly: the sleep, the empty pocket, the search. He studies your face for a long moment.",
+          "es": "El inspector llega, alto y gris. \"Boleto, por favor.\" Le explicas todo con honestidad: el sueño, el bolsillo vacío, la búsqueda. Él estudia tu rostro un largo momento.",
+          "choices": [
+            { "en": "Hold his gaze and wait.", "next": "end_home" },
+            { "en": "Offer to pay for a new ticket.", "next": "end_off" }
+          ]
+        },
+        "end_home": {
+          "end": true,
+          "ending_title": "The Way Home",
+          "en": "\"Truth is the oldest ticket,\" the inspector says, and punches a hole in the air itself. The train slows at a station that looks exactly like your street. You step off — home, and somehow braver. THE END (Ending 1 of 4)",
+          "es": "\"La verdad es el boleto más antiguo\", dice el inspector, y perfora el propio aire. El tren se detiene en una estación idéntica a tu calle. Bajas — en casa, y de algún modo más valiente. FIN (Final 1 de 4)"
+        },
+        "end_forever": {
+          "end": true,
+          "ending_title": "The Permanent Passenger",
+          "en": "Years later, travelers still talk about the kind stranger on the midnight train who helps people find what they have lost. Nobody knows your name. You like it that way. THE END (Ending 2 of 4)",
+          "es": "Años después, los viajeros aún hablan del amable desconocido del tren de medianoche que ayuda a la gente a encontrar lo que ha perdido. Nadie sabe tu nombre. Así te gusta. FIN (Final 2 de 4)"
+        },
+        "end_off": {
+          "end": true,
+          "ending_title": "The Next Station",
+          "en": "The inspector nods slowly. \"Honesty buys one stop.\" You step off at a small station at dawn. It is not home — but the ticket office is open, and the first train leaves in an hour. THE END (Ending 3 of 4)",
+          "es": "El inspector asiente despacio. \"La honestidad compra una parada.\" Bajas en una pequeña estación al amanecer. No es tu casa — pero la taquilla está abierta, y el primer tren sale en una hora. FIN (Final 3 de 4)"
+        },
+        "end_caught": {
+          "end": true,
+          "ending_title": "The Collector",
+          "en": "The inspector opens the wallet and looks at the photo — of his own mother. \"Interesting,\" he says coldly. You spend the rest of the night explaining. Some lies cost more than tickets. THE END (Ending 4 of 4)",
+          "es": "El inspector abre la cartera y mira la foto — de su propia madre. \"Interesante\", dice fríamente. Pasas el resto de la noche dando explicaciones. Algunas mentiras cuestan más que los boletos. FIN (Final 4 de 4)"
+        },
+        "end_lost": {
+          "end": true,
+          "ending_title": "The Last Car",
+          "en": "You hide until the lights go out, one by one. When you finally look up, the train has no windows, no doors, no end. They say some passengers are still riding. THE END (Secret ending!)",
+          "es": "Te escondes hasta que las luces se apagan, una a una. Cuando por fin levantas la vista, el tren no tiene ventanas, ni puertas, ni final. Dicen que algunos pasajeros siguen viajando. FIN (¡Final secreto!)"
+        }
+      }
+    }
+  ]
+}

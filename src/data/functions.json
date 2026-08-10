@@ -1,0 +1,129 @@
+{
+  "intro_en": "Today we learn how to give opinions, agree and disagree politely — the language you need for real discussions and meetings. Our topic is crime and the death penalty.",
+  "intro_es": "Hoy aprendemos a dar opiniones, estar de acuerdo y en desacuerdo con educación — el lenguaje que necesitas para debates y reuniones reales. El tema es el crimen y la pena de muerte.",
+  "groups": [
+    {
+      "fn": "Giving your opinion",
+      "fn_es": "Dar tu opinión",
+      "emoji": "💭",
+      "phrases": [
+        { "en": "In my opinion, …", "es": "En mi opinión, …", "ex_en": "In my opinion, the death penalty is wrong.", "ex_es": "En mi opinión, la pena de muerte está mal." },
+        { "en": "I think that …", "es": "Yo creo que …", "ex_en": "I think that prison is better than execution.", "ex_es": "Creo que la cárcel es mejor que la ejecución." },
+        { "en": "If you ask me, …", "es": "Si me preguntas, …", "ex_en": "If you ask me, no country should kill prisoners.", "ex_es": "Si me preguntas, ningún país debería matar presos." },
+        { "en": "From my point of view, …", "es": "Desde mi punto de vista, …", "ex_en": "From my point of view, crime comes from poverty.", "ex_es": "Desde mi punto de vista, el crimen viene de la pobreza." }
+      ]
+    },
+    {
+      "fn": "Agreeing",
+      "fn_es": "Estar de acuerdo",
+      "emoji": "✅",
+      "phrases": [
+        { "en": "I agree with you.", "es": "Estoy de acuerdo contigo.", "ex_en": "I agree with you — the punishment is too harsh.", "ex_es": "Estoy de acuerdo contigo — el castigo es demasiado duro." },
+        { "en": "That's a good point.", "es": "Es un buen punto.", "ex_en": "That's a good point about innocent people.", "ex_es": "Es un buen punto sobre las personas inocentes." },
+        { "en": "Exactly! / Absolutely!", "es": "¡Exacto! / ¡Totalmente!", "ex_en": "Absolutely! Life in prison is enough.", "ex_es": "¡Totalmente! La cadena perpetua es suficiente." },
+        { "en": "You're right.", "es": "Tienes razón.", "ex_en": "You're right, mistakes can't be undone.", "ex_es": "Tienes razón, los errores no se pueden deshacer." }
+      ]
+    },
+    {
+      "fn": "Partly agreeing",
+      "fn_es": "Estar de acuerdo en parte",
+      "emoji": "🤝",
+      "phrases": [
+        { "en": "I see your point, but …", "es": "Entiendo tu punto, pero …", "ex_en": "I see your point, but I still can't support it.", "ex_es": "Entiendo tu punto, pero aún no puedo apoyarlo." },
+        { "en": "That's true, however …", "es": "Es cierto, sin embargo …", "ex_en": "That's true, however the system makes mistakes.", "ex_es": "Es cierto, sin embargo el sistema comete errores." },
+        { "en": "You may be right, but …", "es": "Puede que tengas razón, pero …", "ex_en": "You may be right, but it's too final.", "ex_es": "Puede que tengas razón, pero es demasiado definitivo." }
+      ]
+    },
+    {
+      "fn": "Disagreeing (politely)",
+      "fn_es": "Estar en desacuerdo (con educación)",
+      "emoji": "❌",
+      "phrases": [
+        { "en": "I'm not sure I agree.", "es": "No estoy seguro de estar de acuerdo.", "ex_en": "I'm not sure I agree with that idea.", "ex_es": "No estoy seguro de estar de acuerdo con esa idea." },
+        { "en": "I see it differently.", "es": "Yo lo veo diferente.", "ex_en": "I see it differently — it doesn't reduce crime.", "ex_es": "Yo lo veo diferente — no reduce el crimen." },
+        { "en": "I'm afraid I disagree.", "es": "Me temo que no estoy de acuerdo.", "ex_en": "I'm afraid I disagree with the death penalty.", "ex_es": "Me temo que no estoy de acuerdo con la pena de muerte." },
+        { "en": "I don't think that's true.", "es": "No creo que eso sea cierto.", "ex_en": "I don't think that's true for every case.", "ex_es": "No creo que eso sea cierto en todos los casos." }
+      ]
+    },
+    {
+      "fn": "Asking for an opinion",
+      "fn_es": "Pedir una opinión",
+      "emoji": "❓",
+      "phrases": [
+        { "en": "What do you think?", "es": "¿Qué piensas?", "ex_en": "What do you think about the death penalty?", "ex_es": "¿Qué piensas sobre la pena de muerte?" },
+        { "en": "How do you feel about …?", "es": "¿Cómo te sientes respecto a …?", "ex_en": "How do you feel about longer sentences?", "ex_es": "¿Cómo te sientes respecto a condenas más largas?" },
+        { "en": "Do you agree?", "es": "¿Estás de acuerdo?", "ex_en": "Prison should rehabilitate people. Do you agree?", "ex_es": "La cárcel debería rehabilitar. ¿Estás de acuerdo?" }
+      ]
+    }
+  ],
+  "vocab": [
+    { "en": "crime", "es": "crimen / delito" },
+    { "en": "criminal", "es": "criminal / delincuente" },
+    { "en": "punishment", "es": "castigo" },
+    { "en": "the death penalty", "es": "la pena de muerte" },
+    { "en": "to execute", "es": "ejecutar" },
+    { "en": "life in prison", "es": "cadena perpetua" },
+    { "en": "guilty", "es": "culpable" },
+    { "en": "innocent", "es": "inocente" },
+    { "en": "a sentence", "es": "una condena / sentencia" },
+    { "en": "to commit a crime", "es": "cometer un delito" },
+    { "en": "to rehabilitate", "es": "rehabilitar" },
+    { "en": "fair / unfair", "es": "justo / injusto" }
+  ],
+  "practice": [
+    {
+      "situation_es": "Alguien dice algo y tú piensas exactamente lo mismo. Quieres estar totalmente de acuerdo.",
+      "options": [
+        { "en": "Absolutely! I agree with you.", "ok": true },
+        { "en": "I'm afraid I disagree.", "ok": false },
+        { "en": "What do you think?", "ok": false }
+      ],
+      "tip_es": "Para acuerdo fuerte: Absolutely! / Exactly! / I agree."
+    },
+    {
+      "situation_es": "No estás de acuerdo, pero quieres sonar educado y no agresivo.",
+      "options": [
+        { "en": "You're completely wrong.", "ok": false },
+        { "en": "I'm not sure I agree — I see it differently.", "ok": true },
+        { "en": "Exactly, that's a good point.", "ok": false }
+      ],
+      "tip_es": "En reuniones, suaviza el desacuerdo: 'I'm not sure I agree' suena mucho mejor que 'You're wrong'."
+    },
+    {
+      "situation_es": "Entiendes parte de lo que dicen, pero tienes una objeción.",
+      "options": [
+        { "en": "I see your point, but the system makes mistakes.", "ok": true },
+        { "en": "I don't think that's true.", "ok": false },
+        { "en": "How do you feel about it?", "ok": false }
+      ],
+      "tip_es": "Acuerdo parcial: 'I see your point, but…' / 'That's true, however…'."
+    },
+    {
+      "situation_es": "Quieres empezar a dar tu propia opinión sobre la pena de muerte.",
+      "options": [
+        { "en": "Do you agree?", "ok": false },
+        { "en": "In my opinion, the death penalty is wrong.", "ok": true },
+        { "en": "You're right.", "ok": false }
+      ],
+      "tip_es": "Para introducir tu opinión: 'In my opinion…' / 'I think that…' / 'If you ask me…'."
+    },
+    {
+      "situation_es": "Quieres saber qué piensa la otra persona antes de seguir.",
+      "options": [
+        { "en": "That's a good point.", "ok": false },
+        { "en": "What do you think about it?", "ok": true },
+        { "en": "I'm afraid I disagree.", "ok": false }
+      ],
+      "tip_es": "Para pedir opinión: 'What do you think?' / 'How do you feel about…?' / 'Do you agree?'."
+    },
+    {
+      "situation_es": "Reconoces que la otra persona puede tener razón, pero mantienes tu postura.",
+      "options": [
+        { "en": "You may be right, but it's too final.", "ok": true },
+        { "en": "Exactly!", "ok": false },
+        { "en": "I don't think that's true.", "ok": false }
+      ],
+      "tip_es": "Concede primero, luego objeta: 'You may be right, but…'."
+    }
+  ]
+}

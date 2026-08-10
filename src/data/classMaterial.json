@@ -1,0 +1,70 @@
+{
+  "id": "cm_weight_loss_drugs",
+  "title": "Weight Loss Drugs",
+  "title_es": "Medicamentos para adelgazar",
+  "level": "A2",
+  "source": "iTalk A2 · Let's Go For More · 6 Minute English",
+  "expiresDays": 7,
+  "intro_es": "Tema de tu clase: los medicamentos para bajar de peso (como Ozempic), sus efectos, el 'ruido de comida' y el debate personal de usarlos o no. Estudia esto para llegar con vocabulario y poder hablar toda la clase.",
+  "warmup": [
+    { "en": "What does \"feeling good in your body\" mean to you? Is it about energy, mood, or strength?", "es": "¿Qué significa para ti \"sentirte bien en tu cuerpo\"? ¿Es energía, ánimo o fuerza?" },
+    { "en": "Have you ever felt \"two voices\" inside when making a health decision?", "es": "¿Alguna vez sentiste \"dos voces\" al tomar una decisión de salud?" },
+    { "en": "When you see ads for health products, what message do you notice often?", "es": "Cuando ves anuncios de productos de salud, ¿qué mensaje notas a menudo?" }
+  ],
+  "vocabulary": [
+    { "en": "Weight loss drug", "es": "Medicamento para adelgazar", "def_en": "a medicine used to help a person lose weight" },
+    { "en": "Food noise", "es": "\"Ruido de comida\"", "def_en": "intrusive, unwanted thoughts about food" },
+    { "en": "Side effect", "es": "Efecto secundario", "def_en": "a secondary effect of a drug, usually undesirable" },
+    { "en": "On the market", "es": "En el mercado (a la venta)", "def_en": "available for sale" },
+    { "en": "Self-esteem", "es": "Autoestima", "def_en": "belief and confidence in your own abilities" },
+    { "en": "Into the ether", "es": "Desvanecerse (en el aire)", "def_en": "completely disappeared; vanished" },
+    { "en": "Obesity", "es": "Obesidad", "def_en": "the condition of being very overweight" },
+    { "en": "Diabetes", "es": "Diabetes", "def_en": "a disease in which the body cannot control blood sugar" },
+    { "en": "To prescribe", "es": "Recetar", "def_en": "when a doctor tells you to take a medicine" },
+    { "en": "Off-label", "es": "Uso fuera de indicación", "def_en": "using a drug for a purpose it was not officially approved for" },
+    { "en": "Temptation", "es": "Tentación", "def_en": "a strong wish to do or have something, often unwise" },
+    { "en": "Conscience", "es": "Conciencia", "def_en": "the inner voice that tells you right from wrong" },
+    { "en": "BMI (Body Mass Index)", "es": "IMC (índice de masa corporal)", "def_en": "a measure doctors use to estimate a healthy weight" }
+  ],
+  "phrases": [
+    { "en": "In my opinion, weight loss drugs can help, but they also have side effects.", "es": "En mi opinión, los medicamentos para adelgazar pueden ayudar, pero también tienen efectos secundarios." },
+    { "en": "For me, feeling good in my body is mostly about energy and mood.", "es": "Para mí, sentirme bien en mi cuerpo es sobre todo energía y ánimo." },
+    { "en": "On one hand it can help, but on the other hand we don't know the long-term effects.", "es": "Por un lado puede ayudar, pero por otro lado no conocemos los efectos a largo plazo." },
+    { "en": "If I tried a new health product, I would ask about the side effects first.", "es": "Si probara un nuevo producto de salud, preguntaría primero por los efectos secundarios." },
+    { "en": "I've never taken these drugs, but I've heard about Ozempic.", "es": "Nunca he tomado estos medicamentos, pero he oído sobre Ozempic." },
+    { "en": "I think it depends on the person and their health.", "es": "Creo que depende de la persona y de su salud." },
+    { "en": "I'm not sure it's a good idea, because it can be risky.", "es": "No estoy seguro de que sea buena idea, porque puede ser arriesgado." }
+  ],
+  "quiz": [
+    { "q": "Which term describes a secondary effect of a drug?", "options": ["side effects", "special effects", "after effects"], "answer": "side effects" },
+    { "q": "Which term describes 'intrusive, unwanted thoughts about food'?", "options": ["food bank", "food allergy", "food noise"], "answer": "food noise" },
+    { "q": "What does it mean if something is 'on the market'?", "options": ["it's sold out", "it's available to buy", "it's overpriced"], "answer": "it's available to buy" },
+    { "q": "What does BMI stand for?", "options": ["British Medical Index", "Body Mass Index", "Body Muscle Index"], "answer": "Body Mass Index" }
+  ],
+  "discussion": [
+    {
+      "q_en": "What does \"feeling good in your body\" mean to you?",
+      "q_es": "¿Qué significa para ti \"sentirte bien en tu cuerpo\"?",
+      "model_en": "For me, feeling good in my body means having energy and a positive mood. It's not only about being thin; it's about feeling strong and healthy.",
+      "model_es": "Para mí, sentirme bien en mi cuerpo significa tener energía y buen ánimo. No es solo estar delgado; es sentirme fuerte y saludable."
+    },
+    {
+      "q_en": "Have you ever felt an \"angel and a devil\" when deciding something?",
+      "q_es": "¿Has sentido un \"ángel y un diablo\" al decidir algo?",
+      "model_en": "Yes, sometimes I have an angel and a devil on my shoulders. One voice says \"be healthy\" and the other says \"just one bite\". Usually I try to listen to my conscience.",
+      "model_es": "Sí, a veces tengo un ángel y un diablo en los hombros. Una voz dice \"sé saludable\" y la otra \"solo un bocado\". Normalmente intento escuchar a mi conciencia."
+    },
+    {
+      "q_en": "If a product promised to quiet \"food noise\", what question would you ask?",
+      "q_es": "Si un producto prometiera calmar el \"ruido de comida\", ¿qué preguntarías?",
+      "model_en": "I would ask, \"What are the side effects?\" and \"Is it safe to use for a long time?\" I don't like to try new drugs without information.",
+      "model_es": "Preguntaría: \"¿Cuáles son los efectos secundarios?\" y \"¿Es seguro usarlo por mucho tiempo?\". No me gusta probar medicamentos nuevos sin información."
+    },
+    {
+      "q_en": "Do you think weight loss drugs are a good idea? Why?",
+      "q_es": "¿Crees que los medicamentos para adelgazar son buena idea? ¿Por qué?",
+      "model_en": "In my opinion, they can help people with obesity or diabetes, but they are not magic. I think a healthy diet and exercise are still important.",
+      "model_es": "En mi opinión, pueden ayudar a personas con obesidad o diabetes, pero no son magia. Creo que una dieta sana y el ejercicio siguen siendo importantes."
+    }
+  ]
+}

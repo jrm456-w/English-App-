@@ -1,0 +1,592 @@
+/* Screen renderers for Home, Learn, Unit, Games, Progress, Settings. */
+import { el, clear, toast } from './ui.js';
+import { t, setLang, applyTranslations } from './i18n.js';
+import { getState, setState, resetState } from './store.js';
+import { loadLevel, levels } from './data.js';
+import { navigate, goBack } from './router.js';
+import { speak } from './speech.js';
+import {
+  levelProgress, recentBadges, BADGES, badgeName, markUnitStudied,
+  getDaily, DAILY, unitCompleted, unitPassedCount, levelReadyToAdvance,
+  nextLevel, advanceLevel, gamePassed, weakGrammarList
+} from './gamification.js';
+import { cloudEnabled, getUser, onUser, signIn, signOutCloud } from './cloud.js';
+import { GAMES, gamesForLevel } from '../games/index.js';
+import { dueCount } from '../games/review.js';
+import { newWordsToday } from './dailyLesson.js';
+import { isOnline } from './net.js';
+import { emojiFor } from './emoji.js';
+
+const LEVEL_INDEX = { A1: 0, A2: 1, B1: 2, B2: 3, C1: 4 };
+
+/* Find a grammar example sentence that uses the word, so vocabulary is shown in context. */
+function exampleFor(examples, enWord) {
+  const w = enWord.toLowerCase().replace(/^to\s+/, '').trim();
+  const re = new RegExp('\\b' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+  return examples.find((ex) => re.test(ex)) || null;
+}
+
+/* ---------------- Reusable cards ---------------- */
+function taskRow(label, current, target) {
+  const done = current >= target;
+  const pct = Math.min(100, Math.round((current / target) * 100));
+  return `
+    <div style="margin-top:10px">
+      <div class="row" style="justify-content:space-between">
+        <span>${done ? '✅' : '⬜'} ${label}</span>
+        <small class="muted">${Math.min(current, target)}/${target}</small>
+      </div>
+      <div class="progress" style="margin-top:6px;height:8px"><div class="progress__fill" style="width:${pct}%"></div></div>
+    </div>`;
+}
+
+function dailyCard() {
+  const d = getDaily();
+  const card = el(`
+    <div class="card" style="margin-top:16px">
+      <div class="row" style="justify-content:space-between">
+        <strong>🎯 ${t('daily.title')}</strong>
+        ${d.done ? `<span class="badge pill">${t('daily.allDone')}</span>` : ''}
+      </div>
+      <small class="muted">${t('daily.subtitle')}</small>
+      ${taskRow(t('daily.games'), d.games, DAILY.games)}
+      ${taskRow(t('daily.stories'), d.stories, DAILY.stories)}
+      ${taskRow(t('daily.xp'), d.xp, DAILY.xp)}
+    </div>`);
+  return card;
+}
+
+function advanceCard(level) {
+  const next = nextLevel(level);
+  const card = el(`
+    <div class="card center" style="border:2px solid var(--c-success)">
+      <div style="font-size:2rem">🎓</div>
+      <strong>${t('advance.ready')}</strong>
+      <p class="muted">${t('advance.button')} ${next}</p>
+      <button class="btn btn--success btn--block" id="adv">${t('advance.button')} ${next} →</button>
+    </div>`);
+  card.querySelector('#adv').onclick = () => {
+    const to = advanceLevel();
+    if (to) { toast(`${t('advance.done')} ${to}! 🎉`); navigate('/home'); }
+  };
+  return card;
+}
+
+/* ---------------- HOME ---------------- */
+export async function home(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  const prog = levelProgress(data);
+
+  view.appendChild(el(`
+    <div class="hero">
+      <h1 class="h1">${t('home.greeting')}</h1>
+      <p style="opacity:.9">${t('home.subtitle')}</p>
+    </div>`));
+
+  view.appendChild(el(`
+    <div class="stats">
+      <div class="stat"><div class="stat__num">${s.level}</div><div class="stat__label">${t('home.level')}</div></div>
+      <div class="stat"><div class="stat__num">${s.xp}</div><div class="stat__label">${t('home.xp')}</div></div>
+      <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
+    </div>`));
+
+  // Daily lesson (the main "do this today" action)
+  const lessonDone = getDaily().lessonDone;
+  const newCount = (await newWordsToday(s.level)).length;
+  const lessonCard = el(`
+    <div class="card card--tap" style="margin-top:16px;border:2px solid var(--c-primary)">
+      <div class="row" style="justify-content:space-between">
+        <strong>📅 ${t('daily.lesson')}</strong>
+        <span class="badge ${lessonDone ? '' : 'pill'}">${lessonDone ? '✅' : '▶'}</span>
+      </div>
+      <small class="muted">${lessonDone ? t('daily.lessonDone') : (newCount ? `${newCount} ${t('daily.newWords')} + ${t('daily.review')}` : t('daily.reviewOnly'))}</small>
+    </div>`);
+  lessonCard.onclick = () => navigate('/daily');
+  view.appendChild(lessonCard);
+
+  // Daily mission
+  view.appendChild(dailyCard());
+
+  const cont = el(`
+    <div class="card card--tap" style="margin-top:16px">
+      <div class="row" style="justify-content:space-between">
+        <strong>${t('home.continue')}</strong><span>→</span>
+      </div>
+      <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
+      <small class="muted">${prog}% · ${t('advance.unitsDone')}: ${data.units.filter((u) => unitCompleted(s.level, u)).length}/${data.units.length}</small>
+    </div>`);
+  cont.onclick = () => navigate('/learn');
+  view.appendChild(cont);
+
+  // Ready to advance?
+  if (levelReadyToAdvance(data) && nextLevel(s.level)) {
+    view.appendChild(advanceCard(s.level));
+  }
+
+  const storiesCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>📖 ${t('stories.title')}</strong><span>→</span>
+      </div>
+      <small class="muted">${t('stories.subtitle')}</small>
+    </div>`);
+  storiesCard.onclick = () => navigate('/stories');
+  view.appendChild(storiesCard);
+
+  // Smart review (spaced repetition)
+  const due = await dueCount(s.level);
+  const reviewCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>🔁 ${t('review.title')}</strong>
+        <span class="badge ${due ? 'pill' : ''}">${due}</span>
+      </div>
+      <small class="muted">${t('review.subtitle')}</small>
+    </div>`);
+  reviewCard.onclick = () => navigate('/review');
+  view.appendChild(reviewCard);
+
+  const dictCard = el(`
+    <div class="card card--tap">
+      <div class="row" style="justify-content:space-between">
+        <strong>🔤 ${t('dict.title')}</strong><span>→</span>
+      </div>
+      <small class="muted">${t('dict.search')}</small>
+    </div>`);
+  dictCard.onclick = () => navigate('/dictionary');
+  view.appendChild(dictCard);
+
+  // Quick games
+  view.appendChild(el(`<h2 class="h2">${t('home.quickGames')}</h2>`));
+  const grid = el(`<div class="grid grid--2"></div>`);
+  const firstUnit = data.units[0];
+  gamesForLevel(LEVEL_INDEX[s.level]).slice(0, 4).forEach((type) => {
+    const c = el(`<div class="card card--tap center"><div style="font-size:1.8rem">${GAMES[type].icon}</div><div>${t('game.' + type)}</div></div>`);
+    c.onclick = () => navigate(`/game/${type}/${s.level}/${firstUnit.id}`);
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+
+  // Recent badges
+  const badges = recentBadges(4);
+  if (badges.length) {
+    view.appendChild(el(`<h2 class="h2">${t('home.recentBadges')}</h2>`));
+    const bg = el(`<div class="grid grid--auto"></div>`);
+    badges.forEach((b) => bg.appendChild(el(`<div class="badge-tile"><div class="badge-tile__icon">${b.icon}</div><div class="badge-tile__name">${badgeName(b)}</div></div>`)));
+    view.appendChild(bg);
+  }
+}
+
+/* ---------------- LEARN (unit list) ---------------- */
+export async function learn(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  view.appendChild(el(`<h1 class="h1">${t('learn.title')} · ${s.level}</h1>`));
+  const quickRow = el(`<div class="grid grid--2" style="margin-bottom:14px"></div>`);
+  const storiesBtn = el(`<button class="btn btn--ghost">📖 ${t('stories.title')}</button>`);
+  storiesBtn.onclick = () => navigate('/stories');
+  const dictBtn = el(`<button class="btn btn--ghost">🔤 ${t('dict.title')}</button>`);
+  dictBtn.onclick = () => navigate('/dictionary');
+  quickRow.appendChild(storiesBtn);
+  quickRow.appendChild(dictBtn);
+  view.appendChild(quickRow);
+  data.units.forEach((u) => {
+    const done = unitCompleted(s.level, u);
+    const passed = unitPassedCount(s.level, u);
+    const totalGames = (u.games || []).length;
+    const needsNet = u.requiresConnection;
+    const c = el(`
+      <div class="card card--tap">
+        <div class="row" style="justify-content:space-between">
+          <strong>${done ? '✅ ' : ''}${u.title}</strong>
+          <span class="badge">${passed}/${totalGames} ${t('learn.passed')}</span>
+        </div>
+        <small class="muted">${u.grammar ? u.grammar.rule : ''}</small>
+        ${needsNet ? `<div class="needs-net" style="margin-top:6px">${t('net.needsConnection')}</div>` : ''}
+      </div>`);
+    if (needsNet && !isOnline()) c.classList.add('is-offline-locked');
+    c.onclick = () => navigate(`/unit/${s.level}/${u.id}`);
+    view.appendChild(c);
+  });
+}
+
+/* ---------------- UNIT detail ---------------- */
+export async function unit({ level, id }, view) {
+  const data = await loadLevel(level);
+  const u = data.units.find((x) => x.id === id);
+  if (!u) { navigate('/learn'); return; }
+  clear(view);
+
+  view.appendChild(el(`<button class="btn btn--ghost btn--small" id="back">← ${t('path.title')}</button>`));
+  view.querySelector('#back').onclick = () => goBack('/home');
+
+  // Gate content that requires a connection.
+  if (u.requiresConnection && !isOnline()) {
+    view.appendChild(el(`<h1 class="h1">${u.title}</h1>`));
+    view.appendChild(el(`<div class="card center"><div style="font-size:2.4rem">🌐</div><p>${t('net.lockedMsg')}</p></div>`));
+    return;
+  }
+  markUnitStudied(level, u.id);
+  const idx = data.units.findIndex((x) => x.id === id);
+  view.appendChild(el(`<p class="muted" style="margin-bottom:0">${t('path.lesson')} ${idx + 1} / ${data.units.length}</p>`));
+  view.appendChild(el(`<h1 class="h1" style="margin-top:4px">${u.title}</h1>`));
+  // "Can-do" goal so the learner knows what this lesson is FOR (CEFR best practice).
+  view.appendChild(el(`
+    <div class="card" style="background:var(--c-surface-2);border-style:dashed">
+      🎯 <strong>${t('lesson.goal')}:</strong> ${t('lesson.goalText')} <strong>${u.title.split(' / ')[0]}</strong>${u.grammar ? ` ${t('lesson.and')} <strong>${u.grammar.rule}</strong>` : ''}.
+    </div>`));
+  // 3-step guide so the user always knows what to do.
+  view.appendChild(el(`
+    <div class="steps">
+      <span class="steps__item is-on">1 · ${t('learn.vocab')}</span>
+      <span class="steps__item is-on">2 · ${t('learn.grammar')}</span>
+      <span class="steps__item ${unitCompleted(level, u) ? 'is-on' : ''}">3 · ${t('learn.practice')}</span>
+    </div>`));
+
+  // Vocabulary (shown in context with an example sentence when available)
+  view.appendChild(el(`<h2 class="h2">${t('learn.vocab')}</h2>`));
+  // Active-learning trainer: see -> recall -> produce (guarantees real learning).
+  const trainBtn = el(`<button class="btn btn--block" style="margin-bottom:12px">🧠 ${t('train.cta')}</button>`);
+  trainBtn.onclick = () => navigate(`/study/${level}/${u.id}`);
+  view.appendChild(trainBtn);
+  const examples = (u.grammar && u.grammar.examples) || [];
+  const vlist = el(`<div class="card"></div>`);
+  u.vocabulary.forEach((v) => {
+    const ex = exampleFor(examples, v.en);
+    const row = el(`
+      <div style="padding:10px 0;border-bottom:1px solid var(--c-border)">
+        <div class="row" style="justify-content:space-between">
+          <span>${emojiFor(v.en) ? `<span style="font-size:1.3rem">${emojiFor(v.en)}</span> ` : ''}<strong>${v.en}</strong> — <span class="muted">${v.es}</span></span>
+          <button class="btn btn--ghost btn--small" aria-label="Listen ${v.en}">🔊</button>
+        </div>
+        ${ex ? `<div class="muted" style="font-style:italic;font-size:.9rem;margin-top:4px">"${ex}"</div>` : ''}
+      </div>`);
+    row.querySelector('button').onclick = () => speak(ex || v.en);
+    vlist.appendChild(row);
+  });
+  view.appendChild(vlist);
+
+  // Grammar
+  if (u.grammar) {
+    view.appendChild(el(`<h2 class="h2">${t('learn.grammar')}: ${u.grammar.rule}</h2>`));
+    const g = el(`<div class="card"><p>${u.grammar.explanation_es}</p><strong>${t('learn.examples')}:</strong></div>`);
+    (u.grammar.examples || []).forEach((ex) => {
+      const r = el(`<div class="setting-row"><span>${ex}</span><button class="btn btn--ghost btn--small">🔊</button></div>`);
+      r.querySelector('button').onclick = () => speak(ex);
+      g.appendChild(r);
+    });
+    view.appendChild(g);
+    const gBtn = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:10px">🧩 ${t('gram.practice')}</button>`);
+    gBtn.onclick = () => navigate(`/grammar/${level}/${u.id}`);
+    view.appendChild(gBtn);
+  }
+
+  // Practice games for this unit (passing 2 completes the lesson)
+  view.appendChild(el(`<h2 class="h2">${t('learn.practice')}</h2>`));
+  view.appendChild(el(`<p class="muted" style="margin-top:-8px">${t('path.passToComplete')}</p>`));
+  const grid = el(`<div class="grid grid--2"></div>`);
+  (u.games || []).filter((type) => GAMES[type]).forEach((type) => {
+    const passed = gamePassed(level, u.id, type);
+    const c = el(`<div class="card card--tap center"><div style="font-size:1.6rem">${GAMES[type].icon}</div><div>${passed ? '✅ ' : ''}${t('game.' + type)}</div></div>`);
+    c.onclick = () => navigate(`/game/${type}/${level}/${u.id}`);
+    grid.appendChild(c);
+  });
+  view.appendChild(grid);
+
+  // Completion footer with a clear "next lesson" action.
+  const done = unitCompleted(level, u);
+  const next = data.units[idx + 1];
+  if (done) {
+    const card = el(`
+      <div class="card center" style="border:2px solid var(--c-success)">
+        <div style="font-size:2rem">✅</div>
+        <strong>${t('path.lessonDone')}</strong>
+        ${next ? `<button class="btn btn--success btn--block" id="next" style="margin-top:10px">${t('path.nextLesson')} →</button>`
+               : `<button class="btn btn--success btn--block" id="next" style="margin-top:10px">${t('path.backToPath')}</button>`}
+      </div>`);
+    view.appendChild(card);
+    card.querySelector('#next').onclick = () => next ? navigate(`/unit/${level}/${next.id}`) : navigate('/home');
+  } else {
+    const back = el(`<button class="btn btn--ghost btn--block" style="margin-top:8px">← ${t('path.title')}</button>`);
+    back.onclick = () => goBack('/home');
+    view.appendChild(back);
+  }
+}
+
+/* ---------------- GAMES hub ---------------- */
+export async function games(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  view.appendChild(el(`<h1 class="h1">${t('games.title')}</h1><p class="muted">${t('games.choose')} · ${s.level}</p>`));
+
+  // Unit selector
+  const sel = el(`<select class="select" id="unit-sel" style="margin:12px 0"></select>`);
+  data.units.forEach((u) => sel.appendChild(el(`<option value="${u.id}">${u.title}</option>`)));
+  view.appendChild(sel);
+
+  const grid = el(`<div class="grid grid--2"></div>`);
+  view.appendChild(grid);
+
+  function renderGames() {
+    clear(grid);
+    const unitId = sel.value;
+    const u = data.units.find((x) => x.id === unitId);
+    const available = gamesForLevel(LEVEL_INDEX[s.level]);
+    // Prefer this unit's own games, then any other level-appropriate games.
+    const list = Array.from(new Set([...(u.games || []), ...available])).filter((type) => available.includes(type) && GAMES[type]);
+    list.forEach((type) => {
+      const key = `${s.level}:${unitId}:${type}`;
+      const done = getState().completedGames[key];
+      const c = el(`
+        <div class="card card--tap center">
+          <div style="font-size:2rem">${GAMES[type].icon}</div>
+          <div><strong>${t('game.' + type)}</strong></div>
+          ${done ? `<small class="muted">⭐ ${done.correct}/${done.attempts}</small>` : ''}
+        </div>`);
+      c.onclick = () => navigate(`/game/${type}/${s.level}/${unitId}`);
+      grid.appendChild(c);
+    });
+  }
+  sel.onchange = renderGames;
+  renderGames();
+}
+
+/* ---------------- PROGRESS ---------------- */
+export async function progress(_p, view) {
+  const s = getState();
+  clear(view);
+  const data = await loadLevel(s.level);
+  const prog = levelProgress(data);
+
+  view.appendChild(el(`<h1 class="h1">${t('progress.title')}</h1>`));
+  const unitsDone = data.units.filter((u) => unitCompleted(s.level, u)).length;
+  view.appendChild(el(`
+    <div class="card">
+      <strong>${t('progress.overall')} · ${s.level}</strong>
+      <div class="progress" style="margin-top:10px"><div class="progress__fill" style="width:${prog}%"></div></div>
+      <small class="muted">${prog}% · ${t('advance.unitsDone')}: ${unitsDone}/${data.units.length}</small>
+      <p class="muted" style="margin:12px 0 0;font-size:.85rem">ℹ️ ${t('advance.criteria')}<br>${t('advance.howto')}</p>
+    </div>`));
+
+  if (levelReadyToAdvance(data) && nextLevel(s.level)) view.appendChild(advanceCard(s.level));
+
+  view.appendChild(dailyCard());
+
+  view.appendChild(el(`
+    <div class="stats">
+      <div class="stat"><div class="stat__num">${s.xp}</div><div class="stat__label">${t('home.xp')}</div></div>
+      <div class="stat"><div class="stat__num">🔥 ${s.streak}</div><div class="stat__label">${t('home.streak')}</div></div>
+      <div class="stat"><div class="stat__num">${s.badges.length}</div><div class="stat__label">${t('progress.badges')}</div></div>
+    </div>`));
+
+  // ---- Memory strength: how far each word has travelled toward mastery (SRS boxes) ----
+  const srs = Object.values(s.srs || {});
+  if (srs.length) {
+    const boxes = [0, 0, 0, 0, 0];
+    srs.forEach((e) => { boxes[Math.min(4, Math.max(0, (e.box || 1) - 1))]++; });
+    const maxBox = Math.max(...boxes, 1);
+    const seq = ['#93c5fd', '#60a5fa', '#3b82f6', '#2563eb', '#1d4ed8']; // one hue, light→dark
+    const names = [t('viz.box1'), t('viz.box2'), t('viz.box3'), t('viz.box4'), t('viz.box5')];
+    const mastered = boxes[3] + boxes[4];
+    const mem = el(`<div class="card"></div>`);
+    mem.appendChild(el(`<div class="row" style="justify-content:space-between"><strong>🧠 ${t('viz.memory')}</strong><small class="muted">${srs.length} ${t('dict.words')} · ${mastered} ${t('viz.mastered')}</small></div>`));
+    mem.appendChild(el(`<p class="muted" style="font-size:.8rem;margin:4px 0 10px">${t('viz.memoryHint')}</p>`));
+    boxes.forEach((n, i2) => {
+      mem.appendChild(el(`
+        <div class="memrow">
+          <span class="memrow__name">${names[i2]}</span>
+          <span class="memrow__track"><span class="memrow__fill" style="width:${Math.round((n / maxBox) * 100)}%;background:${seq[i2]}"></span></span>
+          <span class="memrow__val">${n}</span>
+        </div>`));
+    });
+    view.appendChild(mem);
+  }
+
+  // ---- Activity: XP earned in the last 7 days (single series, one hue) ----
+  {
+    const log = s.xpLog || {};
+    const days = [];
+    for (let k = 6; k >= 0; k--) {
+      const dte = new Date(); dte.setDate(dte.getDate() - k);
+      const iso = dte.toISOString().slice(0, 10);
+      days.push({ iso, xp: log[iso] || 0, dow: dte.getDay(), today: k === 0 });
+    }
+    const maxXp = Math.max(...days.map((d2) => d2.xp), 1);
+    const dini = (getState().lang === 'en') ? ['S', 'M', 'T', 'W', 'T', 'F', 'S'] : ['D', 'L', 'M', 'X', 'J', 'V', 'S'];
+    const act = el(`<div class="card"></div>`);
+    act.appendChild(el(`<strong>📈 ${t('viz.activity')}</strong>`));
+    const cols = el(`<div class="viz-cols" role="img" aria-label="${t('viz.activity')}"></div>`);
+    days.forEach((d2) => {
+      const h = d2.xp ? Math.max(6, Math.round((d2.xp / maxXp) * 84)) : 2;
+      // Label only today's bar and the week's max — selective, not every point.
+      const showVal = d2.xp > 0 && (d2.today || d2.xp === maxXp);
+      cols.appendChild(el(`
+        <div class="viz-col" title="${d2.iso} · ${d2.xp} XP">
+          <span class="viz-col__val">${showVal ? d2.xp : ''}</span>
+          <span class="viz-col__bar${d2.today ? ' is-today' : ''}" style="height:${h}px"></span>
+          <span class="viz-col__day">${dini[d2.dow]}</span>
+        </div>`));
+    });
+    act.appendChild(cols);
+    view.appendChild(act);
+  }
+
+  // ---- Consistency: last 4 weeks as a calendar heatmap ----
+  {
+    const log = s.xpLog || {};
+    const cal = el(`<div class="card"></div>`);
+    cal.appendChild(el(`<strong>📆 ${t('viz.consistency')}</strong>`));
+    const grid = el(`<div class="viz-cal"></div>`);
+    for (let k = 27; k >= 0; k--) {
+      const dte = new Date(); dte.setDate(dte.getDate() - k);
+      const iso = dte.toISOString().slice(0, 10);
+      const xp = log[iso] || 0;
+      const lvl2 = xp >= 50 ? 3 : xp >= 20 ? 2 : xp > 0 ? 1 : 0;
+      grid.appendChild(el(`<span class="viz-cell viz-cell--${lvl2}" title="${iso} · ${xp} XP"></span>`));
+    }
+    cal.appendChild(grid);
+    cal.appendChild(el(`<small class="muted">${t('viz.calHint')}</small>`));
+    view.appendChild(cal);
+  }
+
+  // Grammar the user keeps missing -> shown so they know what to reinforce.
+  const weak = weakGrammarList(6);
+  if (weak.length) {
+    view.appendChild(el(`<h2 class="h2">📘 ${t('progress.weak')}</h2>`));
+    const wc = el(`<div class="card"></div>`);
+    weak.forEach((rule) => {
+      const u = data.units.find((x) => x.grammar && x.grammar.rule === rule);
+      const row = el(`<div class="setting-row" style="${u ? 'cursor:pointer' : ''}"><span>⚠️ ${rule}</span>${u ? `<span class="lesson-node__cta">🧩 ${t('gram.practice')}</span>` : ''}</div>`);
+      if (u) row.onclick = () => navigate(`/grammar/${s.level}/${u.id}`);
+      wc.appendChild(row);
+    });
+    view.appendChild(wc);
+  }
+
+  view.appendChild(el(`<h2 class="h2">${t('progress.badges')}</h2>`));
+  const bg = el(`<div class="grid grid--auto"></div>`);
+  BADGES.forEach((b) => {
+    const owned = s.badges.includes(b.id);
+    bg.appendChild(el(`<div class="badge-tile ${owned ? '' : 'is-locked'}"><div class="badge-tile__icon">${b.icon}</div><div class="badge-tile__name">${badgeName(b)}</div></div>`));
+  });
+  view.appendChild(bg);
+}
+
+/* ---------------- SETTINGS ---------------- */
+export function settings(_p, view) {
+  const s = getState();
+  clear(view);
+  view.appendChild(el(`<h1 class="h1">${t('settings.title')}</h1>`));
+
+  const card = el(`<div class="card"></div>`);
+
+  // Dark mode
+  const dark = el(`
+    <div class="setting-row">
+      <span>${t('settings.theme')}</span>
+      <label class="switch"><input type="checkbox" id="dark" ${s.theme === 'dark' ? 'checked' : ''}><span class="switch__slider"></span></label>
+    </div>`);
+  dark.querySelector('#dark').onchange = (e) => {
+    setState({ theme: e.target.checked ? 'dark' : 'light' });
+    const th = getState().theme;
+    document.documentElement.dataset.theme = th;
+    document.getElementById('app').dataset.theme = th;
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', th === 'dark' ? '#0f172a' : '#2563eb');
+  };
+  card.appendChild(dark);
+
+  // Slow audio (easier listening)
+  const slow = el(`
+    <div class="setting-row">
+      <span>🐢 ${t('settings.slowAudio')}</span>
+      <label class="switch"><input type="checkbox" id="slow" ${s.slowAudio ? 'checked' : ''}><span class="switch__slider"></span></label>
+    </div>`);
+  slow.querySelector('#slow').onchange = (e) => setState({ slowAudio: e.target.checked });
+  card.appendChild(slow);
+
+  // Language
+  const lang = el(`
+    <div class="setting-row">
+      <span>${t('settings.language')}</span>
+      <select class="select" id="lang">
+        <option value="es" ${s.lang === 'es' ? 'selected' : ''}>Español</option>
+        <option value="en" ${s.lang === 'en' ? 'selected' : ''}>English</option>
+      </select>
+    </div>`);
+  lang.querySelector('#lang').onchange = (e) => { setLang(e.target.value); settings(_p, view); };
+  card.appendChild(lang);
+
+  // Level
+  const level = el(`<div class="setting-row" style="flex-wrap:wrap"><span>${t('settings.level')}</span><div class="row" id="levels"></div></div>`);
+  const lv = level.querySelector('#levels');
+  levels().forEach((L) => {
+    const chip = el(`<button class="level-chip ${s.level === L ? 'is-active' : ''}">${L}</button>`);
+    chip.onclick = () => { setState({ level: L }); toast(`${t('home.level')}: ${L}`); settings(_p, view); };
+    lv.appendChild(chip);
+  });
+  card.appendChild(level);
+  view.appendChild(card);
+
+  // Account / cloud sync
+  view.appendChild(accountCard(view, _p));
+
+  // Actions
+  const actions = el(`<div class="card"></div>`);
+  const retake = el(`<button class="btn btn--ghost btn--block" style="margin-bottom:10px">${t('settings.retakeQuiz')}</button>`);
+  retake.onclick = () => navigate('/quiz');
+  const reset = el(`<button class="btn btn--block" style="background:var(--c-danger)">${t('settings.reset')}</button>`);
+  reset.onclick = () => {
+    if (confirm(t('settings.reset.confirm'))) {
+      resetState();
+      document.documentElement.dataset.theme = 'light';
+      document.getElementById('app').dataset.theme = 'light';
+      applyTranslations();
+      navigate('/quiz');
+    }
+  };
+  actions.appendChild(retake);
+  actions.appendChild(reset);
+  view.appendChild(actions);
+
+  view.appendChild(el(`<p class="muted center" style="margin-top:16px">EngFlow · v1.0 · ${t('settings.about')}: PWA offline para aprender inglés.</p>`));
+}
+
+let authSubscribed = false;
+function accountCard(view, _p) {
+  const card = el(`<div class="card"></div>`);
+  card.appendChild(el(`<strong>☁️ ${t('auth.account')}</strong>`));
+
+  if (!cloudEnabled()) {
+    card.appendChild(el(`<p class="muted" style="margin:8px 0 0">${t('auth.notConfigured')}</p>`));
+    return card;
+  }
+
+  const user = getUser();
+  if (user) {
+    card.appendChild(el(`<p style="margin:8px 0">${t('auth.signedInAs')}<br><strong>${user.email || user.displayName || 'Google'}</strong></p>`));
+    card.appendChild(el(`<p class="muted" style="margin:0 0 8px">${t('auth.synced')}</p>`));
+    const out = el(`<button class="btn btn--ghost btn--block">${t('auth.signOut')}</button>`);
+    out.onclick = async () => { await signOutCloud(); location.reload(); };
+    card.appendChild(out);
+  } else {
+    card.appendChild(el(`<p class="muted" style="margin:8px 0">${t('auth.syncDesc')}</p>`));
+    const inBtn = el(`<button class="btn btn--block">${t('auth.signIn')}</button>`);
+    inBtn.onclick = async () => {
+      inBtn.disabled = true;
+      const r = await signIn();
+      if (!r.ok && r.reason !== 'unavailable') toast(t('auth.error'));
+    };
+    card.appendChild(inBtn);
+  }
+
+  // Re-render settings when auth state changes (once).
+  if (!authSubscribed) {
+    authSubscribed = true;
+    onUser(() => { if (location.hash.replace(/^#/, '').startsWith('/settings')) settings(_p, view); });
+  }
+  return card;
+}

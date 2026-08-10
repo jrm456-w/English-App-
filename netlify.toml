@@ -1,0 +1,22 @@
+# EngFlow is a no-build vanilla PWA: we publish the repo root directly.
+# This is more robust on Netlify than a bundler step (nothing to break on deploy).
+[build]
+  publish = "."
+  command = "node scripts/generate-icons.cjs"
+
+# SPA fallback: all routes resolve to index.html (app uses hash routing).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Never cache the service worker so updates roll out immediately.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/manifest.json"
+  [headers.values]
+    Cache-Control = "no-cache"

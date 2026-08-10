@@ -1,0 +1,702 @@
+{
+  "level": "C1",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Academic Vocabulary / Léxico académico",
+      "vocabulary": [
+        { "en": "Furthermore", "es": "Además" },
+        { "en": "Consequently", "es": "Por consiguiente" },
+        { "en": "Nevertheless", "es": "No obstante" },
+        { "en": "Hypothesis", "es": "Hipótesis" },
+        { "en": "Significant", "es": "Significativo" },
+        { "en": "To assess", "es": "Evaluar" },
+        { "en": "To imply", "es": "Implicar" },
+        { "en": "Comprehensive", "es": "Exhaustivo" },
+        { "en": "Empirical", "es": "Empírico" },
+        { "en": "Framework", "es": "Marco (teórico)" },
+        { "en": "To derive", "es": "Derivar / Deducir" },
+        { "en": "Underlying", "es": "Subyacente" }
+      ],
+      "grammar": {
+        "rule": "Formal connectors & nominalisation",
+        "explanation_es": "En registro académico se usan conectores formales (furthermore, consequently) y nominalización para sonar objetivo.",
+        "examples": ["The findings are significant; furthermore, they are replicable.", "Consequently, the hypothesis was rejected.", "Nevertheless, further research is required.", "The data imply a strong correlation.", "This framework underlies the entire study."]
+      },
+      "story": {
+        "text": "The study presents a ___ analysis of the data. ___ , the results suggest a strong correlation. The authors ___ that the findings are robust. ___ , they acknowledge certain limitations. Further research is ___ to confirm the conclusions.",
+        "answers": ["comprehensive", "Furthermore", "imply", "Nevertheless", "required"],
+        "bank": ["comprehensive", "Furthermore", "imply", "Nevertheless", "required", "significant", "consequently"]
+      },
+      "sentences": [
+        "Consequently the hypothesis was rejected.",
+        "The data imply a strong correlation.",
+        "Nevertheless further research is required.",
+        "The findings are significant and replicable."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Complex Grammar / Gramática avanzada",
+      "vocabulary": [
+        { "en": "Had I known", "es": "De haber sabido" },
+        { "en": "Inversion", "es": "Inversión" },
+        { "en": "Not only", "es": "No solo" },
+        { "en": "Seldom", "es": "Rara vez" },
+        { "en": "Were it not for", "es": "De no ser por" },
+        { "en": "Hardly", "es": "Apenas" },
+        { "en": "No sooner", "es": "Apenas / Tan pronto" },
+        { "en": "Subordinate", "es": "Subordinado" },
+        { "en": "Should you need", "es": "Si necesitara" },
+        { "en": "Little did he know", "es": "Poco sabía él" },
+        { "en": "Under no circumstances", "es": "Bajo ninguna circunstancia" },
+        { "en": "Only then", "es": "Solo entonces" }
+      ],
+      "grammar": {
+        "rule": "Inversion for emphasis",
+        "explanation_es": "Para enfatizar, invertimos sujeto y auxiliar: 'Not only did he win, but he also broke a record', 'Seldom have I seen such talent'.",
+        "examples": ["Not only did he win, but he also broke a record.", "Seldom have I seen such talent.", "Had I known, I would have helped.", "No sooner had we arrived than it started to rain.", "Under no circumstances should you give up."]
+      },
+      "story": {
+        "text": "___ only is the report detailed, but it is also persuasive. ___ have I read such a compelling argument. ___ I known the deadline, I would have started earlier. No ___ had they finished than new issues arose. Were it ___ for her support, the project would have failed.",
+        "answers": ["Not", "Seldom", "Had", "sooner", "not"],
+        "bank": ["Not", "Seldom", "Had", "sooner", "not", "hardly", "only"]
+      },
+      "sentences": [
+        "Seldom have I seen such talent.",
+        "Had I known I would have helped.",
+        "Not only did he win the prize.",
+        "No sooner had we arrived than it rained."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u3",
+      "title": "Debate Expressions / Debate",
+      "vocabulary": [
+        { "en": "I would argue that", "es": "Yo sostendría que" },
+        { "en": "On the contrary", "es": "Por el contrario" },
+        { "en": "To play devil's advocate", "es": "Hacer de abogado del diablo" },
+        { "en": "A compelling case", "es": "Un argumento convincente" },
+        { "en": "To concede", "es": "Conceder / Admitir" },
+        { "en": "Granted", "es": "Es cierto que" },
+        { "en": "To refute", "es": "Refutar" },
+        { "en": "By and large", "es": "En general" },
+        { "en": "To put it bluntly", "es": "Para decirlo sin rodeos" },
+        { "en": "With all due respect", "es": "Con todo respeto" },
+        { "en": "That said", "es": "Dicho esto" },
+        { "en": "To bear in mind", "es": "Tener en cuenta" }
+      ],
+      "grammar": {
+        "rule": "Hedging & concession",
+        "explanation_es": "En debate formal matizamos (hedging) y concedemos puntos: 'Granted, that's true, but...', 'I would argue that...'.",
+        "examples": ["I would argue that education is the key.", "Granted, the cost is high, but the benefits outweigh it.", "On the contrary, the evidence suggests otherwise.", "Let me play devil's advocate for a moment.", "That said, we must bear the risks in mind."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Professional World / Mundo profesional",
+      "vocabulary": [
+        { "en": "Stakeholder", "es": "Parte interesada" },
+        { "en": "Leverage", "es": "Aprovechar" },
+        { "en": "Deliverable", "es": "Entregable" },
+        { "en": "Streamline", "es": "Optimizar" },
+        { "en": "Negotiate", "es": "Negociar" },
+        { "en": "Milestone", "es": "Hito" },
+        { "en": "Outcome", "es": "Resultado" },
+        { "en": "Strategy", "es": "Estrategia" },
+        { "en": "Efficiency", "es": "Eficiencia" },
+        { "en": "Accountability", "es": "Responsabilidad" },
+        { "en": "Scope", "es": "Alcance" },
+        { "en": "Feasible", "es": "Viable" }
+      ],
+      "grammar": {
+        "rule": "Cleft sentences for emphasis",
+        "explanation_es": "Para enfatizar: 'What we need is more time', 'It is efficiency that matters most'.",
+        "examples": ["What we need is a clearer strategy.", "It is accountability that drives results.", "What matters most is the outcome.", "It was her leadership that saved the project.", "What I suggest is that we streamline the process."]
+      },
+      "story": {
+        "text": "To ensure success, every ___ must be aligned on the goals. The team agreed to ___ the workflow to improve ___ . After reaching the first ___ , they renegotiated the project ___ to keep it feasible.",
+        "answers": ["stakeholder", "streamline", "efficiency", "milestone", "scope"],
+        "bank": ["stakeholder", "streamline", "efficiency", "milestone", "scope", "outcome", "strategy"]
+      },
+      "sentences": [
+        "What we need is a clearer strategy.",
+        "It is accountability that drives results.",
+        "We must streamline the process.",
+        "The plan is feasible within the scope."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Nuance & Style / Matices y estilo",
+      "vocabulary": [
+        { "en": "Arguably", "es": "Podría decirse que" },
+        { "en": "Albeit", "es": "Aunque" },
+        { "en": "To a certain extent", "es": "Hasta cierto punto" },
+        { "en": "Notwithstanding", "es": "A pesar de" },
+        { "en": "Inevitably", "es": "Inevitablemente" },
+        { "en": "Subtle", "es": "Sutil" },
+        { "en": "Profound", "es": "Profundo" },
+        { "en": "Ambiguous", "es": "Ambiguo" },
+        { "en": "Compelling", "es": "Convincente" },
+        { "en": "Intricate", "es": "Intrincado" },
+        { "en": "To grasp", "es": "Captar / Comprender" },
+        { "en": "Insight", "es": "Perspicacia / Visión" }
+      ],
+      "grammar": {
+        "rule": "Advanced modality & nuance",
+        "explanation_es": "Matizar el grado de certeza: 'It may well be...', 'arguably', 'to a certain extent'.",
+        "examples": ["It may well be the best solution.", "This is, arguably, his finest work.", "The argument is compelling, albeit complex.", "Notwithstanding the risks, they proceeded.", "To a certain extent, I agree."]
+      },
+      "story": {
+        "text": "The author offers a ___ analysis that is ___ , though not without flaws. ___ the complexity, the central idea is easy to ___ . ___ , this book provides genuine ___ into human behavior.",
+        "answers": ["profound", "compelling", "Notwithstanding", "grasp", "Arguably", "insight"],
+        "bank": ["profound", "compelling", "Notwithstanding", "grasp", "Arguably", "insight", "subtle"]
+      },
+      "sentences": [
+        "It may well be the best solution.",
+        "This is arguably his finest work.",
+        "The argument is compelling albeit complex.",
+        "To a certain extent I agree with you."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Advanced Idioms / Modismos avanzados",
+      "vocabulary": [
+        { "en": "To cut corners", "es": "Hacer las cosas a medias" },
+        { "en": "The bottom line", "es": "Lo esencial / El resultado final" },
+        { "en": "To be on the fence", "es": "Estar indeciso" },
+        { "en": "A blessing in disguise", "es": "Un mal que vino para bien" },
+        { "en": "To take it with a grain of salt", "es": "Tomarlo con cautela" },
+        { "en": "To go the extra mile", "es": "Hacer un esfuerzo adicional" },
+        { "en": "To be in the same boat", "es": "Estar en la misma situación" },
+        { "en": "To beat around the bush", "es": "Andarse por las ramas" },
+        { "en": "To call it a day", "es": "Dar por terminado" },
+        { "en": "Food for thought", "es": "Algo para reflexionar" },
+        { "en": "To touch base", "es": "Ponerse en contacto" },
+        { "en": "The tip of the iceberg", "es": "La punta del iceberg" }
+      ],
+      "grammar": {
+        "rule": "Idiomatic register",
+        "explanation_es": "Los modismos avanzados aportan naturalidad. Adáptalos al contexto formal o informal adecuado.",
+        "examples": ["Don't cut corners on safety.", "The bottom line is that we need more time.", "I'm still on the fence about it.", "Losing that job was a blessing in disguise.", "Let's go the extra mile for our clients."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Abstract Concepts / Conceptos abstractos",
+      "vocabulary": [
+        { "en": "Freedom", "es": "Libertad" },
+        { "en": "Justice", "es": "Justicia" },
+        { "en": "Purpose", "es": "Propósito" },
+        { "en": "Identity", "es": "Identidad" },
+        { "en": "Perception", "es": "Percepción" },
+        { "en": "Consciousness", "es": "Conciencia" },
+        { "en": "Morality", "es": "Moralidad" },
+        { "en": "Resilience", "es": "Resiliencia" },
+        { "en": "Ambiguity", "es": "Ambigüedad" },
+        { "en": "Legacy", "es": "Legado" },
+        { "en": "Wisdom", "es": "Sabiduría" },
+        { "en": "Dignity", "es": "Dignidad" }
+      ],
+      "grammar": {
+        "rule": "Abstract nouns & articles",
+        "explanation_es": "Los sustantivos abstractos suelen ir sin artículo cuando son generales: 'Freedom is essential', 'Wisdom comes with age'.",
+        "examples": ["Freedom is a fundamental right.", "Wisdom comes with experience.", "Resilience helps us overcome failure.", "Identity shapes our choices.", "His legacy will endure."]
+      },
+      "story": {
+        "text": "True ___ is not the absence of fear but the courage to act despite it. Over time, ___ teaches us that failure builds ___ . A person of ___ treats everyone with respect, leaving behind a lasting ___ .",
+        "answers": ["wisdom", "experience", "resilience", "dignity", "legacy"],
+        "bank": ["wisdom", "experience", "resilience", "dignity", "legacy", "freedom", "purpose"]
+      },
+      "sentences": [
+        "Freedom is a fundamental right.",
+        "Wisdom comes with experience.",
+        "Resilience helps us overcome failure.",
+        "His legacy will endure for years."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Arts & Literature / Arte y literatura",
+      "vocabulary": [
+        { "en": "Novel", "es": "Novela" },
+        { "en": "Author", "es": "Autor" },
+        { "en": "Character", "es": "Personaje" },
+        { "en": "Metaphor", "es": "Metáfora" },
+        { "en": "Symbolism", "es": "Simbolismo" },
+        { "en": "Genre", "es": "Género" },
+        { "en": "Masterpiece", "es": "Obra maestra" },
+        { "en": "Narrative", "es": "Narrativa" },
+        { "en": "Aesthetic", "es": "Estético" },
+        { "en": "Portray", "es": "Retratar" },
+        { "en": "Interpretation", "es": "Interpretación" },
+        { "en": "Theme", "es": "Tema" }
+      ],
+      "grammar": {
+        "rule": "Participle clauses",
+        "explanation_es": "Cláusulas con participio para un estilo elegante: 'Written in 1925, the novel...', 'Praised by critics, ...'.",
+        "examples": ["Written in 1925, the novel remains relevant.", "Praised by critics, the film won awards.", "The author portrays society with subtle irony.", "This metaphor enriches the narrative.", "Its themes are universal."]
+      },
+      "story": {
+        "text": "The ___ is widely regarded as a ___ of modern literature. Its ___ are complex and deeply human. Through powerful ___ , the ___ explores themes of love and loss, inviting endless ___ .",
+        "answers": ["novel", "masterpiece", "characters", "symbolism", "author", "interpretation"],
+        "bank": ["novel", "masterpiece", "characters", "symbolism", "author", "interpretation", "genre"]
+      },
+      "sentences": [
+        "The author portrays society with irony.",
+        "This novel is a true masterpiece.",
+        "Its themes are deeply universal.",
+        "The metaphor enriches the narrative."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "Research & Analysis / Investigación y análisis",
+      "vocabulary": [
+        { "en": "Methodology", "es": "Metodología" },
+        { "en": "Variable", "es": "Variable" },
+        { "en": "Correlation", "es": "Correlación" },
+        { "en": "Sample", "es": "Muestra" },
+        { "en": "Bias", "es": "Sesgo" },
+        { "en": "Findings", "es": "Hallazgos" },
+        { "en": "Conclusion", "es": "Conclusión" },
+        { "en": "Validate", "es": "Validar" },
+        { "en": "Estimate", "es": "Estimar" },
+        { "en": "Trend", "es": "Tendencia" },
+        { "en": "Outcome", "es": "Resultado" },
+        { "en": "Limitation", "es": "Limitación" }
+      ],
+      "grammar": {
+        "rule": "Cautious / hedged language",
+        "explanation_es": "La investigación usa lenguaje cauto: 'The data suggest...', 'This may indicate...', 'It appears that...'.",
+        "examples": ["The data suggest a clear trend.", "This may indicate a strong correlation.", "The sample was relatively small.", "These findings should be validated.", "There are some limitations to consider."]
+      },
+      "story": {
+        "text": "The research followed a rigorous ___ to minimize ___ . After analyzing a large ___ , the team identified a significant ___ between the variables. The ___ were promising, although the authors noted several ___ .",
+        "answers": ["methodology", "bias", "sample", "correlation", "findings", "limitations"],
+        "bank": ["methodology", "bias", "sample", "correlation", "findings", "limitations", "trend"]
+      },
+      "sentences": [
+        "The data suggest a clear trend.",
+        "The sample was relatively small.",
+        "These findings should be validated.",
+        "There are limitations to consider."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u10",
+      "title": "Register & Connotation / Registro y connotación",
+      "vocabulary": [
+        { "en": "Formal", "es": "Formal" },
+        { "en": "Informal", "es": "Informal" },
+        { "en": "Slang", "es": "Jerga" },
+        { "en": "Tone", "es": "Tono" },
+        { "en": "Euphemism", "es": "Eufemismo" },
+        { "en": "Connotation", "es": "Connotación" },
+        { "en": "Bluntly", "es": "Sin rodeos" },
+        { "en": "Tactfully", "es": "Con tacto" },
+        { "en": "Understatement", "es": "Atenuación" },
+        { "en": "Sarcasm", "es": "Sarcasmo" },
+        { "en": "Diplomatic", "es": "Diplomático" },
+        { "en": "Vague", "es": "Vago / Impreciso" }
+      ],
+      "grammar": {
+        "rule": "Softening & diplomacy",
+        "explanation_es": "Para sonar diplomático usamos atenuadores: 'I'm afraid...', 'It might be better to...', 'with respect'.",
+        "examples": ["I'm afraid that won't be possible.", "It might be better to wait.", "He put it rather bluntly.", "She handled it tactfully.", "That's a bit of an understatement."]
+      },
+      "sentences": [
+        "I'm afraid that won't be possible.",
+        "It might be better to wait.",
+        "She handled the issue tactfully.",
+        "He put it rather bluntly."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Collocations / Colocaciones",
+      "vocabulary": [
+        { "en": "Make a decision", "es": "Tomar una decisión" },
+        { "en": "Take responsibility", "es": "Asumir la responsabilidad" },
+        { "en": "Pay attention", "es": "Prestar atención" },
+        { "en": "Reach a conclusion", "es": "Llegar a una conclusión" },
+        { "en": "Raise awareness", "es": "Concienciar" },
+        { "en": "Meet a deadline", "es": "Cumplir un plazo" },
+        { "en": "Draw a comparison", "es": "Establecer una comparación" },
+        { "en": "Bear in mind", "es": "Tener presente" },
+        { "en": "Make progress", "es": "Avanzar / Progresar" },
+        { "en": "Set a goal", "es": "Fijar una meta" },
+        { "en": "Take into account", "es": "Tomar en cuenta" },
+        { "en": "Have an impact", "es": "Tener un impacto" }
+      ],
+      "grammar": {
+        "rule": "Collocations (natural word pairs)",
+        "explanation_es": "Los nativos combinan ciertas palabras: 'make a decision' (no 'do a decision'). Apréndelas en bloque.",
+        "examples": ["We need to make a decision soon.", "Please pay attention to the details.", "They reached a conclusion quickly.", "This will have a huge impact.", "Bear in mind the deadline."]
+      },
+      "sentences": [
+        "We need to make a decision soon.",
+        "Please pay attention to detail.",
+        "This will have a huge impact.",
+        "Bear in mind the final deadline."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Global Issues / Temas globales",
+      "vocabulary": [
+        { "en": "Inequality", "es": "Desigualdad" },
+        { "en": "Migration", "es": "Migración" },
+        { "en": "Sustainability", "es": "Sostenibilidad" },
+        { "en": "Globalization", "es": "Globalización" },
+        { "en": "Humanitarian", "es": "Humanitario" },
+        { "en": "Infrastructure", "es": "Infraestructura" },
+        { "en": "Pandemic", "es": "Pandemia" },
+        { "en": "Diplomacy", "es": "Diplomacia" },
+        { "en": "Sanctions", "es": "Sanciones" },
+        { "en": "Aid", "es": "Ayuda" },
+        { "en": "Refugee", "es": "Refugiado" },
+        { "en": "Crisis", "es": "Crisis" }
+      ],
+      "grammar": {
+        "rule": "Complex noun phrases",
+        "explanation_es": "El registro periodístico usa frases nominales densas: 'the growing threat of climate-driven migration'.",
+        "examples": ["Inequality remains a pressing global issue.", "The pandemic exposed weak infrastructure.", "Diplomacy can prevent conflict.", "Humanitarian aid reached the region.", "Sustainability must guide development."]
+      },
+      "story": {
+        "text": "The international community faced a growing ___ as conflict forced thousands to flee. ___ organizations rushed to provide ___ to the ___ . Experts argued that long-term ___ , not just short-term relief, was essential.",
+        "answers": ["crisis", "Humanitarian", "aid", "refugees", "sustainability"],
+        "bank": ["crisis", "Humanitarian", "aid", "refugees", "sustainability", "diplomacy", "migration"]
+      },
+      "sentences": [
+        "Inequality remains a global issue.",
+        "Diplomacy can help prevent conflict.",
+        "Humanitarian aid reached the region.",
+        "Sustainability must guide development."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Advanced Verbs / Verbos avanzados",
+      "vocabulary": [
+        { "en": "To undermine", "es": "Socavar" },
+        { "en": "To enhance", "es": "Mejorar / Realzar" },
+        { "en": "To mitigate", "es": "Mitigar" },
+        { "en": "To advocate", "es": "Abogar por" },
+        { "en": "To undertake", "es": "Emprender" },
+        { "en": "To allocate", "es": "Asignar" },
+        { "en": "To foster", "es": "Fomentar" },
+        { "en": "To compel", "es": "Obligar" },
+        { "en": "To overshadow", "es": "Eclipsar" },
+        { "en": "To reconcile", "es": "Reconciliar" },
+        { "en": "To exacerbate", "es": "Agravar" },
+        { "en": "To yield", "es": "Producir / Ceder" }
+      ],
+      "grammar": {
+        "rule": "Precise verb choice (register)",
+        "explanation_es": "El registro culto exige verbos precisos: 'enhance' en lugar de 'make better', 'mitigate' en vez de 'reduce a bit'.",
+        "examples": ["The reforms enhanced productivity.", "We must mitigate the risks.", "She advocates for human rights.", "Poor planning undermined the project.", "The policy fostered innovation."]
+      },
+      "sentences": [
+        "The reforms greatly enhanced productivity.",
+        "We must mitigate the financial risks.",
+        "She advocates for human rights.",
+        "Poor planning undermined the project."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Finance & Economics / Finanzas y economía",
+      "vocabulary": [
+        { "en": "Inflation", "es": "Inflación" },
+        { "en": "Recession", "es": "Recesión" },
+        { "en": "Asset", "es": "Activo" },
+        { "en": "Liability", "es": "Pasivo" },
+        { "en": "Shareholder", "es": "Accionista" },
+        { "en": "Interest rate", "es": "Tasa de interés" },
+        { "en": "Capital", "es": "Capital" },
+        { "en": "Fiscal", "es": "Fiscal" },
+        { "en": "Volatile", "es": "Volátil" },
+        { "en": "Diversify", "es": "Diversificar" },
+        { "en": "Surplus", "es": "Superávit" },
+        { "en": "Deficit", "es": "Déficit" }
+      ],
+      "grammar": {
+        "rule": "Cause and effect language",
+        "explanation_es": "Relaciones causales formales: 'A leads to B', 'B stems from A', 'as a result of'.",
+        "examples": ["Rising inflation leads to higher prices.", "The recession stemmed from weak demand.", "Investors should diversify their assets.", "The deficit widened significantly.", "Markets remain highly volatile."]
+      },
+      "story": {
+        "text": "During a ___ , rising ___ erodes people's savings. Central banks may raise the ___ to stabilize prices. Wise investors ___ their portfolio to reduce risk, balancing each ___ against its potential return.",
+        "answers": ["recession", "inflation", "interest rate", "diversify", "asset"],
+        "bank": ["recession", "inflation", "interest rate", "diversify", "asset", "deficit", "capital"]
+      },
+      "sentences": [
+        "Rising inflation leads to higher prices.",
+        "Investors should diversify their assets.",
+        "The budget deficit widened sharply.",
+        "Markets remain extremely volatile."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "Ethics & Philosophy / Ética y filosofía",
+      "vocabulary": [
+        { "en": "Morality", "es": "Moralidad" },
+        { "en": "Virtue", "es": "Virtud" },
+        { "en": "Dilemma", "es": "Dilema" },
+        { "en": "Conscience", "es": "Conciencia" },
+        { "en": "Principle", "es": "Principio" },
+        { "en": "Justify", "es": "Justificar" },
+        { "en": "Objective", "es": "Objetivo / Imparcial" },
+        { "en": "Subjective", "es": "Subjetivo" },
+        { "en": "Inherent", "es": "Inherente" },
+        { "en": "Rational", "es": "Racional" },
+        { "en": "Consequence", "es": "Consecuencia" },
+        { "en": "Integrity", "es": "Integridad" }
+      ],
+      "grammar": {
+        "rule": "Hypothetical & abstract argument",
+        "explanation_es": "Para argumentar en abstracto: 'One could argue that...', 'It raises the question of whether...'.",
+        "examples": ["One could argue that morality is subjective.", "The case poses a serious ethical dilemma.", "We must act with integrity.", "Such actions are hard to justify.", "Every choice has consequences."]
+      },
+      "story": {
+        "text": "The scientist faced a profound moral ___ : whether to publish data that could be misused. Guided by her ___ and a firm sense of ___ , she refused to ___ a decision that violated her core ___ .",
+        "answers": ["dilemma", "conscience", "integrity", "justify", "principles"],
+        "bank": ["dilemma", "conscience", "integrity", "justify", "principles", "virtue", "consequence"]
+      },
+      "sentences": [
+        "One could argue that morality is subjective.",
+        "The case poses an ethical dilemma.",
+        "We must always act with integrity.",
+        "Such actions are hard to justify."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "Rhetoric & Persuasion / Retórica y persuasión",
+      "vocabulary": [
+        { "en": "Persuade", "es": "Persuadir" },
+        { "en": "Emphasize", "es": "Enfatizar" },
+        { "en": "Highlight", "es": "Destacar" },
+        { "en": "Undeniable", "es": "Innegable" },
+        { "en": "Compelling", "es": "Convincente" },
+        { "en": "Counterargument", "es": "Contraargumento" },
+        { "en": "Assertion", "es": "Afirmación" },
+        { "en": "Credibility", "es": "Credibilidad" },
+        { "en": "Appeal", "es": "Apelar / Atractivo" },
+        { "en": "Rhetoric", "es": "Retórica" },
+        { "en": "Concede", "es": "Conceder" },
+        { "en": "Rebut", "es": "Rebatir" }
+      ],
+      "grammar": {
+        "rule": "Emphatic structures",
+        "explanation_es": "Para enfatizar al persuadir: 'It is precisely because...', 'What is undeniable is that...'.",
+        "examples": ["What is undeniable is that change is needed.", "Let me emphasize this key point.", "Her argument was truly compelling.", "He anticipated every counterargument.", "This appeals to our sense of justice."]
+      },
+      "sentences": [
+        "Let me emphasize this key point.",
+        "Her argument was truly compelling.",
+        "He anticipated every counterargument.",
+        "What is undeniable is the need to act."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Technology & Innovation / Tecnología e innovación",
+      "vocabulary": [
+        { "en": "Algorithm", "es": "Algoritmo" },
+        { "en": "Automation", "es": "Automatización" },
+        { "en": "Breakthrough", "es": "Avance decisivo" },
+        { "en": "Disruptive", "es": "Disruptivo" },
+        { "en": "Cutting-edge", "es": "De vanguardia" },
+        { "en": "Scalable", "es": "Escalable" },
+        { "en": "Encryption", "es": "Cifrado" },
+        { "en": "Infrastructure", "es": "Infraestructura" },
+        { "en": "Obsolete", "es": "Obsoleto" },
+        { "en": "Implement", "es": "Implementar" },
+        { "en": "Optimize", "es": "Optimizar" },
+        { "en": "Artificial intelligence", "es": "Inteligencia artificial" }
+      ],
+      "grammar": {
+        "rule": "Future continuous & perfect",
+        "explanation_es": "Para hablar del futuro tecnológico: 'will be using', 'will have transformed by 2040'.",
+        "examples": ["Automation will be transforming entire industries.", "By 2040, AI will have reshaped work.", "The startup developed a disruptive algorithm.", "We need to optimize the infrastructure.", "That technology is now obsolete."]
+      },
+      "story": {
+        "text": "The company achieved a major ___ with a new ___ that powered its product. Critics called the model ___ , predicting it would make older systems ___ . To grow, the team had to ___ its ___ for millions of users.",
+        "answers": ["breakthrough", "algorithm", "disruptive", "obsolete", "optimize", "infrastructure"],
+        "bank": ["breakthrough", "algorithm", "disruptive", "obsolete", "optimize", "infrastructure", "automation"]
+      },
+      "sentences": [
+        "Automation will transform entire industries.",
+        "The startup built a disruptive algorithm.",
+        "We need to optimize the infrastructure.",
+        "That technology is now obsolete."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Advanced Phrasal Verbs / Verbos compuestos avanzados",
+      "vocabulary": [
+        { "en": "To account for", "es": "Explicar / Representar" },
+        { "en": "To boil down to", "es": "Reducirse a" },
+        { "en": "To branch out", "es": "Diversificarse" },
+        { "en": "To weigh up", "es": "Sopesar" },
+        { "en": "To rule out", "es": "Descartar" },
+        { "en": "To phase out", "es": "Eliminar gradualmente" },
+        { "en": "To stem from", "es": "Provenir de" },
+        { "en": "To gloss over", "es": "Pasar por alto" },
+        { "en": "To bring about", "es": "Provocar / Ocasionar" },
+        { "en": "To single out", "es": "Señalar / Destacar" },
+        { "en": "To live up to", "es": "Estar a la altura de" },
+        { "en": "To zero in on", "es": "Centrarse en" }
+      ],
+      "grammar": {
+        "rule": "Formal phrasal verbs in writing",
+        "explanation_es": "Algunos phrasal verbs son válidos en registro formal: 'account for', 'bring about', 'stem from'.",
+        "examples": ["This factor accounts for the difference.", "It all boils down to trust.", "We cannot rule out that option.", "The crisis brought about major change.", "The problem stems from poor planning."]
+      },
+      "sentences": [
+        "This factor accounts for the difference.",
+        "It all boils down to trust.",
+        "We cannot rule out that option.",
+        "The crisis brought about major change."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "Legal Language / Lenguaje jurídico",
+      "vocabulary": [
+        { "en": "Legislation", "es": "Legislación" },
+        { "en": "Liability", "es": "Responsabilidad legal" },
+        { "en": "Contract", "es": "Contrato" },
+        { "en": "Clause", "es": "Cláusula" },
+        { "en": "Plaintiff", "es": "Demandante" },
+        { "en": "Defendant", "es": "Demandado" },
+        { "en": "Verdict", "es": "Veredicto" },
+        { "en": "Appeal", "es": "Apelación" },
+        { "en": "Comply", "es": "Cumplir" },
+        { "en": "Breach", "es": "Incumplimiento" },
+        { "en": "Enforce", "es": "Hacer cumplir" },
+        { "en": "Jurisdiction", "es": "Jurisdicción" }
+      ],
+      "grammar": {
+        "rule": "Formal obligation (shall / be required to)",
+        "explanation_es": "El lenguaje legal usa 'shall' y 'be required to': 'The party shall comply with the terms'.",
+        "examples": ["The parties shall comply with the contract.", "He was found liable for the breach.", "The defendant filed an appeal.", "This clause must be enforced.", "The verdict was unanimous."]
+      },
+      "sentences": [
+        "The parties shall comply with the contract.",
+        "He was found liable for the breach.",
+        "The defendant filed an appeal.",
+        "This clause must be enforced strictly."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Medicine & Health / Medicina y salud",
+      "vocabulary": [
+        { "en": "Diagnosis", "es": "Diagnóstico" },
+        { "en": "Treatment", "es": "Tratamiento" },
+        { "en": "Symptom", "es": "Síntoma" },
+        { "en": "Chronic", "es": "Crónico" },
+        { "en": "Prescription", "es": "Receta médica" },
+        { "en": "Immune", "es": "Inmune" },
+        { "en": "Recovery", "es": "Recuperación" },
+        { "en": "Surgery", "es": "Cirugía" },
+        { "en": "Outbreak", "es": "Brote" },
+        { "en": "Vaccine", "es": "Vacuna" },
+        { "en": "Side effect", "es": "Efecto secundario" },
+        { "en": "Wellbeing", "es": "Bienestar" }
+      ],
+      "grammar": {
+        "rule": "Impersonal passive (medical register)",
+        "explanation_es": "Registro médico impersonal: 'The patient was diagnosed with...', 'Treatment is recommended'.",
+        "examples": ["The patient was diagnosed early.", "Treatment significantly improved recovery.", "The vaccine reduces severe symptoms.", "Chronic conditions require ongoing care.", "The drug has mild side effects."]
+      },
+      "sentences": [
+        "The patient was diagnosed early.",
+        "Treatment improved his recovery.",
+        "The vaccine reduces severe symptoms.",
+        "Chronic conditions require ongoing care."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "Academic Connectors / Conectores académicos",
+      "vocabulary": [
+        { "en": "Thereby", "es": "De ese modo" },
+        { "en": "Whereas", "es": "Mientras que" },
+        { "en": "Insofar as", "es": "En la medida en que" },
+        { "en": "Accordingly", "es": "En consecuencia" },
+        { "en": "Conversely", "es": "A la inversa" },
+        { "en": "Hitherto", "es": "Hasta ahora" },
+        { "en": "Henceforth", "es": "De ahora en adelante" },
+        { "en": "Notably", "es": "Notablemente" },
+        { "en": "Predominantly", "es": "Predominantemente" },
+        { "en": "Ostensibly", "es": "Aparentemente" },
+        { "en": "By virtue of", "es": "En virtud de" },
+        { "en": "With respect to", "es": "Con respecto a" }
+      ],
+      "grammar": {
+        "rule": "High-register cohesion",
+        "explanation_es": "Conectores formales propios de ensayos y artículos: 'thereby', 'conversely', 'accordingly'.",
+        "examples": ["The data were incomplete; accordingly, conclusions are tentative.", "Conversely, the second group improved.", "Costs rose, thereby reducing profit.", "This is notably absent from the report.", "Henceforth, new rules apply."]
+      },
+      "sentences": [
+        "Conversely the second group improved.",
+        "Costs rose thereby reducing profit.",
+        "This is notably absent from the report.",
+        "Accordingly the conclusions are tentative."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Idioms 2 / Modismos 2",
+      "vocabulary": [
+        { "en": "To raise the bar", "es": "Subir el listón" },
+        { "en": "To think outside the box", "es": "Pensar de forma creativa" },
+        { "en": "A double-edged sword", "es": "Un arma de doble filo" },
+        { "en": "To get cold feet", "es": "Acobardarse" },
+        { "en": "To be a game changer", "es": "Cambiarlo todo" },
+        { "en": "To jump on the bandwagon", "es": "Sumarse a la moda" },
+        { "en": "To read between the lines", "es": "Leer entre líneas" },
+        { "en": "To move the goalposts", "es": "Cambiar las reglas" },
+        { "en": "Par for the course", "es": "Lo habitual" },
+        { "en": "A long shot", "es": "Algo poco probable" },
+        { "en": "To rock the boat", "es": "Causar problemas" },
+        { "en": "The lion's share", "es": "La mayor parte" }
+      ],
+      "grammar": {
+        "rule": "Idioms in professional discourse",
+        "explanation_es": "Estos modismos son frecuentes en contextos profesionales; úsalos para sonar natural y nativo.",
+        "examples": ["This product is a real game changer.", "Their decision was a double-edged sword.", "Let's think outside the box.", "He got cold feet at the last minute.", "They took the lion's share of the profit."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "dialogues": [
+    {
+      "id": "cv_a1_1",
+      "level": "A1",
+      "emoji": "☕",
+      "title": "Ordering a coffee",
+      "title_es": "Pedir un café",
+      "lines": [
+        { "who": "them", "en": "Hi! What would you like?", "es": "¡Hola! ¿Qué desea?" },
+        { "who": "you", "prompt_es": "Pide un café", "options": [
+          { "en": "I'd like a coffee, please.", "ok": true },
+          { "en": "I am a coffee.", "ok": false },
+          { "en": "Coffee, give me.", "ok": false }
+        ] },
+        { "who": "them", "en": "Sure. Anything else?", "es": "Claro. ¿Algo más?" },
+        { "who": "you", "prompt_es": "Di que no, gracias", "options": [
+          { "en": "No, thank you.", "ok": true },
+          { "en": "Yes, no thanks.", "ok": false }
+        ] },
+        { "who": "them", "en": "That's two dollars.", "es": "Son dos dólares." },
+        { "who": "you", "prompt_es": "Paga y despídete", "options": [
+          { "en": "Here you are. Have a nice day!", "ok": true },
+          { "en": "Money here. Bye day.", "ok": false }
+        ] },
+        { "who": "them", "en": "Thank you! Goodbye.", "es": "¡Gracias! Adiós." }
+      ]
+    },
+    {
+      "id": "cv_a2_1",
+      "level": "A2",
+      "emoji": "🧭",
+      "title": "Asking for directions",
+      "title_es": "Pedir direcciones",
+      "lines": [
+        { "who": "them", "en": "Excuse me, do you need help?", "es": "Disculpe, ¿necesita ayuda?" },
+        { "who": "you", "prompt_es": "Pregunta dónde está la estación", "options": [
+          { "en": "Yes, where is the station?", "ok": true },
+          { "en": "Yes, where the station?", "ok": false },
+          { "en": "Station you are?", "ok": false }
+        ] },
+        { "who": "them", "en": "Go straight and turn left at the corner.", "es": "Siga recto y gire a la izquierda en la esquina." },
+        { "who": "you", "prompt_es": "Pregunta si está lejos", "options": [
+          { "en": "Is it far from here?", "ok": true },
+          { "en": "It far is?", "ok": false }
+        ] },
+        { "who": "them", "en": "No, it's about five minutes on foot.", "es": "No, son unos cinco minutos a pie." },
+        { "who": "you", "prompt_es": "Agradece", "options": [
+          { "en": "Thank you very much!", "ok": true },
+          { "en": "Thanks you a lot much.", "ok": false }
+        ] },
+        { "who": "them", "en": "You're welcome!", "es": "¡De nada!" }
+      ]
+    },
+    {
+      "id": "cv_b1_1",
+      "level": "B1",
+      "emoji": "🏨",
+      "title": "At the hotel reception",
+      "title_es": "En la recepción del hotel",
+      "lines": [
+        { "who": "them", "en": "Good evening. How can I help you?", "es": "Buenas noches. ¿En qué puedo ayudarle?" },
+        { "who": "you", "prompt_es": "Di que tienes una reserva", "options": [
+          { "en": "I have a reservation under Garcia.", "ok": true },
+          { "en": "I have reservation Garcia name.", "ok": false },
+          { "en": "Reservation me, Garcia.", "ok": false }
+        ] },
+        { "who": "them", "en": "Let me check… Yes, a double room for two nights.", "es": "Déjeme comprobar… Sí, una habitación doble para dos noches." },
+        { "who": "you", "prompt_es": "Pregunta si el desayuno está incluido", "options": [
+          { "en": "Is breakfast included?", "ok": true },
+          { "en": "Breakfast is in the price include?", "ok": false }
+        ] },
+        { "who": "them", "en": "Yes, it's served from 7 to 10.", "es": "Sí, se sirve de 7 a 10." },
+        { "who": "you", "prompt_es": "Pide la llave", "options": [
+          { "en": "Great. Could I have the key, please?", "ok": true },
+          { "en": "Give the key for me now.", "ok": false }
+        ] },
+        { "who": "them", "en": "Of course. Here you are. Enjoy your stay!", "es": "Por supuesto. Aquí tiene. ¡Disfrute su estancia!" }
+      ]
+    },
+    {
+      "id": "cv_b2_1",
+      "level": "B2",
+      "emoji": "💼",
+      "title": "A job interview",
+      "title_es": "Una entrevista de trabajo",
+      "lines": [
+        { "who": "them", "en": "Thanks for coming. Tell me about yourself.", "es": "Gracias por venir. Hábleme de usted." },
+        { "who": "you", "prompt_es": "Preséntate con tu experiencia", "options": [
+          { "en": "I have five years of experience in customer service.", "ok": true },
+          { "en": "I am experience five years customer.", "ok": false },
+          { "en": "Me work customer service long time.", "ok": false }
+        ] },
+        { "who": "them", "en": "Why do you want to work here?", "es": "¿Por qué quiere trabajar aquí?" },
+        { "who": "you", "prompt_es": "Explica tu motivación", "options": [
+          { "en": "I admire your company and I'm eager to grow with your team.", "ok": true },
+          { "en": "Because I need money and job.", "ok": false }
+        ] },
+        { "who": "them", "en": "What would you say is your main weakness?", "es": "¿Cuál diría que es su principal debilidad?" },
+        { "who": "you", "prompt_es": "Responde con tacto", "options": [
+          { "en": "I can be a perfectionist, but I'm learning to delegate.", "ok": true },
+          { "en": "I have no weakness, I am perfect.", "ok": false }
+        ] },
+        { "who": "them", "en": "Great answer. We'll be in touch soon.", "es": "Buena respuesta. Estaremos en contacto pronto." }
+      ]
+    },
+    {
+      "id": "cv_c1_1",
+      "level": "C1",
+      "emoji": "🤝",
+      "title": "Negotiating a deadline",
+      "title_es": "Negociar un plazo",
+      "lines": [
+        { "who": "them", "en": "We really need the report by Friday.", "es": "Necesitamos el informe para el viernes." },
+        { "who": "you", "prompt_es": "Propón una alternativa razonada", "options": [
+          { "en": "I'd argue that Monday would ensure higher quality, if that works.", "ok": true },
+          { "en": "No, Friday is impossible for me always.", "ok": false },
+          { "en": "Friday no, Monday yes, ok bye.", "ok": false }
+        ] },
+        { "who": "them", "en": "Quality matters, but the client is waiting.", "es": "La calidad importa, pero el cliente espera." },
+        { "who": "you", "prompt_es": "Ofrece un compromiso", "options": [
+          { "en": "How about a draft on Friday and the final version on Monday?", "ok": true },
+          { "en": "I do half and half, you decide.", "ok": false }
+        ] },
+        { "who": "them", "en": "That's a fair compromise. Let's do that.", "es": "Es un acuerdo justo. Hagámoslo así." },
+        { "who": "you", "prompt_es": "Cierra el acuerdo con cortesía", "options": [
+          { "en": "Perfect. I appreciate your flexibility.", "ok": true },
+          { "en": "Ok good, you are flexible person.", "ok": false }
+        ] },
+        { "who": "them", "en": "Likewise. Thanks for your professionalism.", "es": "Igualmente. Gracias por su profesionalismo." }
+      ]
+    },
+    {
+      "id": "cv_b2_2",
+      "level": "B2",
+      "emoji": "🩺",
+      "title": "At the doctor's office",
+      "title_es": "En el consultorio médico",
+      "lines": [
+        { "who": "them", "en": "Good morning. What seems to be the problem?", "es": "Buenos días. ¿Cuál parece ser el problema?" },
+        { "who": "you", "prompt_es": "Describe tus síntomas (dolor de cabeza y cansancio desde hace una semana)", "options": [
+          { "en": "I've been having headaches and feeling exhausted for about a week.", "ok": true },
+          { "en": "My head is pain and tired one week.", "ok": false },
+          { "en": "Since one week I am headache.", "ok": false }
+        ] },
+        { "who": "them", "en": "I see. Have you been sleeping well lately?", "es": "Entiendo. ¿Ha dormido bien últimamente?" },
+        { "who": "you", "prompt_es": "Di que no, que duermes 4-5 horas por el trabajo", "options": [
+          { "en": "Not really — I've only been getting four or five hours because of work.", "ok": true },
+          { "en": "No sleep because job takes hours four or five.", "ok": false }
+        ] },
+        { "who": "them", "en": "That could explain a lot. I'd recommend rest before we try any medication.", "es": "Eso podría explicar mucho. Le recomendaría descanso antes de probar medicación." },
+        { "who": "you", "prompt_es": "Pregunta si deberías hacerte algún examen", "options": [
+          { "en": "Should I get any tests done, just in case?", "ok": true },
+          { "en": "You make me exam now or no?", "ok": false }
+        ] },
+        { "who": "them", "en": "Let's do a basic blood test. Come back in a week with the results.", "es": "Hagamos un análisis de sangre básico. Vuelva en una semana con los resultados." }
+      ]
+    },
+    {
+      "id": "cv_b2_3",
+      "level": "B2",
+      "emoji": "📦",
+      "title": "Complaining about an order",
+      "title_es": "Reclamar por un pedido",
+      "lines": [
+        { "who": "them", "en": "Customer service, how can I help you today?", "es": "Servicio al cliente, ¿en qué puedo ayudarle hoy?" },
+        { "who": "you", "prompt_es": "Explica que tu pedido llegó dañado", "options": [
+          { "en": "I'm calling because my order arrived damaged.", "ok": true },
+          { "en": "My order is broke when arrive.", "ok": false },
+          { "en": "You send me broken thing.", "ok": false }
+        ] },
+        { "who": "them", "en": "I'm sorry to hear that. Could you give me your order number?", "es": "Lamento oír eso. ¿Podría darme su número de pedido?" },
+        { "who": "you", "prompt_es": "Da el número y pide una solución", "options": [
+          { "en": "It's 58214. I'd like a replacement or a full refund, please.", "ok": true },
+          { "en": "58214. Give money back now.", "ok": false }
+        ] },
+        { "who": "them", "en": "We can send a replacement tomorrow, free of charge. Would that work?", "es": "Podemos enviar un reemplazo mañana, sin costo. ¿Le parece bien?" },
+        { "who": "you", "prompt_es": "Acepta y agradece la gestión", "options": [
+          { "en": "That works perfectly. I appreciate you resolving this so quickly.", "ok": true },
+          { "en": "Ok is fine I suppose whatever.", "ok": false }
+        ] },
+        { "who": "them", "en": "My pleasure. You'll receive a confirmation email shortly.", "es": "Un placer. Recibirá un correo de confirmación en breve." }
+      ]
+    }
+  ]
+}

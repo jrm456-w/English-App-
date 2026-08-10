@@ -1,0 +1,19 @@
+{
+  "questions": [
+    { "type": "vocab", "prompt": "¿Qué significa 'Hello'?", "options": ["Adiós", "Hola", "Gracias", "Por favor"], "answer": "Hola" },
+    { "type": "vocab", "prompt": "¿Qué significa 'Dog'?", "options": ["Gato", "Pájaro", "Perro", "Pez"], "answer": "Perro" },
+    { "type": "grammar", "prompt": "I ___ a student.", "options": ["am", "is", "are", "be"], "answer": "am" },
+    { "type": "grammar", "prompt": "She ___ happy.", "options": ["am", "is", "are", "be"], "answer": "is" },
+    { "type": "grammar", "prompt": "They ___ from Spain.", "options": ["is", "am", "are", "be"], "answer": "are" },
+    { "type": "listening", "audio": "good morning", "options": ["good night", "good morning", "good afternoon", "goodbye"], "answer": "good morning" },
+    { "type": "grammar", "prompt": "He ___ to school every day.", "options": ["go", "goes", "going", "gone"], "answer": "goes" },
+    { "type": "vocab", "prompt": "¿Cómo se dice 'comida' en inglés?", "options": ["water", "food", "drink", "table"], "answer": "food" },
+    { "type": "grammar", "prompt": "Yesterday I ___ to the park.", "options": ["go", "going", "went", "goes"], "answer": "went" },
+    { "type": "reading", "context": "Anna lives in London. She works in a hospital as a nurse.", "prompt": "What is Anna's job?", "options": ["Teacher", "Doctor", "Nurse", "Driver"], "answer": "Nurse" },
+    { "type": "grammar", "prompt": "I have ___ finished my homework.", "options": ["yet", "already", "since", "ago"], "answer": "already" },
+    { "type": "listening", "audio": "I would like a cup of coffee, please", "options": ["I want some tea", "I would like a cup of coffee, please", "Can I have water", "Give me a sandwich"], "answer": "I would like a cup of coffee, please" },
+    { "type": "grammar", "prompt": "If I ___ rich, I would travel the world.", "options": ["am", "was", "were", "be"], "answer": "were" },
+    { "type": "vocab", "prompt": "Choose the idiom meaning 'very easy':", "options": ["a piece of cake", "break a leg", "hit the books", "under the weather"], "answer": "a piece of cake" },
+    { "type": "reading", "context": "Despite the committee's reservations, the proposal was ultimately ratified after extensive deliberation.", "prompt": "The proposal was:", "options": ["Rejected", "Approved", "Ignored", "Postponed"], "answer": "Approved" }
+  ]
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Aprende inglés rápido y fácil: lecciones, juegos interactivos y práctica de pronunciación. Para hispanohablantes. Funciona sin conexión." />
+  <meta name="theme-color" content="#2563eb" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="src/assets/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="EngFlow" />
+  <title>EngFlow – Aprende Inglés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="src/css/styles.css" />
+</head>
+<body>
+  <!-- App shell -->
+  <div id="app" class="app" data-theme="light">
+
+    <!-- Desktop sidebar / mobile top header -->
+    <aside class="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <span class="brand__logo" aria-hidden="true">E</span>
+        <span class="brand__name">EngFlow</span>
+      </div>
+      <nav class="nav nav--side">
+        <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🧭</span><span data-i18n="nav.home">Aprender</span></a>
+        <a href="#/stories" class="nav__item" data-route="stories"><span class="nav__icon">📖</span><span data-i18n="nav.stories">Historias</span></a>
+        <a href="#/games" class="nav__item" data-route="games"><span class="nav__icon">🎮</span><span data-i18n="nav.games">Juegos</span></a>
+        <a href="#/progress" class="nav__item" data-route="progress"><span class="nav__icon">📈</span><span data-i18n="nav.progress">Progreso</span></a>
+        <a href="#/settings" class="nav__item" data-route="settings"><span class="nav__icon">⚙️</span><span data-i18n="nav.settings">Ajustes</span></a>
+      </nav>
+    </aside>
+
+    <main id="view" class="view" role="main" aria-live="polite">
+      <!-- Screens are injected here by the router -->
+    </main>
+
+    <!-- Mobile bottom navigation -->
+    <nav class="nav nav--bottom" aria-label="Navegación inferior">
+      <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🧭</span><span data-i18n="nav.home">Aprender</span></a>
+      <a href="#/stories" class="nav__item" data-route="stories"><span class="nav__icon">📖</span><span data-i18n="nav.stories">Historias</span></a>
+      <a href="#/games" class="nav__item" data-route="games"><span class="nav__icon">🎮</span><span data-i18n="nav.games">Juegos</span></a>
+      <a href="#/progress" class="nav__item" data-route="progress"><span class="nav__icon">📈</span><span data-i18n="nav.progress">Progreso</span></a>
+      <a href="#/settings" class="nav__item" data-route="settings"><span class="nav__icon">⚙️</span><span data-i18n="nav.settings">Ajustes</span></a>
+    </nav>
+  </div>
+
+  <!-- Offline status indicator -->
+  <div id="net-status" class="net-status" hidden role="status">📴 <span data-i18n="net.offline">Sin conexión</span></div>
+
+  <!-- Toast / notifications -->
+  <div id="toast" class="toast" role="status" aria-live="assertive"></div>
+
+  <!-- Install prompt banner -->
+  <div id="install-banner" class="install-banner" hidden>
+    <span data-i18n="install.text">Instala EngFlow en tu dispositivo</span>
+    <button id="install-btn" class="btn btn--small" data-i18n="install.button">Instalar</button>
+    <button id="install-dismiss" class="btn btn--ghost btn--small" aria-label="Cerrar">✕</button>
+  </div>
+
+  <script type="module" src="src/js/app.js"></script>
+</body>
+</html>

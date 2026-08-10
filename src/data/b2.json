@@ -1,0 +1,824 @@
+{
+  "level": "B2",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Current Events / Actualidad",
+      "vocabulary": [
+        { "en": "Headline", "es": "Titular" },
+        { "en": "Economy", "es": "Economía" },
+        { "en": "Government", "es": "Gobierno" },
+        { "en": "Election", "es": "Elección" },
+        { "en": "Climate", "es": "Clima" },
+        { "en": "Issue", "es": "Asunto / Problema" },
+        { "en": "Policy", "es": "Política (medida)" },
+        { "en": "Society", "es": "Sociedad" },
+        { "en": "Protest", "es": "Protesta" },
+        { "en": "Budget", "es": "Presupuesto" },
+        { "en": "Crisis", "es": "Crisis" },
+        { "en": "Reform", "es": "Reforma" }
+      ],
+      "grammar": {
+        "rule": "Passive Voice",
+        "explanation_es": "La voz pasiva enfatiza la acción sobre quién la hace: 'The law was passed', 'A decision has been made'.",
+        "examples": ["The new law was passed yesterday.", "A decision has been made.", "Taxes will be raised next year.", "The report is being reviewed.", "Millions were affected by the crisis."]
+      },
+      "story": {
+        "text": "The government announced a new ___ to reduce pollution. The decision was ___ after months of debate. Many citizens believe it will improve the ___ . However, some experts remain ___ about the long-term effects on the ___ .",
+        "answers": ["policy", "made", "climate", "skeptical", "economy"],
+        "bank": ["policy", "made", "climate", "skeptical", "economy", "headline", "election"]
+      },
+      "sentences": [
+        "The new law was passed yesterday.",
+        "A decision has been made.",
+        "Taxes will be raised next year.",
+        "The report is being reviewed carefully."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u2",
+      "title": "Conditionals / Condicionales",
+      "vocabulary": [
+        { "en": "If", "es": "Si" },
+        { "en": "Would", "es": "Haría / Sería" },
+        { "en": "Unless", "es": "A menos que" },
+        { "en": "Otherwise", "es": "De lo contrario" },
+        { "en": "Provided that", "es": "Siempre que" },
+        { "en": "In case", "es": "En caso de" },
+        { "en": "As long as", "es": "Mientras que" },
+        { "en": "Were", "es": "Fuera / Estuviera" },
+        { "en": "Suppose", "es": "Supongamos" },
+        { "en": "Whether", "es": "Si (o no)" },
+        { "en": "Even if", "es": "Incluso si" },
+        { "en": "Consequence", "es": "Consecuencia" }
+      ],
+      "grammar": {
+        "rule": "Second Conditional",
+        "explanation_es": "Para situaciones hipotéticas: 'If I were rich, I would travel'. Usamos 'were' para todas las personas.",
+        "examples": ["If I were rich, I would travel the world.", "If she studied more, she would pass.", "I wouldn't do that unless it was necessary.", "We would help if we could.", "Even if it rained, we would go."]
+      },
+      "story": {
+        "text": "If I ___ more time, I would learn three languages. I ___ travel to many countries and meet new people. Unless we ___ harder, we will not improve. ___ that you practice every day, fluency is possible. As long as you stay ___ , you will succeed.",
+        "answers": ["had", "would", "work", "Provided", "motivated"],
+        "bank": ["had", "would", "work", "Provided", "motivated", "unless", "otherwise"]
+      },
+      "sentences": [
+        "If I were rich I would travel the world.",
+        "We would help if we could.",
+        "If she studied more she would pass.",
+        "I wouldn't do that unless necessary."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u3",
+      "title": "Idioms / Modismos",
+      "vocabulary": [
+        { "en": "A piece of cake", "es": "Pan comido" },
+        { "en": "Break a leg", "es": "Mucha suerte" },
+        { "en": "Hit the books", "es": "Ponerse a estudiar" },
+        { "en": "Under the weather", "es": "Indispuesto" },
+        { "en": "Once in a blue moon", "es": "Muy de vez en cuando" },
+        { "en": "Cost an arm and a leg", "es": "Costar un ojo de la cara" },
+        { "en": "Spill the beans", "es": "Revelar un secreto" },
+        { "en": "Hang in there", "es": "Aguanta / Resiste" },
+        { "en": "Out of the blue", "es": "De repente" },
+        { "en": "Get the hang of it", "es": "Agarrarle el truco" },
+        { "en": "On the same page", "es": "De acuerdo" },
+        { "en": "Bite the bullet", "es": "Hacer de tripas corazón" }
+      ],
+      "grammar": {
+        "rule": "Using idioms naturally",
+        "explanation_es": "Los modismos no se traducen literalmente. Apréndelos como bloques fijos y úsalos en contexto.",
+        "examples": ["The exam was a piece of cake.", "Good luck! Break a leg!", "I need to hit the books tonight.", "I'm feeling under the weather today.", "Hang in there, it gets easier."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "speaking_mirror"]
+    },
+    {
+      "id": "u4",
+      "title": "Formal Writing / Escritura formal",
+      "vocabulary": [
+        { "en": "Furthermore", "es": "Además" },
+        { "en": "Therefore", "es": "Por lo tanto" },
+        { "en": "In addition", "es": "Adicionalmente" },
+        { "en": "On the other hand", "es": "Por otro lado" },
+        { "en": "To summarize", "es": "Para resumir" },
+        { "en": "Regarding", "es": "Con respecto a" },
+        { "en": "I am writing to", "es": "Le escribo para" },
+        { "en": "Sincerely", "es": "Atentamente" },
+        { "en": "Attached", "es": "Adjunto" },
+        { "en": "Request", "es": "Solicitar" },
+        { "en": "Inform", "es": "Informar" },
+        { "en": "Consider", "es": "Considerar" }
+      ],
+      "grammar": {
+        "rule": "Reported Speech",
+        "explanation_es": "Para contar lo que alguien dijo: 'He said that he was tired'. El verbo retrocede un tiempo.",
+        "examples": ["He said that he was busy.", "She told me she would call.", "They said they had finished.", "I asked if he could help.", "He explained that the report was ready."]
+      },
+      "story": {
+        "text": "I am writing to ___ about your recent order. ___ , we apologize for the delay. The product has been shipped and is ___ to this email. ___ , please contact us if you have questions. We look forward to hearing from you. ___ , the Support Team.",
+        "answers": ["inform", "Furthermore", "attached", "Therefore", "Sincerely"],
+        "bank": ["inform", "Furthermore", "attached", "Therefore", "Sincerely", "regarding", "request"]
+      },
+      "sentences": [
+        "He said that he was busy.",
+        "She told me she would call later.",
+        "They said they had finished the report.",
+        "I am writing to request information."
+      ],
+      "games": ["fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u5",
+      "title": "Environment / Medio ambiente",
+      "vocabulary": [
+        { "en": "Pollution", "es": "Contaminación" },
+        { "en": "Recycle", "es": "Reciclar" },
+        { "en": "Waste", "es": "Residuos / Desperdicio" },
+        { "en": "Renewable", "es": "Renovable" },
+        { "en": "Energy", "es": "Energía" },
+        { "en": "Global warming", "es": "Calentamiento global" },
+        { "en": "Sustainable", "es": "Sostenible" },
+        { "en": "Wildlife", "es": "Vida silvestre" },
+        { "en": "Resources", "es": "Recursos" },
+        { "en": "Carbon footprint", "es": "Huella de carbono" },
+        { "en": "Endangered", "es": "En peligro" },
+        { "en": "Greenhouse gas", "es": "Gas de efecto invernadero" }
+      ],
+      "grammar": {
+        "rule": "Future Perfect & Predictions",
+        "explanation_es": "'will have + participio' para algo que estará terminado en el futuro: 'By 2050, sea levels will have risen'.",
+        "examples": ["By 2050, sea levels will have risen.", "We must reduce pollution now.", "If we don't act, the planet will suffer.", "Renewable energy is becoming cheaper.", "Many species have become endangered."]
+      },
+      "story": {
+        "text": "Scientists warn that ___ is one of the biggest threats today. To protect the planet, we must ___ more and reduce ___ . Switching to ___ energy can lower our carbon footprint. If we act now, future generations will inherit a more ___ world.",
+        "answers": ["pollution", "recycle", "waste", "renewable", "sustainable"],
+        "bank": ["pollution", "recycle", "waste", "renewable", "sustainable", "energy", "wildlife"]
+      },
+      "sentences": [
+        "We must reduce pollution now.",
+        "Renewable energy is becoming cheaper.",
+        "Many species have become endangered.",
+        "We should recycle more at home."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "hw1",
+      "title": "Academy: Personality I / Personalidad (rasgos positivos)",
+      "vocabulary": [
+        { "en": "Ambitious", "es": "Ambicioso/a" },
+        { "en": "Brave", "es": "Valiente" },
+        { "en": "Carefree", "es": "Despreocupado/a" },
+        { "en": "Charming", "es": "Encantador/a" },
+        { "en": "Cheerful", "es": "Animado/a" },
+        { "en": "Friendly", "es": "Amable / Amigable" },
+        { "en": "Generous", "es": "Generoso/a" },
+        { "en": "Hard-working", "es": "Trabajador/a" },
+        { "en": "Honest", "es": "Honesto/a" },
+        { "en": "Kind", "es": "Bondadoso/a" },
+        { "en": "Laid-back", "es": "Tranquilo/a, relajado/a" },
+        { "en": "Loyal", "es": "Leal" }
+      ],
+      "grammar": {
+        "rule": "Describing personality: be + adjective",
+        "explanation_es": "Para describir la personalidad usamos 'to be' + adjetivo: 'She is friendly'. Intensificamos con very, really, quite: 'He is really hard-working'.",
+        "examples": ["She is very friendly and kind.", "He is honest and hard-working.", "My best friend is loyal and generous.", "Our teacher is cheerful and charming.", "I am quite laid-back about most things."]
+      },
+      "fill": [
+        { "sentence": "She always tells the truth — she is very ___.", "answer": "honest", "options": ["lazy", "boring", "cruel"] },
+        { "sentence": "He works twelve hours a day. He is really ___.", "answer": "hard-working", "options": ["carefree", "shy", "mean"] },
+        { "sentence": "My dog never leaves my side — he is so ___.", "answer": "loyal", "options": ["ugly", "naive", "proud"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw2",
+      "title": "Academy: Personality II / Personalidad (rasgos negativos)",
+      "vocabulary": [
+        { "en": "Annoying", "es": "Irritante" },
+        { "en": "Bad-tempered", "es": "Malhumorado/a" },
+        { "en": "Bitchy", "es": "Maldiciente, venenoso/a" },
+        { "en": "Boring", "es": "Aburrido/a" },
+        { "en": "Cruel", "es": "Cruel" },
+        { "en": "Dull", "es": "Sin gracia, soso/a" },
+        { "en": "Lazy", "es": "Perezoso/a" },
+        { "en": "Mean", "es": "Mezquino/a" },
+        { "en": "Narrow-minded", "es": "De mente cerrada" },
+        { "en": "Selfish", "es": "Egoísta" },
+        { "en": "Stubborn", "es": "Obstinado/a, terco/a" },
+        { "en": "Two-faced", "es": "Falso/a, de doble cara" }
+      ],
+      "grammar": {
+        "rule": "Softening negative descriptions",
+        "explanation_es": "Para criticar con tacto usamos 'a bit', 'a little', 'can be': 'He can be a bit stubborn' suena mucho mejor que 'He is stubborn'.",
+        "examples": ["He can be a bit stubborn sometimes.", "My neighbor is quite bad-tempered in the morning.", "That movie was really boring.", "Don't be so selfish — share with your brother.", "She seemed a little annoying at first, but she is kind."]
+      },
+      "fill": [
+        { "sentence": "He never shares anything. He is so ___.", "answer": "selfish", "options": ["generous", "loyal", "brave"] },
+        { "sentence": "She refuses to change her mind — she is very ___.", "answer": "stubborn", "options": ["carefree", "cheerful", "elegant"] },
+        { "sentence": "He says one thing to you and another behind your back. He is ___.", "answer": "two-faced", "options": ["honest", "kind", "polite"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw3",
+      "title": "Academy: Personality III / Más rasgos (¡ojo con sensible!)",
+      "vocabulary": [
+        { "en": "Cautious", "es": "Cauteloso/a" },
+        { "en": "Conservative", "es": "Conservador/a" },
+        { "en": "Modest", "es": "Modesto/a" },
+        { "en": "Naive", "es": "Ingenuo/a" },
+        { "en": "Naughty", "es": "Travieso/a" },
+        { "en": "Open-minded", "es": "De mente abierta" },
+        { "en": "Polite", "es": "Educado/a, cortés" },
+        { "en": "Proud", "es": "Orgulloso/a" },
+        { "en": "Reliable", "es": "Confiable" },
+        { "en": "Self-confident", "es": "Seguro/a de sí mismo/a" },
+        { "en": "Sensible", "es": "Sensato/a (¡NO 'sensible'!)" },
+        { "en": "Sensitive", "es": "Sensible" },
+        { "en": "Shy", "es": "Tímido/a" },
+        { "en": "Talkative", "es": "Hablador/a" },
+        { "en": "Weird", "es": "Raro/a, extraño/a" }
+      ],
+      "grammar": {
+        "rule": "False friends: sensible ≠ sensible",
+        "explanation_es": "¡Trampa clásica! En inglés 'sensible' significa SENSATO (que piensa bien), y 'sensitive' significa SENSIBLE (que siente mucho). Son falsos amigos: no las traduzcas directo.",
+        "examples": ["She is very sensible with money.", "He is too sensitive to criticism.", "Be sensible — don't spend it all.", "My little brother is quite naughty.", "She is shy at first, but very talkative later."]
+      },
+      "fill": [
+        { "sentence": "She cries with every sad movie — she is very ___.", "answer": "sensitive", "options": ["sensible", "reliable", "cautious"] },
+        { "sentence": "Saving money instead of spending it all is the ___ thing to do.", "answer": "sensible", "options": ["sensitive", "naughty", "weird"] },
+        { "sentence": "You can always count on her. She is completely ___.", "answer": "reliable", "options": ["naive", "shy", "proud"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "hw4",
+      "title": "Academy: Looks / La apariencia",
+      "vocabulary": [
+        { "en": "Tall", "es": "Alto/a" },
+        { "en": "Short", "es": "Bajo/a" },
+        { "en": "Of medium height", "es": "De estatura mediana" },
+        { "en": "Fat", "es": "Gordo/a" },
+        { "en": "Thin", "es": "Flaco/a, delgado/a" },
+        { "en": "Chubby", "es": "Rechoncho/a" },
+        { "en": "Beautiful", "es": "Bonita, hermosa" },
+        { "en": "Handsome", "es": "Guapo" },
+        { "en": "Ugly", "es": "Feo/a" },
+        { "en": "Attractive", "es": "Atractivo/a" },
+        { "en": "Sexy", "es": "Sexy" },
+        { "en": "Elegant", "es": "Elegante" }
+      ],
+      "grammar": {
+        "rule": "What does he/she look like?",
+        "explanation_es": "Para preguntar por la apariencia: 'What does she look like?' (¿cómo es físicamente?). Respuesta: 'She is tall and thin'. Ojo: 'beautiful' se usa para mujeres y 'handsome' para hombres.",
+        "examples": ["What does your brother look like?", "He is tall and thin.", "She is of medium height.", "My grandfather was a handsome man.", "She looked very elegant at the party."]
+      },
+      "fill": [
+        { "sentence": "He is not tall and not short — he is of medium ___.", "answer": "height", "options": ["weight", "size", "length"] },
+        { "sentence": "We usually say a man is ___ and a woman is beautiful.", "answer": "handsome", "options": ["pretty", "chubby", "elegant"] },
+        { "sentence": "The baby is not fat, just a little ___.", "answer": "chubby", "options": ["ugly", "tall", "thin"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo", "speaking_mirror"]
+    },
+    {
+      "id": "u6",
+      "title": "Business & Economy / Negocios y economía",
+      "vocabulary": [
+        { "en": "Company", "es": "Empresa" },
+        { "en": "Profit", "es": "Ganancia" },
+        { "en": "Loss", "es": "Pérdida" },
+        { "en": "Customer", "es": "Cliente" },
+        { "en": "Market", "es": "Mercado" },
+        { "en": "Investment", "es": "Inversión" },
+        { "en": "Competition", "es": "Competencia" },
+        { "en": "Brand", "es": "Marca" },
+        { "en": "Demand", "es": "Demanda" },
+        { "en": "Supply", "es": "Oferta / Suministro" },
+        { "en": "Revenue", "es": "Ingresos" },
+        { "en": "Launch", "es": "Lanzar" }
+      ],
+      "grammar": {
+        "rule": "Modals of deduction (must/might/can't)",
+        "explanation_es": "Para deducir: 'must be' (debe de ser, casi seguro), 'might be' (podría ser), 'can't be' (no puede ser).",
+        "examples": ["The company must be doing well.", "They might launch a new product.", "It can't be a coincidence.", "Demand might increase next year.", "The investment must have paid off."]
+      },
+      "story": {
+        "text": "The startup decided to ___ a new product to gain ___ . At first, they faced strong ___ from bigger companies. However, growing ___ for the product increased their ___ within a year.",
+        "answers": ["launch", "customers", "competition", "demand", "revenue"],
+        "bank": ["launch", "customers", "competition", "demand", "revenue", "profit", "brand"]
+      },
+      "sentences": [
+        "The company must be doing well.",
+        "They might launch a new product.",
+        "Demand for the brand is growing.",
+        "The investment finally paid off."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u7",
+      "title": "Science / Ciencia",
+      "vocabulary": [
+        { "en": "Research", "es": "Investigación" },
+        { "en": "Experiment", "es": "Experimento" },
+        { "en": "Theory", "es": "Teoría" },
+        { "en": "Evidence", "es": "Evidencia" },
+        { "en": "Data", "es": "Datos" },
+        { "en": "Discovery", "es": "Descubrimiento" },
+        { "en": "Cell", "es": "Célula" },
+        { "en": "Brain", "es": "Cerebro" },
+        { "en": "Disease", "es": "Enfermedad" },
+        { "en": "Cure", "es": "Cura" },
+        { "en": "Measure", "es": "Medir" },
+        { "en": "Prove", "es": "Probar / Demostrar" }
+      ],
+      "grammar": {
+        "rule": "Passive in reporting research",
+        "explanation_es": "La ciencia usa pasiva impersonal: 'It is believed that...', 'The data were collected...'.",
+        "examples": ["The experiment was carefully designed.", "It is believed that exercise improves the brain.", "The data were collected over five years.", "New evidence supports the theory.", "The cure has not been found yet."]
+      },
+      "story": {
+        "text": "After years of ___ , the team made an important ___ . Their ___ was based on solid ___ collected from thousands of patients. The results may help scientists find a ___ for the disease.",
+        "answers": ["research", "discovery", "theory", "evidence", "cure"],
+        "bank": ["research", "discovery", "theory", "evidence", "cure", "data", "experiment"]
+      },
+      "sentences": [
+        "The experiment was carefully designed.",
+        "New evidence supports the theory.",
+        "The data were collected over years.",
+        "They are looking for a cure."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u8",
+      "title": "Law & Crime / Ley y delito",
+      "vocabulary": [
+        { "en": "Law", "es": "Ley" },
+        { "en": "Crime", "es": "Delito" },
+        { "en": "Court", "es": "Tribunal" },
+        { "en": "Judge", "es": "Juez" },
+        { "en": "Lawyer", "es": "Abogado" },
+        { "en": "Witness", "es": "Testigo" },
+        { "en": "Guilty", "es": "Culpable" },
+        { "en": "Innocent", "es": "Inocente" },
+        { "en": "Evidence", "es": "Pruebas" },
+        { "en": "Punishment", "es": "Castigo" },
+        { "en": "Arrest", "es": "Arrestar" },
+        { "en": "Trial", "es": "Juicio" }
+      ],
+      "grammar": {
+        "rule": "Third Conditional",
+        "explanation_es": "Para hipótesis del pasado: 'If he had told the truth, he wouldn't have been arrested'. (If + had + participio, would have + participio).",
+        "examples": ["If he had told the truth, he wouldn't have been arrested.", "The judge found her innocent.", "There wasn't enough evidence.", "The witness saw the crime.", "He should have called a lawyer."]
+      },
+      "story": {
+        "text": "The ___ examined all the ___ before the ___ began. A key ___ described what happened that night. In the end, the jury found the man not ___ .",
+        "answers": ["judge", "evidence", "trial", "witness", "guilty"],
+        "bank": ["judge", "evidence", "trial", "witness", "guilty", "court", "innocent"]
+      },
+      "sentences": [
+        "The judge found her innocent.",
+        "There wasn't enough evidence.",
+        "The witness saw the whole crime.",
+        "He should have called a lawyer."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u9",
+      "title": "Personality / Personalidad",
+      "vocabulary": [
+        { "en": "Honest", "es": "Honesto" },
+        { "en": "Generous", "es": "Generoso" },
+        { "en": "Ambitious", "es": "Ambicioso" },
+        { "en": "Reliable", "es": "Confiable" },
+        { "en": "Stubborn", "es": "Terco" },
+        { "en": "Patient", "es": "Paciente" },
+        { "en": "Selfish", "es": "Egoísta" },
+        { "en": "Brave", "es": "Valiente" },
+        { "en": "Polite", "es": "Educado" },
+        { "en": "Hardworking", "es": "Trabajador" },
+        { "en": "Cheerful", "es": "Alegre" },
+        { "en": "Thoughtful", "es": "Considerado" }
+      ],
+      "grammar": {
+        "rule": "Adjective order & intensifiers",
+        "explanation_es": "Intensificamos con 'really', 'quite', 'extremely': 'She is extremely reliable', 'quite stubborn'.",
+        "examples": ["She is extremely reliable.", "He can be quite stubborn.", "They are very generous people.", "Be polite to everyone.", "He is a hardworking student."]
+      },
+      "sentences": [
+        "She is extremely reliable.",
+        "He can be quite stubborn.",
+        "They are very generous people.",
+        "Be polite and patient with others."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u10",
+      "title": "Advanced Phrasal Verbs / Verbos compuestos avanzados",
+      "vocabulary": [
+        { "en": "Put up with", "es": "Tolerar / Aguantar" },
+        { "en": "Come up with", "es": "Idear / Proponer" },
+        { "en": "Look forward to", "es": "Esperar con ganas" },
+        { "en": "Get along with", "es": "Llevarse bien con" },
+        { "en": "Run out of", "es": "Quedarse sin" },
+        { "en": "Take after", "es": "Parecerse a" },
+        { "en": "Bring up", "es": "Mencionar / Criar" },
+        { "en": "Carry out", "es": "Llevar a cabo" },
+        { "en": "Turn down", "es": "Rechazar" },
+        { "en": "Point out", "es": "Señalar" },
+        { "en": "Set up", "es": "Establecer / Montar" },
+        { "en": "Work out", "es": "Resolver / Ejercitarse" }
+      ],
+      "grammar": {
+        "rule": "Multi-word phrasal verbs",
+        "explanation_es": "Algunos phrasal verbs llevan dos partículas: 'look forward to', 'put up with'. Tras 'to' va -ing.",
+        "examples": ["I look forward to hearing from you.", "She came up with a great idea.", "We ran out of time.", "He takes after his father.", "They carried out the plan."]
+      },
+      "sentences": [
+        "I look forward to hearing from you.",
+        "She came up with a great idea.",
+        "We ran out of time yesterday.",
+        "He takes after his father."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u11",
+      "title": "Politics & Society / Política y sociedad",
+      "vocabulary": [
+        { "en": "Citizen", "es": "Ciudadano" },
+        { "en": "Rights", "es": "Derechos" },
+        { "en": "Equality", "es": "Igualdad" },
+        { "en": "Freedom", "es": "Libertad" },
+        { "en": "Vote", "es": "Votar" },
+        { "en": "Leader", "es": "Líder" },
+        { "en": "Community", "es": "Comunidad" },
+        { "en": "Justice", "es": "Justicia" },
+        { "en": "Poverty", "es": "Pobreza" },
+        { "en": "Welfare", "es": "Bienestar" },
+        { "en": "Debate", "es": "Debate" },
+        { "en": "Majority", "es": "Mayoría" }
+      ],
+      "grammar": {
+        "rule": "Expressing necessity & importance",
+        "explanation_es": "'It is essential/important that...', 'There is a need to...': para subrayar lo necesario.",
+        "examples": ["It is essential that everyone votes.", "Citizens have rights and duties.", "We must fight for equality.", "Justice should be for all.", "The majority supported the reform."]
+      },
+      "sentences": [
+        "It is essential that everyone votes.",
+        "Citizens have rights and duties.",
+        "We must fight for equality.",
+        "Justice should be for everyone."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u12",
+      "title": "Health & Lifestyle / Salud y estilo de vida",
+      "vocabulary": [
+        { "en": "Diet", "es": "Dieta" },
+        { "en": "Exercise", "es": "Ejercicio" },
+        { "en": "Stress", "es": "Estrés" },
+        { "en": "Habit", "es": "Hábito" },
+        { "en": "Sleep", "es": "Sueño / Dormir" },
+        { "en": "Balance", "es": "Equilibrio" },
+        { "en": "Mental health", "es": "Salud mental" },
+        { "en": "Wellbeing", "es": "Bienestar" },
+        { "en": "Avoid", "es": "Evitar" },
+        { "en": "Quit", "es": "Dejar (un hábito)" },
+        { "en": "Routine", "es": "Rutina" },
+        { "en": "Fit", "es": "En forma" }
+      ],
+      "grammar": {
+        "rule": "Verbs + gerund / infinitive",
+        "explanation_es": "Algunos verbos llevan -ing (avoid eating), otros 'to' (decide to quit). 'stop doing' vs 'stop to do' cambian de sentido.",
+        "examples": ["You should avoid eating late.", "He decided to quit smoking.", "She enjoys exercising daily.", "Try to reduce stress.", "I want to keep fit."]
+      },
+      "sentences": [
+        "You should avoid eating late.",
+        "He decided to quit smoking.",
+        "Try to reduce your stress.",
+        "A good routine improves wellbeing."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u13",
+      "title": "Internet & Social Media / Internet y redes",
+      "vocabulary": [
+        { "en": "Browse", "es": "Navegar" },
+        { "en": "Post", "es": "Publicar / Publicación" },
+        { "en": "Follower", "es": "Seguidor" },
+        { "en": "Privacy", "es": "Privacidad" },
+        { "en": "Content", "es": "Contenido" },
+        { "en": "Streaming", "es": "Transmisión" },
+        { "en": "Notification", "es": "Notificación" },
+        { "en": "Trend", "es": "Tendencia" },
+        { "en": "Scroll", "es": "Desplazar" },
+        { "en": "Influencer", "es": "Influencer" },
+        { "en": "Fake news", "es": "Noticias falsas" },
+        { "en": "Addiction", "es": "Adicción" }
+      ],
+      "grammar": {
+        "rule": "Causative (have/get something done)",
+        "explanation_es": "'have/get + objeto + participio' para algo hecho por otros: 'I got my account verified'.",
+        "examples": ["She spends hours scrolling online.", "I got my account verified.", "Be careful with your privacy settings.", "That post went viral.", "Fake news spreads quickly."]
+      },
+      "story": {
+        "text": "Many people now get their news from social media, where ___ spreads faster than facts. A single ___ can reach millions of ___ in hours. Experts warn about ___ and the loss of ___ online.",
+        "answers": ["content", "post", "followers", "addiction", "privacy"],
+        "bank": ["content", "post", "followers", "addiction", "privacy", "trend", "streaming"]
+      },
+      "sentences": [
+        "She spends hours scrolling online.",
+        "That post went completely viral.",
+        "Fake news spreads very quickly.",
+        "Check your privacy settings often."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u14",
+      "title": "Travel & Culture / Viajes y cultura",
+      "vocabulary": [
+        { "en": "Destination", "es": "Destino" },
+        { "en": "Tourist", "es": "Turista" },
+        { "en": "Sightseeing", "es": "Turismo (visitar lugares)" },
+        { "en": "Landmark", "es": "Monumento / Punto de referencia" },
+        { "en": "Souvenir", "es": "Recuerdo" },
+        { "en": "Local", "es": "Local" },
+        { "en": "Heritage", "es": "Patrimonio" },
+        { "en": "Adventure", "es": "Aventura" },
+        { "en": "Journey", "es": "Viaje / Trayecto" },
+        { "en": "Explore", "es": "Explorar" },
+        { "en": "Diverse", "es": "Diverso" },
+        { "en": "Authentic", "es": "Auténtico" }
+      ],
+      "grammar": {
+        "rule": "used to / would for past habits",
+        "explanation_es": "Para hábitos pasados al narrar viajes: 'We would explore the old town every evening'.",
+        "examples": ["We explored the ancient landmarks.", "I would buy a souvenir in each city.", "The food was wonderfully authentic.", "This region is culturally diverse.", "The journey was an adventure."]
+      },
+      "sentences": [
+        "We explored the ancient landmarks.",
+        "The food was wonderfully authentic.",
+        "This region is culturally diverse.",
+        "The whole journey was an adventure."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u15",
+      "title": "Art & Music / Arte y música",
+      "vocabulary": [
+        { "en": "Painting", "es": "Pintura" },
+        { "en": "Artist", "es": "Artista" },
+        { "en": "Gallery", "es": "Galería" },
+        { "en": "Exhibition", "es": "Exposición" },
+        { "en": "Melody", "es": "Melodía" },
+        { "en": "Lyrics", "es": "Letra" },
+        { "en": "Instrument", "es": "Instrumento" },
+        { "en": "Perform", "es": "Interpretar / Actuar" },
+        { "en": "Creative", "es": "Creativo" },
+        { "en": "Inspire", "es": "Inspirar" },
+        { "en": "Talent", "es": "Talento" },
+        { "en": "Masterpiece", "es": "Obra maestra" }
+      ],
+      "grammar": {
+        "rule": "Relative clauses (non-defining)",
+        "explanation_es": "Añaden información extra con comas: 'The artist, who lives in Paris, paints landscapes.'",
+        "examples": ["The artist, who is famous, paints landscapes.", "Her music inspires millions.", "We visited an art exhibition.", "He performs with great talent.", "It is considered a masterpiece."]
+      },
+      "sentences": [
+        "Her music inspires millions of people.",
+        "We visited a fascinating art exhibition.",
+        "He performs with great talent.",
+        "It is considered a true masterpiece."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u16",
+      "title": "Advanced Adjectives / Adjetivos avanzados",
+      "vocabulary": [
+        { "en": "Outstanding", "es": "Sobresaliente" },
+        { "en": "Remarkable", "es": "Notable" },
+        { "en": "Disappointing", "es": "Decepcionante" },
+        { "en": "Overwhelming", "es": "Abrumador" },
+        { "en": "Reluctant", "es": "Reacio" },
+        { "en": "Genuine", "es": "Genuino" },
+        { "en": "Crucial", "es": "Crucial" },
+        { "en": "Inevitable", "es": "Inevitable" },
+        { "en": "Vague", "es": "Vago" },
+        { "en": "Thorough", "es": "Minucioso" },
+        { "en": "Demanding", "es": "Exigente" },
+        { "en": "Worthwhile", "es": "Que vale la pena" }
+      ],
+      "grammar": {
+        "rule": "Strong (extreme) adjectives",
+        "explanation_es": "Algunos adjetivos ya son extremos: 'outstanding' (= muy bueno). Con ellos usamos 'absolutely', no 'very'.",
+        "examples": ["Her performance was outstanding.", "The results were remarkable.", "The movie was rather disappointing.", "This step is absolutely crucial.", "It was a worthwhile effort."]
+      },
+      "sentences": [
+        "Her performance was outstanding.",
+        "The results were truly remarkable.",
+        "This step is absolutely crucial.",
+        "It was a worthwhile effort overall."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u17",
+      "title": "Media & Journalism / Medios y periodismo",
+      "vocabulary": [
+        { "en": "Journalist", "es": "Periodista" },
+        { "en": "Source", "es": "Fuente" },
+        { "en": "Interview", "es": "Entrevista" },
+        { "en": "Coverage", "es": "Cobertura" },
+        { "en": "Bias", "es": "Sesgo" },
+        { "en": "Report", "es": "Reportar / Informe" },
+        { "en": "Broadcast", "es": "Emisión" },
+        { "en": "Editor", "es": "Editor" },
+        { "en": "Article", "es": "Artículo" },
+        { "en": "Censorship", "es": "Censura" },
+        { "en": "Reliable", "es": "Fiable" },
+        { "en": "Investigate", "es": "Investigar" },
+        { "en": "Statement", "es": "Declaración" }
+      ],
+      "grammar": {
+        "rule": "Reporting verbs",
+        "explanation_es": "Para informar: 'claim', 'deny', 'reveal', 'announce': 'The minister denied the accusations.'",
+        "examples": ["The journalist revealed the truth.", "Officials denied the report.", "The story got wide coverage.", "Always check a reliable source.", "The newspaper announced the results."]
+      },
+      "story": {
+        "text": "A respected ___ decided to ___ the scandal. She gathered information from several reliable ___ before writing the ___ . Despite pressure and even ___ , the story received massive ___ .",
+        "answers": ["journalist", "investigate", "sources", "article", "censorship", "coverage"],
+        "bank": ["journalist", "investigate", "sources", "article", "censorship", "coverage", "bias"]
+      },
+      "sentences": [
+        "The journalist revealed the truth.",
+        "Officials denied the entire report.",
+        "Always check a reliable source.",
+        "The story got wide coverage."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "story_cloze", "speaking_mirror"]
+    },
+    {
+      "id": "u18",
+      "title": "Emotions in Depth / Emociones a fondo",
+      "vocabulary": [
+        { "en": "Anxious", "es": "Ansioso" },
+        { "en": "Grateful", "es": "Agradecido" },
+        { "en": "Frustrated", "es": "Frustrado" },
+        { "en": "Overwhelmed", "es": "Abrumado" },
+        { "en": "Content", "es": "Satisfecho" },
+        { "en": "Jealous", "es": "Celoso" },
+        { "en": "Embarrassed", "es": "Avergonzado" },
+        { "en": "Relieved", "es": "Aliviado" },
+        { "en": "Disappointed", "es": "Decepcionado" },
+        { "en": "Eager", "es": "Ansioso (con ganas)" },
+        { "en": "Calm", "es": "Tranquilo" },
+        { "en": "Resentful", "es": "Resentido" }
+      ],
+      "grammar": {
+        "rule": "Expressing emotional reactions",
+        "explanation_es": "Estructuras: 'I feel ... about', 'It makes me feel ...', 'I was relieved to hear ...'.",
+        "examples": ["I feel anxious about the interview.", "She was relieved to hear the news.", "He felt frustrated with the delay.", "I'm grateful for your help.", "They were disappointed by the result."]
+      },
+      "sentences": [
+        "I feel anxious about the interview.",
+        "She was relieved to hear the news.",
+        "I'm truly grateful for your help.",
+        "He felt frustrated with the delay."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u19",
+      "title": "Education & Academia / Educación superior",
+      "vocabulary": [
+        { "en": "Lecture", "es": "Conferencia / Clase magistral" },
+        { "en": "Assignment", "es": "Trabajo / Tarea" },
+        { "en": "Scholarship", "es": "Beca" },
+        { "en": "Curriculum", "es": "Plan de estudios" },
+        { "en": "Tuition", "es": "Matrícula" },
+        { "en": "Graduate", "es": "Graduarse" },
+        { "en": "Thesis", "es": "Tesis" },
+        { "en": "Faculty", "es": "Facultad / Profesorado" },
+        { "en": "Semester", "es": "Semestre" },
+        { "en": "Deadline", "es": "Fecha límite" },
+        { "en": "Plagiarism", "es": "Plagio" },
+        { "en": "Qualification", "es": "Titulación" }
+      ],
+      "grammar": {
+        "rule": "Concession (although / despite)",
+        "explanation_es": "'although' + oración; 'despite' + sustantivo/-ing: 'Despite the deadline, she finished.'",
+        "examples": ["Although the course was hard, she passed.", "Despite the deadline, he relaxed.", "She won a full scholarship.", "He is writing his thesis.", "The curriculum was recently updated."]
+      },
+      "sentences": [
+        "Although the course was hard she passed.",
+        "She won a full scholarship.",
+        "He is currently writing his thesis.",
+        "The deadline is next Friday."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u20",
+      "title": "Psychology & Mind / Psicología y mente",
+      "vocabulary": [
+        { "en": "Behaviour", "es": "Comportamiento" },
+        { "en": "Motivation", "es": "Motivación" },
+        { "en": "Memory", "es": "Memoria" },
+        { "en": "Attitude", "es": "Actitud" },
+        { "en": "Perception", "es": "Percepción" },
+        { "en": "Awareness", "es": "Conciencia" },
+        { "en": "Habit", "es": "Hábito" },
+        { "en": "Mindset", "es": "Mentalidad" },
+        { "en": "Cope", "es": "Afrontar" },
+        { "en": "Trigger", "es": "Desencadenar" },
+        { "en": "Self-esteem", "es": "Autoestima" },
+        { "en": "Reaction", "es": "Reacción" }
+      ],
+      "grammar": {
+        "rule": "Verbs of perception & cognition",
+        "explanation_es": "'seem', 'appear', 'tend to', 'be likely to' describen tendencias mentales y percepciones.",
+        "examples": ["Her attitude seems very positive.", "Stress can trigger anxiety.", "A growth mindset boosts motivation.", "He struggles to cope with change.", "Memory tends to fade over time."]
+      },
+      "sentences": [
+        "Her attitude seems very positive.",
+        "Stress can trigger anxiety.",
+        "A growth mindset boosts motivation.",
+        "He struggles to cope with change."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u21",
+      "title": "Discourse Markers / Marcadores del discurso",
+      "vocabulary": [
+        { "en": "As a result", "es": "Como resultado" },
+        { "en": "In contrast", "es": "En contraste" },
+        { "en": "For instance", "es": "Por ejemplo" },
+        { "en": "Moreover", "es": "Además" },
+        { "en": "In other words", "es": "En otras palabras" },
+        { "en": "On the whole", "es": "En conjunto" },
+        { "en": "As far as", "es": "En cuanto a" },
+        { "en": "To begin with", "es": "Para empezar" },
+        { "en": "In conclusion", "es": "En conclusión" },
+        { "en": "Apart from", "es": "Aparte de" },
+        { "en": "Due to", "es": "Debido a" },
+        { "en": "Whereas", "es": "Mientras que" }
+      ],
+      "grammar": {
+        "rule": "Organizing an argument",
+        "explanation_es": "Los marcadores estructuran el discurso: introducir (to begin with), añadir (moreover), concluir (in conclusion).",
+        "examples": ["To begin with, the plan is costly.", "Moreover, it lacks support.", "In contrast, the alternative is cheaper.", "As a result, sales fell.", "In conclusion, we should wait."]
+      },
+      "sentences": [
+        "To begin with the plan is costly.",
+        "Moreover it lacks public support.",
+        "As a result sales fell sharply.",
+        "In conclusion we should wait."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    },
+    {
+      "id": "u22",
+      "title": "Negotiation / Negociación",
+      "vocabulary": [
+        { "en": "Offer", "es": "Oferta" },
+        { "en": "Compromise", "es": "Acuerdo / Ceder" },
+        { "en": "Agreement", "es": "Acuerdo" },
+        { "en": "Condition", "es": "Condición" },
+        { "en": "Proposal", "es": "Propuesta" },
+        { "en": "Discount", "es": "Descuento" },
+        { "en": "Deal", "es": "Trato" },
+        { "en": "Counteroffer", "es": "Contraoferta" },
+        { "en": "Flexible", "es": "Flexible" },
+        { "en": "Mutual", "es": "Mutuo" },
+        { "en": "Settle", "es": "Resolver / Acordar" },
+        { "en": "Terms", "es": "Condiciones" }
+      ],
+      "grammar": {
+        "rule": "Conditional bargaining",
+        "explanation_es": "Para negociar: 'If you lower the price, we'll sign today', 'We could agree, provided that...'.",
+        "examples": ["If you lower the price, we'll sign.", "We could reach a compromise.", "Let's agree on the terms.", "I'm open to a counteroffer.", "We need a mutual agreement."]
+      },
+      "sentences": [
+        "If you lower the price we'll sign.",
+        "We could reach a fair compromise.",
+        "Let's agree on the final terms.",
+        "We need a mutual agreement."
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "sentence_builder", "speaking_mirror"]
+    }
+  ]
+}

@@ -1,0 +1,705 @@
+{
+  "level": "A1",
+  "units": [
+    {
+      "id": "u1",
+      "title": "Greetings / Saludos",
+      "vocabulary": [
+        { "en": "Hello", "es": "Hola" },
+        { "en": "Goodbye", "es": "Adiós" },
+        { "en": "Good morning", "es": "Buenos días" },
+        { "en": "Good afternoon", "es": "Buenas tardes" },
+        { "en": "Good night", "es": "Buenas noches" },
+        { "en": "Please", "es": "Por favor" },
+        { "en": "Thank you", "es": "Gracias" },
+        { "en": "You're welcome", "es": "De nada" },
+        { "en": "Excuse me", "es": "Disculpe" },
+        { "en": "Sorry", "es": "Lo siento" },
+        { "en": "Yes", "es": "Sí" },
+        { "en": "No", "es": "No" }
+      ],
+      "grammar": {
+        "rule": "Verb TO BE – Affirmative",
+        "explanation_es": "El verbo 'to be' (ser/estar) cambia según el sujeto: I am, you are, he/she/it is, we/they are.",
+        "examples": ["I am a student.", "She is happy.", "We are friends.", "You are welcome.", "He is my brother."]
+      },
+      "fill": [
+        { "sentence": "I ___ a student.", "answer": "am", "options": ["is", "are", "be"] },
+        { "sentence": "She ___ happy.", "answer": "is", "options": ["am", "are", "be"] },
+        { "sentence": "We ___ friends.", "answer": "are", "options": ["am", "is", "be"] }
+      ],
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u2",
+      "title": "Pronouns / Pronombres",
+      "vocabulary": [
+        { "en": "I", "es": "Yo" },
+        { "en": "You", "es": "Tú / Usted" },
+        { "en": "He", "es": "Él" },
+        { "en": "She", "es": "Ella" },
+        { "en": "It", "es": "Ello (cosa/animal)" },
+        { "en": "We", "es": "Nosotros" },
+        { "en": "They", "es": "Ellos" },
+        { "en": "My", "es": "Mi" },
+        { "en": "Your", "es": "Tu" },
+        { "en": "His", "es": "Su (de él)" },
+        { "en": "Her", "es": "Su (de ella)" },
+        { "en": "Our", "es": "Nuestro" }
+      ],
+      "grammar": {
+        "rule": "Subject pronouns + TO BE",
+        "explanation_es": "Cada pronombre usa una forma de 'to be': I am, you are, he/she/it is, we/they are.",
+        "examples": ["I am here.", "You are my friend.", "He is tall.", "It is a cat.", "They are at home."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u3",
+      "title": "Colors / Colores",
+      "vocabulary": [
+        { "en": "Red", "es": "Rojo" },
+        { "en": "Blue", "es": "Azul" },
+        { "en": "Green", "es": "Verde" },
+        { "en": "Yellow", "es": "Amarillo" },
+        { "en": "Black", "es": "Negro" },
+        { "en": "White", "es": "Blanco" },
+        { "en": "Orange", "es": "Naranja" },
+        { "en": "Purple", "es": "Morado" },
+        { "en": "Pink", "es": "Rosa" },
+        { "en": "Brown", "es": "Marrón" },
+        { "en": "Gray", "es": "Gris" }
+      ],
+      "grammar": {
+        "rule": "Adjectives before nouns",
+        "explanation_es": "En inglés el adjetivo va antes del sustantivo: 'a red car' (un coche rojo), no 'a car red'.",
+        "examples": ["The car is red.", "I have a blue pen.", "She likes green apples.", "It is a yellow flower.", "He has a black dog."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u4",
+      "title": "Numbers / Números",
+      "vocabulary": [
+        { "en": "One", "es": "Uno" },
+        { "en": "Two", "es": "Dos" },
+        { "en": "Three", "es": "Tres" },
+        { "en": "Four", "es": "Cuatro" },
+        { "en": "Five", "es": "Cinco" },
+        { "en": "Six", "es": "Seis" },
+        { "en": "Seven", "es": "Siete" },
+        { "en": "Eight", "es": "Ocho" },
+        { "en": "Nine", "es": "Nueve" },
+        { "en": "Ten", "es": "Diez" },
+        { "en": "Twenty", "es": "Veinte" },
+        { "en": "Hundred", "es": "Cien" }
+      ],
+      "grammar": {
+        "rule": "There is / There are",
+        "explanation_es": "Usamos 'there is' para singular y 'there are' para plural: hay.",
+        "examples": ["There is one apple.", "There are five books.", "There are two cats.", "There is a problem.", "There are ten students."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u5",
+      "title": "Family / La familia",
+      "vocabulary": [
+        { "en": "Mother", "es": "Madre" },
+        { "en": "Father", "es": "Padre" },
+        { "en": "Brother", "es": "Hermano" },
+        { "en": "Sister", "es": "Hermana" },
+        { "en": "Son", "es": "Hijo" },
+        { "en": "Daughter", "es": "Hija" },
+        { "en": "Grandmother", "es": "Abuela" },
+        { "en": "Grandfather", "es": "Abuelo" },
+        { "en": "Husband", "es": "Esposo" },
+        { "en": "Wife", "es": "Esposa" },
+        { "en": "Child", "es": "Niño/a" },
+        { "en": "Family", "es": "Familia" }
+      ],
+      "grammar": {
+        "rule": "Possessive 's",
+        "explanation_es": "Para indicar posesión añadimos 's: 'my mother's car' (el coche de mi madre).",
+        "examples": ["This is my mother.", "He is my brother.", "Her sister is tall.", "My father's name is John.", "Our family is big."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u6",
+      "title": "Common Verbs / Verbos comunes",
+      "vocabulary": [
+        { "en": "To be", "es": "Ser / Estar" },
+        { "en": "To have", "es": "Tener" },
+        { "en": "To do", "es": "Hacer" },
+        { "en": "To go", "es": "Ir" },
+        { "en": "To eat", "es": "Comer" },
+        { "en": "To drink", "es": "Beber" },
+        { "en": "To want", "es": "Querer" },
+        { "en": "To like", "es": "Gustar" },
+        { "en": "To live", "es": "Vivir" },
+        { "en": "To speak", "es": "Hablar" },
+        { "en": "To work", "es": "Trabajar" },
+        { "en": "To see", "es": "Ver" }
+      ],
+      "grammar": {
+        "rule": "Present Simple – I/You/We/They",
+        "explanation_es": "En presente simple, con I/you/we/they usamos el verbo base: 'I eat', 'they live'.",
+        "examples": ["I eat breakfast.", "They live in Madrid.", "We like music.", "You speak English.", "I work every day."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u7",
+      "title": "Everyday Objects / Objetos cotidianos",
+      "vocabulary": [
+        { "en": "House", "es": "Casa" },
+        { "en": "Door", "es": "Puerta" },
+        { "en": "Table", "es": "Mesa" },
+        { "en": "Chair", "es": "Silla" },
+        { "en": "Bed", "es": "Cama" },
+        { "en": "Phone", "es": "Teléfono" },
+        { "en": "Book", "es": "Libro" },
+        { "en": "Car", "es": "Coche" },
+        { "en": "Key", "es": "Llave" },
+        { "en": "Money", "es": "Dinero" },
+        { "en": "Water", "es": "Agua" },
+        { "en": "Window", "es": "Ventana" }
+      ],
+      "grammar": {
+        "rule": "Articles a / an / the",
+        "explanation_es": "Usamos 'a' antes de consonante, 'an' antes de vocal, y 'the' para algo específico.",
+        "examples": ["a book", "an apple", "the house", "I have a car.", "Open the door."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u8",
+      "title": "Days & Time / Días y tiempo",
+      "vocabulary": [
+        { "en": "Monday", "es": "Lunes" },
+        { "en": "Tuesday", "es": "Martes" },
+        { "en": "Wednesday", "es": "Miércoles" },
+        { "en": "Thursday", "es": "Jueves" },
+        { "en": "Friday", "es": "Viernes" },
+        { "en": "Saturday", "es": "Sábado" },
+        { "en": "Sunday", "es": "Domingo" },
+        { "en": "Today", "es": "Hoy" },
+        { "en": "Tomorrow", "es": "Mañana" },
+        { "en": "Yesterday", "es": "Ayer" },
+        { "en": "Week", "es": "Semana" },
+        { "en": "Hour", "es": "Hora" }
+      ],
+      "grammar": {
+        "rule": "Prepositions of time: on / in / at",
+        "explanation_es": "Usamos 'on' con días (on Monday), 'in' con meses/años (in May), 'at' con horas (at 5).",
+        "examples": ["I work on Monday.", "See you tomorrow.", "The class is at three.", "We meet on Friday.", "It is in May."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u9",
+      "title": "Places & Prepositions / Lugares y preposiciones",
+      "vocabulary": [
+        { "en": "School", "es": "Escuela" },
+        { "en": "Store", "es": "Tienda" },
+        { "en": "City", "es": "Ciudad" },
+        { "en": "Street", "es": "Calle" },
+        { "en": "Park", "es": "Parque" },
+        { "en": "Here", "es": "Aquí" },
+        { "en": "There", "es": "Allí" },
+        { "en": "In", "es": "En (dentro)" },
+        { "en": "On", "es": "Sobre" },
+        { "en": "Under", "es": "Debajo" },
+        { "en": "Next to", "es": "Al lado de" },
+        { "en": "Near", "es": "Cerca" }
+      ],
+      "grammar": {
+        "rule": "Prepositions of place",
+        "explanation_es": "Indican dónde está algo: in (en), on (sobre), under (debajo), next to (al lado de).",
+        "examples": ["The cat is under the table.", "The book is on the chair.", "I live near the park.", "The store is next to the school.", "She is in the city."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u10",
+      "title": "Food Basics / Comida básica",
+      "vocabulary": [
+        { "en": "Bread", "es": "Pan" },
+        { "en": "Milk", "es": "Leche" },
+        { "en": "Egg", "es": "Huevo" },
+        { "en": "Apple", "es": "Manzana" },
+        { "en": "Rice", "es": "Arroz" },
+        { "en": "Chicken", "es": "Pollo" },
+        { "en": "Coffee", "es": "Café" },
+        { "en": "Tea", "es": "Té" },
+        { "en": "Fruit", "es": "Fruta" },
+        { "en": "Sugar", "es": "Azúcar" },
+        { "en": "Salt", "es": "Sal" },
+        { "en": "Food", "es": "Comida" }
+      ],
+      "grammar": {
+        "rule": "I like / I want",
+        "explanation_es": "Para expresar gustos y deseos: 'I like coffee' (me gusta el café), 'I want water' (quiero agua).",
+        "examples": ["I like apples.", "I want some bread.", "She likes tea.", "We want coffee.", "Do you like rice?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u11",
+      "title": "The Body / El cuerpo",
+      "vocabulary": [
+        { "en": "Head", "es": "Cabeza" },
+        { "en": "Hair", "es": "Cabello" },
+        { "en": "Eye", "es": "Ojo" },
+        { "en": "Nose", "es": "Nariz" },
+        { "en": "Mouth", "es": "Boca" },
+        { "en": "Ear", "es": "Oreja" },
+        { "en": "Hand", "es": "Mano" },
+        { "en": "Arm", "es": "Brazo" },
+        { "en": "Leg", "es": "Pierna" },
+        { "en": "Foot", "es": "Pie" },
+        { "en": "Heart", "es": "Corazón" },
+        { "en": "Face", "es": "Cara" }
+      ],
+      "grammar": {
+        "rule": "have / has for description",
+        "explanation_es": "Usamos 'have/has' para describir: 'She has blue eyes', 'I have long hair'.",
+        "examples": ["She has blue eyes.", "I have long hair.", "He has big hands.", "They have brown eyes.", "My head hurts."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u12",
+      "title": "Clothes / La ropa",
+      "vocabulary": [
+        { "en": "Shirt", "es": "Camisa" },
+        { "en": "Pants", "es": "Pantalones" },
+        { "en": "Dress", "es": "Vestido" },
+        { "en": "Shoes", "es": "Zapatos" },
+        { "en": "Hat", "es": "Sombrero" },
+        { "en": "Jacket", "es": "Chaqueta" },
+        { "en": "Socks", "es": "Calcetines" },
+        { "en": "Skirt", "es": "Falda" },
+        { "en": "Coat", "es": "Abrigo" },
+        { "en": "Glasses", "es": "Gafas" },
+        { "en": "Watch", "es": "Reloj" },
+        { "en": "Bag", "es": "Bolsa" }
+      ],
+      "grammar": {
+        "rule": "to wear / to put on",
+        "explanation_es": "'wear' = llevar puesto; 'put on' = ponerse. 'She is wearing a red dress'.",
+        "examples": ["She is wearing a dress.", "I wear glasses.", "He puts on his jacket.", "They wear shoes.", "Put on your coat."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u13",
+      "title": "Animals / Animales",
+      "vocabulary": [
+        { "en": "Dog", "es": "Perro" },
+        { "en": "Cat", "es": "Gato" },
+        { "en": "Bird", "es": "Pájaro" },
+        { "en": "Fish", "es": "Pez" },
+        { "en": "Horse", "es": "Caballo" },
+        { "en": "Cow", "es": "Vaca" },
+        { "en": "Pig", "es": "Cerdo" },
+        { "en": "Chicken", "es": "Gallina" },
+        { "en": "Rabbit", "es": "Conejo" },
+        { "en": "Mouse", "es": "Ratón" },
+        { "en": "Lion", "es": "León" },
+        { "en": "Bear", "es": "Oso" }
+      ],
+      "grammar": {
+        "rule": "Plural nouns (-s / -es)",
+        "explanation_es": "Para el plural añadimos -s (dogs) o -es tras s/x/ch (boxes). Algunos son irregulares (mouse → mice).",
+        "examples": ["I have two dogs.", "The cats are sleeping.", "Birds can fly.", "There are three horses.", "She likes animals."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u14",
+      "title": "Weather & Seasons / Clima y estaciones",
+      "vocabulary": [
+        { "en": "Sun", "es": "Sol" },
+        { "en": "Rain", "es": "Lluvia" },
+        { "en": "Snow", "es": "Nieve" },
+        { "en": "Wind", "es": "Viento" },
+        { "en": "Cloud", "es": "Nube" },
+        { "en": "Hot", "es": "Caluroso" },
+        { "en": "Cold", "es": "Frío" },
+        { "en": "Warm", "es": "Cálido" },
+        { "en": "Summer", "es": "Verano" },
+        { "en": "Winter", "es": "Invierno" },
+        { "en": "Spring", "es": "Primavera" },
+        { "en": "Autumn", "es": "Otoño" }
+      ],
+      "grammar": {
+        "rule": "It is + weather",
+        "explanation_es": "Para el clima usamos 'It is': 'It is sunny', 'It is cold today'.",
+        "examples": ["It is sunny today.", "It is raining.", "It is very cold.", "I like summer.", "It is hot in July."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u15",
+      "title": "The House / La casa",
+      "vocabulary": [
+        { "en": "Kitchen", "es": "Cocina" },
+        { "en": "Bedroom", "es": "Dormitorio" },
+        { "en": "Bathroom", "es": "Baño" },
+        { "en": "Living room", "es": "Sala de estar" },
+        { "en": "Floor", "es": "Suelo" },
+        { "en": "Wall", "es": "Pared" },
+        { "en": "Roof", "es": "Techo" },
+        { "en": "Garden", "es": "Jardín" },
+        { "en": "Stairs", "es": "Escaleras" },
+        { "en": "Lamp", "es": "Lámpara" },
+        { "en": "Mirror", "es": "Espejo" },
+        { "en": "Clock", "es": "Reloj (de pared)" }
+      ],
+      "grammar": {
+        "rule": "There is / There are (rooms)",
+        "explanation_es": "Describimos la casa con 'there is/are': 'There is a kitchen', 'There are two bedrooms'.",
+        "examples": ["There is a big kitchen.", "There are two bathrooms.", "The bedroom is upstairs.", "We have a garden.", "The living room is large."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u16",
+      "title": "Question Words / Palabras de pregunta",
+      "vocabulary": [
+        { "en": "What", "es": "Qué" },
+        { "en": "Who", "es": "Quién" },
+        { "en": "Where", "es": "Dónde" },
+        { "en": "When", "es": "Cuándo" },
+        { "en": "Why", "es": "Por qué" },
+        { "en": "How", "es": "Cómo" },
+        { "en": "Which", "es": "Cuál" },
+        { "en": "How much", "es": "Cuánto" },
+        { "en": "How many", "es": "Cuántos" },
+        { "en": "Whose", "es": "De quién" },
+        { "en": "What time", "es": "A qué hora" },
+        { "en": "How old", "es": "Qué edad" }
+      ],
+      "grammar": {
+        "rule": "Questions with question words",
+        "explanation_es": "La pregunta empieza con la palabra interrogativa + auxiliar: 'Where do you live?', 'What is this?'.",
+        "examples": ["What is your name?", "Where do you live?", "How are you?", "Why are you sad?", "When is the class?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u17",
+      "title": "Months / Meses",
+      "vocabulary": [
+        { "en": "January", "es": "Enero" },
+        { "en": "February", "es": "Febrero" },
+        { "en": "March", "es": "Marzo" },
+        { "en": "April", "es": "Abril" },
+        { "en": "May", "es": "Mayo" },
+        { "en": "June", "es": "Junio" },
+        { "en": "July", "es": "Julio" },
+        { "en": "August", "es": "Agosto" },
+        { "en": "September", "es": "Septiembre" },
+        { "en": "October", "es": "Octubre" },
+        { "en": "November", "es": "Noviembre" },
+        { "en": "December", "es": "Diciembre" }
+      ],
+      "grammar": {
+        "rule": "Dates: in / on",
+        "explanation_es": "Usamos 'in' con meses (in June) y 'on' con fechas concretas (on June 5th).",
+        "examples": ["My birthday is in May.", "We travel in July.", "The party is on December 31st.", "School starts in September.", "It is cold in January."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u18",
+      "title": "Common Adjectives / Adjetivos comunes",
+      "vocabulary": [
+        { "en": "Big", "es": "Grande" },
+        { "en": "Small", "es": "Pequeño" },
+        { "en": "Good", "es": "Bueno" },
+        { "en": "Bad", "es": "Malo" },
+        { "en": "New", "es": "Nuevo" },
+        { "en": "Old", "es": "Viejo" },
+        { "en": "Fast", "es": "Rápido" },
+        { "en": "Slow", "es": "Lento" },
+        { "en": "Easy", "es": "Fácil" },
+        { "en": "Hard", "es": "Difícil" },
+        { "en": "Clean", "es": "Limpio" },
+        { "en": "Dirty", "es": "Sucio" }
+      ],
+      "grammar": {
+        "rule": "Opposites with adjectives",
+        "explanation_es": "Aprende los adjetivos en pares de opuestos: big/small, good/bad, fast/slow.",
+        "examples": ["The house is big.", "This car is very fast.", "The test was easy.", "My shoes are dirty.", "It is a good book."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u19",
+      "title": "Meals & More Food / Comidas",
+      "vocabulary": [
+        { "en": "Soup", "es": "Sopa" },
+        { "en": "Salad", "es": "Ensalada" },
+        { "en": "Sandwich", "es": "Sándwich" },
+        { "en": "Pizza", "es": "Pizza" },
+        { "en": "Cake", "es": "Pastel" },
+        { "en": "Banana", "es": "Plátano" },
+        { "en": "Orange", "es": "Naranja (fruta)" },
+        { "en": "Potato", "es": "Papa" },
+        { "en": "Tomato", "es": "Tomate" },
+        { "en": "Butter", "es": "Mantequilla" },
+        { "en": "Juice", "es": "Jugo" },
+        { "en": "Breakfast", "es": "Desayuno" }
+      ],
+      "grammar": {
+        "rule": "a / an with food",
+        "explanation_es": "Usamos 'a/an' con contables singulares: 'a sandwich', 'an orange'. Incontables sin artículo: 'soup', 'juice'.",
+        "examples": ["I want a sandwich.", "She eats an orange.", "We have soup for lunch.", "He likes pizza.", "Can I have some juice?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u20",
+      "title": "Classroom / El aula",
+      "vocabulary": [
+        { "en": "Teacher", "es": "Profesor" },
+        { "en": "Student", "es": "Estudiante" },
+        { "en": "Pen", "es": "Bolígrafo" },
+        { "en": "Pencil", "es": "Lápiz" },
+        { "en": "Notebook", "es": "Cuaderno" },
+        { "en": "Board", "es": "Pizarra" },
+        { "en": "Desk", "es": "Pupitre" },
+        { "en": "Paper", "es": "Papel" },
+        { "en": "Question", "es": "Pregunta" },
+        { "en": "Answer", "es": "Respuesta" },
+        { "en": "Lesson", "es": "Lección" },
+        { "en": "Homework", "es": "Tarea" }
+      ],
+      "grammar": {
+        "rule": "Classroom imperatives",
+        "explanation_es": "Órdenes comunes en clase con el verbo base: 'Open your book', 'Listen', 'Write the answer'.",
+        "examples": ["Open your notebook.", "Write the answer.", "Listen to the teacher.", "Read the lesson.", "Ask a question."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u21",
+      "title": "Action Verbs / Verbos de acción",
+      "vocabulary": [
+        { "en": "Open", "es": "Abrir" },
+        { "en": "Close", "es": "Cerrar" },
+        { "en": "Walk", "es": "Caminar" },
+        { "en": "Run", "es": "Correr" },
+        { "en": "Jump", "es": "Saltar" },
+        { "en": "Sit", "es": "Sentarse" },
+        { "en": "Stand", "es": "Pararse" },
+        { "en": "Give", "es": "Dar" },
+        { "en": "Take", "es": "Tomar" },
+        { "en": "Buy", "es": "Comprar" },
+        { "en": "Help", "es": "Ayudar" },
+        { "en": "Stop", "es": "Parar" }
+      ],
+      "grammar": {
+        "rule": "Present continuous (am/is/are + -ing)",
+        "explanation_es": "Para acciones que ocurren ahora: 'I am walking', 'She is running'.",
+        "examples": ["I am walking to school.", "She is running fast.", "They are sitting down.", "He is helping his mom.", "We are buying food."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u22",
+      "title": "Basic Feelings / Emociones básicas",
+      "vocabulary": [
+        { "en": "Happy", "es": "Feliz" },
+        { "en": "Sad", "es": "Triste" },
+        { "en": "Tired", "es": "Cansado" },
+        { "en": "Hungry", "es": "Hambriento" },
+        { "en": "Thirsty", "es": "Sediento" },
+        { "en": "Cold", "es": "Con frío" },
+        { "en": "Hot", "es": "Con calor" },
+        { "en": "Scared", "es": "Asustado" },
+        { "en": "Angry", "es": "Enojado" },
+        { "en": "Fine", "es": "Bien" },
+        { "en": "Sick", "es": "Enfermo" },
+        { "en": "Bored", "es": "Aburrido" }
+      ],
+      "grammar": {
+        "rule": "I am + feeling",
+        "explanation_es": "En inglés usamos 'to be' para sentimientos: 'I am hungry' (tengo hambre), 'She is tired'.",
+        "examples": ["I am happy today.", "She is very tired.", "Are you hungry?", "He is sick.", "We are cold."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u23",
+      "title": "Sports / Deportes",
+      "vocabulary": [
+        { "en": "Soccer", "es": "Fútbol" },
+        { "en": "Basketball", "es": "Baloncesto" },
+        { "en": "Tennis", "es": "Tenis" },
+        { "en": "Swimming", "es": "Natación" },
+        { "en": "Running", "es": "Correr (deporte)" },
+        { "en": "Ball", "es": "Pelota" },
+        { "en": "Team", "es": "Equipo" },
+        { "en": "Game", "es": "Partido" },
+        { "en": "Win", "es": "Ganar" },
+        { "en": "Lose", "es": "Perder" },
+        { "en": "Player", "es": "Jugador" },
+        { "en": "Coach", "es": "Entrenador" }
+      ],
+      "grammar": {
+        "rule": "play / do / go with sports",
+        "explanation_es": "Usamos 'play' con deportes de pelota (play soccer), 'go' con -ing (go swimming), 'do' para otros (do yoga).",
+        "examples": ["I play soccer on Sundays.", "She goes swimming every week.", "They play basketball.", "Our team won the game.", "He is a great player."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u24",
+      "title": "In Town / En el pueblo",
+      "vocabulary": [
+        { "en": "Bank", "es": "Banco" },
+        { "en": "Restaurant", "es": "Restaurante" },
+        { "en": "Hotel", "es": "Hotel" },
+        { "en": "Hospital", "es": "Hospital" },
+        { "en": "Church", "es": "Iglesia" },
+        { "en": "Market", "es": "Mercado" },
+        { "en": "Station", "es": "Estación" },
+        { "en": "Bridge", "es": "Puente" },
+        { "en": "Corner", "es": "Esquina" },
+        { "en": "Square", "es": "Plaza" },
+        { "en": "Building", "es": "Edificio" },
+        { "en": "Road", "es": "Carretera" }
+      ],
+      "grammar": {
+        "rule": "Is there...? / Are there...?",
+        "explanation_es": "Para preguntar por lugares: 'Is there a bank near here?', 'Are there any restaurants?'.",
+        "examples": ["Is there a bank near here?", "Are there any hotels?", "The hospital is on this road.", "There is a market in the square.", "Where is the station?"]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u25",
+      "title": "Time & Ordinals / La hora y ordinales",
+      "vocabulary": [
+        { "en": "First", "es": "Primero" },
+        { "en": "Second", "es": "Segundo" },
+        { "en": "Third", "es": "Tercero" },
+        { "en": "O'clock", "es": "En punto" },
+        { "en": "Half past", "es": "Y media" },
+        { "en": "Quarter", "es": "Cuarto" },
+        { "en": "Minute", "es": "Minuto" },
+        { "en": "Morning", "es": "Mañana" },
+        { "en": "Noon", "es": "Mediodía" },
+        { "en": "Evening", "es": "Noche (temprano)" },
+        { "en": "Midnight", "es": "Medianoche" },
+        { "en": "Early", "es": "Temprano" }
+      ],
+      "grammar": {
+        "rule": "Telling the time",
+        "explanation_es": "'It's three o'clock', 'It's half past two'. Para preguntar: 'What time is it?'.",
+        "examples": ["What time is it?", "It is three o'clock.", "It is half past nine.", "The class starts at noon.", "I wake up early."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u26",
+      "title": "Drinks / Bebidas",
+      "vocabulary": [
+        { "en": "Water", "es": "Agua" },
+        { "en": "Coffee", "es": "Café" },
+        { "en": "Tea", "es": "Té" },
+        { "en": "Milk", "es": "Leche" },
+        { "en": "Juice", "es": "Jugo" },
+        { "en": "Soda", "es": "Refresco" },
+        { "en": "Beer", "es": "Cerveza" },
+        { "en": "Wine", "es": "Vino" },
+        { "en": "Lemonade", "es": "Limonada" },
+        { "en": "Hot chocolate", "es": "Chocolate caliente" },
+        { "en": "Ice", "es": "Hielo" },
+        { "en": "Cup", "es": "Taza" }
+      ],
+      "grammar": {
+        "rule": "Would you like...?",
+        "explanation_es": "Para ofrecer cortésmente: 'Would you like some tea?'. Respuesta: 'Yes, please' / 'No, thanks'.",
+        "examples": ["Would you like some water?", "I'd like a coffee, please.", "Do you want juice or soda?", "A cup of tea, please.", "No ice, thank you."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u27",
+      "title": "Kitchen Objects / Objetos de cocina",
+      "vocabulary": [
+        { "en": "Plate", "es": "Plato" },
+        { "en": "Cup", "es": "Taza" },
+        { "en": "Glass", "es": "Vaso" },
+        { "en": "Spoon", "es": "Cuchara" },
+        { "en": "Fork", "es": "Tenedor" },
+        { "en": "Knife", "es": "Cuchillo" },
+        { "en": "Bottle", "es": "Botella" },
+        { "en": "Bowl", "es": "Tazón" },
+        { "en": "Pan", "es": "Sartén" },
+        { "en": "Napkin", "es": "Servilleta" },
+        { "en": "Box", "es": "Caja" },
+        { "en": "Bag", "es": "Bolsa" }
+      ],
+      "grammar": {
+        "rule": "this / that / these / those",
+        "explanation_es": "'this/these' para cerca, 'that/those' para lejos: 'this spoon', 'those plates'.",
+        "examples": ["This is my cup.", "Pass me that fork, please.", "These glasses are clean.", "Those plates are dirty.", "I need a knife."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    },
+    {
+      "id": "u28",
+      "title": "People / Personas",
+      "vocabulary": [
+        { "en": "Man", "es": "Hombre" },
+        { "en": "Woman", "es": "Mujer" },
+        { "en": "Boy", "es": "Niño" },
+        { "en": "Girl", "es": "Niña" },
+        { "en": "Baby", "es": "Bebé" },
+        { "en": "Friend", "es": "Amigo" },
+        { "en": "Neighbor", "es": "Vecino" },
+        { "en": "People", "es": "Gente" },
+        { "en": "Name", "es": "Nombre" },
+        { "en": "Age", "es": "Edad" },
+        { "en": "Young", "es": "Joven" },
+        { "en": "Old", "es": "Mayor" }
+      ],
+      "grammar": {
+        "rule": "How old are you?",
+        "explanation_es": "Para la edad usamos 'to be': 'I am twenty years old'. Pregunta: 'How old are you?'.",
+        "examples": ["What is your name?", "How old are you?", "I am twenty years old.", "He is a young man.", "Those people are my friends."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard", "listening_echo"]
+    },
+    {
+      "id": "u29",
+      "title": "Quantities / Cantidades",
+      "vocabulary": [
+        { "en": "Some", "es": "Algunos" },
+        { "en": "Many", "es": "Muchos" },
+        { "en": "Much", "es": "Mucho" },
+        { "en": "A lot", "es": "Mucho" },
+        { "en": "Few", "es": "Pocos" },
+        { "en": "Little", "es": "Poco" },
+        { "en": "All", "es": "Todo" },
+        { "en": "None", "es": "Ninguno" },
+        { "en": "More", "es": "Más" },
+        { "en": "Less", "es": "Menos" },
+        { "en": "Every", "es": "Cada" },
+        { "en": "Half", "es": "Mitad" }
+      ],
+      "grammar": {
+        "rule": "many / much / a lot of",
+        "explanation_es": "'many' con contables (many books), 'much' con incontables (much water), 'a lot of' con ambos.",
+        "examples": ["I have many friends.", "There isn't much time.", "She has a lot of money.", "We need more water.", "Every day is different."]
+      },
+      "games": ["word_match", "fill_blank", "flashcard"]
+    }
+  ]
+}

@@ -1,0 +1,493 @@
+{
+  "stories": [
+    {
+      "id": "s_a1_1",
+      "level": "A1",
+      "emoji": "👋",
+      "title": "A New Friend",
+      "title_es": "Un nuevo amigo",
+      "summary_es": "Ana va al parque y conoce a alguien nuevo.",
+      "sentences": [
+        { "en": "Ana goes to the park every morning.", "es": "Ana va al parque cada mañana." },
+        { "en": "Today she sees a small dog.", "es": "Hoy ve un perro pequeño." },
+        { "en": "The dog is brown and happy.", "es": "El perro es marrón y feliz." },
+        { "en": "A boy runs to the dog.", "es": "Un niño corre hacia el perro." },
+        { "en": "\"Hello! Is this your dog?\" asks Ana.", "es": "\"¡Hola! ¿Es tuyo este perro?\", pregunta Ana." },
+        { "en": "\"Yes, his name is Max,\" says the boy.", "es": "\"Sí, se llama Max\", dice el niño." },
+        { "en": "Ana and the boy play with Max.", "es": "Ana y el niño juegan con Max." },
+        { "en": "Now they are good friends.", "es": "Ahora son buenos amigos." }
+      ],
+      "glossary": [
+        { "en": "park", "es": "parque" },
+        { "en": "morning", "es": "mañana" },
+        { "en": "dog", "es": "perro" },
+        { "en": "brown", "es": "marrón" },
+        { "en": "happy", "es": "feliz" },
+        { "en": "boy", "es": "niño" },
+        { "en": "friends", "es": "amigos" }
+      ],
+      "questions": [
+        { "q": "Where does Ana go?", "options": ["To school", "To the park", "To work"], "answer": "To the park" },
+        { "q": "What is the dog's name?", "options": ["Max", "Ana", "Sam"], "answer": "Max" },
+        { "q": "What color is the dog?", "options": ["Black", "White", "Brown"], "answer": "Brown" }
+      ]
+    },
+    {
+      "id": "s_a1_2",
+      "level": "A1",
+      "emoji": "🍎",
+      "title": "Breakfast Time",
+      "title_es": "La hora del desayuno",
+      "summary_es": "Una familia desayuna junta por la mañana.",
+      "sentences": [
+        { "en": "It is seven o'clock in the morning.", "es": "Son las siete de la mañana." },
+        { "en": "The family is in the kitchen.", "es": "La familia está en la cocina." },
+        { "en": "Mom makes coffee and bread.", "es": "Mamá hace café y pan." },
+        { "en": "Dad eats an apple.", "es": "Papá come una manzana." },
+        { "en": "The children drink milk.", "es": "Los niños beben leche." },
+        { "en": "\"I love breakfast!\" says the little girl.", "es": "\"¡Me encanta el desayuno!\", dice la niña pequeña." },
+        { "en": "They are all very happy.", "es": "Todos están muy felices." }
+      ],
+      "glossary": [
+        { "en": "morning", "es": "mañana" },
+        { "en": "family", "es": "familia" },
+        { "en": "kitchen", "es": "cocina" },
+        { "en": "coffee", "es": "café" },
+        { "en": "bread", "es": "pan" },
+        { "en": "apple", "es": "manzana" },
+        { "en": "milk", "es": "leche" },
+        { "en": "breakfast", "es": "desayuno" }
+      ],
+      "questions": [
+        { "q": "What does Dad eat?", "options": ["Bread", "An apple", "Cheese"], "answer": "An apple" },
+        { "q": "What do the children drink?", "options": ["Water", "Coffee", "Milk"], "answer": "Milk" },
+        { "q": "Where is the family?", "options": ["In the park", "In the kitchen", "At school"], "answer": "In the kitchen" }
+      ]
+    },
+    {
+      "id": "s_a2_1",
+      "level": "A2",
+      "emoji": "🚌",
+      "title": "A Busy Day",
+      "title_es": "Un día ocupado",
+      "summary_es": "Carlos cuenta lo que hizo ayer.",
+      "sentences": [
+        { "en": "Yesterday was a very busy day for Carlos.", "es": "Ayer fue un día muy ocupado para Carlos." },
+        { "en": "He woke up early and took a shower.", "es": "Se despertó temprano y se duchó." },
+        { "en": "He went to work by bus.", "es": "Fue al trabajo en autobús." },
+        { "en": "At noon, he had lunch with a friend.", "es": "Al mediodía, almorzó con un amigo." },
+        { "en": "After work, he bought some food.", "es": "Después del trabajo, compró algo de comida." },
+        { "en": "In the evening, he cooked dinner at home.", "es": "Por la tarde, cocinó la cena en casa." },
+        { "en": "He was tired, but he felt good.", "es": "Estaba cansado, pero se sentía bien." }
+      ],
+      "glossary": [
+        { "en": "yesterday", "es": "ayer" },
+        { "en": "busy", "es": "ocupado" },
+        { "en": "shower", "es": "ducha" },
+        { "en": "bus", "es": "autobús" },
+        { "en": "lunch", "es": "almuerzo" },
+        { "en": "bought", "es": "compró" },
+        { "en": "dinner", "es": "cena" },
+        { "en": "tired", "es": "cansado" }
+      ],
+      "questions": [
+        { "q": "How did Carlos go to work?", "options": ["By car", "By bus", "On foot"], "answer": "By bus" },
+        { "q": "What did he do after work?", "options": ["He slept", "He bought food", "He went to the park"], "answer": "He bought food" },
+        { "q": "How did he feel at the end?", "options": ["Tired but good", "Angry", "Bored"], "answer": "Tired but good" }
+      ]
+    },
+    {
+      "id": "s_b1_1",
+      "level": "B1",
+      "emoji": "✈️",
+      "title": "The Lost Suitcase",
+      "title_es": "La maleta perdida",
+      "summary_es": "Una viajera pierde su maleta en el aeropuerto.",
+      "sentences": [
+        { "en": "Marta had just arrived at the airport in London.", "es": "Marta acababa de llegar al aeropuerto de Londres." },
+        { "en": "She had travelled abroad many times before.", "es": "Había viajado al extranjero muchas veces antes." },
+        { "en": "However, this time her suitcase was missing.", "es": "Sin embargo, esta vez su maleta había desaparecido." },
+        { "en": "She went to the information desk to ask for help.", "es": "Fue al mostrador de información para pedir ayuda." },
+        { "en": "\"Don't worry, we have found it,\" said the agent.", "es": "\"No se preocupe, la hemos encontrado\", dijo el agente." },
+        { "en": "Her suitcase had been sent to the wrong city.", "es": "Su maleta había sido enviada a la ciudad equivocada." },
+        { "en": "It arrived the next morning, and Marta was relieved.", "es": "Llegó a la mañana siguiente, y Marta se sintió aliviada." }
+      ],
+      "glossary": [
+        { "en": "airport", "es": "aeropuerto" },
+        { "en": "travelled", "es": "viajado" },
+        { "en": "abroad", "es": "al extranjero" },
+        { "en": "suitcase", "es": "maleta" },
+        { "en": "missing", "es": "perdida/desaparecida" },
+        { "en": "help", "es": "ayuda" },
+        { "en": "relieved", "es": "aliviada" }
+      ],
+      "questions": [
+        { "q": "What problem did Marta have?", "options": ["She lost her passport", "Her suitcase was missing", "Her flight was cancelled"], "answer": "Her suitcase was missing" },
+        { "q": "Where was the suitcase sent?", "options": ["To the wrong city", "To her home", "To another person"], "answer": "To the wrong city" },
+        { "q": "How did Marta feel at the end?", "options": ["Angry", "Relieved", "Sad"], "answer": "Relieved" }
+      ]
+    },
+    {
+      "id": "s_b2_1",
+      "level": "B2",
+      "emoji": "🌍",
+      "title": "A Difficult Decision",
+      "title_es": "Una decisión difícil",
+      "summary_es": "Un joven debe elegir entre un trabajo seguro y su sueño.",
+      "sentences": [
+        { "en": "If David had taken the safe job, his life would have been simpler.", "es": "Si David hubiera aceptado el trabajo seguro, su vida habría sido más sencilla." },
+        { "en": "Nevertheless, he had always dreamed of starting his own company.", "es": "No obstante, siempre había soñado con crear su propia empresa." },
+        { "en": "His family was worried about the risks involved.", "es": "Su familia estaba preocupada por los riesgos que implicaba." },
+        { "en": "\"Unless you try, you will never know,\" his mentor told him.", "es": "\"A menos que lo intentes, nunca lo sabrás\", le dijo su mentor." },
+        { "en": "After months of doubt, he finally made up his mind.", "es": "Tras meses de duda, finalmente se decidió." },
+        { "en": "The decision was not easy, but it felt right.", "es": "La decisión no fue fácil, pero la sintió correcta." },
+        { "en": "Looking back, he was proud that he had followed his dream.", "es": "Mirando atrás, estaba orgulloso de haber seguido su sueño." }
+      ],
+      "glossary": [
+        { "en": "decision", "es": "decisión" },
+        { "en": "safe", "es": "seguro" },
+        { "en": "dreamed", "es": "soñado" },
+        { "en": "company", "es": "empresa" },
+        { "en": "risks", "es": "riesgos" },
+        { "en": "mentor", "es": "mentor" },
+        { "en": "proud", "es": "orgulloso" }
+      ],
+      "questions": [
+        { "q": "What did David dream of doing?", "options": ["Travelling", "Starting his own company", "Buying a house"], "answer": "Starting his own company" },
+        { "q": "What did his mentor advise?", "options": ["To stay safe", "To try", "To ask his family"], "answer": "To try" },
+        { "q": "How did he feel looking back?", "options": ["Proud", "Regretful", "Confused"], "answer": "Proud" }
+      ]
+    },
+    {
+      "id": "s_c1_1",
+      "level": "C1",
+      "emoji": "🔬",
+      "title": "The Power of Curiosity",
+      "title_es": "El poder de la curiosidad",
+      "summary_es": "Una reflexión sobre cómo la curiosidad impulsa el conocimiento.",
+      "sentences": [
+        { "en": "Seldom do we appreciate how curiosity shapes human progress.", "es": "Rara vez apreciamos cómo la curiosidad moldea el progreso humano." },
+        { "en": "Throughout history, the most significant discoveries arose from simple questions.", "es": "A lo largo de la historia, los descubrimientos más significativos surgieron de preguntas simples." },
+        { "en": "Furthermore, curiosity is not limited to scientists or scholars.", "es": "Además, la curiosidad no se limita a científicos o académicos." },
+        { "en": "Anyone willing to learn can contribute meaningfully to knowledge.", "es": "Cualquiera dispuesto a aprender puede contribuir de forma significativa al conocimiento." },
+        { "en": "Had society nurtured curiosity more deliberately, innovation would have flourished.", "es": "De haber cultivado la sociedad la curiosidad más deliberadamente, la innovación habría florecido." },
+        { "en": "Consequently, education should empower every citizen, not just a privileged few.", "es": "Por consiguiente, la educación debería empoderar a cada ciudadano, no solo a unos pocos privilegiados." },
+        { "en": "In the end, knowledge belongs to those who dare to ask.", "es": "Al final, el conocimiento pertenece a quienes se atreven a preguntar." }
+      ],
+      "glossary": [
+        { "en": "curiosity", "es": "curiosidad" },
+        { "en": "progress", "es": "progreso" },
+        { "en": "discoveries", "es": "descubrimientos" },
+        { "en": "scholars", "es": "académicos" },
+        { "en": "knowledge", "es": "conocimiento" },
+        { "en": "innovation", "es": "innovación" },
+        { "en": "citizen", "es": "ciudadano" }
+      ],
+      "questions": [
+        { "q": "According to the text, where do great discoveries often start?", "options": ["From simple questions", "From expensive labs", "From luck"], "answer": "From simple questions" },
+        { "q": "Who can contribute to knowledge?", "options": ["Only scientists", "Anyone willing to learn", "Only scholars"], "answer": "Anyone willing to learn" },
+        { "q": "What should education do?", "options": ["Empower every citizen", "Stay exclusive", "Focus on a few"], "answer": "Empower every citizen" }
+      ]
+    },
+    {
+      "id": "s_a2_2",
+      "level": "A2",
+      "emoji": "🛒",
+      "title": "At the Market",
+      "title_es": "En el mercado",
+      "summary_es": "Lucía va al mercado a comprar comida para la semana.",
+      "sentences": [
+        { "en": "On Saturday morning, Lucía went to the market.", "es": "El sábado por la mañana, Lucía fue al mercado." },
+        { "en": "She wanted to buy fresh fruit and vegetables.", "es": "Quería comprar fruta y verduras frescas." },
+        { "en": "\"How much are the apples?\" she asked.", "es": "\"¿Cuánto cuestan las manzanas?\", preguntó." },
+        { "en": "\"Two dollars a kilo,\" said the seller.", "es": "\"Dos dólares el kilo\", dijo el vendedor." },
+        { "en": "She bought apples, bread, and some cheese.", "es": "Compró manzanas, pan y un poco de queso." },
+        { "en": "The seller gave her a small discount.", "es": "El vendedor le dio un pequeño descuento." },
+        { "en": "Lucía paid and thanked him with a smile.", "es": "Lucía pagó y le dio las gracias con una sonrisa." }
+      ],
+      "glossary": [
+        { "en": "market", "es": "mercado" },
+        { "en": "fresh", "es": "fresco" },
+        { "en": "vegetables", "es": "verduras" },
+        { "en": "seller", "es": "vendedor" },
+        { "en": "discount", "es": "descuento" },
+        { "en": "paid", "es": "pagó" }
+      ],
+      "questions": [
+        { "q": "What did Lucía want to buy?", "options": ["Clothes", "Fresh fruit and vegetables", "A phone"], "answer": "Fresh fruit and vegetables" },
+        { "q": "How much were the apples?", "options": ["Two dollars a kilo", "Five dollars", "Free"], "answer": "Two dollars a kilo" },
+        { "q": "What did the seller give her?", "options": ["A small discount", "A gift", "Nothing"], "answer": "A small discount" }
+      ]
+    },
+    {
+      "id": "s_b1_2",
+      "level": "B1",
+      "emoji": "💼",
+      "title": "The Job Interview",
+      "title_es": "La entrevista de trabajo",
+      "summary_es": "Pedro tiene su primera entrevista importante.",
+      "sentences": [
+        { "en": "Pedro had been preparing for the interview all week.", "es": "Pedro había estado preparándose para la entrevista toda la semana." },
+        { "en": "He arrived early and waited nervously in the lobby.", "es": "Llegó temprano y esperó nerviosamente en el vestíbulo." },
+        { "en": "The manager asked about his experience and skills.", "es": "El gerente preguntó por su experiencia y sus habilidades." },
+        { "en": "\"I have worked in customer service for three years,\" he said.", "es": "\"He trabajado en atención al cliente durante tres años\", dijo." },
+        { "en": "He explained that he was a fast learner and a team player.", "es": "Explicó que aprendía rápido y que trabajaba bien en equipo." },
+        { "en": "The manager seemed impressed by his answers.", "es": "El gerente pareció impresionado por sus respuestas." },
+        { "en": "A week later, Pedro got the job he wanted.", "es": "Una semana después, Pedro consiguió el trabajo que quería." }
+      ],
+      "glossary": [
+        { "en": "interview", "es": "entrevista" },
+        { "en": "experience", "es": "experiencia" },
+        { "en": "skills", "es": "habilidades" },
+        { "en": "manager", "es": "gerente" },
+        { "en": "team player", "es": "jugador de equipo" },
+        { "en": "impressed", "es": "impresionado" }
+      ],
+      "questions": [
+        { "q": "How long had Pedro prepared?", "options": ["All week", "One hour", "He didn't"], "answer": "All week" },
+        { "q": "What was his experience in?", "options": ["Customer service", "Engineering", "Teaching"], "answer": "Customer service" },
+        { "q": "What happened a week later?", "options": ["He got the job", "He was rejected", "He moved away"], "answer": "He got the job" }
+      ]
+    },
+    {
+      "id": "s_c1_2",
+      "level": "C1",
+      "emoji": "🤖",
+      "title": "The Age of Machines",
+      "title_es": "La era de las máquinas",
+      "summary_es": "Una reflexión sobre la tecnología y el papel del ser humano.",
+      "sentences": [
+        { "en": "Few innovations have transformed society as profoundly as artificial intelligence.", "es": "Pocas innovaciones han transformado la sociedad tan profundamente como la inteligencia artificial." },
+        { "en": "Notwithstanding its benefits, it raises significant ethical concerns.", "es": "A pesar de sus beneficios, plantea preocupaciones éticas significativas." },
+        { "en": "Arguably, the greatest risk is not the technology itself, but our complacency.", "es": "Podría decirse que el mayor riesgo no es la tecnología en sí, sino nuestra complacencia." },
+        { "en": "Machines can process data, yet they cannot grasp human meaning.", "es": "Las máquinas pueden procesar datos, pero no pueden captar el significado humano." },
+        { "en": "Consequently, education must emphasize critical thinking over mere memorization.", "es": "Por consiguiente, la educación debe enfatizar el pensamiento crítico sobre la mera memorización." },
+        { "en": "It is human judgment, not computation, that should guide our decisions.", "es": "Es el juicio humano, no el cálculo, lo que debería guiar nuestras decisiones." },
+        { "en": "Ultimately, technology should serve humanity, not the other way around.", "es": "En última instancia, la tecnología debería servir a la humanidad, no al revés." }
+      ],
+      "glossary": [
+        { "en": "innovations", "es": "innovaciones" },
+        { "en": "profoundly", "es": "profundamente" },
+        { "en": "ethical", "es": "ético" },
+        { "en": "complacency", "es": "complacencia" },
+        { "en": "grasp", "es": "captar" },
+        { "en": "judgment", "es": "juicio" }
+      ],
+      "questions": [
+        { "q": "What does the author say is the greatest risk?", "options": ["The technology itself", "Our complacency", "The cost"], "answer": "Our complacency" },
+        { "q": "What can machines NOT do?", "options": ["Process data", "Grasp human meaning", "Compute"], "answer": "Grasp human meaning" },
+        { "q": "What should technology do?", "options": ["Serve humanity", "Replace humans", "Make decisions alone"], "answer": "Serve humanity" }
+      ]
+    },
+    {
+      "id": "s_a1_3",
+      "level": "A1",
+      "emoji": "🐶",
+      "title": "My Dog Rocky",
+      "title_es": "Mi perro Rocky",
+      "summary_es": "Un niño describe a su perro y su rutina diaria.",
+      "sentences": [
+        { "en": "I have a dog. His name is Rocky.", "es": "Tengo un perro. Se llama Rocky." },
+        { "en": "He is small and brown.", "es": "Es pequeño y marrón." },
+        { "en": "Every morning, Rocky wakes me up.", "es": "Cada mañana, Rocky me despierta." },
+        { "en": "We go to the park together.", "es": "Vamos al parque juntos." },
+        { "en": "He likes to run and play.", "es": "Le gusta correr y jugar." },
+        { "en": "In the evening, he eats his food.", "es": "Por la tarde, come su comida." },
+        { "en": "Rocky is my best friend.", "es": "Rocky es mi mejor amigo." }
+      ],
+      "glossary": [
+        { "en": "dog", "es": "perro" },
+        { "en": "small", "es": "pequeño" },
+        { "en": "morning", "es": "mañana" },
+        { "en": "park", "es": "parque" },
+        { "en": "run", "es": "correr" },
+        { "en": "friend", "es": "amigo" }
+      ],
+      "questions": [
+        { "q": "What is the dog's name?", "options": ["Rocky", "Max", "Bo"], "answer": "Rocky" },
+        { "q": "What color is the dog?", "options": ["Black", "Brown", "White"], "answer": "Brown" },
+        { "q": "Where do they go together?", "options": ["To school", "To the park", "To the store"], "answer": "To the park" }
+      ]
+    },
+    {
+      "id": "s_a2_3",
+      "level": "A2",
+      "emoji": "🎂",
+      "title": "A Surprise Party",
+      "title_es": "Una fiesta sorpresa",
+      "summary_es": "Los amigos preparan una fiesta sorpresa para Sara.",
+      "sentences": [
+        { "en": "Last Friday, we planned a surprise party for Sara.", "es": "El viernes pasado, planeamos una fiesta sorpresa para Sara." },
+        { "en": "We decorated the house and bought a big cake.", "es": "Decoramos la casa y compramos un pastel grande." },
+        { "en": "Everyone arrived early and stayed quiet.", "es": "Todos llegaron temprano y se quedaron callados." },
+        { "en": "When Sara opened the door, we shouted 'Surprise!'", "es": "Cuando Sara abrió la puerta, gritamos '¡Sorpresa!'" },
+        { "en": "She was very happy and a little surprised.", "es": "Estaba muy feliz y un poco sorprendida." },
+        { "en": "We danced and ate cake all night.", "es": "Bailamos y comimos pastel toda la noche." },
+        { "en": "It was a wonderful evening.", "es": "Fue una velada maravillosa." }
+      ],
+      "glossary": [
+        { "en": "surprise", "es": "sorpresa" },
+        { "en": "party", "es": "fiesta" },
+        { "en": "decorated", "es": "decoramos" },
+        { "en": "cake", "es": "pastel" },
+        { "en": "quiet", "es": "callado" },
+        { "en": "danced", "es": "bailamos" }
+      ],
+      "questions": [
+        { "q": "Who was the party for?", "options": ["Sara", "Pedro", "Ana"], "answer": "Sara" },
+        { "q": "What did they buy?", "options": ["A big cake", "Flowers", "A gift card"], "answer": "A big cake" },
+        { "q": "How did Sara feel?", "options": ["Angry", "Happy and surprised", "Bored"], "answer": "Happy and surprised" }
+      ]
+    },
+    {
+      "id": "s_b2_2",
+      "level": "B2",
+      "emoji": "🌱",
+      "title": "The Small Change",
+      "title_es": "El pequeño cambio",
+      "summary_es": "Una comunidad transforma su barrio con pequeñas acciones.",
+      "sentences": [
+        { "en": "When the residents noticed how polluted their street had become, they decided to act.", "es": "Cuando los residentes notaron lo contaminada que se había vuelto su calle, decidieron actuar." },
+        { "en": "Rather than waiting for the government, they organized themselves.", "es": "En lugar de esperar al gobierno, se organizaron." },
+        { "en": "Every weekend, volunteers collected waste and planted trees.", "es": "Cada fin de semana, los voluntarios recogían residuos y plantaban árboles." },
+        { "en": "At first, progress was slow and some neighbors were skeptical.", "es": "Al principio, el progreso era lento y algunos vecinos eran escépticos." },
+        { "en": "Nevertheless, within a year the neighborhood had completely changed.", "es": "No obstante, en un año el barrio había cambiado por completo." },
+        { "en": "The project proved that small, consistent actions can have a big impact.", "es": "El proyecto demostró que las acciones pequeñas y constantes pueden tener un gran impacto." },
+        { "en": "Today, other communities use it as an example to follow.", "es": "Hoy, otras comunidades lo usan como un ejemplo a seguir." }
+      ],
+      "glossary": [
+        { "en": "polluted", "es": "contaminada" },
+        { "en": "volunteers", "es": "voluntarios" },
+        { "en": "waste", "es": "residuos" },
+        { "en": "skeptical", "es": "escéptico" },
+        { "en": "impact", "es": "impacto" },
+        { "en": "community", "es": "comunidad" }
+      ],
+      "questions": [
+        { "q": "What did the residents decide to do?", "options": ["Wait for the government", "Act themselves", "Move away"], "answer": "Act themselves" },
+        { "q": "What did the volunteers do?", "options": ["Collected waste and planted trees", "Built houses", "Opened shops"], "answer": "Collected waste and planted trees" },
+        { "q": "What did the project prove?", "options": ["Small actions have a big impact", "Nothing changes", "Only money matters"], "answer": "Small actions have a big impact" }
+      ]
+    },
+    {
+      "id": "s_b2_3",
+      "level": "B2",
+      "emoji": "💡",
+      "title": "The Late Bloomer",
+      "title_es": "El que florece tarde",
+      "summary_es": "Una mujer cambia de carrera a los cuarenta y encuentra su pasión.",
+      "sentences": [
+        { "en": "For most of her life, Marina had worked in a job she found unfulfilling.", "es": "Durante casi toda su vida, Marina había trabajado en un empleo que le resultaba insatisfactorio." },
+        { "en": "It wasn't until her forties that she discovered a passion for design.", "es": "No fue hasta los cuarenta cuando descubrió una pasión por el diseño." },
+        { "en": "Many people told her it was too late to start over.", "es": "Mucha gente le decía que era demasiado tarde para empezar de nuevo." },
+        { "en": "Nevertheless, she enrolled in evening classes while keeping her day job.", "es": "Sin embargo, se inscribió en clases nocturnas mientras mantenía su trabajo diurno." },
+        { "en": "Progress was slow, and there were moments when she nearly gave up.", "es": "El progreso era lento, y hubo momentos en que casi se rindió." },
+        { "en": "Eventually, her persistence paid off and she launched her own studio.", "es": "Con el tiempo, su perseverancia dio frutos y abrió su propio estudio." },
+        { "en": "Her story reminds us that it is never too late to reinvent ourselves.", "es": "Su historia nos recuerda que nunca es demasiado tarde para reinventarnos." }
+      ],
+      "glossary": [
+        { "en": "unfulfilling", "es": "insatisfactorio" },
+        { "en": "passion", "es": "pasión" },
+        { "en": "enrolled", "es": "se inscribió" },
+        { "en": "persistence", "es": "perseverancia" },
+        { "en": "paid off", "es": "dio frutos" },
+        { "en": "reinvent", "es": "reinventar" }
+      ],
+      "questions": [
+        { "q": "When did Marina discover her passion?", "options": ["In her twenties", "In her forties", "As a child"], "answer": "In her forties" },
+        { "q": "What did she do to pursue it?", "options": ["Quit immediately", "Took evening classes", "Did nothing"], "answer": "Took evening classes" },
+        { "q": "What is the message of the story?", "options": ["It's never too late to reinvent yourself", "Always play it safe", "Money is everything"], "answer": "It's never too late to reinvent yourself" }
+      ]
+    },
+    {
+      "id": "s_b2_4",
+      "level": "B2",
+      "emoji": "🤝",
+      "title": "The Misunderstanding",
+      "title_es": "El malentendido",
+      "summary_es": "Dos colegas resuelven un conflicto gracias a la comunicación.",
+      "sentences": [
+        { "en": "Tom assumed his colleague had ignored his email on purpose.", "es": "Tom supuso que su colega había ignorado su correo a propósito." },
+        { "en": "Feeling offended, he started avoiding her at the office.", "es": "Sintiéndose ofendido, empezó a evitarla en la oficina." },
+        { "en": "The tension between them grew over several days.", "es": "La tensión entre ellos creció durante varios días." },
+        { "en": "Eventually, their manager suggested they talk it through.", "es": "Finalmente, su jefe sugirió que lo hablaran." },
+        { "en": "It turned out the email had gone straight to her spam folder.", "es": "Resultó que el correo había ido directo a su carpeta de spam." },
+        { "en": "Both of them realized how easily assumptions can damage a relationship.", "es": "Ambos se dieron cuenta de lo fácil que las suposiciones pueden dañar una relación." },
+        { "en": "From then on, they made a point of communicating clearly.", "es": "A partir de entonces, se propusieron comunicarse con claridad." }
+      ],
+      "glossary": [
+        { "en": "assumed", "es": "supuso" },
+        { "en": "offended", "es": "ofendido" },
+        { "en": "tension", "es": "tensión" },
+        { "en": "turned out", "es": "resultó" },
+        { "en": "assumptions", "es": "suposiciones" },
+        { "en": "clearly", "es": "con claridad" }
+      ],
+      "questions": [
+        { "q": "Why did Tom avoid his colleague?", "options": ["He thought she ignored him", "She was rude", "He was busy"], "answer": "He thought she ignored him" },
+        { "q": "What had actually happened to the email?", "options": ["It went to spam", "She deleted it", "He never sent it"], "answer": "It went to spam" },
+        { "q": "What did they learn?", "options": ["To communicate clearly", "To avoid each other", "To change jobs"], "answer": "To communicate clearly" }
+      ]
+    },
+    {
+      "id": "s_b2_5",
+      "level": "B2",
+      "emoji": "🏝️",
+      "title": "The Island Without Wi-Fi",
+      "title_es": "La isla sin wifi",
+      "summary_es": "Un adicto al trabajo pasa una semana desconectado y descubre algo inesperado.",
+      "sentences": [
+        { "en": "When Daniel booked a week on a remote island, he didn't realize there would be no signal at all.", "es": "Cuando Daniel reservó una semana en una isla remota, no se dio cuenta de que no habría señal en absoluto." },
+        { "en": "For the first two days, he kept checking a phone that had nothing to show him.", "es": "Durante los dos primeros días, no dejaba de mirar un teléfono que no tenía nada que mostrarle." },
+        { "en": "By the third day, something strange happened: he started noticing things.", "es": "Al tercer día, ocurrió algo extraño: empezó a fijarse en las cosas." },
+        { "en": "The fishermen repaired their nets while telling stories he half understood.", "es": "Los pescadores reparaban sus redes mientras contaban historias que él entendía a medias." },
+        { "en": "He helped an old man carry water, and they talked for an hour using simple words and gestures.", "es": "Ayudó a un anciano a cargar agua, y hablaron durante una hora usando palabras sencillas y gestos." },
+        { "en": "On the last night, Daniel wrote in a notebook instead of typing on a screen.", "es": "La última noche, Daniel escribió en un cuaderno en lugar de teclear en una pantalla." },
+        { "en": "\"I came here to disconnect,\" he wrote, \"but actually, I finally connected.\"", "es": "\"Vine aquí a desconectarme\", escribió, \"pero en realidad, por fin me conecté.\"" }
+      ],
+      "glossary": [
+        { "en": "remote", "es": "remoto" },
+        { "en": "signal", "es": "señal" },
+        { "en": "noticing", "es": "fijándose en" },
+        { "en": "nets", "es": "redes" },
+        { "en": "gestures", "es": "gestos" },
+        { "en": "notebook", "es": "cuaderno" }
+      ],
+      "questions": [
+        { "q": "What surprised Daniel about the island?", "options": ["There was no signal", "It was crowded", "It was expensive"], "answer": "There was no signal" },
+        { "q": "What changed on the third day?", "options": ["He started noticing things", "He found Wi-Fi", "He went home"], "answer": "He started noticing things" },
+        { "q": "What did he write on the last night?", "options": ["That he finally connected", "That he hated the island", "A work email"], "answer": "That he finally connected" }
+      ]
+    },
+    {
+      "id": "s_c1_3",
+      "level": "C1",
+      "emoji": "⏳",
+      "title": "The Art of Slow Thinking",
+      "title_es": "El arte de pensar despacio",
+      "summary_es": "Un ensayo breve sobre por qué las mejores decisiones no son las más rápidas.",
+      "sentences": [
+        { "en": "We live in an age that mistakes speed for intelligence.", "es": "Vivimos en una época que confunde la velocidad con la inteligencia." },
+        { "en": "Notifications reward the instant reply; algorithms amplify the hasty opinion.", "es": "Las notificaciones premian la respuesta instantánea; los algoritmos amplifican la opinión apresurada." },
+        { "en": "Yet the decisions we regret most are rarely the ones we made too slowly.", "es": "Sin embargo, las decisiones de las que más nos arrepentimos rara vez son las que tomamos demasiado despacio." },
+        { "en": "Slow thinking is not hesitation; it is deliberate resistance to the shallow.", "es": "Pensar despacio no es titubear; es una resistencia deliberada a lo superficial." },
+        { "en": "It asks uncomfortable questions: What am I assuming? What would change my mind?", "es": "Plantea preguntas incómodas: ¿Qué estoy asumiendo? ¿Qué me haría cambiar de opinión?" },
+        { "en": "Paradoxically, those who pause the longest often act the most decisively.", "es": "Paradójicamente, quienes más se detienen suelen actuar con mayor decisión." },
+        { "en": "In a noisy world, patience may be the last true competitive advantage.", "es": "En un mundo ruidoso, la paciencia puede ser la última ventaja competitiva verdadera." }
+      ],
+      "glossary": [
+        { "en": "hasty", "es": "apresurado" },
+        { "en": "regret", "es": "arrepentirse" },
+        { "en": "hesitation", "es": "titubeo" },
+        { "en": "deliberate", "es": "deliberado" },
+        { "en": "assuming", "es": "asumiendo" },
+        { "en": "advantage", "es": "ventaja" }
+      ],
+      "questions": [
+        { "q": "What does the age we live in mistake speed for?", "options": ["Intelligence", "Kindness", "Wealth"], "answer": "Intelligence" },
+        { "q": "According to the text, slow thinking is…", "options": ["Deliberate resistance to the shallow", "A form of fear", "A waste of time"], "answer": "Deliberate resistance to the shallow" },
+        { "q": "What may be the last true competitive advantage?", "options": ["Patience", "Technology", "Money"], "answer": "Patience" }
+      ]
+    }
+  ]
+}
