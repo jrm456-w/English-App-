@@ -105,6 +105,17 @@ export async function learningPath(_p, view) {
   room.onclick = () => navigate('/room/session');
   view.appendChild(room);
 
+  /* ---- Communication lesson: agree/disagree/opinions (functional language) ---- */
+  const comm = el(`
+    <div class="card card--tap" style="border:2px solid var(--c-accent)">
+      <div class="row" style="justify-content:space-between">
+        <strong>💬 ${t('func.title')}</strong><span class="badge pill">🆕</span>
+      </div>
+      <small class="muted">${t('func.subtitle')}</small>
+    </div>`);
+  comm.onclick = () => navigate('/functions');
+  view.appendChild(comm);
+
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();
   const due = await dueCount(s.level);
