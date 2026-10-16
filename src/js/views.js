@@ -1,5 +1,5 @@
 /* Screen renderers for Home, Learn, Unit, Games, Progress, Settings. */
-import { el, clear, toast, localDate } from './ui.js';
+import { el, clear, toast, localDate, escapeHtml } from './ui.js';
 import { t, setLang, applyTranslations } from './i18n.js';
 import { getState, setState, resetState } from './store.js';
 import { loadLevel, levels } from './data.js';
@@ -567,7 +567,7 @@ function accountCard(view, _p) {
 
   const user = getUser();
   if (user) {
-    card.appendChild(el(`<p style="margin:8px 0">${t('auth.signedInAs')}<br><strong>${user.email || user.displayName || 'Google'}</strong></p>`));
+    card.appendChild(el(`<p style="margin:8px 0">${t('auth.signedInAs')}<br><strong>${escapeHtml(user.email || user.displayName || 'Google')}</strong></p>`));
     card.appendChild(el(`<p class="muted" style="margin:0 0 8px">${t('auth.synced')}</p>`));
     const out = el(`<button class="btn btn--ghost btn--block">${t('auth.signOut')}</button>`);
     out.onclick = async () => { await signOutCloud(); location.reload(); };

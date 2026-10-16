@@ -16,7 +16,7 @@
        4) Añade tu dominio de Netlify en Authentication → Settings → Authorized domains
        5) Pega la config aquí abajo
    ============================================================ */
-export const firebaseConfig = {
+export const firebaseConfig = Object.freeze({
   apiKey: "AIzaSyBi-vUMvspZ7yQELVA9QKwELxGVnT_OzNU",
   authDomain: "english-app-17680.firebaseapp.com",
   projectId: "english-app-17680",
@@ -24,7 +24,7 @@ export const firebaseConfig = {
   messagingSenderId: "1054510351612",
   appId: "1:1054510351612:web:9f32e86c3de4dadd414379",
   measurementId: "G-H6K8JV09QS"
-};
+});
 
 export function isFirebaseConfigured() {
   return typeof firebaseConfig.apiKey === 'string' &&
@@ -35,17 +35,16 @@ export function isFirebaseConfigured() {
 /* ============================================================
    Lista blanca de correos permitidos
    ------------------------------------------------------------
-   - Si la dejas VACÍA, cualquier cuenta de Google puede entrar.
    - Si pones uno o más correos, SOLO esos podrán iniciar sesión
      (los demás se cierran automáticamente).
-   IMPORTANTE: esto es solo la primera barrera (en el navegador).
+   IMPORTANTE: esto es la primera barrera (en el navegador).
    La seguridad REAL la dan las Reglas de Firestore (ver README),
    donde debes repetir esta misma lista de correos.
    ============================================================ */
-export const allowedEmails = [
+export const allowedEmails = Object.freeze([
   "jr944180@gmail.com",
   "riveraerick628@gmail.com",
-];
+]);
 
 /* requireLogin = true  -> NADIE usa la app sin iniciar sesión (muro de acceso).
    requireLogin = false -> el login es opcional (solo para sincronizar).
@@ -53,7 +52,8 @@ export const allowedEmails = [
 export const requireLogin = true;
 
 export function isEmailAllowed(email) {
-  if (!allowedEmails.length) return true; // sin lista => abierto
-  if (!email) return false;
-  return allowedEmails.map((e) => e.toLowerCase().trim()).includes(email.toLowerCase().trim());
+  if (!allowedEmails.length) return !requireLogin; // fail-closed cuando requireLogin es true
+  if (!email || typeof email !== 'string') return false;
+  const clean = email.toLowerCase().trim();
+  return allowedEmails.some((e) => e.toLowerCase().trim() === clean);
 }

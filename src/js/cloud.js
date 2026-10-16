@@ -41,16 +41,16 @@ async function ensureInit() {
     // Keep cloud copy updated as the user plays (debounced).
     subscribe(() => schedulePush());
     authMod.onAuthStateChanged(auth, async (user) => {
-      // Enforce the email allowlist on the client (Firestore rules enforce it on the server).
-      if (user && !isEmailAllowed(user.email)) {
+      // Enforce verified email + allowlist on the client (Firestore rules enforce it on the server).
+      if (user && (!user.emailVerified || !isEmailAllowed(user.email))) {
         const email = user.email;
         await signOutCloud();
         deniedCbs.forEach((cb) => cb(email));
         return;
       }
       currentUser = user;
-      if (user) {
-        try { localStorage.setItem(AUTH_FLAG, user.email || '1'); } catch {}
+      if (user && user.email) {
+        try { localStorage.setItem(AUTH_FLAG, user.email.toLowerCase().trim()); } catch {}
         await pullAndMerge();
       }
       resolveFirstAuth(currentUser);
@@ -67,10 +67,13 @@ async function ensureInit() {
 /* Restore a previous session on boot (no-op if not configured / offline). */
 export function autoStart() { ensureInit(); }
 
-/* True if this device has signed in with an allowed account at least once
-   (used to grant offline access to the owner after the first online login). */
+/* True if this device has signed in with a currently-allowed account at least once
+   (revokes offline access immediately if an email is later removed from allowedEmails). */
 export function wasAuthorized() {
-  try { return !!localStorage.getItem(AUTH_FLAG); } catch { return false; }
+  try {
+    const savedEmail = localStorage.getItem(AUTH_FLAG);
+    return !!savedEmail && isEmailAllowed(savedEmail);
+  } catch { return false; }
 }
 
 /* Used by the login gate. Waits for the first auth state, with a timeout for

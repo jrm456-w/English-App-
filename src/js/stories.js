@@ -180,7 +180,7 @@ export async function storyReader({ id }, view) {
           const heard = await listenOnce();
           const pass = heard.some((h) => normalize(h) === normalize(s.en)) ||
                        heard.some((h) => overlap(normalize(h), normalize(s.en)) >= 0.7);
-          fb.innerHTML = `<div class="feedback ${pass ? 'feedback--ok' : 'feedback--no'}">${pass ? '✅ ' + t('common.correct') : '🔁 ' + t('speak.heard') + ': "' + (heard[0] || '') + '"'}</div>`;
+          fb.innerHTML = `<div class="feedback ${pass ? 'feedback--ok' : 'feedback--no'}">${pass ? '✅ ' + t('common.correct') : '🔁 ' + t('speak.heard') + ': "' + escapeHtml(heard[0] || '') + '"'}</div>`;
         } catch {
           fb.innerHTML = `<div class="feedback feedback--no">🎤</div>`;
         }

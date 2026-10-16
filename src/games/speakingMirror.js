@@ -1,5 +1,5 @@
 /* Speaking Mirror — user speaks a sentence; STT checks pronunciation (B1+). */
-import { el, clear, sample } from '../js/ui.js';
+import { el, clear, sample, escapeHtml } from '../js/ui.js';
 import { speak, listenOnce, sttSupported, normalize } from '../js/speech.js';
 import { t } from '../js/i18n.js';
 
@@ -16,7 +16,7 @@ export function speakingMirror(stage, ctx) {
       <div class="card center">
         <p class="muted">${t('quiz.question')} ${i + 1} ${t('quiz.of')} ${total}</p>
         <p>${t('speak.prompt')}</p>
-        <h2 class="h2">${target}</h2>
+        <h2 class="h2">${escapeHtml(target)}</h2>
         <button class="btn btn--ghost" id="hear">${t('common.listen')}</button>
         <button class="btn btn--accent btn--block" id="speak" style="margin-top:12px">${t('common.speak')}</button>
         <div id="fb"></div>
@@ -48,7 +48,7 @@ export function speakingMirror(stage, ctx) {
         fb.innerHTML = `
           <div class="feedback ${pass ? 'feedback--ok' : 'feedback--no'}">
             ${pass ? '✅ ' + t('common.correct') : '❌ ' + t('common.wrong')}<br>
-            <small>${t('speak.heard')}: "${heard[0] || ''}"</small>
+            <small>${t('speak.heard')}: "${escapeHtml(heard[0] || '')}"</small>
           </div>`;
       } catch {
         fb.innerHTML = `<div class="feedback feedback--no">🎤 ${t('common.wrong')}</div>`;

@@ -1,7 +1,7 @@
 /* Daily Speaking — output practice (the missing half: producing language, not just understanding).
    Shadowing: hear a sentence, then say it; speech recognition gives lenient pass/fail.
    Falls back to read-aloud self-assessment when STT is unavailable. */
-import { el, clear, sample, celebrate } from './ui.js';
+import { el, clear, sample, celebrate, escapeHtml } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadLevel } from './data.js';
@@ -38,7 +38,7 @@ export async function speaking(_p, view) {
       <div class="card center">
         <p class="muted">${i + 1} / ${total}</p>
         <p>${t('speak.prompt')}</p>
-        <h2 class="h2">${sentence}</h2>
+        <h2 class="h2">${escapeHtml(sentence)}</h2>
         <button class="btn btn--ghost" id="hear">${t('common.listen')}</button>
         ${sttSupported() ? `<button class="btn btn--accent btn--block" id="rec" style="margin-top:12px">${t('common.speak')}</button>` : ''}
         <div id="fb"></div>
@@ -61,7 +61,7 @@ export async function speaking(_p, view) {
         const pass = heard.some((h) => normalize(h) === normalize(sentence)) ||
                      heard.some((h) => overlap(normalize(h), normalize(sentence)) >= 0.7);
         if (pass) good++;
-        fb.innerHTML = `<div class="feedback ${pass ? 'feedback--ok' : 'feedback--no'}">${pass ? '✅ ' + t('common.correct') : '🔁 ' + t('speak.heard') + ': "' + (heard[0] || '') + '"'}</div>`;
+        fb.innerHTML = `<div class="feedback ${pass ? 'feedback--ok' : 'feedback--no'}">${pass ? '✅ ' + t('common.correct') : '🔁 ' + t('speak.heard') + ': "' + escapeHtml(heard[0] || '') + '"'}</div>`;
       } catch {
         fb.innerHTML = `<div class="feedback feedback--no">🎤 ${t('speak2.retry')}</div>`;
       }
