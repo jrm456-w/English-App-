@@ -14,9 +14,14 @@ let cachedVoice = null;
 function pickEnglishVoice() {
   if (cachedVoice) return cachedVoice;
   const voices = window.speechSynthesis.getVoices();
+  const enVoices = voices.filter((v) => /^en([-_]|$)/i.test(v.lang));
+  const isUS = (v) => /en[-_]US/i.test(v.lang);
+  const isNatural = (v) => /natural|online|neural|google|siri|premium|enhanced/i.test(v.name);
   cachedVoice =
-    voices.find((v) => /en[-_]US/i.test(v.lang)) ||
-    voices.find((v) => /^en/i.test(v.lang)) ||
+    enVoices.find((v) => isUS(v) && isNatural(v)) ||
+    enVoices.find((v) => isNatural(v)) ||
+    enVoices.find((v) => isUS(v)) ||
+    enVoices[0] ||
     null;
   return cachedVoice;
 }

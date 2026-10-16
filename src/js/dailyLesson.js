@@ -2,7 +2,7 @@
    Learn new words -> Practice them -> Review due words.
    It walks sequentially through the level's vocabulary (a real curriculum),
    so each day brings something new and each level leads into the next. */
-import { el, clear, shuffle, sample, celebrate } from './ui.js';
+import { el, clear, shuffle, sample, celebrate, localDate } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { vocabPool } from './data.js';
@@ -14,7 +14,7 @@ import { navigate, goBack } from './router.js';
 const NEW_PER_DAY = 5;
 const REVIEW_PER_DAY = 6;
 
-function today() { return new Date().toISOString().slice(0, 10); }
+function today() { return localDate(); }
 
 export async function newWordsToday(level) {
   const pool = await vocabPool(level);

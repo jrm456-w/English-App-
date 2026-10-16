@@ -1,5 +1,5 @@
 /* EngFlow Service Worker — Cache-First for static assets & lesson data */
-const CACHE_VERSION = 'engflow-v39';
+const CACHE_VERSION = 'engflow-v40';
 const OFFLINE_URL = './offline.html';
 
 // Everything needed to run 100% offline after first load.
@@ -10,6 +10,7 @@ const PRECACHE_URLS = [
   './manifest.json',
   './src/css/styles.css',
   './src/js/app.js',
+  './src/js/ui.js',
   './src/js/router.js',
   './src/js/store.js',
   './src/js/i18n.js',

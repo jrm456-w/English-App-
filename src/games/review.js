@@ -1,7 +1,7 @@
 /* Smart Review — spaced repetition (Leitner system).
    This is the core "learn it for good, fast" engine: words you know move to
    longer intervals; words you miss come back tomorrow. */
-import { el, clear } from '../js/ui.js';
+import { el, clear, localDate } from '../js/ui.js';
 import { t } from '../js/i18n.js';
 import { getState, update } from '../js/store.js';
 import { vocabPool } from '../js/data.js';
@@ -13,8 +13,8 @@ import { navigate, goBack } from '../js/router.js';
 const BOX_DAYS = { 1: 1, 2: 2, 3: 4, 4: 8, 5: 16 };
 const SESSION_MAX = 12;
 
-function today() { return new Date().toISOString().slice(0, 10); }
-function addDays(n) { const d = new Date(); d.setDate(d.getDate() + n); return d.toISOString().slice(0, 10); }
+function today() { return localDate(); }
+function addDays(n) { const d = new Date(); d.setDate(d.getDate() + n); return localDate(d); }
 function keyFor(level, en) { return `${level}:${en}`; }
 
 /* How many words are due for review right now (used on Home). */

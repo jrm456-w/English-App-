@@ -44,6 +44,7 @@ export function isFirebaseConfigured() {
    ============================================================ */
 export const allowedEmails = [
   "jr944180@gmail.com",
+  "riveraerick628@gmail.com",
 ];
 
 /* requireLogin = true  -> NADIE usa la app sin iniciar sesión (muro de acceso).

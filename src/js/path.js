@@ -94,39 +94,6 @@ export async function learningPath(_p, view) {
     view.appendChild(card);
   }
 
-  /* ---- Speaking Room: fastest way to build spoken fluency (voice only) ---- */
-  const room = el(`
-    <div class="card card--tap" style="border:2px solid var(--c-accent);background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.06))">
-      <div class="row" style="justify-content:space-between">
-        <strong>🎙️ ${t('room.cta')}</strong><span class="badge pill">🎤</span>
-      </div>
-      <small class="muted">${t('room.ctaHint')}</small>
-    </div>`);
-  room.onclick = () => navigate('/room/session');
-  view.appendChild(room);
-
-  /* ---- Communication lesson: agree/disagree/opinions (functional language) ---- */
-  const comm = el(`
-    <div class="card card--tap" style="border:2px solid var(--c-accent)">
-      <div class="row" style="justify-content:space-between">
-        <strong>💬 ${t('func.title')}</strong><span class="badge pill">🆕</span>
-      </div>
-      <small class="muted">${t('func.subtitle')}</small>
-    </div>`);
-  comm.onclick = () => navigate('/functions');
-  view.appendChild(comm);
-
-  /* ---- Class Prep: get ready before each class (aligned to the real calendar) ---- */
-  const prep = el(`
-    <div class="card card--tap" style="border:2px solid var(--c-accent)">
-      <div class="row" style="justify-content:space-between">
-        <strong>📅 ${t('prep.cta')}</strong><span class="badge pill">${t('prep.thisWeek')}</span>
-      </div>
-      <small class="muted">Vocabulario y frases de tu clase, antes de ir. Lun→Jue.</small>
-    </div>`);
-  prep.onclick = () => navigate('/prep');
-  view.appendChild(prep);
-
   /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
   const d = getDaily();
   const due = await dueCount(s.level);
@@ -158,6 +125,38 @@ export async function learningPath(_p, view) {
   if (next) cta.onclick = next.run; else cta.disabled = true;
   plan.appendChild(cta);
   view.appendChild(plan);
+
+  /* ---- Speaking Room & Class Modes (compact access) ---- */
+  const room = el(`
+    <div class="card card--tap" style="border:2px solid var(--c-accent);background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.06))">
+      <div class="row" style="justify-content:space-between">
+        <strong>🎙️ ${t('room.cta')}</strong><span class="badge pill">🎤</span>
+      </div>
+      <small class="muted">${t('room.ctaHint')}</small>
+    </div>`);
+  room.onclick = () => navigate('/room/session');
+  view.appendChild(room);
+
+  const quickModes = el(`<div class="grid grid--2" style="margin-bottom:var(--sp-4)"></div>`);
+  const comm = el(`
+    <div class="card card--tap" style="margin-bottom:0;border:1px solid var(--c-accent)">
+      <div class="row" style="justify-content:space-between">
+        <strong>💬 ${t('func.title')}</strong><span class="badge pill">🆕</span>
+      </div>
+      <small class="muted">${t('func.subtitle')}</small>
+    </div>`);
+  comm.onclick = () => navigate('/functions');
+  const prep = el(`
+    <div class="card card--tap" style="margin-bottom:0;border:1px solid var(--c-accent)">
+      <div class="row" style="justify-content:space-between">
+        <strong>📅 ${t('prep.cta')}</strong><span class="badge">${t('prep.thisWeek')}</span>
+      </div>
+      <small class="muted">Vocabulario y frases antes de tu clase (Lun→Jue).</small>
+    </div>`);
+  prep.onclick = () => navigate('/prep');
+  quickModes.appendChild(comm);
+  quickModes.appendChild(prep);
+  view.appendChild(quickModes);
 
   view.appendChild(el(`<h2 class="h2">${t('path.yourPath')}</h2>`));
   view.appendChild(el(`<p class="muted" style="margin-top:-8px;font-size:.85rem">${t('path.mapHint')}</p>`));

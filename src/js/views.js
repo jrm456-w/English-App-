@@ -1,5 +1,5 @@
 /* Screen renderers for Home, Learn, Unit, Games, Progress, Settings. */
-import { el, clear, toast } from './ui.js';
+import { el, clear, toast, localDate } from './ui.js';
 import { t, setLang, applyTranslations } from './i18n.js';
 import { getState, setState, resetState } from './store.js';
 import { loadLevel, levels } from './data.js';
@@ -412,7 +412,7 @@ export async function progress(_p, view) {
     const days = [];
     for (let k = 6; k >= 0; k--) {
       const dte = new Date(); dte.setDate(dte.getDate() - k);
-      const iso = dte.toISOString().slice(0, 10);
+      const iso = localDate(dte);
       days.push({ iso, xp: log[iso] || 0, dow: dte.getDay(), today: k === 0 });
     }
     const maxXp = Math.max(...days.map((d2) => d2.xp), 1);
@@ -443,7 +443,7 @@ export async function progress(_p, view) {
     const grid = el(`<div class="viz-cal"></div>`);
     for (let k = 27; k >= 0; k--) {
       const dte = new Date(); dte.setDate(dte.getDate() - k);
-      const iso = dte.toISOString().slice(0, 10);
+      const iso = localDate(dte);
       const xp = log[iso] || 0;
       const lvl2 = xp >= 50 ? 3 : xp >= 20 ? 2 : xp > 0 ? 1 : 0;
       grid.appendChild(el(`<span class="viz-cell viz-cell--${lvl2}" title="${iso} · ${xp} XP"></span>`));

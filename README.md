@@ -66,7 +66,7 @@ Hay **dos barreras** y debes configurar las dos:
 ```js
 export const allowedEmails = [
   "jr944180@gmail.com",
-  // "otro.permitido@gmail.com",
+  "riveraerick628@gmail.com",
 ];
 ```
 Si dejas la lista vacía, cualquiera puede entrar. Con correos, los demás se **cierran automáticamente** y ven un aviso. (Esto es solo UX: un usuario avanzado podría saltárselo, por eso hace falta la barrera 2.)
@@ -82,8 +82,8 @@ service cloud.firestore {
       return request.auth != null
         && request.auth.token.email_verified == true
         && request.auth.token.email in [
-             'jr944180@gmail.com'
-             // , 'otro.permitido@gmail.com'
+             'jr944180@gmail.com',
+             'riveraerick628@gmail.com'
            ];
     }
     match /users/{uid} {

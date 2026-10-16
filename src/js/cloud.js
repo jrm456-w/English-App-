@@ -157,6 +157,26 @@ function mergeStates(local, remote) {
     }
     return o;
   };
+  const mergeSrs = (a = {}, b = {}) => {
+    const o = { ...a };
+    for (const k in b) {
+      const x = a[k], y = b[k];
+      if (!x) o[k] = y;
+      else if ((y.box || 1) > (x.box || 1)) o[k] = y;
+      else if ((y.box || 1) === (x.box || 1) && (y.due || '') > (x.due || '')) o[k] = y;
+    }
+    return o;
+  };
+  const mergeEndings = (a = {}, b = {}) => {
+    const o = { ...a };
+    for (const k in b) o[k] = Array.from(new Set([...(a[k] || []), ...(b[k] || [])]));
+    return o;
+  };
+  const minMap = (a = {}, b = {}) => {
+    const o = { ...a };
+    for (const k in b) o[k] = a[k] ? Math.min(a[k], b[k]) : b[k];
+    return o;
+  };
   const higherLevel = (a, b) => (LEVELS.indexOf(b) > LEVELS.indexOf(a) ? b : a);
   return {
     ...local,
@@ -169,6 +189,11 @@ function mergeStates(local, remote) {
     completedUnits: unionTrue(remote.completedUnits, local.completedUnits),
     storiesRead: unionTrue(remote.storiesRead, local.storiesRead),
     mastered: maxMap(remote.mastered, local.mastered),
-    completedGames: mergeGames(local.completedGames, remote.completedGames)
+    completedGames: mergeGames(local.completedGames, remote.completedGames),
+    srs: mergeSrs(local.srs, remote.srs),
+    xpLog: maxMap(remote.xpLog, local.xpLog),
+    weakGrammar: maxMap(remote.weakGrammar, local.weakGrammar),
+    endingsFound: mergeEndings(local.endingsFound, remote.endingsFound),
+    materialSeen: minMap(local.materialSeen, remote.materialSeen)
   };
 }

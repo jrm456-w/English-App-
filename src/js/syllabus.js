@@ -1,7 +1,7 @@
 /* Class Prep — a lightweight weekly prep sheet aligned to the real class calendar.
    No engine, no heavy state: just data (syllabus.json) + audio, so you arrive at
    class already knowing the vocabulary and useful phrases for each theme. */
-import { el, clear, escapeHtml } from './ui.js';
+import { el, clear, escapeHtml, localDate } from './ui.js';
 import { t } from './i18n.js';
 import { speak } from './speech.js';
 import { navigate, goBack } from './router.js';
@@ -22,7 +22,7 @@ function sayChip(text_en, label) {
 
 /* Which week contains today (or the next upcoming one). */
 function currentWeekId(weeks) {
-  const today = new Date().toISOString().slice(0, 10);
+  const today = localDate();
   const inRange = weeks.find((w) => today >= w.start && today <= w.end);
   if (inRange) return inRange.id;
   const upcoming = weeks.find((w) => w.start >= today);

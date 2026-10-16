@@ -1,5 +1,6 @@
 /* XP, streaks, daily missions, level progression and badge logic. */
 import { getState, update } from './store.js';
+import { localDate } from './ui.js';
 
 export const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
@@ -30,8 +31,8 @@ export const BADGES = [
 
 export function badgeName(b) { return getState().lang === 'en' ? b.name_en : b.name_es; }
 
-function today() { return new Date().toISOString().slice(0, 10); }
-function daysBetween(a, b) { return Math.round((new Date(b) - new Date(a)) / 86400000); }
+function today() { return localDate(); }
+function daysBetween(a, b) { return Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000); }
 
 let pendingBadgeCb = null;
 export function onBadge(cb) { pendingBadgeCb = cb; }
@@ -93,7 +94,7 @@ export function scheduleWord(level, en, es, known) {
     const prev = st.srs[k] || { box: 1 };
     const box = known ? Math.min(5, (prev.box || 1) + 1) : 1;
     const d = new Date(); d.setDate(d.getDate() + BOX_DAYS[box]);
-    st.srs[k] = { box, due: d.toISOString().slice(0, 10), en, es };
+    st.srs[k] = { box, due: localDate(d), en, es };
   });
 }
 

@@ -48,6 +48,7 @@ function match(hashPath) {
 
 export function handle() {
   const hashPath = location.hash.replace(/^#/, '') || '/home';
+  if ('speechSynthesis' in window) window.speechSynthesis.cancel();
   // Maintain the back stack (skip when we're navigating back).
   if (!goingBack && prevPath !== null && prevPath !== hashPath) {
     histStack.push(prevPath);
@@ -69,7 +70,10 @@ function updateActiveNav(hashPath) {
   // unit & game screens belong under their parent tab
   const tabMap = {
     unit: 'home', learn: 'home', game: 'games', quiz: 'home', story: 'stories',
-    daily: 'home', review: 'home', dictionary: 'home'
+    lesson: 'home', daily: 'home', review: 'home', dictionary: 'home',
+    pronunciation: 'home', pron: 'home', exam: 'home', study: 'home',
+    speak: 'home', grammar: 'home', convo: 'home', adventure: 'home',
+    material: 'home', chat: 'home', room: 'home', functions: 'home', prep: 'home'
   };
   const active = tabMap[top] || top;
   document.querySelectorAll('.nav__item').forEach((el) => {
