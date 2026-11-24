@@ -73,7 +73,8 @@ function updateActiveNav(hashPath) {
     lesson: 'home', daily: 'home', review: 'home', dictionary: 'home',
     pronunciation: 'home', pron: 'home', exam: 'home', study: 'home',
     speak: 'home', grammar: 'home', convo: 'home', adventure: 'home',
-    material: 'home', chat: 'home', room: 'home', functions: 'home', prep: 'home'
+    material: 'home', chat: 'home', room: 'home', functions: 'home', prep: 'home',
+    reflex: 'home', ear: 'home', notebook: 'home', explore: 'home'
   };
   const active = tabMap[top] || top;
   document.querySelectorAll('.nav__item').forEach((el) => {

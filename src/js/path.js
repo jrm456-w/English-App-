@@ -1,38 +1,16 @@
-/* Learning Path — the single, clear, guided journey.
-   Lessons (units) unlock one after another; stories are interleaved for variety.
-   One "Continue" button always tells the user exactly what to do next. */
-import { el, clear, celebrate, escapeHtml } from './ui.js';
+/* Learning Path — "Modo Enfoque" (15 min/day active fluency routine)
+   plus collapsible CEFR unit journey map so learners don't get lost in 18 modes. */
+import { el, clear, escapeHtml, toast } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
 import { loadLevel, loadStories } from './data.js';
 import { navigate } from './router.js';
 import {
   unitCompleted, unitPassedCount, levelProgress, levelReadyToAdvance,
-  nextLevel, advanceLevel, getDaily
+  nextLevel, getDaily, mistakeList
 } from './gamification.js';
 import { dueCount } from '../games/review.js';
-import { newWordsToday } from './dailyLesson.js';
-import { pickLessonStory } from './storyLesson.js';
 import { materialStatus } from './classMaterial.js';
-import { toast } from './ui.js';
-
-/* Step 3 of the plan rotates by weekday so every day feels different. */
-function dailyChallenge(d) {
-  const ROTATION = [
-    { icon: '🎙️', key: 'room.title', route: '/room' },       // Sun
-    { icon: '🗣️', key: 'speak2.title', route: '/speak' },    // Mon
-    { icon: '🎙️', key: 'room.title', route: '/room' },       // Tue
-    { icon: '👂', key: 'pron.title', route: '/pronunciation' }, // Wed
-    { icon: '🎙️', key: 'room.title', route: '/room' },       // Thu
-    { icon: '💬', key: 'convo.title', route: '/convo' },      // Fri
-    { icon: '🎙️', key: 'room.title', route: '/room' }        // Sat
-  ];
-  const c = ROTATION[new Date().getDay()];
-  return {
-    icon: c.icon, label: t('plan.challenge'), sub: t(c.key),
-    done: !!d.challenge || !!d.spoke, ok: true, run: () => navigate(c.route)
-  };
-}
 
 export async function learningPath(_p, view) {
   const s = getState();
@@ -41,9 +19,8 @@ export async function learningPath(_p, view) {
   const units = data.units;
   const stories = (await loadStories()).filter((st) => st.level === s.level);
   const prog = levelProgress(data);
-  const read = getState().storiesRead;
+  const read = s.storiesRead || {};
 
-  // The current lesson = first not-yet-completed unit.
   let currentIdx = units.findIndex((u) => !unitCompleted(s.level, u));
   const allDone = currentIdx === -1;
   if (allDone) currentIdx = units.length;
@@ -63,13 +40,13 @@ export async function learningPath(_p, view) {
   const currentStop = stops.find((st) => !stopDone(st)) || null;
   const curIndex = currentStop ? stops.indexOf(currentStop) : stops.length;
 
-  /* ---- Hero (status only) ---- */
+  /* ---- Compact Hero (Level, Streak, XP, Progress) ---- */
   view.appendChild(el(`
     <div class="hero">
       <div class="row" style="justify-content:space-between;align-items:center">
         <div>
-          <div style="opacity:.85;font-size:.9rem">${t('path.level')} ${s.level}</div>
-          <h1 class="h1" style="margin:2px 0">${t('path.title')}</h1>
+          <div style="opacity:.85;font-size:.9rem">${t('path.level')} ${s.level} · ⚡ ${s.xp} XP</div>
+          <h1 class="h1" style="margin:2px 0">${t('focus.title')}</h1>
         </div>
         <div class="badge" style="background:rgba(255,255,255,.2);border:0;color:#fff">🔥 ${s.streak}</div>
       </div>
@@ -79,7 +56,7 @@ export async function learningPath(_p, view) {
       <div style="opacity:.9;font-size:.85rem;margin-top:6px">${doneCount}/${units.length} ${t('path.lessons')} · ${prog}%</div>
     </div>`));
 
-  /* ---- Class material (from your academy) — shows only while it's fresh ---- */
+  /* ---- Class material (from your academy) — shows only while fresh ---- */
   const mat = await materialStatus();
   if (mat) {
     const card = el(`
@@ -94,74 +71,164 @@ export async function learningPath(_p, view) {
     view.appendChild(card);
   }
 
-  /* ---- PLAN DE HOY: one guided sequence, always shows what to do next ---- */
+  /* ---- 🎯 TU RUTINA DE HOY (15 min — Focus Mode) ---- */
   const d = getDaily();
   const due = await dueCount(s.level);
-  const goStop = () => {
-    if (!currentStop) return;
-    currentStop.type === 'reading' ? navigate(`/lesson/${currentStop.id}`) : navigate(`/unit/${s.level}/${currentStop.id}`);
+  const mistakes = mistakeList();
+  const phrasesCount = (s.myPhrases || []).length;
+
+  const step1 = mistakes.length > 0
+    ? {
+        icon: '🔥',
+        time: '3 min',
+        label: t('focus.step1Mistakes'),
+        sub: `${mistakes.length} ${t('focus.realMistakes')}`,
+        done: !!(d.mistakes || d.reviewed),
+        ok: true,
+        run: () => navigate('/reflex/mistakes')
+      }
+    : {
+        icon: '🔁',
+        time: '3 min',
+        label: t('focus.step1Review'),
+        sub: due ? `${due} ${t('path.due')}` : t('plan.allReviewed'),
+        done: due === 0 || !!d.reviewed,
+        ok: true,
+        run: () => navigate('/review')
+      };
+
+  const step2 = {
+    icon: '⚡',
+    time: '5 min',
+    label: t('focus.step2Reflex'),
+    sub: t('focus.step2Sub'),
+    done: !!d.reflex,
+    ok: true,
+    run: () => navigate('/reflex')
   };
-  const steps = [
-    { icon: currentStop && currentStop.type === 'reading' ? (currentStop.emoji || '📖') : '📖',
-      label: t('plan.lesson'),
-      sub: currentStop ? escapeHtml(currentStop.title) : t('plan.journeyDone'),
-      done: !currentStop || !!d.storyLesson || d.games > 0,
-      ok: !!currentStop, run: goStop },
-    { icon: '🔁', label: t('plan.review'), sub: due ? (due + ' ' + t('path.due')) : t('plan.allReviewed'), done: due === 0 || !!d.reviewed, ok: true, run: () => navigate('/review') },
-    dailyChallenge(d)
-  ];
-  const next = steps.find((st) => !st.done && st.ok);
+
+  const step3 = {
+    icon: '🎧',
+    time: '7 min',
+    label: t('focus.step3EarVoice'),
+    sub: d.ear ? t('focus.step3VoiceSub') : t('focus.step3EarSub'),
+    done: !!(d.ear || d.spoke),
+    ok: true,
+    run: () => navigate(d.ear ? '/room/session' : '/ear')
+  };
+
+  const steps = [step1, step2, step3];
+  const nextStep = steps.find((st) => !st.done && st.ok);
   const doneSteps = steps.filter((st) => st.done).length;
 
-  const plan = el(`<div class="card" style="border:2px solid var(--c-primary)"></div>`);
-  plan.appendChild(el(`<div class="row" style="justify-content:space-between"><strong>🎯 ${t('plan.title')}</strong><small class="muted">${doneSteps}/${steps.length}</small></div>`));
+  const routine = el(`<div class="card" style="border:2px solid var(--c-primary)"></div>`);
+  routine.appendChild(el(`
+    <div class="row" style="justify-content:space-between;margin-bottom:4px">
+      <strong>🎯 ${t('focus.routineTitle')}</strong>
+      <span class="badge pill">${doneSteps}/${steps.length}</span>
+    </div>
+    <p class="muted" style="margin:0 0 8px;font-size:.86rem">${t('focus.routineDesc')}</p>`));
+
   steps.forEach((st) => {
-    const mark = st.done ? '✅' : (st === next ? '▶️' : '⬜');
-    const row = el(`<div class="setting-row"><span>${mark} ${st.icon} <strong>${st.label}</strong>${st.sub ? ` <span class="muted" style="font-size:.8rem">· ${st.sub}</span>` : ''}</span></div>`);
-    if (st.ok) { row.style.cursor = 'pointer'; row.onclick = st.run; }
-    plan.appendChild(row);
+    const mark = st.done ? '✅' : (st === nextStep ? '▶️' : '⬜');
+    const row = el(`
+      <div class="focus-step ${st === nextStep ? 'is-next' : ''} ${st.done ? 'is-done' : ''}">
+        <span class="focus-step__mark">${mark}</span>
+        <div class="focus-step__body">
+          <div class="row" style="justify-content:space-between;gap:6px">
+            <strong>${st.icon} ${escapeHtml(st.label)}</strong>
+            <small class="muted">${st.time}</small>
+          </div>
+          <small class="muted">${escapeHtml(st.sub)}</small>
+        </div>
+      </div>`);
+    row.onclick = st.run;
+    routine.appendChild(row);
   });
-  const cta = el(`<button class="btn btn--block" style="margin-top:12px">${next ? '▶ ' + t('plan.start') : '🎉 ' + t('plan.done')}</button>`);
-  if (next) cta.onclick = next.run; else cta.disabled = true;
-  plan.appendChild(cta);
-  view.appendChild(plan);
 
-  /* ---- Speaking Room & Class Modes (compact access) ---- */
-  const room = el(`
-    <div class="card card--tap" style="border:2px solid var(--c-accent);background:linear-gradient(135deg,rgba(37,99,235,.06),rgba(124,58,237,.06))">
+  const cta = el(`<button class="btn btn--block" style="margin-top:12px">${nextStep ? '▶ ' + t('plan.start') : '🎉 ' + t('plan.done')}</button>`);
+  if (nextStep) cta.onclick = nextStep.run;
+  else cta.disabled = true;
+  routine.appendChild(cta);
+  view.appendChild(routine);
+
+  /* ---- Compact 2-column Quick Access Grids ---- */
+  const row1 = el(`<div class="grid grid--2" style="margin-bottom:var(--sp-3)"></div>`);
+  const nbTotal = mistakes.length + phrasesCount;
+  const nbCard = el(`
+    <div class="card card--tap" style="margin-bottom:0">
       <div class="row" style="justify-content:space-between">
-        <strong>🎙️ ${t('room.cta')}</strong><span class="badge pill">🎤</span>
+        <strong>📓 ${t('notebook.title')}</strong>
+        <span class="badge ${nbTotal ? 'pill' : ''}">${nbTotal}</span>
       </div>
-      <small class="muted">${t('room.ctaHint')}</small>
+      <small class="muted">${t('focus.notebookHint')}</small>
     </div>`);
-  room.onclick = () => navigate('/room/session');
-  view.appendChild(room);
+  nbCard.onclick = () => navigate('/notebook');
 
-  const quickModes = el(`<div class="grid grid--2" style="margin-bottom:var(--sp-4)"></div>`);
-  const comm = el(`
+  const roomCard = el(`
     <div class="card card--tap" style="margin-bottom:0;border:1px solid var(--c-accent)">
       <div class="row" style="justify-content:space-between">
-        <strong>💬 ${t('func.title')}</strong><span class="badge pill">🆕</span>
+        <strong>🎙️ ${t('room.title')}</strong>
+        <span class="badge pill">🎤</span>
       </div>
-      <small class="muted">${t('func.subtitle')}</small>
+      <small class="muted">${t('focus.roomHint')}</small>
     </div>`);
-  comm.onclick = () => navigate('/functions');
-  const prep = el(`
-    <div class="card card--tap" style="margin-bottom:0;border:1px solid var(--c-accent)">
+  roomCard.onclick = () => navigate('/room/session');
+  row1.appendChild(nbCard);
+  row1.appendChild(roomCard);
+  view.appendChild(row1);
+
+  const row2 = el(`<div class="grid grid--2" style="margin-bottom:var(--sp-4)"></div>`);
+  const earCard = el(`
+    <div class="card card--tap" style="margin-bottom:0">
       <div class="row" style="justify-content:space-between">
-        <strong>📅 ${t('prep.cta')}</strong><span class="badge">${t('prep.thisWeek')}</span>
+        <strong>🎧 ${t('ear.title')}</strong>
+        <span>→</span>
       </div>
-      <small class="muted">Vocabulario y frases antes de tu clase (Lun→Jue).</small>
+      <small class="muted">${t('focus.earHint')}</small>
     </div>`);
-  prep.onclick = () => navigate('/prep');
-  quickModes.appendChild(comm);
-  quickModes.appendChild(prep);
-  view.appendChild(quickModes);
+  earCard.onclick = () => navigate('/ear');
 
-  view.appendChild(el(`<h2 class="h2">${t('path.yourPath')}</h2>`));
-  view.appendChild(el(`<p class="muted" style="margin-top:-8px;font-size:.85rem">${t('path.mapHint')}</p>`));
+  const expCard = el(`
+    <div class="card card--tap" style="margin-bottom:0">
+      <div class="row" style="justify-content:space-between">
+        <strong>🧭 ${t('explore.title')}</strong>
+        <span>→</span>
+      </div>
+      <small class="muted">${t('focus.exploreHint')}</small>
+    </div>`);
+  expCard.onclick = () => navigate('/explore');
+  row2.appendChild(earCard);
+  row2.appendChild(expCard);
+  view.appendChild(row2);
 
-  /* ---- The journey map (units + readings as one sequence) ---- */
+  /* ---- End of level exam banner ---- */
+  if (allDone) {
+    const next = nextLevel(s.level);
+    const end = el(`
+      <div class="card center" style="border:2px solid var(--c-success);margin-top:8px">
+        <div style="font-size:2.5rem">🎓</div>
+        <h2 class="h2">${t('path.levelComplete')}</h2>
+        ${next ? `<button class="btn btn--success btn--block" id="adv">📝 ${t('exam.take')} ${next} →</button>` : `<p class="muted">${t('path.topLevel')}</p>`}
+      </div>`);
+    view.appendChild(end);
+    if (next) end.querySelector('#adv').onclick = () => navigate(`/exam/${s.level}`);
+  } else if (levelReadyToAdvance(data) && nextLevel(s.level)) {
+    const adv = el(`<div class="card center" style="border:2px solid var(--c-success)"><strong>🎓 ${t('advance.ready')}</strong><button class="btn btn--success btn--block" id="adv2" style="margin-top:8px">📝 ${t('exam.take')} →</button></div>`);
+    view.appendChild(adv);
+    adv.querySelector('#adv2').onclick = () => navigate(`/exam/${s.level}`);
+  }
+
+  /* ---- Collapsible CEFR Unit Journey Map ---- */
+  const mapWrap = el(`<details class="card"></details>`);
+  mapWrap.appendChild(el(`
+    <summary style="cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;align-items:center">
+      <span>🗺️ ${t('focus.mapTitle')} (${doneCount}/${units.length})</span>
+      <span class="muted" style="font-size:.85rem">▾</span>
+    </summary>`));
+  const mapBody = el(`<div style="margin-top:12px"></div>`);
+  mapBody.appendChild(el(`<p class="muted" style="font-size:.85rem;margin-top:0">${t('path.mapHint')}</p>`));
+
   let lessonNo = 0;
   stops.forEach((st, idx) => {
     if (st.type === 'unit') lessonNo++;
@@ -183,47 +250,16 @@ export async function learningPath(_p, view) {
       <div class="${cls}">
         <div class="lesson-node__icon">${icon}</div>
         <div class="lesson-node__body">
-          <div class="lesson-node__title">${isCurrent ? '▶️ ' : ''}${title}</div>
-          <div class="lesson-node__sub">${isCurrent ? t('path.todayHere') + ' · ' : ''}${sub}</div>
+          <div class="lesson-node__title">${isCurrent ? '▶️ ' : ''}${escapeHtml(title)}</div>
+          <div class="lesson-node__sub">${isCurrent ? t('path.todayHere') + ' · ' : ''}${escapeHtml(sub)}</div>
         </div>
         ${isCurrent ? `<span class="lesson-node__cta">${t('common.start')} →</span>` : ''}
       </div>`);
     if (locked) node.onclick = () => toast('🔒 ' + t('path.lockedMsg'));
     else node.onclick = () => isReading ? navigate(`/lesson/${st.id}`) : navigate(`/unit/${s.level}/${st.id}`);
-    view.appendChild(node);
+    mapBody.appendChild(node);
   });
 
-  /* ---- End of level ---- */
-  if (allDone) {
-    const next = nextLevel(s.level);
-    const end = el(`
-      <div class="card center" style="border:2px solid var(--c-success);margin-top:8px">
-        <div style="font-size:2.5rem">🎓</div>
-        <h2 class="h2">${t('path.levelComplete')}</h2>
-        ${next ? `<button class="btn btn--success btn--block" id="adv">📝 ${t('exam.take')} ${next} →</button>` : `<p class="muted">${t('path.topLevel')}</p>`}
-      </div>`);
-    view.appendChild(end);
-    if (next) end.querySelector('#adv').onclick = () => navigate(`/exam/${s.level}`);
-  } else if (levelReadyToAdvance(data) && nextLevel(s.level)) {
-    const adv = el(`<div class="card center" style="border:2px solid var(--c-success)"><strong>🎓 ${t('advance.ready')}</strong><button class="btn btn--success btn--block" id="adv2" style="margin-top:8px">📝 ${t('exam.take')} →</button></div>`);
-    view.appendChild(adv);
-    adv.querySelector('#adv2').onclick = () => navigate(`/exam/${s.level}`);
-  }
-
-  // Small footer tools (secondary, not cluttering the main flow).
-  const tools = el(`<div class="row" style="justify-content:center;margin-top:16px;gap:14px;flex-wrap:wrap">
-    <button class="btn btn--ghost btn--small" id="t-chat">🤖 ${t('chat.title')}</button>
-    <button class="btn btn--ghost btn--small" id="t-adv">🗺️ ${t('adv.title')}</button>
-    <button class="btn btn--ghost btn--small" id="t-convo">💬 ${t('convo.title')}</button>
-    <button class="btn btn--ghost btn--small" id="t-pron">🗣️ ${t('pron.title')}</button>
-    <button class="btn btn--ghost btn--small" id="t-dict">🔤 ${t('dict.title')}</button>
-    <button class="btn btn--ghost btn--small" id="t-daily">📅 ${t('daily.lesson')}</button>
-  </div>`);
-  tools.querySelector('#t-chat').onclick = () => navigate('/chat');
-  tools.querySelector('#t-adv').onclick = () => navigate('/adventure');
-  tools.querySelector('#t-convo').onclick = () => navigate('/convo');
-  tools.querySelector('#t-pron').onclick = () => navigate('/pronunciation');
-  tools.querySelector('#t-dict').onclick = () => navigate('/dictionary');
-  tools.querySelector('#t-daily').onclick = () => navigate('/daily');
-  view.appendChild(tools);
+  mapWrap.appendChild(mapBody);
+  view.appendChild(mapWrap);
 }

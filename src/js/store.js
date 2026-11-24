@@ -20,6 +20,8 @@ const DEFAULT_STATE = {
   xpLog: {},               // daily activity history: { "YYYY-MM-DD": xpEarned }
   endingsFound: {},        // adventures: { advId: [endingNodeIds] }
   materialSeen: {},         // class material first-seen timestamps: { id: ms }
+  myPhrases: [],           // personal phrasebook: [{ id, en, es, note, createdAt, box, due }]
+  mistakes: {},            // real mistakes bank: { normalizedEn: { en, es, tip, misses, lastMissed, due } }
   slowAudio: false,        // 🐢 slower TTS for easier listening
   quizScore: null
 };

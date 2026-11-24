@@ -1,0 +1,504 @@
+{
+  "drills": [
+    {
+      "id": "a1_1",
+      "level": "A1",
+      "chunk": "I'm + edad (no 'have')",
+      "situation_es": "Preséntate y di que tienes 28 años",
+      "en": "I'm twenty-eight years old.",
+      "alt": ["I am twenty-eight years old.", "I'm 28 years old.", "I am 28."],
+      "trap_es": "En inglés la edad se 'es' (I am), nunca se 'tiene' (evita decir 'I have 28 years').",
+      "connected": "I'm twenty-eight → /aɪm twen-ti-eɪt/"
+    },
+    {
+      "id": "a1_2",
+      "level": "A1",
+      "chunk": "I agree (no 'am')",
+      "situation_es": "Dile a tu compañero que estás de acuerdo con él",
+      "en": "I totally agree with you.",
+      "alt": ["I agree with you.", "I completely agree with you."],
+      "trap_es": "'Agree' ya es un verbo, no lleva 'am'. Evita 'I am agree'.",
+      "connected": "agree with → /əˈɡriː wɪð/ (sin pausa)"
+    },
+    {
+      "id": "a1_3",
+      "level": "A1",
+      "chunk": "I have to...",
+      "situation_es": "Di que tienes que trabajar temprano mañana",
+      "en": "I have to work early tomorrow.",
+      "alt": ["I have to go to work early tomorrow.", "I need to work early tomorrow."],
+      "trap_es": "Recuerda decir 'have to' (tener que), no solo 'have work'.",
+      "connected": "have to → suena como 'hafta' (/ˈhæftə/)"
+    },
+    {
+      "id": "a1_4",
+      "level": "A1",
+      "chunk": "It's + clima / hora",
+      "situation_es": "Di que hace mucho calor hoy",
+      "en": "It's really hot today.",
+      "alt": ["It is very hot today.", "It's very hot today."],
+      "trap_es": "El inglés siempre necesita sujeto ('It's'), no digas 'Is hot' ni 'Makes hot'.",
+      "connected": "It's really → /ɪts ˈrɪəli/"
+    },
+    {
+      "id": "a1_5",
+      "level": "A1",
+      "chunk": "Can I have...?",
+      "situation_es": "Pide un café con leche amablemente en una cafetería",
+      "en": "Can I have a coffee with milk, please?",
+      "alt": ["Could I have a coffee with milk, please?", "I'd like a coffee with milk, please."],
+      "trap_es": "Para pedir en tiendas usa 'Can I have...?' o 'I'd like...', no 'Give me'.",
+      "connected": "Can I have a → /kənaɪˈhævə/"
+    },
+    {
+      "id": "a1_6",
+      "level": "A1",
+      "chunk": "I don't understand",
+      "situation_es": "Pide a alguien que hable más despacio porque no entiendes",
+      "en": "Sorry, I don't understand. Can you speak slower?",
+      "alt": ["I don't understand. Could you speak more slowly?", "Sorry, I didn't understand."],
+      "trap_es": "En presente negativo usa 'don't', nunca 'I no understand'.",
+      "connected": "don't understand → la 't' de don't casi desaparece"
+    },
+    {
+      "id": "a1_7",
+      "level": "A1",
+      "chunk": "How much is...?",
+      "situation_es": "Pregunta cuánto cuesta esta camisa",
+      "en": "Excuse me, how much is this shirt?",
+      "alt": ["How much is this shirt?", "How much does this shirt cost?"],
+      "trap_es": "Para precios singulares usa 'How much is...', no 'How many cost?'.",
+      "connected": "how much is → /haʊ ˈmʌtʃɪz/"
+    },
+    {
+      "id": "a1_8",
+      "level": "A1",
+      "chunk": "There is / There are",
+      "situation_es": "Di que hay dos supermercados cerca de tu casa",
+      "en": "There are two supermarkets near my house.",
+      "alt": ["There are two supermarkets close to my house.", "There are two grocery stores near my home."],
+      "trap_es": "'Hay' en inglés es 'There is' (singular) o 'There are' (plural), nunca 'Have two supermarkets'.",
+      "connected": "There are → /ðeərɑːr/"
+    },
+    {
+      "id": "a1_9",
+      "level": "A1",
+      "chunk": "I'm going to...",
+      "situation_es": "Di que vas a estudiar inglés esta noche",
+      "en": "I'm going to study English tonight.",
+      "alt": ["I'm gonna study English tonight.", "I am going to study English tonight."],
+      "trap_es": "Para planes inmediatos usa 'going to + verbo' (no olvides el 'to').",
+      "connected": "going to → suena como 'gonna' (/ˈɡʌnə/)"
+    },
+    {
+      "id": "a1_10",
+      "level": "A1",
+      "chunk": "See you + tiempo",
+      "situation_es": "Despídete diciendo que nos vemos el lunes por la mañana",
+      "en": "See you on Monday morning!",
+      "alt": ["See you Monday morning.", "I'll see you on Monday morning."],
+      "trap_es": "Los días de la semana llevan 'on' (on Monday), nunca 'the Monday'.",
+      "connected": "See you on → /siːjʊwɒn/"
+    },
+    {
+      "id": "a2_1",
+      "level": "A2",
+      "chunk": "I want to / wanna",
+      "situation_es": "Di que quieres practicar inglés todos los días",
+      "en": "I want to practice English every day.",
+      "alt": ["I wanna practice English every day.", "I want to practise English every day."],
+      "trap_es": "Después de 'want' va 'to + verbo' sin -ing (evita 'I want practice' o 'I want practicing').",
+      "connected": "want to → suena 'wanna' (/ˈwɑːnə/)"
+    },
+    {
+      "id": "a2_2",
+      "level": "A2",
+      "chunk": "Wait for (no 'wait' solo)",
+      "situation_es": "Dile a un amigo que te espere cinco minutos",
+      "en": "Wait for me five minutes, please.",
+      "alt": ["Wait for me for five minutes.", "Please wait five minutes for me."],
+      "trap_es": "En inglés esperas 'por' alguien: 'wait for me', no 'wait me'.",
+      "connected": "Wait for me → /weɪtfərˈmiː/"
+    },
+    {
+      "id": "a2_3",
+      "level": "A2",
+      "chunk": "Did you + verbo base?",
+      "situation_es": "Pregúntale a alguien si vio la película anoche",
+      "en": "Did you watch the movie last night?",
+      "alt": ["Did you see the movie last night?", "Did you watch that movie last night?"],
+      "trap_es": "Cuando usas 'Did', el verbo va en forma base ('watch'), nunca en pasado ('watched').",
+      "connected": "Did you → suena como 'Didja' (/ˈdɪdʒə/)"
+    },
+    {
+      "id": "a2_4",
+      "level": "A2",
+      "chunk": "It depends on...",
+      "situation_es": "Responde que depende del clima y de tu horario",
+      "en": "It depends on the weather and my schedule.",
+      "alt": ["Well, it depends on the weather and my schedule."],
+      "trap_es": "'Depend' siempre va con 'on' ('depends on'), nunca con 'of' ('depends of').",
+      "connected": "depends on → /dɪˈpendzɒn/"
+    },
+    {
+      "id": "a2_5",
+      "level": "A2",
+      "chunk": "Running late",
+      "situation_es": "Avísale a tu jefe que llegarás 10 minutos tarde por el tráfico",
+      "en": "I'm running ten minutes late because of traffic.",
+      "alt": ["I'll be ten minutes late because of the traffic.", "I am ten minutes late due to traffic."],
+      "trap_es": "'Arrive late' suena robótico en mensajes rápidos; los nativos dicen 'running late' o 'be late'.",
+      "connected": "because of → /bɪˈkʌzəv/"
+    },
+    {
+      "id": "a2_6",
+      "level": "A2",
+      "chunk": "Tell vs Say",
+      "situation_es": "Dile a tu colega que te diga la verdad",
+      "en": "Please tell me the truth.",
+      "alt": ["Tell me the truth, please."],
+      "trap_es": "Cuando mencionas a quién hablas usa 'tell me', no 'say me'.",
+      "connected": "tell me → /ˈtelmi/"
+    },
+    {
+      "id": "a2_7",
+      "level": "A2",
+      "chunk": "How long does it take?",
+      "situation_es": "Pregunta cuánto tiempo toma llegar al aeropuerto",
+      "en": "How long does it take to get to the airport?",
+      "alt": ["How long does it take to reach the airport?"],
+      "trap_es": "Para duración de viajes usa 'How long does it take?', no 'How much time takes?'.",
+      "connected": "does it take → /dʌzɪtˈteɪk/"
+    },
+    {
+      "id": "a2_8",
+      "level": "A2",
+      "chunk": "I forgot to...",
+      "situation_es": "Di que se te olvidó enviar el correo electrónico ayer",
+      "en": "I forgot to send the email yesterday.",
+      "alt": ["I completely forgot to send the email yesterday."],
+      "trap_es": "Se dice 'I forgot to...', no 'It forgot me' ni 'I forgot send'.",
+      "connected": "forgot to → /fərˈɡɑːttə/"
+    },
+    {
+      "id": "a2_9",
+      "level": "A2",
+      "chunk": "Look forward to + -ing",
+      "situation_es": "Di que tienes muchas ganas de ver a tu familia",
+      "en": "I'm looking forward to seeing my family.",
+      "alt": ["I'm really looking forward to seeing my family."],
+      "trap_es": "Después de 'look forward to', el verbo lleva '-ing' ('seeing'), no infinitivo ('see').",
+      "connected": "looking forward to → /ˈlʊkɪŋ ˈfɔːrwərd tə/"
+    },
+    {
+      "id": "a2_10",
+      "level": "A2",
+      "chunk": "Make vs Do",
+      "situation_es": "Di que cometiste un error pero lo vas a arreglar",
+      "en": "I made a mistake, but I'll fix it.",
+      "alt": ["I made a mistake, but I will fix it."],
+      "trap_es": "Los errores se 'hacen' con 'make' (make a mistake), nunca 'do a mistake'.",
+      "connected": "made a mistake → /meɪdə mɪˈsteɪk/"
+    },
+    {
+      "id": "b1_1",
+      "level": "B1",
+      "chunk": "I'm used to + -ing",
+      "situation_es": "Di que ya estás acostumbrado a levantarte temprano",
+      "en": "I'm used to waking up early now.",
+      "alt": ["I am used to getting up early now.", "I'm used to waking up early."],
+      "trap_es": "'Used to + verbo' es pasado ('solía'). 'Be used to + -ing' significa 'estar acostumbrado a'.",
+      "connected": "used to → /ˈjuːstə/"
+    },
+    {
+      "id": "b1_2",
+      "level": "B1",
+      "chunk": "Could you tell me where...?",
+      "situation_es": "Pregunta con cortesía dónde está la estación de metro más cercana",
+      "en": "Could you tell me where the nearest subway station is?",
+      "alt": ["Do you know where the nearest subway station is?", "Could you tell me where the closest metro station is?"],
+      "trap_es": "En preguntas indirectas ('Could you tell me where...'), el verbo 'is' va AL FINAL, no 'where is the station'.",
+      "connected": "Could you → suena 'Couldja' (/ˈkʊdʒə/)"
+    },
+    {
+      "id": "b1_3",
+      "level": "B1",
+      "chunk": "I've been + -ing",
+      "situation_es": "Di que llevas dos años estudiando inglés",
+      "en": "I've been studying English for two years.",
+      "alt": ["I have been learning English for two years."],
+      "trap_es": "Para algo que empezó en el pasado y continúa hoy, usa 'I've been + -ing', no 'I study since two years'.",
+      "connected": "I've been → /aɪvbɪn/"
+    },
+    {
+      "id": "b1_4",
+      "level": "B1",
+      "chunk": "Would you mind + -ing?",
+      "situation_es": "Pide amablemente a alguien si le importaría abrir la ventana",
+      "en": "Would you mind opening the window?",
+      "alt": ["Would you mind opening that window, please?"],
+      "trap_es": "Después de 'Would you mind' el verbo siempre lleva '-ing', nunca 'to open'.",
+      "connected": "Would you → /ˈwʊdʒə/"
+    },
+    {
+      "id": "b1_5",
+      "level": "B1",
+      "chunk": "On the other hand",
+      "situation_es": "Expresa un contraste: trabajar desde casa ahorra tiempo, pero por otro lado te sientes solo",
+      "en": "Working from home saves time, but on the other hand it can feel lonely.",
+      "alt": ["Working from home saves time, on the other hand it feels lonely."],
+      "trap_es": "Usa 'on the other hand' para contrastar ideas; evita traducir literalmente 'by other side'.",
+      "connected": "on the other → /ɒnðiˈʌðər/"
+    },
+    {
+      "id": "b1_6",
+      "level": "B1",
+      "chunk": "Actually (falso amigo)",
+      "situation_es": "Aclara amablemente que en realidad vives en otra ciudad",
+      "en": "Actually, I live in another city now.",
+      "alt": ["Actually, I currently live in a different city."],
+      "trap_es": "'Actually' significa 'en realidad / de hecho', NO 'actualmente' (eso es 'currently').",
+      "connected": "live in another → /lɪvɪnəˈnʌðər/"
+    },
+    {
+      "id": "b1_7",
+      "level": "B1",
+      "chunk": "Should have + participio",
+      "situation_es": "Di que deberías haber traído una chaqueta porque hace frío",
+      "en": "I should have brought a jacket.",
+      "alt": ["I should've brought a jacket.", "I should have brought a coat."],
+      "trap_es": "Para arrepentimiento en el pasado usa 'should have + participio', no 'I should bring yesterday'.",
+      "connected": "should have → suena 'shoulda' (/ˈʃʊdəv/)"
+    },
+    {
+      "id": "b1_8",
+      "level": "B1",
+      "chunk": "Make sure + sujeto + verbo",
+      "situation_es": "Recuérdale a tu amigo que se asegure de cerrar la puerta con llave",
+      "en": "Make sure you lock the door before you leave.",
+      "alt": ["Make sure to lock the door before leaving."],
+      "trap_es": "Di 'Make sure you lock...', no 'Make sure of lock'.",
+      "connected": "before you leave → /bɪˈfɔːrjə liːv/"
+    },
+    {
+      "id": "b1_9",
+      "level": "B1",
+      "chunk": "It's worth + -ing",
+      "situation_es": "Recomienda un restaurante diciendo que vale la pena probarlo",
+      "en": "That restaurant is definitely worth trying.",
+      "alt": ["It's definitely worth trying that restaurant."],
+      "trap_es": "Después de 'worth' siempre va '-ing' ('worth trying'), nunca 'worth to try'.",
+      "connected": "worth trying → /wɜːrθ ˈtraɪɪŋ/"
+    },
+    {
+      "id": "b1_10",
+      "level": "B1",
+      "chunk": "Let me get back to you",
+      "situation_es": "Di en una reunión que vas a revisarlo y les respondes luego",
+      "en": "Let me check that and get back to you.",
+      "alt": ["Let me look into it and get back to you."],
+      "trap_es": "Frase de oro en oficinas: 'get back to you' es mucho más natural que 'I respond you later'.",
+      "connected": "Let me → suena 'Lemme' (/ˈlemi/)"
+    },
+    {
+      "id": "b2_1",
+      "level": "B2",
+      "chunk": "I wish I had...",
+      "situation_es": "Expresa arrepentimiento por no haber empezado a aprender antes",
+      "en": "I wish I had started learning earlier.",
+      "alt": ["I wish I'd started learning earlier."],
+      "trap_es": "Para deseos sobre el pasado usa 'I wish I had + participio', no 'I wish I started'.",
+      "connected": "wish I had → /wɪʃaɪˈhæd/"
+    },
+    {
+      "id": "b2_2",
+      "level": "B2",
+      "chunk": "Point out / Bring up",
+      "situation_es": "Di en una discusión que alguien mencionó un punto muy válido",
+      "en": "She brought up a really valid point during the meeting.",
+      "alt": ["She pointed out a very valid point in the meeting."],
+      "trap_es": "Usa 'bring up a point' (sacar un tema) en vez de 'put a point'.",
+      "connected": "brought up a → /brɔːtˈʌpə/"
+    },
+    {
+      "id": "b2_3",
+      "level": "B2",
+      "chunk": "Even though vs Despite",
+      "situation_es": "Di que fuiste a trabajar a pesar de sentirte cansado",
+      "en": "Even though I felt tired, I still went to work.",
+      "alt": ["Despite feeling tired, I still went to work.", "Although I was tired, I went to work."],
+      "trap_es": "'Despite' nunca lleva 'of' (no digas 'despite of'). Con 'Even though' va sujeto + verbo.",
+      "connected": "went to → /wentə/"
+    },
+    {
+      "id": "b2_4",
+      "level": "B2",
+      "chunk": "I'm not sure I follow",
+      "situation_es": "Di educadamente que no terminas de entender la explicación de alguien",
+      "en": "I'm not quite sure I follow what you mean.",
+      "alt": ["Could you clarify what you mean by that?", "I'm not sure I follow."],
+      "trap_es": "Forma profesional de pedir aclaración sin sonar brusco como 'I don't understand you'.",
+      "connected": "what you mean → /wʌtʃuˈmiːn/"
+    },
+    {
+      "id": "b2_5",
+      "level": "B2",
+      "chunk": "It turns out that...",
+      "situation_es": "Cuenta que al final resultó que vivían en el mismo barrio",
+      "en": "It turns out we actually live in the same neighborhood.",
+      "alt": ["It turned out that we lived in the same neighborhood."],
+      "trap_es": "'Resultó que' se dice 'It turns out / It turned out', no 'It resulted that'.",
+      "connected": "turns out → /tɜːrnzˈaʊt/"
+    },
+    {
+      "id": "b2_6",
+      "level": "B2",
+      "chunk": "In terms of...",
+      "situation_es": "Evalúa un proyecto diciendo que en términos de costos funciona muy bien",
+      "en": "In terms of cost, this option makes the most sense.",
+      "alt": ["In terms of budget, this option works best."],
+      "trap_es": "'Makes sense' (tiene sentido) siempre usa 'make', nunca 'has sense'.",
+      "connected": "terms of → /tɜːrmzəv/"
+    },
+    {
+      "id": "b2_7",
+      "level": "B2",
+      "chunk": "End up + -ing",
+      "situation_es": "Cuenta que al final terminaste quedándote en casa viendo una serie",
+      "en": "I ended up staying home and watching a show.",
+      "alt": ["We ended up staying at home all evening."],
+      "trap_es": "'End up' siempre va seguido de '-ing' ('ended up staying'), no 'ended up to stay'.",
+      "connected": "ended up → /ˈendɪdʌp/"
+    },
+    {
+      "id": "b2_8",
+      "level": "B2",
+      "chunk": "Would rather + verbo",
+      "situation_es": "Di que preferirías posponer la llamada para mañana",
+      "en": "I'd rather push the call to tomorrow.",
+      "alt": ["I would rather move the call to tomorrow."],
+      "trap_es": "'I'd rather' va directo al verbo sin 'to' (nunca 'I'd rather to push').",
+      "connected": "I'd rather → /aɪdˈræðər/"
+    },
+    {
+      "id": "b2_9",
+      "level": "B2",
+      "chunk": "Get the hang of...",
+      "situation_es": "Anima a un compañero diciendo que pronto le agarrará el truco",
+      "en": "Don't worry, you'll get the hang of it soon.",
+      "alt": ["Give it a few days and you'll get the hang of it."],
+      "trap_es": "Expresión idiomática clave para 'agarrarle la onda / el truco' a algo nuevo.",
+      "connected": "hang of it → /ˈhæŋəvɪt/"
+    },
+    {
+      "id": "b2_10",
+      "level": "B2",
+      "chunk": "Supposed to...",
+      "situation_es": "Di que se suponía que el paquete llegaría esta mañana",
+      "en": "The package was supposed to arrive this morning.",
+      "alt": ["That delivery was supposed to get here this morning."],
+      "trap_es": "Siempre es 'be supposed to' (con -d al final), aunque la 'd' casi no se pronuncie.",
+      "connected": "supposed to → suena 'supposta' (/səˈpoʊstə/)"
+    },
+    {
+      "id": "c1_1",
+      "level": "C1",
+      "chunk": "Had I known...",
+      "situation_es": "Di formalmente que si hubieras sabido el problema antes, habrías actuado distinto",
+      "en": "Had I known earlier, I would have handled it differently.",
+      "alt": ["If I had known earlier, I would've handled it differently."],
+      "trap_es": "Inversión elegante de tercer condicional: omite 'If' e invierte 'Had I known'.",
+      "connected": "would have → suena 'woulda' (/ˈwʊdəv/)"
+    },
+    {
+      "id": "c1_2",
+      "level": "C1",
+      "chunk": "Take into account",
+      "situation_es": "Pide en una junta que tengan en cuenta las limitaciones de tiempo",
+      "en": "We need to take the time constraints into account.",
+      "alt": ["We should take the tight deadline into account."],
+      "trap_es": "Usa 'take into account' o 'keep in mind'; evita 'have in count'.",
+      "connected": "into account → /ˈɪntuːəˈkaʊnt/"
+    },
+    {
+      "id": "c1_3",
+      "level": "C1",
+      "chunk": "Not only... but also",
+      "situation_es": "Destaca que el plan no solo ahorra dinero sino que también mejora la calidad",
+      "en": "Not only does it save money, but it also improves quality.",
+      "alt": ["This plan not only saves money, it also improves quality."],
+      "trap_es": "Si empiezas la frase con 'Not only', debes invertir el auxiliar ('Not only does it...').",
+      "connected": "does it → /ˈdʌzɪt/"
+    },
+    {
+      "id": "c1_4",
+      "level": "C1",
+      "chunk": "Off the top of my head",
+      "situation_es": "Di que no recuerdas la cifra exacta de memoria, pero puedes buscarla",
+      "en": "Off the top of my head, I don't know the exact number.",
+      "alt": ["I can't recall the exact figure off the top of my head."],
+      "trap_es": "Modismo naturalísimo para decir 'de memoria / así de pronto' sin sonar traducido.",
+      "connected": "top of my → /ˈtɒpəvmaɪ/"
+    },
+    {
+      "id": "c1_5",
+      "level": "C1",
+      "chunk": "Boils down to...",
+      "situation_es": "Resume un problema complejo diciendo que todo se reduce a la comunicación",
+      "en": "At the end of the day, it all boils down to communication.",
+      "alt": ["Ultimately, it comes down to good communication."],
+      "trap_es": "'Boils down to' o 'comes down to' significa 'se reduce a' en inglés ejecutivo.",
+      "connected": "boils down → /bɔɪlzˈdaʊn/"
+    },
+    {
+      "id": "c1_6",
+      "level": "C1",
+      "chunk": "Play it by ear",
+      "situation_es": "Propón ver cómo avanza la tarde antes de confirmar los planes",
+      "en": "Let's play it by ear and decide later this afternoon.",
+      "alt": ["Let's just play it by ear depending on how things go."],
+      "trap_es": "'Play it by ear' significa improvisar según vayan saliendo las cosas.",
+      "connected": "play it by → /ˈpleɪɪtbaɪ/"
+    },
+    {
+      "id": "c1_7",
+      "level": "C1",
+      "chunk": "On the same page",
+      "situation_es": "Confirma que todo el equipo entiende el objetivo de la misma manera",
+      "en": "I just want to make sure we're all on the same page.",
+      "alt": ["Let's double-check that everyone is on the same page."],
+      "trap_es": "Mucho más natural en trabajo que 'make sure we agree in the same thing'.",
+      "connected": "we're all on → /wɪərˈɔːlɒn/"
+    },
+    {
+      "id": "c1_8",
+      "level": "C1",
+      "chunk": "It's high time + pasado",
+      "situation_es": "Di con énfasis que ya es hora de actualizar el sistema",
+      "en": "It's high time we updated our system.",
+      "alt": ["It's about time we upgraded our system."],
+      "trap_es": "Después de 'It's high time / about time', el verbo va en PASADO ('updated'), aunque hables del presente.",
+      "connected": "time we → /ˈtaɪmwi/"
+    },
+    {
+      "id": "c1_9",
+      "level": "C1",
+      "chunk": "Wrap up",
+      "situation_es": "Propón ir cerrando la reunión porque ya se acabó el tiempo",
+      "en": "Let's wrap things up and follow up via email.",
+      "alt": ["We should wrap up this meeting now."],
+      "trap_es": "'Wrap up' es cerrar una reunión o tarea; 'follow up' es dar seguimiento.",
+      "connected": "wrap things up → /ræpθɪŋzˈʌp/"
+    },
+    {
+      "id": "c1_10",
+      "level": "C1",
+      "chunk": "Bear in mind",
+      "situation_es": "Señala diplomáticamente que hay que tener presente el riesgo",
+      "en": "We ought to bear in mind that the timeline is quite tight.",
+      "alt": ["Please keep in mind that the deadline is very tight."],
+      "trap_es": "'Bear in mind' / 'keep in mind' son las formas naturales de decir 'tener en cuenta'.",
+      "connected": "bear in mind → /beərɪnˈmaɪnd/"
+    }
+  ]
+}

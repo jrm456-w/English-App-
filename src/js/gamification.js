@@ -255,3 +255,58 @@ export function recentBadges(n = 4) {
   const ids = getState().badges.slice(-n).reverse();
   return ids.map((id) => BADGES.find((b) => b.id === id)).filter(Boolean);
 }
+
+/* ---------------- Personal Mistakes & Phrasebook ---------------- */
+export function recordMistake(en, es, tip = '') {
+  if (!en) return;
+  const key = en.toLowerCase().trim();
+  const td = today();
+  update((st) => {
+    st.mistakes = st.mistakes || {};
+    const prev = st.mistakes[key] || { misses: 0 };
+    st.mistakes[key] = {
+      en: en.trim(),
+      es: (es || '').trim(),
+      tip: (tip || prev.tip || '').trim(),
+      misses: (prev.misses || 0) + 1,
+      lastMissed: td,
+      due: td
+    };
+  });
+}
+
+export function resolveMistake(en) {
+  if (!en) return;
+  const key = en.toLowerCase().trim();
+  update((st) => {
+    if (st.mistakes) delete st.mistakes[key];
+  });
+}
+
+export function mistakeList() {
+  return Object.values(getState().mistakes || {}).sort((a, b) => (b.misses || 1) - (a.misses || 1));
+}
+
+export function addMyPhrase({ en, es, note = '' }) {
+  if (!en || !es) return null;
+  const item = {
+    id: 'p_' + Date.now(),
+    en: en.trim(),
+    es: es.trim(),
+    note: note.trim(),
+    createdAt: Date.now(),
+    box: 1,
+    due: today()
+  };
+  update((st) => {
+    st.myPhrases = st.myPhrases || [];
+    st.myPhrases.unshift(item);
+  });
+  return item;
+}
+
+export function removeMyPhrase(id) {
+  update((st) => {
+    st.myPhrases = (st.myPhrases || []).filter((p) => p.id !== id);
+  });
+}

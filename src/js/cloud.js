@@ -180,6 +180,34 @@ function mergeStates(local, remote) {
     for (const k in b) o[k] = a[k] ? Math.min(a[k], b[k]) : b[k];
     return o;
   };
+  const mergePhrases = (a = [], b = []) => {
+    const map = new Map();
+    [...a, ...b].forEach((p) => {
+      if (!p || !p.id) return;
+      const prev = map.get(p.id);
+      if (!prev) map.set(p.id, p);
+      else if ((p.box || 1) > (prev.box || 1) || ((p.box || 1) === (prev.box || 1) && (p.due || '') > (prev.due || ''))) {
+        map.set(p.id, p);
+      }
+    });
+    return Array.from(map.values()).sort((x, y) => (y.createdAt || 0) - (x.createdAt || 0));
+  };
+  const mergeMistakes = (a = {}, b = {}) => {
+    const o = { ...a };
+    for (const k in b) {
+      const x = a[k], y = b[k];
+      if (!x) o[k] = y;
+      else {
+        o[k] = {
+          ...x,
+          ...y,
+          misses: maxNum(x.misses, y.misses),
+          lastMissed: [x.lastMissed, y.lastMissed].filter(Boolean).sort().pop() || x.lastMissed || y.lastMissed
+        };
+      }
+    }
+    return o;
+  };
   const higherLevel = (a, b) => (LEVELS.indexOf(b) > LEVELS.indexOf(a) ? b : a);
   return {
     ...local,
@@ -197,6 +225,8 @@ function mergeStates(local, remote) {
     xpLog: maxMap(remote.xpLog, local.xpLog),
     weakGrammar: maxMap(remote.weakGrammar, local.weakGrammar),
     endingsFound: mergeEndings(local.endingsFound, remote.endingsFound),
-    materialSeen: minMap(local.materialSeen, remote.materialSeen)
+    materialSeen: minMap(local.materialSeen, remote.materialSeen),
+    myPhrases: mergePhrases(local.myPhrases, remote.myPhrases),
+    mistakes: mergeMistakes(local.mistakes, remote.mistakes)
   };
 }

@@ -402,3 +402,53 @@ a { color: inherit; text-decoration: none; }
 .net-status[hidden] { display: none; }
 .needs-net { color: var(--c-warning); font-weight: 700; font-size: var(--fs-sm); }
 .is-offline-locked { opacity: 0.55; }
+
+/* Reflex Gym timer, word diff, notebook tabs & Focus Mode steps */
+.reflex-timer {
+  height: 8px; background: var(--c-surface-2); border: 1px solid var(--c-border);
+  border-radius: 999px; overflow: hidden;
+}
+.reflex-timer__fill {
+  height: 100%; background: linear-gradient(90deg, var(--c-success), var(--c-warning));
+  transition: width 100ms linear;
+}
+
+.diff-wrap {
+  margin-top: 8px; padding: 10px 12px; border-radius: var(--radius-sm);
+  background: var(--c-surface); border: 1px solid var(--c-border); line-height: 1.8;
+}
+.diff-ok {
+  display: inline-block; padding: 1px 6px; margin: 1px; border-radius: 6px;
+  background: rgba(22, 163, 74, 0.14); color: var(--c-success); font-weight: 700;
+}
+.diff-miss {
+  display: inline-block; padding: 1px 6px; margin: 1px; border-radius: 6px;
+  background: rgba(220, 38, 38, 0.14); color: var(--c-danger); font-weight: 700;
+  text-decoration: underline wavy;
+}
+.diff-extra {
+  display: inline-block; padding: 1px 6px; margin: 1px; border-radius: 6px;
+  background: rgba(245, 158, 11, 0.16); color: var(--c-warning); text-decoration: line-through;
+}
+
+.tabs { display: flex; gap: var(--sp-2); margin-bottom: var(--sp-4); }
+.tab {
+  flex: 1; padding: var(--sp-3); border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border); background: var(--c-surface); color: var(--c-text-muted);
+  font-weight: 700; cursor: pointer; transition: var(--transition);
+}
+.tab.is-active {
+  background: var(--c-primary); color: #fff; border-color: var(--c-primary);
+}
+
+.focus-step {
+  display: flex; align-items: center; gap: var(--sp-3);
+  padding: var(--sp-3); margin-top: var(--sp-2); border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border); background: var(--c-surface-2);
+  cursor: pointer; transition: border-color var(--transition), transform var(--transition);
+}
+.focus-step:hover { border-color: var(--c-primary); transform: translateY(-1px); }
+.focus-step.is-next { border: 2px solid var(--c-primary); background: var(--c-surface); }
+.focus-step.is-done { opacity: 0.72; }
+.focus-step__mark { font-size: 1.2rem; flex-shrink: 0; }
+.focus-step__body { flex: 1; min-width: 0; }
