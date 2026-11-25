@@ -1,11 +1,32 @@
-/* Mi Cuaderno — Personal bank of real mistakes + custom saved phrases.
-   Turns everyday mistakes and real-world phrases into instant Reflex Gym drills. */
+/* Cuaderno — Unified 3-tab personal hub: Mistakes, My Phrases & Searchable Dictionary. */
 import { el, clear, toast, escapeHtml } from './ui.js';
 import { t } from './i18n.js';
 import { getState } from './store.js';
+import { loadLevel, levels } from './data.js';
 import { speak } from './speech.js';
 import { mistakeList, resolveMistake, addMyPhrase, removeMyPhrase } from './gamification.js';
-import { navigate, goBack } from './router.js';
+import { navigate } from './router.js';
+
+let dictCache = null;
+async function getDictEntries() {
+  if (dictCache) return dictCache;
+  const seen = new Set();
+  const entries = [];
+  for (const lvl of levels()) {
+    const data = await loadLevel(lvl);
+    for (const u of data.units) {
+      for (const v of u.vocabulary) {
+        const key = v.en.toLowerCase();
+        if (seen.has(key)) continue;
+        seen.add(key);
+        entries.push({ en: v.en, es: v.es, level: lvl });
+      }
+    }
+  }
+  entries.sort((a, b) => a.en.localeCompare(b.en));
+  dictCache = entries;
+  return entries;
+}
 
 export function notebook(_p, view) {
   let activeTab = 'mistakes';
@@ -16,29 +37,34 @@ export function notebook(_p, view) {
     const phrases = getState().myPhrases || [];
 
     view.appendChild(el(`
-      <div class="row" style="justify-content:space-between">
-        <button class="btn btn--ghost btn--small" id="back">← ${t('common.back')}</button>
-        <span class="badge pill">📓 ${mistakes.length + phrases.length}</span>
-      </div>`));
-    view.querySelector('#back').onclick = () => goBack('/home');
-
-    view.appendChild(el(`<h1 class="h1">📓 ${t('notebook.title')}</h1><p class="muted">${t('notebook.subtitle')}</p>`));
+      <header class="topbar">
+        <div>
+          <h1 class="topbar__title">📓 ${t('notebook.title')}</h1>
+          <div class="topbar__sub">${t('notebook.subtitle')}</div>
+        </div>
+        <span class="badge pill">${mistakes.length + phrases.length}</span>
+      </header>`));
 
     const tabs = el(`
-      <div class="tabs" role="tablist">
-        <button class="tab ${activeTab === 'mistakes' ? 'is-active' : ''}" id="tab-mistakes" role="tab" aria-selected="${activeTab === 'mistakes'}">
+      <div class="seg-tabs" role="tablist">
+        <button class="seg-tab ${activeTab === 'mistakes' ? 'is-active' : ''}" id="tab-mistakes" role="tab" aria-selected="${activeTab === 'mistakes'}">
           🔧 ${t('notebook.tabMistakes')} (${mistakes.length})
         </button>
-        <button class="tab ${activeTab === 'phrases' ? 'is-active' : ''}" id="tab-phrases" role="tab" aria-selected="${activeTab === 'phrases'}">
+        <button class="seg-tab ${activeTab === 'phrases' ? 'is-active' : ''}" id="tab-phrases" role="tab" aria-selected="${activeTab === 'phrases'}">
           📓 ${t('notebook.tabPhrases')} (${phrases.length})
+        </button>
+        <button class="seg-tab ${activeTab === 'dict' ? 'is-active' : ''}" id="tab-dict" role="tab" aria-selected="${activeTab === 'dict'}">
+          🔤 ${t('notebook.tabDict')}
         </button>
       </div>`);
     tabs.querySelector('#tab-mistakes').onclick = () => { activeTab = 'mistakes'; render(); };
     tabs.querySelector('#tab-phrases').onclick = () => { activeTab = 'phrases'; render(); };
+    tabs.querySelector('#tab-dict').onclick = () => { activeTab = 'dict'; render(); };
     view.appendChild(tabs);
 
     if (activeTab === 'mistakes') renderMistakes(mistakes);
-    else renderPhrases(phrases);
+    else if (activeTab === 'phrases') renderPhrases(phrases);
+    else renderDictionary();
   }
 
   function renderMistakes(mistakes) {
@@ -140,6 +166,55 @@ export function notebook(_p, view) {
       };
       view.appendChild(card);
     });
+  }
+
+  async function renderDictionary() {
+    const search = el(`<input class="input" id="dict-search" placeholder="${escapeHtml(t('notebook.searchDict'))}" autocomplete="off" style="margin-bottom:12px" />`);
+    const list = el(`<div class="card"><p class="muted center">${t('gate.loading')}</p></div>`);
+    view.appendChild(search);
+    view.appendChild(list);
+
+    const entries = await getDictEntries();
+
+    function drawRows(filter) {
+      if (activeTab !== 'dict') return;
+      clear(list);
+      const q = (filter || '').toLowerCase().trim();
+      const rows = entries.filter((e) => !q || e.en.toLowerCase().includes(q) || e.es.toLowerCase().includes(q)).slice(0, 120);
+      if (!rows.length) {
+        list.appendChild(el(`<p class="muted center">${t('dict.none')}</p>`));
+        return;
+      }
+      rows.forEach((e) => {
+        const row = el(`
+          <div class="setting-row">
+            <div style="flex:1;min-width:0">
+              <strong>${escapeHtml(e.en)}</strong> — <span class="muted">${escapeHtml(e.es)}</span>
+              <span class="badge" style="font-size:.7rem;margin-left:4px">${escapeHtml(e.level)}</span>
+            </div>
+            <div class="row" style="gap:6px;flex-shrink:0">
+              <button class="btn btn--ghost btn--small" id="d-say" aria-label="Listen">🔊</button>
+              <button class="btn btn--ghost btn--small" id="d-add" title="${escapeHtml(t('notebook.addToPhrases'))}">+</button>
+            </div>
+          </div>`);
+        row.querySelector('#d-say').onclick = () => speak(e.en);
+        row.querySelector('#d-add').onclick = () => {
+          addMyPhrase({ en: e.en, es: e.es, note: `${t('path.level')} ${e.level}` });
+          toast('✅ ' + t('notebook.savedToast'));
+          const phrasesTab = view.querySelector('#tab-phrases');
+          if (phrasesTab) phrasesTab.textContent = `📓 ${t('notebook.tabPhrases')} (${(getState().myPhrases || []).length})`;
+        };
+        list.appendChild(row);
+      });
+    }
+
+    let timer = null;
+    search.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => drawRows(search.value), 140);
+    });
+    drawRows('');
+    search.focus();
   }
 
   render();

@@ -67,14 +67,18 @@ export function handle() {
 
 function updateActiveNav(hashPath) {
   const top = hashPath.split('/').filter(Boolean)[0] || 'home';
-  // unit & game screens belong under their parent tab
+  // Every route maps cleanly to one of the 4 primary Studio tabs.
   const tabMap = {
-    unit: 'home', learn: 'home', game: 'games', quiz: 'home', story: 'stories',
-    lesson: 'home', daily: 'home', review: 'home', dictionary: 'home',
-    pronunciation: 'home', pron: 'home', exam: 'home', study: 'home',
-    speak: 'home', grammar: 'home', convo: 'home', adventure: 'home',
-    material: 'home', chat: 'home', room: 'home', functions: 'home', prep: 'home',
-    reflex: 'home', ear: 'home', notebook: 'home', explore: 'home'
+    home: 'home', quiz: 'home', material: 'home',
+    practice: 'practice', learn: 'practice', unit: 'practice', lesson: 'practice',
+    games: 'practice', game: 'practice', stories: 'practice', story: 'practice',
+    reflex: 'practice', ear: 'practice', room: 'practice', speak: 'practice',
+    pronunciation: 'practice', pron: 'practice', convo: 'practice', chat: 'practice',
+    adventure: 'practice', functions: 'practice', prep: 'practice', daily: 'practice',
+    review: 'practice', study: 'practice', grammar: 'practice', exam: 'practice',
+    explore: 'practice',
+    notebook: 'notebook', dictionary: 'notebook',
+    profile: 'profile', progress: 'profile', settings: 'profile'
   };
   const active = tabMap[top] || top;
   document.querySelectorAll('.nav__item').forEach((el) => {

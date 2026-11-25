@@ -3,7 +3,9 @@ import { getState } from './store.js';
 import { applyTranslations, t } from './i18n.js';
 import { route, setNotFound, startRouter, navigate } from './router.js';
 import { home, learn, unit, games, progress, settings } from './views.js';
-import { learningPath } from './path.js';
+import { homeToday } from './homeToday.js';
+import { practiceHub } from './practiceHub.js';
+import { profile } from './profile.js';
 import { renderQuiz } from './quiz.js';
 import { storiesList, storyReader } from './stories.js';
 import { launchGame } from '../games/index.js';
@@ -38,12 +40,13 @@ function applyTheme() {
   // Set on <html> so <body>'s color/background variables resolve correctly.
   document.documentElement.dataset.theme = getState().theme;
   document.getElementById('app').dataset.theme = getState().theme;
-  document.querySelector('meta[name="theme-color"]').setAttribute('content', getState().theme === 'dark' ? '#0f172a' : '#2563eb');
+  document.querySelector('meta[name="theme-color"]').setAttribute('content', getState().theme === 'dark' ? '#0D0F14' : '#0F9D58');
 }
 
 /* ---- Routes ---- */
-route('/home', (_p, v) => requireOnboard(() => learningPath(_p, v)));
-route('/learn', (_p, v) => requireOnboard(() => learningPath(_p, v)));
+route('/home', (_p, v) => requireOnboard(() => homeToday(_p, v)));
+route('/practice', (_p, v) => requireOnboard(() => practiceHub(_p, v)));
+route('/learn', (_p, v) => requireOnboard(() => learn(_p, v)));
 route('/unit/:level/:id', (p, v) => requireOnboard(() => unit(p, v)));
 route('/games', (_p, v) => requireOnboard(() => games(_p, v)));
 route('/stories', (_p, v) => requireOnboard(() => storiesList(_p, v)));
@@ -76,10 +79,11 @@ route('/reflex/:mode', (p, v) => requireOnboard(() => reflexGym(p, v)));
 route('/ear', (_p, v) => requireOnboard(() => earTrainer(_p, v)));
 route('/notebook', (_p, v) => requireOnboard(() => notebook(_p, v)));
 route('/explore', (_p, v) => requireOnboard(() => explore(_p, v)));
-route('/progress', (_p, v) => requireOnboard(() => progress(_p, v)));
-route('/settings', (_p, v) => settings(_p, v));
+route('/profile', (_p, v) => requireOnboard(() => profile({ tab: 'progress' }, v)));
+route('/progress', (_p, v) => requireOnboard(() => profile({ tab: 'progress' }, v)));
+route('/settings', (_p, v) => profile({ tab: 'settings' }, v));
 route('/quiz', (_p, v) => renderQuiz(v));
-setNotFound((v) => home({}, v));
+setNotFound((v) => homeToday({}, v));
 
 function requireOnboard(fn) {
   if (!getState().onboarded) { navigate('/quiz'); return; }

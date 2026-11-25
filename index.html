@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Aprende inglés rápido y fácil: lecciones, juegos interactivos y práctica de pronunciación. Para hispanohablantes. Funciona sin conexión." />
-  <meta name="theme-color" content="#2563eb" />
+  <meta name="description" content="EngFlow 2.0 — Aprende inglés pensando y hablando desde el día uno. Funciona sin conexión." />
+  <meta name="theme-color" content="#0F9D58" />
   <link rel="manifest" href="manifest.json" />
   <link rel="apple-touch-icon" href="src/assets/icons/apple-touch-icon.png" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -17,18 +17,20 @@
   <!-- App shell -->
   <div id="app" class="app" data-theme="light">
 
-    <!-- Desktop sidebar / mobile top header -->
+    <!-- Desktop sidebar rail -->
     <aside class="sidebar" aria-label="Navegación principal">
       <div class="brand">
         <span class="brand__logo" aria-hidden="true">E</span>
-        <span class="brand__name">EngFlow</span>
+        <div>
+          <div class="brand__name">EngFlow</div>
+          <div class="brand__tag">Studio 2.0</div>
+        </div>
       </div>
       <nav class="nav nav--side">
-        <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🧭</span><span data-i18n="nav.home">Aprender</span></a>
-        <a href="#/stories" class="nav__item" data-route="stories"><span class="nav__icon">📖</span><span data-i18n="nav.stories">Historias</span></a>
-        <a href="#/games" class="nav__item" data-route="games"><span class="nav__icon">🎮</span><span data-i18n="nav.games">Juegos</span></a>
-        <a href="#/progress" class="nav__item" data-route="progress"><span class="nav__icon">📈</span><span data-i18n="nav.progress">Progreso</span></a>
-        <a href="#/settings" class="nav__item" data-route="settings"><span class="nav__icon">⚙️</span><span data-i18n="nav.settings">Ajustes</span></a>
+        <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🎯</span><span data-i18n="nav.today">Hoy</span></a>
+        <a href="#/practice" class="nav__item" data-route="practice"><span class="nav__icon">🎙️</span><span data-i18n="nav.practice">Practicar</span></a>
+        <a href="#/notebook" class="nav__item" data-route="notebook"><span class="nav__icon">📓</span><span data-i18n="nav.notebook">Cuaderno</span></a>
+        <a href="#/profile" class="nav__item" data-route="profile"><span class="nav__icon">👤</span><span data-i18n="nav.profile">Perfil</span></a>
       </nav>
     </aside>
 
@@ -36,13 +38,12 @@
       <!-- Screens are injected here by the router -->
     </main>
 
-    <!-- Mobile bottom navigation -->
+    <!-- Mobile frosted-glass bottom navigation -->
     <nav class="nav nav--bottom" aria-label="Navegación inferior">
-      <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🧭</span><span data-i18n="nav.home">Aprender</span></a>
-      <a href="#/stories" class="nav__item" data-route="stories"><span class="nav__icon">📖</span><span data-i18n="nav.stories">Historias</span></a>
-      <a href="#/games" class="nav__item" data-route="games"><span class="nav__icon">🎮</span><span data-i18n="nav.games">Juegos</span></a>
-      <a href="#/progress" class="nav__item" data-route="progress"><span class="nav__icon">📈</span><span data-i18n="nav.progress">Progreso</span></a>
-      <a href="#/settings" class="nav__item" data-route="settings"><span class="nav__icon">⚙️</span><span data-i18n="nav.settings">Ajustes</span></a>
+      <a href="#/home" class="nav__item" data-route="home"><span class="nav__icon">🎯</span><span data-i18n="nav.today">Hoy</span></a>
+      <a href="#/practice" class="nav__item" data-route="practice"><span class="nav__icon">🎙️</span><span data-i18n="nav.practice">Practicar</span></a>
+      <a href="#/notebook" class="nav__item" data-route="notebook"><span class="nav__icon">📓</span><span data-i18n="nav.notebook">Cuaderno</span></a>
+      <a href="#/profile" class="nav__item" data-route="profile"><span class="nav__icon">👤</span><span data-i18n="nav.profile">Perfil</span></a>
     </nav>
   </div>
 

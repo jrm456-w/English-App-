@@ -495,7 +495,7 @@ export function settings(_p, view) {
     const th = getState().theme;
     document.documentElement.dataset.theme = th;
     document.getElementById('app').dataset.theme = th;
-    document.querySelector('meta[name="theme-color"]').setAttribute('content', th === 'dark' ? '#0f172a' : '#2563eb');
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', th === 'dark' ? '#0D0F14' : '#0F9D58');
   };
   card.appendChild(dark);
 
