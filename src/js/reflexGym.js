@@ -201,12 +201,12 @@ export async function reflexGym(params, view) {
         </div>
         <h2 class="h2" style="margin-top:4px">${escapeHtml(drill.situation_es)}</h2>
         <div id="input-area">
-          ${sttSupported() ? `<button class="btn btn--accent btn--block" id="mic-btn" style="margin-bottom:10px">🎤 ${t('reflex.sayIt')}</button>` : ''}
-          <div class="row" style="gap:8px">
-            <input class="input" id="ans-input" style="flex:1" placeholder="${escapeHtml(t('reflex.typePlaceholder'))}" autocomplete="off" />
-            <button class="btn" id="send-btn">${t('common.check')}</button>
-          </div>
-          <button class="btn btn--ghost btn--small btn--block" id="giveup-btn" style="margin-top:10px">${t('reflex.cantRemember')}</button>
+          ${sttSupported() ? `<button type="button" class="btn btn--accent btn--block" id="mic-btn" style="margin-bottom:10px">🎤 ${t('reflex.sayIt')}</button>` : ''}
+          <form id="reflex-form" novalidate>
+            <input type="text" class="input" id="ans-input" placeholder="${escapeHtml(t('reflex.typePlaceholder'))}" autocomplete="off" autocorrect="off" autocapitalize="sentences" enterkeyhint="send" style="display:block;width:100%;margin-bottom:10px" />
+            <button type="submit" class="btn btn--block" id="send-btn">${t('common.check')}</button>
+          </form>
+          <button type="button" class="btn btn--ghost btn--small btn--block" id="giveup-btn" style="margin-top:10px">${t('reflex.cantRemember')}</button>
         </div>
         <div id="fb"></div>
       </div>`);
@@ -215,8 +215,8 @@ export async function reflexGym(params, view) {
     const fill = card.querySelector('#t-fill');
     const tLabel = card.querySelector('#t-label');
     const pauseBtn = card.querySelector('#pause-btn');
+    const form = card.querySelector('#reflex-form');
     const ansInput = card.querySelector('#ans-input');
-    const sendBtn = card.querySelector('#send-btn');
     const micBtn = card.querySelector('#mic-btn');
     const giveupBtn = card.querySelector('#giveup-btn');
     const inputArea = card.querySelector('#input-area');
@@ -225,6 +225,13 @@ export async function reflexGym(params, view) {
     let remainingMs = 8000;
     let paused = false;
     let settled = false;
+    let lastSec = 8;
+
+    const pauseTimer = () => {
+      if (paused) return;
+      paused = true;
+      pauseBtn.textContent = `▶ ${t('reflex.resume')}`;
+    };
 
     const startTick = () => {
       stopTimer();
@@ -234,11 +241,14 @@ export async function reflexGym(params, view) {
         const pct = Math.round((remainingMs / 8000) * 100);
         fill.style.width = pct + '%';
         const sec = Math.ceil(remainingMs / 1000);
-        if (remainingMs > 0) {
-          tLabel.textContent = `⏱️ ${sec}s · ${t('reflex.thinkFirst')}`;
-        } else {
-          stopTimer();
-          tLabel.textContent = `⏰ ${t('reflex.timesUp')}`;
+        if (sec !== lastSec) {
+          lastSec = sec;
+          if (remainingMs > 0) {
+            tLabel.textContent = `⏱️ ${sec}s · ${t('reflex.thinkFirst')}`;
+          } else {
+            stopTimer();
+            tLabel.textContent = `⏰ ${t('reflex.timesUp')}`;
+          }
         }
       }, 100);
     };
@@ -248,6 +258,9 @@ export async function reflexGym(params, view) {
       paused = !paused;
       pauseBtn.textContent = paused ? `▶ ${t('reflex.resume')}` : `⏸ ${t('reflex.pause')}`;
     };
+
+    ansInput.addEventListener('focus', pauseTimer);
+    ansInput.addEventListener('input', pauseTimer);
 
     function evaluate(rawAnswer, skipped = false) {
       if (settled) return;
@@ -340,16 +353,11 @@ export async function reflexGym(params, view) {
       };
     }
 
-    sendBtn.onclick = () => {
+    form.onsubmit = (e) => {
+      e.preventDefault();
       if (!ansInput.value.trim()) { ansInput.focus(); return; }
       evaluate(ansInput.value, false);
     };
-    ansInput.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        sendBtn.click();
-      }
-    });
     giveupBtn.onclick = () => evaluate('', true);
 
     if (micBtn) {
@@ -371,7 +379,9 @@ export async function reflexGym(params, view) {
       };
     }
 
-    ansInput.focus();
+    if (window.innerWidth >= 900) {
+      requestAnimationFrame(() => ansInput.focus());
+    }
   }
 
   function finish() {
